@@ -131,5 +131,5 @@ module fpadd_single (input clk,
 		endcase
 	end
 
-	assign result = {S_result, Mantissa_result << N, EXP_result - N};
+	assign result = {S_result, (Mantissa_result ?  (Mantissa_result << N) : 23'h400000), EXP_result - N};
 endmodule
