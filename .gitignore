@@ -1,0 +1,8 @@
+*.sim/
+*.cache/
+*.hw/
+*.sim/
+*.runs/
+*.ip_user_files
+vivado.jou
+vivado.log
