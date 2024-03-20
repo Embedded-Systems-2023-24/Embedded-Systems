@@ -20,7 +20,8 @@ module fpadd_single (input clk,
                      input [31:0]reg_B,  
 		     		 output reg[31:0] out);
 
-	reg        A, B, S_A, S_B;
+	reg [31:0] A, B;
+	reg        S_A, S_B;
 	reg  [4:0] N;
 	reg  [7:0] EXP_A, EXP_B, diff, EXP_result, S_result;
 	reg [22:0] Mantissa_A, Mantissa_B, Mantissa_shift_A, Mantissa_shift_B, Mantissa_result;
@@ -103,16 +104,16 @@ module fpadd_single (input clk,
 	//(d): Normalise final result.
 	always @(Mantissa_result) begin
 		casex (Mantissa_result)
-			23'b1xxxxxxxxxxxxxxxxxxxxxx: N = 5'd_0;
-			23'b01xxxxxxxxxxxxxxxxxxxxx: N = 5'd_1;
-			23'b001xxxxxxxxxxxxxxxxxxxx: N = 5'd_2;
-			23'b0001xxxxxxxxxxxxxxxxxxx: N = 5'd_3;
-			23'b00001xxxxxxxxxxxxxxxxxx: N = 5'd_4;
-			23'b000001xxxxxxxxxxxxxxxxx: N = 5'd_5;
-			23'b0000001xxxxxxxxxxxxxxxx: N = 5'd_6;
-			23'b00000001xxxxxxxxxxxxxxx: N = 5'd_7;
-			23'b000000001xxxxxxxxxxxxxx: N = 5'd_8;
-			23'b0000000001xxxxxxxxxxxxx: N = 5'd_9;
+			23'b1xxxxxxxxxxxxxxxxxxxxxx: N = 5'd0;
+			23'b01xxxxxxxxxxxxxxxxxxxxx: N = 5'd1;
+			23'b001xxxxxxxxxxxxxxxxxxxx: N = 5'd2;
+			23'b0001xxxxxxxxxxxxxxxxxxx: N = 5'd3;
+			23'b00001xxxxxxxxxxxxxxxxxx: N = 5'd4;
+			23'b000001xxxxxxxxxxxxxxxxx: N = 5'd5;
+			23'b0000001xxxxxxxxxxxxxxxx: N = 5'd6;
+			23'b00000001xxxxxxxxxxxxxxx: N = 5'd7;
+			23'b000000001xxxxxxxxxxxxxx: N = 5'd8;
+			23'b0000000001xxxxxxxxxxxxx: N = 5'd9;
 			23'b00000000001xxxxxxxxxxxx: N = 5'd10;
 			23'b000000000001xxxxxxxxxxx: N = 5'd11;
 			23'b0000000000001xxxxxxxxxx: N = 5'd12;
