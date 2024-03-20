@@ -18,30 +18,23 @@ module fpadd_single (input clk,
                      input reset,
                      input [31:0]reg_A, 
                      input [31:0]reg_B,  
-		     output reg[31:0] out);
+		     		 output reg[31:0] out);
 
-	reg        S_A, S_B, N;
-	reg  [7:0]      EXP_A,
-	                EXP_B,
-					 diff, EXP_result, S_result;
-	reg [22:0] Mantissa_A,
-	           Mantissa_B,
-		 Mantissa_shift_A,
-		 Mantissa_shift_B,
-		  Mantissa_result;
+	reg        A, B, S_A, S_B;
+	reg  [4:0] N;
+	reg  [7:0] EXP_A, EXP_B, diff, EXP_result, S_result;
+	reg [22:0] Mantissa_A, Mantissa_B, Mantissa_shift_A, Mantissa_shift_B, Mantissa_result;
 				     	
 	// Register the two inputs, and use A and B in the combinational logic. 
-	always @ (posedge clk or posedge reset)
-		begin
-			if (reset == 1'b1)
-				out <= 32'b0;
-			else
-				begin
-					A <= reg_A;
-					B <= reg_B;
-					out <= result;
-				end
+	always @ (posedge clk or posedge reset) begin
+		if (reset == 1'b1)
+			out <= 32'b0;
+		else begin
+			A <= reg_A;
+			B <= reg_B;
+			out <= result;
 		end
+	end
 		
 	//Combinational Logic to (a) compare and adjust the exponents, 
 	//                       (b) shift appropriately the mantissa if necessary, 
@@ -61,7 +54,7 @@ module fpadd_single (input clk,
 		Mantissa_B = B[22:0];
 	end
 
-	//Adjust exponents and shift mantissas.
+	//(a), (b): Adjust exponents and shift mantissas.
 	always@ (EXP_A or EXP_B) begin
 		if (EXP_A == EXP_B) begin 
 			diff = 8'b0;
@@ -88,7 +81,7 @@ module fpadd_single (input clk,
 		end
 	end
 
-	//Add the two Mantissas and define sign of result.
+	//(c): Add the two Mantissas and define sign of result.
 	always @(S_A or S_B or Mantissa_shift_A or Mantissa_shift_B) begin
 		if (S_A == S_B) begin
 			S_result = S_A;
@@ -107,33 +100,33 @@ module fpadd_single (input clk,
 		end
 	end
 
-	//Normalise final result.
+	//(d): Normalise final result.
 	always @(Mantissa_result) begin
 		casex (Mantissa_result)
-			23'b1xxxxxxxxxxxxxxxxxxxxxx: N =  0;
-			23'b01xxxxxxxxxxxxxxxxxxxxx: N =  1;
-			23'b001xxxxxxxxxxxxxxxxxxxx: N =  2;
-			23'b0001xxxxxxxxxxxxxxxxxxx: N =  3;
-			23'b00001xxxxxxxxxxxxxxxxxx: N =  4;
-			23'b000001xxxxxxxxxxxxxxxxx: N =  5;
-			23'b0000001xxxxxxxxxxxxxxxx: N =  6;
-			23'b00000001xxxxxxxxxxxxxxx: N =  7;
-			23'b000000001xxxxxxxxxxxxxx: N =  8;
-			23'b0000000001xxxxxxxxxxxxx: N =  9;
-			23'b00000000001xxxxxxxxxxxx: N = 10;
-			23'b000000000001xxxxxxxxxxx: N = 11;
-			23'b0000000000001xxxxxxxxxx: N = 12;
-			23'b00000000000001xxxxxxxxx: N = 13;
-			23'b000000000000001xxxxxxxx: N = 14;
-			23'b0000000000000001xxxxxxx: N = 15;
-			23'b00000000000000001xxxxxx: N = 16;
-			23'b000000000000000001xxxxx: N = 17;
-			23'b0000000000000000001xxxx: N = 18;
-			23'b00000000000000000001xxx: N = 19;
-			23'b000000000000000000001xx: N = 20;
-			23'b0000000000000000000001x: N = 21;
-			23'b00000000000000000000001: N = 22;
-			default: N = 0;
+			23'b1xxxxxxxxxxxxxxxxxxxxxx: N = 5'd_0;
+			23'b01xxxxxxxxxxxxxxxxxxxxx: N = 5'd_1;
+			23'b001xxxxxxxxxxxxxxxxxxxx: N = 5'd_2;
+			23'b0001xxxxxxxxxxxxxxxxxxx: N = 5'd_3;
+			23'b00001xxxxxxxxxxxxxxxxxx: N = 5'd_4;
+			23'b000001xxxxxxxxxxxxxxxxx: N = 5'd_5;
+			23'b0000001xxxxxxxxxxxxxxxx: N = 5'd_6;
+			23'b00000001xxxxxxxxxxxxxxx: N = 5'd_7;
+			23'b000000001xxxxxxxxxxxxxx: N = 5'd_8;
+			23'b0000000001xxxxxxxxxxxxx: N = 5'd_9;
+			23'b00000000001xxxxxxxxxxxx: N = 5'd10;
+			23'b000000000001xxxxxxxxxxx: N = 5'd11;
+			23'b0000000000001xxxxxxxxxx: N = 5'd12;
+			23'b00000000000001xxxxxxxxx: N = 5'd13;
+			23'b000000000000001xxxxxxxx: N = 5'd14;
+			23'b0000000000000001xxxxxxx: N = 5'd15;
+			23'b00000000000000001xxxxxx: N = 5'd16;
+			23'b000000000000000001xxxxx: N = 5'd17;
+			23'b0000000000000000001xxxx: N = 5'd18;
+			23'b00000000000000000001xxx: N = 5'd19;
+			23'b000000000000000000001xx: N = 5'd20;
+			23'b0000000000000000000001x: N = 5'd21;
+			23'b00000000000000000000001: N = 5'd22;
+			default: N = 5'd0;
 		endcase
 	end
 
