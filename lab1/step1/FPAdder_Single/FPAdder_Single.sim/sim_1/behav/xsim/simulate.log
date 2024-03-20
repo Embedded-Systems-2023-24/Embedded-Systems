@@ -1,0 +1,37 @@
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+A=3f800000,B=40000000,out=40400000, correctOut=40400000
+
+A=bf800000,B=3f800000,out=00000000, correctOut=00000000
+
+A=c2de8000,B=45155e00,out=43f35000, correctOut=450e6a00
+
+Error at input           2. Out was 43f35000 instead of 450e6a00
+
+A=6b64b235,B=6ac49214,out=6b46fb3f, correctOut=6ba37d9f
+
+Error at input           3. Out was 6b46fb3f instead of 6ba37d9f
+
+A=2ac49214,B=6ac49214,out=6ac49214, correctOut=6ac49214
+
+A=bfc66666,B=3fc7ae14,out=3cd1eb80, correctOut=3c23d700
+
+Error at input           5. Out was 3cd1eb80 instead of 3c23d700
+
+A=c565ee8b,B=4565ee8a,out=ba400000, correctOut=b9800000
+
+Error at input           6. Out was ba400000 instead of b9800000
+
+A=447a4efa,B=c47a1ccd,out=3fe45a00, correctOut=3f48b400
+
+Error at input           7. Out was 3fe45a00 instead of 3f48b400
+
+A=00000000,B=00000000,out=00000000, correctOut=00000000
+
+A=38108900,B=bb908900,out=ba7b3f70, correctOut=bb8f67ee
+
+Error at input           9. Out was ba7b3f70 instead of bb8f67ee
+
+Num of Errors =    6
+
+$finish called at time : 440 ns : File "/home/inf2021/iathanasi/embedded/lab1/step1/verilog_input/testbench.v" Line 54

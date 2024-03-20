@@ -20,6 +20,7 @@ module fpadd_single (input clk,
                      input [31:0]reg_B,  
 		     		 output reg[31:0] out);
 
+	wire [31:0] result;
 	reg [31:0] A, B;
 	reg        S_A, S_B;
 	reg  [4:0] N;
@@ -69,13 +70,13 @@ module fpadd_single (input clk,
 			diff = EXP_A - EXP_B;
 
 			Mantissa_shift_A = Mantissa_A;
-			Mantissa_shift_B = Mantissa_B >> diff;
+			Mantissa_shift_B = {1, Mantissa_B} >> diff;
 
 			EXP_result = EXP_A;
 		end else begin
 			diff = EXP_B - EXP_A;
 
-			Mantissa_shift_A = Mantissa_A >> diff;
+			Mantissa_shift_A = {1, Mantissa_A} >> diff;
 			Mantissa_shift_B = Mantissa_B;
 
 			EXP_result = EXP_B;
@@ -131,5 +132,5 @@ module fpadd_single (input clk,
 		endcase
 	end
 
-	assign result = {S_result, (Mantissa_result ?  (Mantissa_result << N) : 23'h400000), EXP_result - N};
+	assign result = { (Mantissa_result ? S_result : 1'b0), (Mantissa_result ? EXP_result - N : 8'b0),  (Mantissa_result << N) };
 endmodule
