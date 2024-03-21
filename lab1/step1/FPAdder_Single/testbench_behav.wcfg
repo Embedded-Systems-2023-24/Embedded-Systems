@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="29583fs"></ZoomStartTime>
-      <ZoomEndTime time="522084fs"></ZoomEndTime>
-      <Cursor1Time time="146083fs"></Cursor1Time>
+      <ZoomStartTime time="73333fs"></ZoomStartTime>
+      <ZoomEndTime time="513334fs"></ZoomEndTime>
+      <Cursor1Time time="440000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="248"></NameColumnWidth>
-      <ValueColumnWidth column_width="121"></ValueColumnWidth>
+      <ValueColumnWidth column_width="117"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="32" />
+   <WVObjectSize size="34" />
    <wvobject type="logic" fp_name="/testbench/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -103,6 +103,7 @@
    <wvobject type="array" fp_name="/testbench/DUT/N">
       <obj_property name="ElementShortName">N[4:0]</obj_property>
       <obj_property name="ObjectShortName">N[4:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/testbench/DUT/EXP_A">
       <obj_property name="ElementShortName">EXP_A[7:0]</obj_property>
@@ -119,14 +120,19 @@
       <obj_property name="ObjectShortName">EXP_result[7:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
+   <wvobject type="array" fp_name="/testbench/DUT/EXP_normal_result">
+      <obj_property name="ElementShortName">EXP_normal_result[7:0]</obj_property>
+      <obj_property name="ObjectShortName">EXP_normal_result[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/testbench/DUT/diff">
       <obj_property name="ElementShortName">diff[7:0]</obj_property>
       <obj_property name="ObjectShortName">diff[7:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/testbench/DUT/S_result">
-      <obj_property name="ElementShortName">S_result[7:0]</obj_property>
-      <obj_property name="ObjectShortName">S_result[7:0]</obj_property>
+   <wvobject type="logic" fp_name="/testbench/DUT/S_result">
+      <obj_property name="ElementShortName">S_result</obj_property>
+      <obj_property name="ObjectShortName">S_result</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/testbench/DUT/Mantissa_A">
       <obj_property name="ElementShortName">Mantissa_A[22:0]</obj_property>
@@ -137,16 +143,20 @@
       <obj_property name="ObjectShortName">Mantissa_B[22:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/testbench/DUT/Mantissa_shift_A">
-      <obj_property name="ElementShortName">Mantissa_shift_A[22:0]</obj_property>
-      <obj_property name="ObjectShortName">Mantissa_shift_A[22:0]</obj_property>
+      <obj_property name="ElementShortName">Mantissa_shift_A[23:0]</obj_property>
+      <obj_property name="ObjectShortName">Mantissa_shift_A[23:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/testbench/DUT/Mantissa_shift_B">
-      <obj_property name="ElementShortName">Mantissa_shift_B[22:0]</obj_property>
-      <obj_property name="ObjectShortName">Mantissa_shift_B[22:0]</obj_property>
+      <obj_property name="ElementShortName">Mantissa_shift_B[23:0]</obj_property>
+      <obj_property name="ObjectShortName">Mantissa_shift_B[23:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/testbench/DUT/Mantissa_result">
-      <obj_property name="ElementShortName">Mantissa_result[22:0]</obj_property>
-      <obj_property name="ObjectShortName">Mantissa_result[22:0]</obj_property>
+      <obj_property name="ElementShortName">Mantissa_result[24:0]</obj_property>
+      <obj_property name="ObjectShortName">Mantissa_result[24:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/DUT/Mantissa_normal_result">
+      <obj_property name="ElementShortName">Mantissa_normal_result[22:0]</obj_property>
+      <obj_property name="ObjectShortName">Mantissa_normal_result[22:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/testbench/DUT/result">
       <obj_property name="ElementShortName">result[31:0]</obj_property>

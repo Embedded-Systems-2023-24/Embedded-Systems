@@ -21,11 +21,15 @@ module fpadd_single (input clk,
 		     		 output reg[31:0] out);
 
 	wire [31:0] result;
+	wire [22:0] Mantissa_normal_result;
+	wire  [7:0] EXP_normal_result;
 	reg [31:0] A, B;
-	reg        S_A, S_B;
+	reg        S_A, S_B, S_result;
 	reg  [4:0] N;
-	reg  [7:0] EXP_A, EXP_B, diff, EXP_result, S_result;
-	reg [22:0] Mantissa_A, Mantissa_B, Mantissa_shift_A, Mantissa_shift_B, Mantissa_result;
+	reg  [7:0] EXP_A, EXP_B, diff, EXP_result;
+	reg [22:0] Mantissa_A, Mantissa_B;
+	reg [23:0] Mantissa_shift_A, Mantissa_shift_B;
+	reg [24:0] Mantissa_result;
 				     	
 	// Register the two inputs, and use A and B in the combinational logic. 
 	always @ (posedge clk or posedge reset) begin
@@ -69,7 +73,7 @@ module fpadd_single (input clk,
 		else if (EXP_A > EXP_B) begin
 			diff = EXP_A - EXP_B;
 
-			Mantissa_shift_A = Mantissa_A;
+			Mantissa_shift_A = {1, Mantissa_A};
 			Mantissa_shift_B = {1, Mantissa_B} >> diff;
 
 			EXP_result = EXP_A;
@@ -77,7 +81,7 @@ module fpadd_single (input clk,
 			diff = EXP_B - EXP_A;
 
 			Mantissa_shift_A = {1, Mantissa_A} >> diff;
-			Mantissa_shift_B = Mantissa_B;
+			Mantissa_shift_B = {1, Mantissa_B};
 
 			EXP_result = EXP_B;
 		end
@@ -105,32 +109,39 @@ module fpadd_single (input clk,
 	//(d): Normalise final result.
 	always @(Mantissa_result) begin
 		casex (Mantissa_result)
-			23'b1xxxxxxxxxxxxxxxxxxxxxx: N = 5'd0;
-			23'b01xxxxxxxxxxxxxxxxxxxxx: N = 5'd1;
-			23'b001xxxxxxxxxxxxxxxxxxxx: N = 5'd2;
-			23'b0001xxxxxxxxxxxxxxxxxxx: N = 5'd3;
-			23'b00001xxxxxxxxxxxxxxxxxx: N = 5'd4;
-			23'b000001xxxxxxxxxxxxxxxxx: N = 5'd5;
-			23'b0000001xxxxxxxxxxxxxxxx: N = 5'd6;
-			23'b00000001xxxxxxxxxxxxxxx: N = 5'd7;
-			23'b000000001xxxxxxxxxxxxxx: N = 5'd8;
-			23'b0000000001xxxxxxxxxxxxx: N = 5'd9;
-			23'b00000000001xxxxxxxxxxxx: N = 5'd10;
-			23'b000000000001xxxxxxxxxxx: N = 5'd11;
-			23'b0000000000001xxxxxxxxxx: N = 5'd12;
-			23'b00000000000001xxxxxxxxx: N = 5'd13;
-			23'b000000000000001xxxxxxxx: N = 5'd14;
-			23'b0000000000000001xxxxxxx: N = 5'd15;
-			23'b00000000000000001xxxxxx: N = 5'd16;
-			23'b000000000000000001xxxxx: N = 5'd17;
-			23'b0000000000000000001xxxx: N = 5'd18;
-			23'b00000000000000000001xxx: N = 5'd19;
-			23'b000000000000000000001xx: N = 5'd20;
-			23'b0000000000000000000001x: N = 5'd21;
-			23'b00000000000000000000001: N = 5'd22;
+			25'b1xxxxxxxxxxxxxxxxxxxxxxxx: N = -5'd1;
+			25'b01xxxxxxxxxxxxxxxxxxxxxxx: N = 5'd0;
+			25'b001xxxxxxxxxxxxxxxxxxxxxx: N = 5'd1;
+			25'b0001xxxxxxxxxxxxxxxxxxxxx: N = 5'd2;
+			25'b00001xxxxxxxxxxxxxxxxxxxx: N = 5'd3;
+			25'b000001xxxxxxxxxxxxxxxxxxx: N = 5'd4;
+			25'b0000001xxxxxxxxxxxxxxxxxx: N = 5'd5;
+			25'b00000001xxxxxxxxxxxxxxxxx: N = 5'd6;
+			25'b000000001xxxxxxxxxxxxxxxx: N = 5'd7;
+			25'b0000000001xxxxxxxxxxxxxxx: N = 5'd8;
+			25'b00000000001xxxxxxxxxxxxxx: N = 5'd9;
+			25'b000000000001xxxxxxxxxxxxx: N = 5'd10;
+			25'b0000000000001xxxxxxxxxxxx: N = 5'd11;
+			25'b00000000000001xxxxxxxxxxx: N = 5'd12;
+			25'b000000000000001xxxxxxxxxx: N = 5'd13;
+			25'b0000000000000001xxxxxxxxx: N = 5'd14;
+			25'b00000000000000001xxxxxxxx: N = 5'd15;
+			25'b000000000000000001xxxxxxx: N = 5'd16;
+			25'b0000000000000000001xxxxxx: N = 5'd17;
+			25'b00000000000000000001xxxxx: N = 5'd18;
+			25'b000000000000000000001xxxx: N = 5'd19;
+			25'b0000000000000000000001xxx: N = 5'd20;
+			25'b00000000000000000000001xx: N = 5'd21;
+			25'b000000000000000000000001x: N = 5'd22;
+			25'b0000000000000000000000001: N = 5'd23;
 			default: N = 5'd0;
 		endcase
 	end
 
-	assign result = { (Mantissa_result ? S_result : 1'b0), (Mantissa_result ? EXP_result - N : 8'b0),  (Mantissa_result << N) };
+	assign Mantissa_normal_result = (N == -5'd1 ? Mantissa_result[23:1] : Mantissa_result << N);
+	assign EXP_normal_result = (Mantissa_result ? (N == -5'd1 ? EXP_result + 8'b1 : EXP_result - N) : 8'b0);
+
+	assign result = { (Mantissa_result ? S_result : 1'b0),
+					  EXP_normal_result,
+					  Mantissa_normal_result};
 endmodule
