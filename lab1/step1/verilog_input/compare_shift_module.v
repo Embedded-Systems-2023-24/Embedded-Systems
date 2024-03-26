@@ -7,7 +7,7 @@ module compare_shift_module (input [22:0] Mantissa_A,
                              output reg [7:0] EXP_result);
     reg [7:0] diff;
 
-	always@ (EXP_A or EXP_B) begin
+	always@ (EXP_A or EXP_B or Mantissa_A or Mantissa_B) begin
 		if (EXP_A == EXP_B) begin 
 			diff = 8'b0;
 

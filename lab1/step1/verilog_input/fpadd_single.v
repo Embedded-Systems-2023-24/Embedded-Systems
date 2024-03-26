@@ -21,12 +21,10 @@ module fpadd_single (input clk,
 		     		 output reg[31:0] out);
 
 	wire [31:0] result;
-	wire [22:0] Mantissa_normal_result;
-	wire  [7:0] EXP_normal_result, EXP_result;
+	wire [22:0] Mantissa_normal_result, Mantissa_A, Mantissa_B;
+	wire  [7:0] EXP_normal_result, EXP_result, EXP_A, EXP_B;
 	reg  [31:0] A, B;
 	wire        S_A, S_B, S_result;
-	wire  [7:0] EXP_A, EXP_B;
-	wire [22:0] Mantissa_A, Mantissa_B;
 	wire [23:0] Mantissa_shift_A, Mantissa_shift_B;
 	wire [24:0] Mantissa_result;
 				     	

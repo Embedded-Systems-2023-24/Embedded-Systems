@@ -18,7 +18,7 @@
 `define CYCLE 20
 
 module testbench;
-parameter NUM = 10;  // This is the number of entries in the input file: number of FP additions 
+parameter NUM = 11;  // This is the number of entries in the input file: number of FP additions 
 reg	clk,rst;
 reg	[31:0] A;
 reg	[31:0] B;   
@@ -65,6 +65,6 @@ reg [31:0] correctOut;
 		end
 		
 		// Instantiate the FP Adder 
-		fpadd_single DUT(.clk(clk), .reset(rst), .reg_A(A),.reg_B(B), .out(out));
+		fpadd_pipelined DUT(.clk(clk), .reset(rst), .reg_A(A),.reg_B(B), .out(out));
 		
 endmodule
