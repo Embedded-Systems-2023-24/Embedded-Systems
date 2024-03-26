@@ -68,6 +68,8 @@ module fpadd_pipelined (input clk,
 	reg [23:0] pipe_Mantissa_shift_A, pipe_Mantissa_shift_B;
 	reg [7:0] pipe_EXP_result;
 
+	//pipeline registers
+	
 
 	always @(posedge clk or posedge reset) begin
 		if ( reset ) begin
