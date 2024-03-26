@@ -3,5 +3,9 @@
 Nov 18 2020
 09:20:35
 /home/inf2021/iathanasi/embedded/Embedded-Systems/lab1/step1/FPAdder_Single/FPAdder_Single.sim/sim_1/behav/xsim/glbl.v,1711005702,verilog,,,,glbl,,,,,,,,
-/home/inf2021/iathanasi/embedded/Embedded-Systems/lab1/step1/verilog_input/fpadd_single.v,1711012434,verilog,,/home/inf2021/iathanasi/embedded/Embedded-Systems/lab1/step1/verilog_input/testbench.v,,fpadd_single,,,,,,,,
+/home/inf2021/iathanasi/embedded/Embedded-Systems/lab1/step1/verilog_input/compare_shift_module.v,1711439695,verilog,,/home/inf2021/iathanasi/embedded/Embedded-Systems/lab1/step1/verilog_input/fpadd_single.v,,compare_shift_module,,,,,,,,
+/home/inf2021/iathanasi/embedded/Embedded-Systems/lab1/step1/verilog_input/fpadd_single.v,1711438862,verilog,,/home/inf2021/iathanasi/embedded/Embedded-Systems/lab1/step1/verilog_input/mantissas_addition_module.v,,fpadd_single,,,,,,,,
+,,,,/home/inf2021/iathanasi/embedded/Embedded-Systems/lab1/step1/verilog_input/post_normalization_module.v,,mantissas_addition_module,,,,,,,,
+,,,,/home/inf2021/iathanasi/embedded/Embedded-Systems/lab1/step1/verilog_input/seperate_segments.v,,post_normalization_module,,,,,,,,
+,,,,/home/inf2021/iathanasi/embedded/Embedded-Systems/lab1/step1/verilog_input/testbench.v,,seperate_segments,,,,,,,,
 /home/inf2021/iathanasi/embedded/Embedded-Systems/lab1/step1/verilog_input/testbench.v,1711005702,verilog,,,,testbench,,,,,,,,

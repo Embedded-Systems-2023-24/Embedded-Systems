@@ -1,6 +1,10 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+"../../../../../verilog_input/compare_shift_module.v" \
 "../../../../../verilog_input/fpadd_single.v" \
+"../../../../../verilog_input/mantissas_addition_module.v" \
+"../../../../../verilog_input/post_normalization_module.v" \
+"../../../../../verilog_input/seperate_segments.v" \
 "../../../../../verilog_input/testbench.v" \
 
 # compile glbl module
