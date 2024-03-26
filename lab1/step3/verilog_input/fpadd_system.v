@@ -20,14 +20,22 @@
                                          rst,
                                          32'h6b64b235, 
                                          32'h6ac49214,  
-		     		                          out);
+		     		                          fp_out);
         
    assign leds = fp_out[7:0];
    
    // Instantiate the 7segment display output 0 
-  
+   SSDisplays_module SSDisplays_inst0 (clk,
+                                       rst,
+                                       fp_out[31:24],
+                                       {a0, b0, c0, d0, e0, f0, g0},
+                                       an0);
    
    // Instantiate the 7segment display output 1
-
+   SSDisplays_module SSDisplays_inst1 (clk,
+                                       rst,
+                                       fp_out[23:16],
+                                       {a1, b1, c1, d1, e1, f1, g1},
+                                       an1);
 
 endmodule
