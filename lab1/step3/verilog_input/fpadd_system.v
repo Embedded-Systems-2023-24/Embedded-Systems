@@ -16,6 +16,11 @@
    // 6b64b235 + 6ac49214 = 6ba37d9f 
    
    // Instantiate the FP adder 
+   fpadd_pipelined fpadd_pipelined_inst (clk,
+                                         rst,
+                                         32'h6b64b235, 
+                                         32'h6ac49214,  
+		     		                          out);
         
    assign leds = fp_out[7:0];
    
