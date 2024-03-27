@@ -3,10 +3,11 @@ module debounce_module (input clk,
                         input button,
                         output reg button_clean);
     reg [23:0] counter;
-    reg current_state, next_state;
+    reg [1:0] current_state, next_state;
 
-    parameter button_pressed   = 1'b1,
-              button_unpressed = 1'b0;
+    parameter button_pressed   = 2'b01,
+              button_detected  = 2'b10,
+              button_unpressed = 2'b00;
 
     always @(posedge clk or posedge reset) begin
         if (reset)
@@ -24,20 +25,26 @@ module debounce_module (input clk,
             counter <= 24'b1001_1000_1001_0110_1000_0000;
     end
 
-    always @(counter or current_state) begin
+    always @(counter or current_state or button) begin
         next_state = current_state;
         button_clean = 1'b0;
 
         case (current_state)
             button_unpressed: begin
                 if (counter) next_state = current_state;
-                else next_state = button_pressed;
+                else next_state = button_detected;
             end 
-            button_pressed: begin
+            button_detected: begin
                 button_clean = 1'b1;
-                next_state = button_unpressed;
+                next_state = button_pressed;
             end
-            default: button_clean = 1'b0;
+            button_pressed: begin
+                button_clean = 1'b0;
+
+                if (~button)
+                    next_state = button_unpressed;
+            end
+            default: begin button_clean = 1'b0; next_state = current_state; end
         endcase
     end
 
