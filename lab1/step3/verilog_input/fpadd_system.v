@@ -14,8 +14,6 @@
      
    // Try this addition of FP numbers 
    // 6b64b235 + 6ac49214 = 6ba37d
-   
-   
    // Instantiate the FP adder 
    fpadd_pipelined fpadd_pipelined_inst (clk,
                                          rst,

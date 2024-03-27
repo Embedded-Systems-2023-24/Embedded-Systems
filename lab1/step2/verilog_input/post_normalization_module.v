@@ -4,6 +4,7 @@ module post_normalization_module (output [22:0] Mantissa_normal_result,
 								  input [7:0] EXP_result);
 	reg [4:0] N;
 
+	//selects how much mantissa must be shifted 
 	always @(Mantissa_result) begin
 		casex (Mantissa_result)
 			25'b1xxxxxxxxxxxxxxxxxxxxxxxx: N = -5'd1;
@@ -35,7 +36,10 @@ module post_normalization_module (output [22:0] Mantissa_normal_result,
 		endcase
 	end
 
+	//shifts the mantissa result accordingly
 	assign Mantissa_normal_result = (N == -5'd1 ? Mantissa_result[23:1] : Mantissa_result << N);
+
+	//adjusts the exponent accordingly 
 	assign EXP_normal_result = (Mantissa_result ? (N == -5'd1 ? EXP_result + 8'b1 : EXP_result - N) : 8'b0);
 
 endmodule

@@ -8,6 +8,7 @@ module DataMemory (input clk,
     wire [63:0] temp;
     reg [3:0] pointer;
 
+    //instantiates the memory
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             data[0] <= 64'h3f800000_40000000;
@@ -23,6 +24,7 @@ module DataMemory (input clk,
         end
     end
 
+    //moves the pointer when the button is pressed (after debouncing)
     always @(posedge clk or posedge reset) begin
         if (reset || pointer == 4'hA)
             pointer <= 4'h0;
@@ -30,6 +32,7 @@ module DataMemory (input clk,
             pointer <= pointer + 4'h1;
     end
 
+    //stores the appropriate fp from the memory
     assign temp = data[pointer];
 
     assign numA = temp[63:32];

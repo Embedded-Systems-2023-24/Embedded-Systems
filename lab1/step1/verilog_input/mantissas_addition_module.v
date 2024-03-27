@@ -5,6 +5,7 @@ module mantissas_addition_module (output reg S_result,
                                   input [23:0] Mantissa_shift_A,
                                   input [23:0] Mantissa_shift_B); 
     
+	//selects the sign of the output and adds (or subtracts) the two fp's
     always @(S_A or S_B or Mantissa_shift_A or Mantissa_shift_B) begin
 		if (S_A == S_B) begin
 			S_result = S_A;

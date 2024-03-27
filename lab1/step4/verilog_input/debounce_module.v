@@ -5,17 +5,18 @@ module debounce_module (input clk,
     reg [23:0] counter;
     reg [1:0] current_state, next_state;
 
+    //parameters for FSM
     parameter button_pressed   = 2'b01,
               button_detected  = 2'b10,
               button_unpressed = 2'b00;
 
+    //sequential FSM module
     always @(posedge clk or posedge reset) begin
-        if (reset)
-            current_state <= button_unpressed;
-        else   
-            current_state <= next_state;
+        if (reset) current_state <= button_unpressed;
+        else       current_state <= next_state;
     end
 
+    //reduces the counter and resets it when needed
     always @(posedge clk or posedge reset) begin
         if (reset || counter == 24'h0)
             counter <= 24'b1001_1000_1001_0110_1000_0000;
@@ -25,6 +26,7 @@ module debounce_module (input clk,
             counter <= 24'b1001_1000_1001_0110_1000_0000;
     end
 
+    //combinational FSM module
     always @(counter or current_state or button) begin
         next_state = current_state;
         button_clean = 1'b0;
@@ -47,5 +49,4 @@ module debounce_module (input clk,
             default: begin button_clean = 1'b0; next_state = current_state; end
         endcase
     end
-
 endmodule

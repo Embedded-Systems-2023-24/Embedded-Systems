@@ -23,10 +23,15 @@ module fpadd_pipelined (input clk,
 	wire [31:0] result;
 	wire [22:0] Mantissa_normal_result, Mantissa_A, Mantissa_B;
 	wire  [7:0] EXP_normal_result, EXP_result, EXP_A, EXP_B;
-	reg  [31:0] A, B;
 	wire        S_A, S_B, S_result;
 	wire [23:0] Mantissa_shift_A, Mantissa_shift_B;
 	wire [24:0] Mantissa_result;
+	reg  [31:0] A, B;
+
+	//pipeline registers
+	reg pipe_S_A, pipe_S_B;
+	reg [23:0] pipe_Mantissa_shift_A, pipe_Mantissa_shift_B;
+	reg [7:0] pipe_EXP_result;
 				     	
 	// Register the two inputs, and use A and B in the combinational logic. 
 	always @ (posedge clk or posedge reset) begin
@@ -63,14 +68,8 @@ module fpadd_pipelined (input clk,
                           					Mantissa_shift_A, 
                           					Mantissa_shift_B, 
                           					EXP_result);
-
-	reg pipe_S_A, pipe_S_B;
-	reg [23:0] pipe_Mantissa_shift_A, pipe_Mantissa_shift_B;
-	reg [7:0] pipe_EXP_result;
-
-	//pipeline registers
 	
-
+	//pipeline
 	always @(posedge clk or posedge reset) begin
 		if ( reset ) begin
 			pipe_S_A <= 1'b0;

@@ -1,3 +1,4 @@
+//NOT USED
 module pipeline_reg_module (input clk,
                             input reset,
                             input S_A,
