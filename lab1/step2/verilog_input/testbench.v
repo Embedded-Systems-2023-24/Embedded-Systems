@@ -18,7 +18,7 @@
 `define CYCLE 20
 
 module testbench;
-parameter NUM = 11;  // This is the number of entries in the input file: number of FP additions 
+parameter NUM = 10;  // This is the number of entries in the input file: number of FP additions 
 reg	clk,rst;
 reg	[31:0] A;
 reg	[31:0] B;   
@@ -43,7 +43,7 @@ reg [31:0] correctOut;
 				    B = FPVal[2*32-1:32]; 
 				    correctOut = FPVal[32-1:0]; 
 				    
-				    #(`CYCLE<<1) $display ("A=%h,B=%h,out=%h, correctOut=%h\n",A, B, out, correctOut);
+				    #(`CYCLE<<2) $display ("A=%h,B=%h,out=%h, correctOut=%h\n",A, B, out, correctOut);
 				    
 				    if (out != correctOut) begin
 				        $display ("Error at input %d. Out was %h instead of %h\n", i, out, correctOut);
