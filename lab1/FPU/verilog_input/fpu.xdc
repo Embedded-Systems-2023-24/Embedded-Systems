@@ -261,8 +261,11 @@ set_property IOSTANDARD LVCMOS33 [get_ports rst]
 set_property PACKAGE_PIN T18 [get_ports button]
 set_property IOSTANDARD LVCMOS33 [get_ports button]
 
-set_property PACKAGE_PIN M15 [get_ports operation]
-set_property IOSTANDARD LVCMOS33 [get_ports operation]
+set_property PACKAGE_PIN M15 [get_ports operation[1]]
+set_property IOSTANDARD LVCMOS33 [get_ports operation[1]]
+
+set_property PACKAGE_PIN H17 [get_ports operation[0]]
+set_property IOSTANDARD LVCMOS33 [get_ports operation[0]]
 
 set_property PACKAGE_PIN T22 [get_ports {leds[0]}]
 set_property PACKAGE_PIN T21 [get_ports {leds[1]}]

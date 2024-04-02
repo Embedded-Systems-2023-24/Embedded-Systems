@@ -6,12 +6,12 @@
  module fpu_system (input clk,
                       input rst, 
                       input button,
-                      input operation, 
+                      input [1:0] operation, 
                       output [7:0] leds, 
                       output an0, output a0, output b0, output c0, output d0, output e0, output f0, output g0,
                       output an1, output a1, output b1, output c1, output d1, output e1, output f1, output g1);
 
-   wire [31:0] fp_out, fpadd_out, fpmulti_out, numA, numB;
+   wire [31:0] fp_out, fpadd_out, fpmulti_out, fpdivide_out, numA, numB;
    wire button_clean;
 
     // Instantiate the debouncing and edge detection circuit
@@ -35,14 +35,21 @@
                                           numB,  
 		     		                      fpadd_out);
 
-    // Instantiate the FP adder 
+    // Instantiate the FP multiplier 
     fpmulti_system fmulti_system_inst (clk,
-                                          rst,
-                                          numA, 
-                                          numB,  
-		     		                      fpmulti_out);
+                                       rst,
+                                       numA, 
+                                       numB,  
+		     		                   fpmulti_out);
 
-    assign fp_out = operation ? fpadd_out : fpmulti_out;        
+    // Instantiate the FP divider 
+    fpdivide_system fdivide_system_inst (clk,
+                                         rst,
+                                         numA, 
+                                         numB,  
+		     		                     fpdivide_out);
+
+    assign fp_out = operation[1] ? operation[0] ? fpadd_out : fpmulti_out : fpdivide_out;     
     assign leds = fp_out[7:0];
    
     // Instantiate the 7segment display output 0 

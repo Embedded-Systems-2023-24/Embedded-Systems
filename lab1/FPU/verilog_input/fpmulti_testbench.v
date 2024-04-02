@@ -17,7 +17,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 `define CYCLE 20
 
-module testbench;
+module fpmulti_testbench;
 parameter NUM = 8;  // This is the number of entries in the input file: number of FP additions 
 reg	clk,rst;
 reg	[31:0] A;
