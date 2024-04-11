@@ -16,3 +16,4 @@ platform write
 platform generate -domains 
 platform active {simple_arm_platform}
 platform generate
+platform generate

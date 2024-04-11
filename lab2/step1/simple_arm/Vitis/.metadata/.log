@@ -1,0 +1,529 @@
+!SESSION 2024-04-11 10:46:59.992 -----------------------------------------------
+eclipse.buildId=2020.2
+java.version=11.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -data /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2024-04-11 10:47:04.242
+!MESSAGE Plug-in 'org.eclipse.ui.editors' contributed an invalid Menu Extension (Path: 'navigate' is invalid): org.eclipse.ui.edit.text.gotoLastEditPosition
+
+!ENTRY org.eclipse.rse.core 4 0 2024-04-11 10:47:09.320
+!MESSAGE Unexpected Exception
+!STACK 0
+java.net.UnknownHostException: localhost.localdomain: localhost.localdomain: Το όνομα ή η υπηρεσία δεν είναι γνωστά
+	at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1642)
+	at org.eclipse.rse.core.RSECorePlugin.getLocalMachineName(RSECorePlugin.java:265)
+	at org.eclipse.rse.core.RSEPreferencesManager.getDefaultPrivateSystemProfileName(RSEPreferencesManager.java:358)
+	at org.eclipse.rse.core.RSEPreferencesManager.initDefaults(RSEPreferencesManager.java:337)
+	at org.eclipse.rse.internal.core.RSEPreferenceInitializer.initializeDefaultPreferences(RSEPreferenceInitializer.java:23)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper$1.run(PreferenceServiceRegistryHelper.java:307)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.runInitializer(PreferenceServiceRegistryHelper.java:310)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.applyRuntimeDefaults(PreferenceServiceRegistryHelper.java:134)
+	at org.eclipse.core.internal.preferences.PreferencesService.applyRuntimeDefaults(PreferencesService.java:374)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.applyRuntimeDefaults(DefaultPreferences.java:225)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.load(DefaultPreferences.java:279)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:370)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:624)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.node(DefaultPreferences.java:150)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.getDefaultPreferences(PreferenceForwarder.java:136)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.getInt(PreferenceForwarder.java:490)
+	at org.eclipse.rse.logging.Logger.initialize(Logger.java:249)
+	at org.eclipse.rse.logging.Logger.<init>(Logger.java:135)
+	at org.eclipse.rse.logging.LoggerFactory.getLogger(LoggerFactory.java:45)
+	at org.eclipse.rse.core.RSECorePlugin.getLogger(RSECorePlugin.java:392)
+	at org.eclipse.rse.internal.core.RSEInitJob.<init>(RSEInitJob.java:133)
+	at org.eclipse.rse.internal.core.RSEInitJob.<clinit>(RSEInitJob.java:65)
+	at org.eclipse.rse.core.RSECorePlugin.waitForInitCompletion(RSECorePlugin.java:142)
+	at org.eclipse.rse.internal.ui.RSEUIInitJob.run(RSEUIInitJob.java:32)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.UnknownHostException: localhost.localdomain: Το όνομα ή η υπηρεσία δεν είναι γνωστά
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+	at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1637)
+	... 25 more
+
+!ENTRY org.eclipse.rse.core 4 0 2024-04-11 10:47:10.396
+!MESSAGE Unexpected Exception
+!STACK 0
+java.net.UnknownHostException: localhost.localdomain: localhost.localdomain: Το όνομα ή η υπηρεσία δεν είναι γνωστά
+	at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1642)
+	at org.eclipse.rse.core.RSECorePlugin.getLocalMachineName(RSECorePlugin.java:265)
+	at org.eclipse.rse.core.RSEPreferencesManager.getDefaultPrivateSystemProfileName(RSEPreferencesManager.java:358)
+	at org.eclipse.rse.internal.core.model.SystemProfileManager.ensureDefaultPrivateProfile(SystemProfileManager.java:477)
+	at org.eclipse.rse.internal.core.model.SystemProfileManager.getDefaultPrivateSystemProfile(SystemProfileManager.java:416)
+	at org.eclipse.rse.internal.core.RSEInitJob.run(RSEInitJob.java:207)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.UnknownHostException: localhost.localdomain: Το όνομα ή η υπηρεσία δεν είναι γνωστά
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+	at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1637)
+	... 6 more
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:47:12.621
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-5: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:47:12.622
+!MESSAGE XSCT Command: [plnx-install-path  ; ::scw::scw_mode gui], Thread: Thread-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:47:12.625
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-19
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:47:12.726
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-5: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:47:12.727
+!MESSAGE XSCT command with result: [plnx-install-path  ; ::scw::scw_mode gui], Result: [null, ]. Thread: Thread-14
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:47:12.728
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-19
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:47:12.729
+!MESSAGE XSCT Command: [set query_var1 $::env(RDI_DATADIR)], Thread: Worker-5: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:47:12.730
+!MESSAGE XSCT Command: [setws /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis], Thread: Thread-19
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:47:12.732
+!MESSAGE XSCT command with result: [set query_var1 $::env(RDI_DATADIR)], Result: [null, /opt/Xilinx/Vitis/2020.2/data]. Thread: Worker-5: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:47:12.740
+!MESSAGE XSCT command with result: [setws /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis], Result: [null, ]. Thread: Thread-19
+
+!ENTRY org.eclipse.rse.core 4 0 2024-04-11 10:47:16.506
+!MESSAGE Unexpected Exception
+!STACK 0
+java.net.UnknownHostException: localhost.localdomain: localhost.localdomain: Το όνομα ή η υπηρεσία δεν είναι γνωστά
+	at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1642)
+	at org.eclipse.rse.core.RSECorePlugin.getLocalMachineName(RSECorePlugin.java:265)
+	at org.eclipse.rse.core.RSEPreferencesManager.getDefaultPrivateSystemProfileName(RSEPreferencesManager.java:358)
+	at org.eclipse.rse.internal.core.model.SystemProfileManager.createDefaultPrivateProfile(SystemProfileManager.java:450)
+	at org.eclipse.rse.internal.core.model.SystemProfileManager.ensureDefaultPrivateProfile(SystemProfileManager.java:501)
+	at org.eclipse.rse.internal.core.model.SystemProfileManager.getDefaultPrivateSystemProfile(SystemProfileManager.java:416)
+	at org.eclipse.rse.internal.core.RSEInitJob.run(RSEInitJob.java:207)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.UnknownHostException: localhost.localdomain: Το όνομα ή η υπηρεσία δεν είναι γνωστά
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+	at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1637)
+	... 7 more
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2024-04-11 10:47:21.462
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.part.IntroPart.dispose(IntroPart.java:99)
+	at org.eclipse.ui.internal.ViewIntroAdapterPart.dispose(ViewIntroAdapterPart.java:153)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.invalidate(CompatibilityPart.java:260)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.destroy(CompatibilityPart.java:417)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:1002)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:967)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.uninject(InjectorImpl.java:200)
+	at org.eclipse.e4.core.internal.di.Requestor.uninject(Requestor.java:176)
+	at org.eclipse.e4.core.internal.contexts.ContextObjectSupplier$ContextInjectionListener.update(ContextObjectSupplier.java:89)
+	at org.eclipse.e4.core.internal.contexts.TrackableComputationExt.update(TrackableComputationExt.java:105)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.removeListenersTo(EclipseContext.java:491)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.uninject(ContextInjectionFactory.java:184)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeRemoveGui(PartRenderingEngine.java:954)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$1(PartRenderingEngine.java:873)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:868)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.removeGui(PartRenderingEngine.java:852)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.disposeWidget(ElementReferenceRenderer.java:115)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeRemoveGui(PartRenderingEngine.java:945)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$1(PartRenderingEngine.java:873)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:868)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.removeGui(PartRenderingEngine.java:852)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.subscribeTopicToBeRendered(PartRenderingEngine.java:187)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.di.internal.extensions.EventObjectSupplier$DIEventHandler.handleEvent(EventObjectSupplier.java:92)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:132)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.UIElementImpl.setToBeRendered(UIElementImpl.java:314)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1406)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1336)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.closePart(StackRenderer.java:1270)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.access$0(StackRenderer.java:1256)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$3.close(StackRenderer.java:1128)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1955)
+	at org.eclipse.swt.custom.CTabFolder.lambda$0(CTabFolder.java:335)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5687)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1423)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4955)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4448)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:658)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at com.xilinx.ide.application.ui.Application.start(Application.java:80)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1420)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-04-11 10:48:32.924
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-04-11 10:48:32.926
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-04-11 10:48:32.928
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-04-11 10:48:40.001
+!MESSAGE Indexed 'simple_arm_platform' (409 sources, 561 headers) in 7.27 sec: 16,239 declarations; 60,994 references; 263 unresolved inclusions; 84 syntax errors; 1,050 unresolved names (1.3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-04-11 10:48:40.610
+!MESSAGE Indexed 'simple_arm_app' (1 sources, 39 headers) in 0.101 sec: 726 declarations; 1,515 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-04-11 10:48:40.614
+!MESSAGE Indexed 'simple_arm_app_system' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:03.750
+!MESSAGE XSCT Command: [::hsi::utils::openhw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/hw/Cortex_A9_wrapper.xsa], Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:05.768
+!MESSAGE XSCT command with result: [::hsi::utils::openhw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/hw/Cortex_A9_wrapper.xsa], Result: [null, ]. Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:05.775
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/hw/Cortex_A9_wrapper.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/sw/simple_arm_platform/standalone_domain/system.mss ], Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:05.779
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/hw/Cortex_A9_wrapper.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/sw/simple_arm_platform/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:05.780
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/hw/Cortex_A9_wrapper.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/sw/simple_arm_platform/standalone_domain/system.mss], Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:05.784
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/hw/Cortex_A9_wrapper.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/sw/simple_arm_platform/standalone_domain/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.3",
+}]. Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2024-04-11 10:49:05.786
+!MESSAGE Generating MD5 hash for file: /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/sw/simple_arm_platform/standalone_domain/system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:05.793
+!MESSAGE XSCT Command: [::hsi::utils::closesw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/sw/simple_arm_platform/standalone_domain/system.mss], Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:05.797
+!MESSAGE XSCT command with result: [::hsi::utils::closesw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/sw/simple_arm_platform/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-5: Build Project
+!SESSION 2024-04-11 10:49:25.275 -----------------------------------------------
+eclipse.buildId=2020.2
+java.version=11.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 4 567 2024-04-11 10:49:26.801
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2024-04-11 10:49:26.801
+!MESSAGE Could not read metadata for 'RemoteSystemsTempFiles'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/RemoteSystemsTempFiles)[567]: java.lang.Exception: The project description file (.project) for 'RemoteSystemsTempFiles' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:908)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:888)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:868)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:724)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1555)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2452)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2210)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:489)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:842)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:834)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:791)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1015)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:365)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:603)
+	at org.eclipse.osgi.container.Module.start(Module.java:467)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:493)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:117)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:571)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:346)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:41)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:473)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3138)
+	at java.base/java.lang.Class.getConstructor0(Class.java:3343)
+	at java.base/java.lang.Class.getConstructor(Class.java:2152)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:825)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:778)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1015)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:365)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:603)
+	at org.eclipse.osgi.container.Module.start(Module.java:467)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:493)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:117)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:571)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:346)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:477)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:620)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:196)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:923)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:246)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.core.internal.variables.DynamicVariable.getValue(DynamicVariable.java:48)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.resolve(StringSubstitutionEngine.java:273)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.substitute(StringSubstitutionEngine.java:196)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.performStringSubstitution(StringSubstitutionEngine.java:91)
+	at org.eclipse.core.internal.variables.StringVariableManager.performStringSubstitution(StringVariableManager.java:547)
+	at org.eclipse.core.internal.variables.StringVariableManager.performStringSubstitution(StringVariableManager.java:347)
+	at com.xilinx.sdk.utils.DynamicVariableHelper.getResolvedValue(DynamicVariableHelper.java:53)
+	at com.xilinx.sdk.utils.XStringUtils.getResolvedValue(XStringUtils.java:388)
+	at com.xilinx.sdk.utils.ToolAnalyticsHelper.computeAnalyticsFilePath(ToolAnalyticsHelper.java:108)
+	at com.xilinx.sdk.utils.ToolAnalyticsHelper.getAnalyticsFilePath(ToolAnalyticsHelper.java:98)
+	at com.xilinx.sdk.utils.ToolAnalyticsHelper.<init>(ToolAnalyticsHelper.java:36)
+	at com.xilinx.sdk.utils.ToolAnalyticsHelper.<clinit>(ToolAnalyticsHelper.java:29)
+	at com.xilinx.ide.application.ui.Application.checkInstanceLocation(Application.java:221)
+	at com.xilinx.ide.application.ui.Application.start(Application.java:74)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1420)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2024-04-11 10:49:26.802
+!MESSAGE The project description file (.project) for 'RemoteSystemsTempFiles' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!STACK 0
+java.lang.Exception: The project description file (.project) for 'RemoteSystemsTempFiles' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:908)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:888)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:868)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:724)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1555)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2452)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2210)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:489)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:842)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:834)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:791)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1015)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:365)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:603)
+	at org.eclipse.osgi.container.Module.start(Module.java:467)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:493)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:117)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:571)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:346)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:41)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:473)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3138)
+	at java.base/java.lang.Class.getConstructor0(Class.java:3343)
+	at java.base/java.lang.Class.getConstructor(Class.java:2152)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:825)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:778)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1015)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:365)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:603)
+	at org.eclipse.osgi.container.Module.start(Module.java:467)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:493)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:117)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:571)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:346)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:477)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:620)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:196)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:923)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:246)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.core.internal.variables.DynamicVariable.getValue(DynamicVariable.java:48)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.resolve(StringSubstitutionEngine.java:273)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.substitute(StringSubstitutionEngine.java:196)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.performStringSubstitution(StringSubstitutionEngine.java:91)
+	at org.eclipse.core.internal.variables.StringVariableManager.performStringSubstitution(StringVariableManager.java:547)
+	at org.eclipse.core.internal.variables.StringVariableManager.performStringSubstitution(StringVariableManager.java:347)
+	at com.xilinx.sdk.utils.DynamicVariableHelper.getResolvedValue(DynamicVariableHelper.java:53)
+	at com.xilinx.sdk.utils.XStringUtils.getResolvedValue(XStringUtils.java:388)
+	at com.xilinx.sdk.utils.ToolAnalyticsHelper.computeAnalyticsFilePath(ToolAnalyticsHelper.java:108)
+	at com.xilinx.sdk.utils.ToolAnalyticsHelper.getAnalyticsFilePath(ToolAnalyticsHelper.java:98)
+	at com.xilinx.sdk.utils.ToolAnalyticsHelper.<init>(ToolAnalyticsHelper.java:36)
+	at com.xilinx.sdk.utils.ToolAnalyticsHelper.<clinit>(ToolAnalyticsHelper.java:29)
+	at com.xilinx.ide.application.ui.Application.checkInstanceLocation(Application.java:221)
+	at com.xilinx.ide.application.ui.Application.start(Application.java:74)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1420)
+
+!ENTRY org.eclipse.ui 4 4 2024-04-11 10:49:29.659
+!MESSAGE Plug-in 'org.eclipse.ui.editors' contributed an invalid Menu Extension (Path: 'navigate' is invalid): org.eclipse.ui.edit.text.gotoLastEditPosition
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:36.548
+!MESSAGE XSCT Command: [plnx-install-path  ; ::scw::scw_mode gui], Thread: Thread-10
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:36.549
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-18
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:36.551
+!MESSAGE XSCT command with result: [plnx-install-path  ; ::scw::scw_mode gui], Result: [null, ]. Thread: Thread-10
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:36.561
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-18
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:36.563
+!MESSAGE XSCT Command: [setws /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis], Thread: Thread-18
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:36.569
+!MESSAGE XSCT command with result: [setws /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis], Result: [null, ]. Thread: Thread-18
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:37.551
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-1: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:37.748
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-1: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:37.759
+!MESSAGE XSCT Command: [set query_var1 $::env(RDI_DATADIR)], Thread: Worker-1: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-11 10:49:37.810
+!MESSAGE XSCT command with result: [set query_var1 $::env(RDI_DATADIR)], Result: [null, /opt/Xilinx/Vitis/2020.2/data]. Thread: Worker-1: Initializing s/w repositories
+
+!ENTRY org.eclipse.rse.core 4 0 2024-04-11 10:49:38.323
+!MESSAGE Unexpected Exception
+!STACK 0
+java.net.UnknownHostException: localhost.localdomain: localhost.localdomain: Το όνομα ή η υπηρεσία δεν είναι γνωστά
+	at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1642)
+	at org.eclipse.rse.core.RSECorePlugin.getLocalMachineName(RSECorePlugin.java:265)
+	at org.eclipse.rse.core.RSEPreferencesManager.getDefaultPrivateSystemProfileName(RSEPreferencesManager.java:358)
+	at org.eclipse.rse.core.RSEPreferencesManager.initDefaults(RSEPreferencesManager.java:337)
+	at org.eclipse.rse.internal.core.RSEPreferenceInitializer.initializeDefaultPreferences(RSEPreferenceInitializer.java:23)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper$1.run(PreferenceServiceRegistryHelper.java:307)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.runInitializer(PreferenceServiceRegistryHelper.java:310)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.applyRuntimeDefaults(PreferenceServiceRegistryHelper.java:134)
+	at org.eclipse.core.internal.preferences.PreferencesService.applyRuntimeDefaults(PreferencesService.java:374)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.applyRuntimeDefaults(DefaultPreferences.java:225)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.load(DefaultPreferences.java:279)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:370)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:624)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.node(DefaultPreferences.java:150)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.getDefaultPreferences(PreferenceForwarder.java:136)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.getInt(PreferenceForwarder.java:490)
+	at org.eclipse.rse.logging.Logger.initialize(Logger.java:249)
+	at org.eclipse.rse.logging.Logger.<init>(Logger.java:135)
+	at org.eclipse.rse.logging.LoggerFactory.getLogger(LoggerFactory.java:45)
+	at org.eclipse.rse.core.RSECorePlugin.getLogger(RSECorePlugin.java:392)
+	at org.eclipse.rse.internal.core.RSEInitJob.<init>(RSEInitJob.java:133)
+	at org.eclipse.rse.internal.core.RSEInitJob.<clinit>(RSEInitJob.java:65)
+	at org.eclipse.rse.core.RSECorePlugin.waitForInitCompletion(RSECorePlugin.java:142)
+	at org.eclipse.rse.internal.ui.RSEUIInitJob.run(RSEUIInitJob.java:32)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.UnknownHostException: localhost.localdomain: Το όνομα ή η υπηρεσία δεν είναι γνωστά
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+	at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1637)
+	... 25 more
+
+!ENTRY org.eclipse.core.resources 4 2 2024-04-11 10:49:38.540
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.ConfigurationBuildConsole.getPage(ConfigurationBuildConsole.java:86)
+	at com.xilinx.sdx.build.ui.util.ConsoleUtil.showsConfigurationBuildConsole(ConsoleUtil.java:109)
+	at com.xilinx.sdx.build.ui.util.ConsoleUtil.getCurrentPartitioner(ConsoleUtil.java:139)
+	at com.xilinx.sdx.build.ui.console.listener.ProjectDeleteResourceChangeListener._deleteConsolePartitioners(ProjectDeleteResourceChangeListener.java:40)
+	at com.xilinx.sdx.build.ui.console.listener.ProjectDeleteResourceChangeListener.resourceChanged(ProjectDeleteResourceChangeListener.java:35)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:305)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:295)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:271)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:375)
+	at org.eclipse.core.internal.resources.Resource.broadcastPreDeleteEvent(Resource.java:1846)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:742)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:326)
+	at org.eclipse.rse.internal.files.ui.resources.SystemRemoteEditManager.createRemoteEditProject(SystemRemoteEditManager.java:343)
+	at org.eclipse.rse.internal.files.ui.resources.SystemRemoteEditManager.getRemoteEditProject(SystemRemoteEditManager.java:284)
+	at org.eclipse.rse.internal.files.ui.Activator$InitRemoteEditJob.run(Activator.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-04-11 10:49:40.832
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-04-11 10:49:40.834
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-04-11 10:49:40.835
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
