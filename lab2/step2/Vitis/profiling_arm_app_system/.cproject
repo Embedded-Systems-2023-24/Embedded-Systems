@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+    	
+    <storageModule moduleId="org.eclipse.cdt.core.settings">
+        		
+        <cconfiguration id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.247145612">
+            			
+            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.247145612" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+                				
+                <externalSettings/>
+                				
+                <extensions>
+                    					
+                    <extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+                    				
+                </extensions>
+                			
+            </storageModule>
+            			
+            <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+                				
+                <configuration artifactName="${ProjName}" buildProperties="" description="" id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.247145612" name="Debug" parent="com.xilinx.sdx.system.managedbuilder.debugConfiguration">
+                    					
+                    <folderInfo id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.247145612." name="/" resourcePath="">
+                        						
+                        <toolChain id="com.xilinx.sdx.system.managedbuilder.debug.toolChain.1141059876" name="System Toolchain" superClass="com.xilinx.sdx.system.managedbuilder.debug.toolChain">
+                            							
+                            <targetPlatform id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.247145612..1921234572" name=""/>
+                            							
+                            <builder buildPath="${workspace_loc:/profiling_arm_app_system}/Debug" enableAutoBuild="true" id="com.xilinx.sdx.system.managedbuilder.systemBuilder.1445182257" managedBuildOn="true" name="System Project Builder.Debug" superClass="com.xilinx.sdx.system.managedbuilder.systemBuilder"/>
+                            							
+                            <tool id="com.xilinx.sdx.system.managedbuilder.toolchain.cfjoinTool.612019987" name="System Builder" superClass="com.xilinx.sdx.system.managedbuilder.toolchain.cfjoinTool"/>
+                            						
+                        </toolChain>
+                        					
+                    </folderInfo>
+                    				
+                </configuration>
+                			
+            </storageModule>
+            			
+            <storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+            		
+        </cconfiguration>
+        		
+        <cconfiguration id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.1786352161">
+            			
+            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.1786352161" moduleId="org.eclipse.cdt.core.settings" name="Release">
+                				
+                <externalSettings/>
+                				
+                <extensions>
+                    					
+                    <extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+                    				
+                </extensions>
+                			
+            </storageModule>
+            			
+            <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+                				
+                <configuration artifactName="${ProjName}" buildProperties="" description="" id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.1786352161" name="Release" parent="com.xilinx.sdx.system.managedbuilder.releaseConfiguration">
+                    					
+                    <folderInfo id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.1786352161." name="/" resourcePath="">
+                        						
+                        <toolChain id="com.xilinx.sdx.system.managedbuilder.release.toolChain.1147792123" name="System Toolchain" superClass="com.xilinx.sdx.system.managedbuilder.release.toolChain">
+                            							
+                            <targetPlatform id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.1786352161..666348792" name=""/>
+                            							
+                            <builder buildPath="${workspace_loc:/profiling_arm_app_system}/Release" enableAutoBuild="true" id="com.xilinx.sdx.system.managedbuilder.systemBuilder.1422210535" managedBuildOn="true" name="System Project Builder.Release" superClass="com.xilinx.sdx.system.managedbuilder.systemBuilder"/>
+                            							
+                            <tool id="com.xilinx.sdx.system.managedbuilder.toolchain.cfjoinTool.1094007722" name="System Builder" superClass="com.xilinx.sdx.system.managedbuilder.toolchain.cfjoinTool"/>
+                            						
+                        </toolChain>
+                        					
+                    </folderInfo>
+                    				
+                </configuration>
+                			
+            </storageModule>
+            			
+            <storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+            		
+        </cconfiguration>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+    	
+    <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+        		
+        <project id="profiling_arm_app_system.com.xilinx.sdx.system.managedbuilder.projectType.1314749599" name="Vitis Embedded System Project" projectType="com.xilinx.sdx.system.managedbuilder.projectType"/>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="scannerConfiguration">
+        		
+        <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="refreshScope"/>
+    
+</cproject>

@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-//Date        : Sun Apr 14 17:29:00 2024
+//Date        : Sun Apr 14 18:27:17 2024
 //Host        : localhost.localdomain running 64-bit openSUSE Leap 15.4
 //Command     : generate_target Cortex_A9_wrapper.bd
 //Design      : Cortex_A9_wrapper
@@ -30,9 +30,7 @@ module Cortex_A9_wrapper
     FIXED_IO_mio,
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
-    FIXED_IO_ps_srstb,
-    btns_5bits_tri_i,
-    swsbntsdd_8bits_tri_i);
+    FIXED_IO_ps_srstb);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -54,8 +52,6 @@ module Cortex_A9_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  input [4:0]btns_5bits_tri_i;
-  input [7:0]swsbntsdd_8bits_tri_i;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -78,8 +74,6 @@ module Cortex_A9_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire [4:0]btns_5bits_tri_i;
-  wire [7:0]swsbntsdd_8bits_tri_i;
 
   Cortex_A9 Cortex_A9_i
        (.DDR_addr(DDR_addr),
@@ -102,7 +96,5 @@ module Cortex_A9_wrapper
         .FIXED_IO_mio(FIXED_IO_mio),
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
-        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-        .btns_5bits_tri_i(btns_5bits_tri_i),
-        .swsbntsdd_8bits_tri_i(swsbntsdd_8bits_tri_i));
+        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb));
 endmodule

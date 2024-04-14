@@ -144,9 +144,6 @@ void add_extensions_to_tlm(const xtlm::aximm_payload* xtlm_pay, tlm::tlm_generic
 
 processing_system7_v5_5_tlm :: processing_system7_v5_5_tlm (sc_core::sc_module_name name,
     xsc::common_cpp::properties& _prop): sc_module(name)//registering module name with parent
-        ,TTC0_WAVE0_OUT("TTC0_WAVE0_OUT")
-        ,TTC0_WAVE1_OUT("TTC0_WAVE1_OUT")
-        ,TTC0_WAVE2_OUT("TTC0_WAVE2_OUT")
         ,M_AXI_GP0_ACLK("M_AXI_GP0_ACLK")
         ,FCLK_CLK0("FCLK_CLK0")
         ,FCLK_RESET0_N("FCLK_RESET0_N")

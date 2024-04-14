@@ -134,9 +134,6 @@ class processing_system7_v5_5_tlm : public sc_core::sc_module   {
     
     public:
     // Non-AXI ports are declared here
-    sc_core::sc_out<bool> TTC0_WAVE0_OUT;
-    sc_core::sc_out<bool> TTC0_WAVE1_OUT;
-    sc_core::sc_out<bool> TTC0_WAVE2_OUT;
     sc_core::sc_in<bool> M_AXI_GP0_ACLK;
     sc_core::sc_out<bool> FCLK_CLK0;
     sc_core::sc_out<bool> FCLK_RESET0_N;
