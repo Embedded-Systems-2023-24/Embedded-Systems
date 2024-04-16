@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Sun Apr 14 20:28:36 2024
+-- Date        : Tue Apr 16 22:16:13 2024
 -- Host        : localhost.localdomain running 64-bit openSUSE Leap 15.4
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/fpadd_arm/fpadd_arm.gen/sources_1/bd/Cortex_A9/ip/Cortex_A9_fpadd_ip_0_0/Cortex_A9_fpadd_ip_0_0_stub.vhdl
@@ -15,7 +15,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity Cortex_A9_fpadd_ip_0_0 is
   Port ( 
     rst : in STD_LOGIC;
-    button : in STD_LOGIC;
     leds : out STD_LOGIC_VECTOR ( 7 downto 0 );
     an0 : out STD_LOGIC;
     a0 : out STD_LOGIC;
@@ -62,7 +61,7 @@ architecture stub of Cortex_A9_fpadd_ip_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "rst,button,leds[7:0],an0,a0,b0,c0,d0,e0,f0,g0,an1,a1,b1,c1,d1,e1,f1,g1,s00_axi_aclk,s00_axi_aresetn,s00_axi_awaddr[3:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[3:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready";
+attribute black_box_pad_pin of stub : architecture is "rst,leds[7:0],an0,a0,b0,c0,d0,e0,f0,g0,an1,a1,b1,c1,d1,e1,f1,g1,s00_axi_aclk,s00_axi_aresetn,s00_axi_awaddr[3:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[3:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "fpadd_ip_v1_0,Vivado 2020.2";
 begin

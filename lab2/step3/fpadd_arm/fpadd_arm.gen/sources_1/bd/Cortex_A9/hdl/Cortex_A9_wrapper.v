@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-//Date        : Sun Apr 14 21:03:18 2024
+//Date        : Tue Apr 16 22:14:03 2024
 //Host        : localhost.localdomain running 64-bit openSUSE Leap 15.4
 //Command     : generate_target Cortex_A9_wrapper.bd
 //Design      : Cortex_A9_wrapper
@@ -31,25 +31,25 @@ module Cortex_A9_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    a0,
-    a1,
-    an0,
-    an1,
-    b0,
-    b1,
+    a0_0,
+    a1_0,
+    an0_0,
+    an1_0,
+    b0_0,
+    b1_0,
     btns_5bits_tri_i,
-    button,
-    c0,
-    c1,
-    d0,
-    d1,
-    e0,
-    e1,
-    f0,
-    f1,
-    g0,
-    g1,
-    leds,
+    c0_0,
+    c1_0,
+    d0_0,
+    d1_0,
+    e0_0,
+    e1_0,
+    f0_0,
+    f1_0,
+    g0_0,
+    g1_0,
+    leds_0,
+    rst_0,
     swsbntsdd_8bits_tri_i);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
@@ -72,25 +72,25 @@ module Cortex_A9_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  output a0;
-  output a1;
-  output an0;
-  output an1;
-  output b0;
-  output b1;
+  output a0_0;
+  output a1_0;
+  output an0_0;
+  output an1_0;
+  output b0_0;
+  output b1_0;
   input [4:0]btns_5bits_tri_i;
-  input button;
-  output c0;
-  output c1;
-  output d0;
-  output d1;
-  output e0;
-  output e1;
-  output f0;
-  output f1;
-  output g0;
-  output g1;
-  output [7:0]leds;
+  output c0_0;
+  output c1_0;
+  output d0_0;
+  output d1_0;
+  output e0_0;
+  output e1_0;
+  output f0_0;
+  output f1_0;
+  output g0_0;
+  output g1_0;
+  output [7:0]leds_0;
+  input rst_0;
   input [7:0]swsbntsdd_8bits_tri_i;
 
   wire [14:0]DDR_addr;
@@ -114,25 +114,25 @@ module Cortex_A9_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire a0;
-  wire a1;
-  wire an0;
-  wire an1;
-  wire b0;
-  wire b1;
+  wire a0_0;
+  wire a1_0;
+  wire an0_0;
+  wire an1_0;
+  wire b0_0;
+  wire b1_0;
   wire [4:0]btns_5bits_tri_i;
-  wire button;
-  wire c0;
-  wire c1;
-  wire d0;
-  wire d1;
-  wire e0;
-  wire e1;
-  wire f0;
-  wire f1;
-  wire g0;
-  wire g1;
-  wire [7:0]leds;
+  wire c0_0;
+  wire c1_0;
+  wire d0_0;
+  wire d1_0;
+  wire e0_0;
+  wire e1_0;
+  wire f0_0;
+  wire f1_0;
+  wire g0_0;
+  wire g1_0;
+  wire [7:0]leds_0;
+  wire rst_0;
   wire [7:0]swsbntsdd_8bits_tri_i;
 
   Cortex_A9 Cortex_A9_i
@@ -157,24 +157,24 @@ module Cortex_A9_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-        .a0(a0),
-        .a1(a1),
-        .an0(an0),
-        .an1(an1),
-        .b0(b0),
-        .b1(b1),
+        .a0_0(a0_0),
+        .a1_0(a1_0),
+        .an0_0(an0_0),
+        .an1_0(an1_0),
+        .b0_0(b0_0),
+        .b1_0(b1_0),
         .btns_5bits_tri_i(btns_5bits_tri_i),
-        .button(button),
-        .c0(c0),
-        .c1(c1),
-        .d0(d0),
-        .d1(d1),
-        .e0(e0),
-        .e1(e1),
-        .f0(f0),
-        .f1(f1),
-        .g0(g0),
-        .g1(g1),
-        .leds(leds),
+        .c0_0(c0_0),
+        .c1_0(c1_0),
+        .d0_0(d0_0),
+        .d1_0(d1_0),
+        .e0_0(e0_0),
+        .e1_0(e1_0),
+        .f0_0(f0_0),
+        .f1_0(f1_0),
+        .g0_0(g0_0),
+        .g1_0(g1_0),
+        .leds_0(leds_0),
+        .rst_0(rst_0),
         .swsbntsdd_8bits_tri_i(swsbntsdd_8bits_tri_i));
 endmodule

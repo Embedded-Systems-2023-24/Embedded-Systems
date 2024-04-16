@@ -162,30 +162,28 @@ proc create_root_design { parentCell } {
 
   set btns_5bits [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 btns_5bits ]
 
-  set gpi [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:gpio_rtl:1.0 gpi ]
-
   set swsbntsdd_8bits [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 swsbntsdd_8bits ]
 
 
   # Create ports
-  set a0 [ create_bd_port -dir O a0 ]
-  set a1 [ create_bd_port -dir O a1 ]
-  set an0 [ create_bd_port -dir O an0 ]
-  set an1 [ create_bd_port -dir O an1 ]
-  set b0 [ create_bd_port -dir O b0 ]
-  set b1 [ create_bd_port -dir O b1 ]
-  set button [ create_bd_port -dir I button ]
-  set c0 [ create_bd_port -dir O c0 ]
-  set c1 [ create_bd_port -dir O c1 ]
-  set d0 [ create_bd_port -dir O d0 ]
-  set d1 [ create_bd_port -dir O d1 ]
-  set e0 [ create_bd_port -dir O e0 ]
-  set e1 [ create_bd_port -dir O e1 ]
-  set f0 [ create_bd_port -dir O f0 ]
-  set f1 [ create_bd_port -dir O f1 ]
-  set g0 [ create_bd_port -dir O g0 ]
-  set g1 [ create_bd_port -dir O g1 ]
-  set leds [ create_bd_port -dir O -from 7 -to 0 leds ]
+  set a0_0 [ create_bd_port -dir O a0_0 ]
+  set a1_0 [ create_bd_port -dir O a1_0 ]
+  set an0_0 [ create_bd_port -dir O an0_0 ]
+  set an1_0 [ create_bd_port -dir O an1_0 ]
+  set b0_0 [ create_bd_port -dir O b0_0 ]
+  set b1_0 [ create_bd_port -dir O b1_0 ]
+  set c0_0 [ create_bd_port -dir O c0_0 ]
+  set c1_0 [ create_bd_port -dir O c1_0 ]
+  set d0_0 [ create_bd_port -dir O d0_0 ]
+  set d1_0 [ create_bd_port -dir O d1_0 ]
+  set e0_0 [ create_bd_port -dir O e0_0 ]
+  set e1_0 [ create_bd_port -dir O e1_0 ]
+  set f0_0 [ create_bd_port -dir O f0_0 ]
+  set f1_0 [ create_bd_port -dir O f1_0 ]
+  set g0_0 [ create_bd_port -dir O g0_0 ]
+  set g1_0 [ create_bd_port -dir O g1_0 ]
+  set leds_0 [ create_bd_port -dir O -from 7 -to 0 leds_0 ]
+  set rst_0 [ create_bd_port -dir I -type rst rst_0 ]
 
   # Create instance: btns_5bit, and set properties
   set btns_5bit [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 btns_5bit ]
@@ -626,33 +624,32 @@ proc create_root_design { parentCell } {
 
   # Create port connections
   connect_bd_net -net btns_5bit_ip2intc_irpt [get_bd_pins btns_5bit/ip2intc_irpt] [get_bd_pins processing_system7_0/IRQ_F2P]
-  connect_bd_net -net button_1 [get_bd_ports button] [get_bd_pins fpadd_ip_0/button]
-  connect_bd_net -net fpadd_ip_0_a0 [get_bd_ports a0] [get_bd_pins fpadd_ip_0/a0]
-  connect_bd_net -net fpadd_ip_0_a1 [get_bd_ports a1] [get_bd_pins fpadd_ip_0/a1]
-  connect_bd_net -net fpadd_ip_0_an0 [get_bd_ports an0] [get_bd_pins fpadd_ip_0/an0]
-  connect_bd_net -net fpadd_ip_0_an1 [get_bd_ports an1] [get_bd_pins fpadd_ip_0/an1]
-  connect_bd_net -net fpadd_ip_0_b0 [get_bd_ports b0] [get_bd_pins fpadd_ip_0/b0]
-  connect_bd_net -net fpadd_ip_0_b1 [get_bd_ports b1] [get_bd_pins fpadd_ip_0/b1]
-  connect_bd_net -net fpadd_ip_0_c0 [get_bd_ports c0] [get_bd_pins fpadd_ip_0/c0]
-  connect_bd_net -net fpadd_ip_0_c1 [get_bd_ports c1] [get_bd_pins fpadd_ip_0/c1]
-  connect_bd_net -net fpadd_ip_0_d0 [get_bd_ports d0] [get_bd_pins fpadd_ip_0/d0]
-  connect_bd_net -net fpadd_ip_0_d1 [get_bd_ports d1] [get_bd_pins fpadd_ip_0/d1]
-  connect_bd_net -net fpadd_ip_0_e0 [get_bd_ports e0] [get_bd_pins fpadd_ip_0/e0]
-  connect_bd_net -net fpadd_ip_0_e1 [get_bd_ports e1] [get_bd_pins fpadd_ip_0/e1]
-  connect_bd_net -net fpadd_ip_0_f0 [get_bd_ports f0] [get_bd_pins fpadd_ip_0/f0]
-  connect_bd_net -net fpadd_ip_0_f1 [get_bd_ports f1] [get_bd_pins fpadd_ip_0/f1]
-  connect_bd_net -net fpadd_ip_0_g0 [get_bd_ports g0] [get_bd_pins fpadd_ip_0/g0]
-  connect_bd_net -net fpadd_ip_0_g1 [get_bd_ports g1] [get_bd_pins fpadd_ip_0/g1]
-  connect_bd_net -net fpadd_ip_0_leds [get_bd_ports leds] [get_bd_pins fpadd_ip_0/leds]
+  connect_bd_net -net fpadd_ip_0_a0 [get_bd_ports a0_0] [get_bd_pins fpadd_ip_0/a0]
+  connect_bd_net -net fpadd_ip_0_a1 [get_bd_ports a1_0] [get_bd_pins fpadd_ip_0/a1]
+  connect_bd_net -net fpadd_ip_0_an0 [get_bd_ports an0_0] [get_bd_pins fpadd_ip_0/an0]
+  connect_bd_net -net fpadd_ip_0_an1 [get_bd_ports an1_0] [get_bd_pins fpadd_ip_0/an1]
+  connect_bd_net -net fpadd_ip_0_b0 [get_bd_ports b0_0] [get_bd_pins fpadd_ip_0/b0]
+  connect_bd_net -net fpadd_ip_0_b1 [get_bd_ports b1_0] [get_bd_pins fpadd_ip_0/b1]
+  connect_bd_net -net fpadd_ip_0_c0 [get_bd_ports c0_0] [get_bd_pins fpadd_ip_0/c0]
+  connect_bd_net -net fpadd_ip_0_c1 [get_bd_ports c1_0] [get_bd_pins fpadd_ip_0/c1]
+  connect_bd_net -net fpadd_ip_0_d0 [get_bd_ports d0_0] [get_bd_pins fpadd_ip_0/d0]
+  connect_bd_net -net fpadd_ip_0_d1 [get_bd_ports d1_0] [get_bd_pins fpadd_ip_0/d1]
+  connect_bd_net -net fpadd_ip_0_e0 [get_bd_ports e0_0] [get_bd_pins fpadd_ip_0/e0]
+  connect_bd_net -net fpadd_ip_0_e1 [get_bd_ports e1_0] [get_bd_pins fpadd_ip_0/e1]
+  connect_bd_net -net fpadd_ip_0_f0 [get_bd_ports f0_0] [get_bd_pins fpadd_ip_0/f0]
+  connect_bd_net -net fpadd_ip_0_f1 [get_bd_ports f1_0] [get_bd_pins fpadd_ip_0/f1]
+  connect_bd_net -net fpadd_ip_0_g0 [get_bd_ports g0_0] [get_bd_pins fpadd_ip_0/g0]
+  connect_bd_net -net fpadd_ip_0_g1 [get_bd_ports g1_0] [get_bd_pins fpadd_ip_0/g1]
+  connect_bd_net -net fpadd_ip_0_leds [get_bd_ports leds_0] [get_bd_pins fpadd_ip_0/leds]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins btns_5bit/s_axi_aclk] [get_bd_pins fpadd_ip_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins sw_8bit/s_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
+  connect_bd_net -net rst_0_1 [get_bd_ports rst_0] [get_bd_pins fpadd_ip_0/rst]
   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins btns_5bit/s_axi_aresetn] [get_bd_pins fpadd_ip_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins sw_8bit/s_axi_aresetn]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_reset [get_bd_pins fpadd_ip_0/rst] [get_bd_pins rst_ps7_0_100M/peripheral_reset]
 
   # Create address segments
   assign_bd_address -offset 0x41200000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs sw_8bit/S_AXI/Reg] -force
   assign_bd_address -offset 0x41210000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs btns_5bit/S_AXI/Reg] -force
-  assign_bd_address -offset 0x41220000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs fpadd_ip_0/S00_AXI/S00_AXI_reg] -force
+  assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs fpadd_ip_0/S00_AXI/S00_AXI_reg] -force
 
 
   # Restore current instance

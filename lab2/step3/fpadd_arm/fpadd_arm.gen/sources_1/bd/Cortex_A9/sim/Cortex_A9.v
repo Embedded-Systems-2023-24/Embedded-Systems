@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-//Date        : Sun Apr 14 21:03:17 2024
+//Date        : Tue Apr 16 22:14:03 2024
 //Host        : localhost.localdomain running 64-bit openSUSE Leap 15.4
 //Command     : generate_target Cortex_A9.bd
 //Design      : Cortex_A9
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "Cortex_A9,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Cortex_A9,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=12,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=3,da_clkrst_cnt=1,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Cortex_A9.hwdef" *) 
+(* CORE_GENERATION_INFO = "Cortex_A9,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Cortex_A9,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=12,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=2,da_clkrst_cnt=1,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "Cortex_A9.hwdef" *) 
 module Cortex_A9
    (DDR_addr,
     DDR_ba,
@@ -32,25 +32,25 @@ module Cortex_A9
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    a0,
-    a1,
-    an0,
-    an1,
-    b0,
-    b1,
+    a0_0,
+    a1_0,
+    an0_0,
+    an1_0,
+    b0_0,
+    b1_0,
     btns_5bits_tri_i,
-    button,
-    c0,
-    c1,
-    d0,
-    d1,
-    e0,
-    e1,
-    f0,
-    f1,
-    g0,
-    g1,
-    leds,
+    c0_0,
+    c1_0,
+    d0_0,
+    d1_0,
+    e0_0,
+    e1_0,
+    f0_0,
+    f1_0,
+    g0_0,
+    g1_0,
+    leds_0,
+    rst_0,
     swsbntsdd_8bits_tri_i);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
@@ -73,31 +73,30 @@ module Cortex_A9
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK" *) inout FIXED_IO_ps_clk;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
-  output a0;
-  output a1;
-  output an0;
-  output an1;
-  output b0;
-  output b1;
+  output a0_0;
+  output a1_0;
+  output an0_0;
+  output an1_0;
+  output b0_0;
+  output b1_0;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 btns_5bits TRI_I" *) input [4:0]btns_5bits_tri_i;
-  input button;
-  output c0;
-  output c1;
-  output d0;
-  output d1;
-  output e0;
-  output e1;
-  output f0;
-  output f1;
-  output g0;
-  output g1;
-  output [7:0]leds;
+  output c0_0;
+  output c1_0;
+  output d0_0;
+  output d1_0;
+  output e0_0;
+  output e1_0;
+  output f0_0;
+  output f1_0;
+  output g0_0;
+  output g1_0;
+  output [7:0]leds_0;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RST_0 RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RST_0, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input rst_0;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 swsbntsdd_8bits TRI_I" *) input [7:0]swsbntsdd_8bits_tri_i;
 
   wire [7:0]axi_gpio_0_GPIO_TRI_I;
   wire [4:0]btns_5bit_GPIO_TRI_I;
   wire btns_5bit_ip2intc_irpt;
-  wire button_1;
   wire fpadd_ip_0_a0;
   wire fpadd_ip_0_a1;
   wire fpadd_ip_0_an0;
@@ -229,29 +228,29 @@ module Cortex_A9
   wire ps7_0_axi_periph_M02_AXI_WREADY;
   wire [3:0]ps7_0_axi_periph_M02_AXI_WSTRB;
   wire ps7_0_axi_periph_M02_AXI_WVALID;
+  wire rst_0_1;
   wire [0:0]rst_ps7_0_100M_peripheral_aresetn;
-  wire [0:0]rst_ps7_0_100M_peripheral_reset;
 
-  assign a0 = fpadd_ip_0_a0;
-  assign a1 = fpadd_ip_0_a1;
-  assign an0 = fpadd_ip_0_an0;
-  assign an1 = fpadd_ip_0_an1;
+  assign a0_0 = fpadd_ip_0_a0;
+  assign a1_0 = fpadd_ip_0_a1;
+  assign an0_0 = fpadd_ip_0_an0;
+  assign an1_0 = fpadd_ip_0_an1;
   assign axi_gpio_0_GPIO_TRI_I = swsbntsdd_8bits_tri_i[7:0];
-  assign b0 = fpadd_ip_0_b0;
-  assign b1 = fpadd_ip_0_b1;
+  assign b0_0 = fpadd_ip_0_b0;
+  assign b1_0 = fpadd_ip_0_b1;
   assign btns_5bit_GPIO_TRI_I = btns_5bits_tri_i[4:0];
-  assign button_1 = button;
-  assign c0 = fpadd_ip_0_c0;
-  assign c1 = fpadd_ip_0_c1;
-  assign d0 = fpadd_ip_0_d0;
-  assign d1 = fpadd_ip_0_d1;
-  assign e0 = fpadd_ip_0_e0;
-  assign e1 = fpadd_ip_0_e1;
-  assign f0 = fpadd_ip_0_f0;
-  assign f1 = fpadd_ip_0_f1;
-  assign g0 = fpadd_ip_0_g0;
-  assign g1 = fpadd_ip_0_g1;
-  assign leds[7:0] = fpadd_ip_0_leds;
+  assign c0_0 = fpadd_ip_0_c0;
+  assign c1_0 = fpadd_ip_0_c1;
+  assign d0_0 = fpadd_ip_0_d0;
+  assign d1_0 = fpadd_ip_0_d1;
+  assign e0_0 = fpadd_ip_0_e0;
+  assign e1_0 = fpadd_ip_0_e1;
+  assign f0_0 = fpadd_ip_0_f0;
+  assign f1_0 = fpadd_ip_0_f1;
+  assign g0_0 = fpadd_ip_0_g0;
+  assign g1_0 = fpadd_ip_0_g1;
+  assign leds_0[7:0] = fpadd_ip_0_leds;
+  assign rst_0_1 = rst_0;
   Cortex_A9_axi_gpio_1_0 btns_5bit
        (.gpio_io_i(btns_5bit_GPIO_TRI_I),
         .ip2intc_irpt(btns_5bit_ip2intc_irpt),
@@ -281,7 +280,6 @@ module Cortex_A9
         .an1(fpadd_ip_0_an1),
         .b0(fpadd_ip_0_b0),
         .b1(fpadd_ip_0_b1),
-        .button(button_1),
         .c0(fpadd_ip_0_c0),
         .c1(fpadd_ip_0_c1),
         .d0(fpadd_ip_0_d0),
@@ -293,7 +291,7 @@ module Cortex_A9
         .g0(fpadd_ip_0_g0),
         .g1(fpadd_ip_0_g1),
         .leds(fpadd_ip_0_leds),
-        .rst(rst_ps7_0_100M_peripheral_reset),
+        .rst(rst_0_1),
         .s00_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axi_araddr(ps7_0_axi_periph_M02_AXI_ARADDR[3:0]),
         .s00_axi_aresetn(rst_ps7_0_100M_peripheral_aresetn),
@@ -487,7 +485,6 @@ module Cortex_A9
         .ext_reset_in(processing_system7_0_FCLK_RESET0_N),
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_ps7_0_100M_peripheral_aresetn),
-        .peripheral_reset(rst_ps7_0_100M_peripheral_reset),
         .slowest_sync_clk(processing_system7_0_FCLK_CLK0));
   Cortex_A9_axi_gpio_0_0 sw_8bit
        (.gpio_io_i(axi_gpio_0_GPIO_TRI_I),

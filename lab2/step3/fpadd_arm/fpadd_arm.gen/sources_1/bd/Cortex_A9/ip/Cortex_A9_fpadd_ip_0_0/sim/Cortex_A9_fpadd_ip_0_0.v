@@ -48,14 +48,13 @@
 
 
 // IP VLNV: xilinx.com:user:fpadd_ip:1.0
-// IP Revision: 4
+// IP Revision: 7
 
 `timescale 1ns/1ps
 
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module Cortex_A9_fpadd_ip_0_0 (
   rst,
-  button,
   leds,
   an0,
   a0,
@@ -99,7 +98,6 @@ module Cortex_A9_fpadd_ip_0_0 (
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
-input wire button;
 output wire [7 : 0] leds;
 output wire an0;
 output wire a0;
@@ -169,7 +167,6 @@ input wire s00_axi_rready;
     .C_S00_AXI_ADDR_WIDTH(4)  // Width of S_AXI address bus
   ) inst (
     .rst(rst),
-    .button(button),
     .leds(leds),
     .an0(an0),
     .a0(a0),
