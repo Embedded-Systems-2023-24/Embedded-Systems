@@ -1,0 +1,96 @@
+#include "xil_printf.h"
+#include "timer_util.h"
+#include <sleep.h>
+#include <stdlib.h>
+
+#define SIZE 700-1 // number of SIZE in Matrix-1
+#define UNROLL_FACTOR 4
+
+int m1[SIZE][SIZE];
+int m2[SIZE][SIZE];
+int result_slow[SIZE][SIZE];
+int result_optimized[SIZE][SIZE];
+
+int **multi_Matrix(int **m1, int **m2, int size);
+int **multi_Matrix_optimized(int **m1, int **m2, int size);
+
+int main (void)
+{
+	xil_printf("\r\nCreating arrays\r\n");
+
+    // Fill the arrays with random values
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            m1[i][j] = rand();
+            m2[i][j] = rand();
+        }
+    }
+
+	xil_printf("***Starting Slow***\r\n");
+
+//Slow Multiplication.
+	start_time();
+
+    // Function call
+	multi_Matrix(m1, m2, SIZE);
+
+	stop_time();
+	CORE_TICKS total_time = get_time();
+	secs_ret secs_passed_slow = time_in_secs(total_time);
+
+	xil_printf("***Starting Optimized***\r\n");
+
+//Optimized Multiplication.
+	start_time();
+
+    // Function call
+	multi_Matrix(m1, m2, SIZE);
+
+	stop_time();
+	total_time = get_time();
+	secs_ret secs_passed_optimized = time_in_secs(total_time);
+
+	xil_printf("Results:\r\n");
+	xil_printf("Slow\r\nTime Passed: %d\r\n", secs_passed_slow);
+	xil_printf("Optimized\r\nTime Passed: %d\r\n", secs_passed_optimized);
+
+	xil_printf("Finished!\r\n");
+
+  return 0;
+}
+
+void multi_Matrix(int **m1, int **m2, int size) {
+
+    for (int i = 0; i < size; i++) {
+    	//xil_printf("Row: %d\r\n", i);
+        for (int j = 0; j < size; j++) {
+        	result_slow[i][j] = 0;
+
+            // Unroll the inner loop for better performance
+            for (int k = 0; k < size; k += UNROLL_FACTOR) {
+            	result_slow[i][j] += m1[i][k] * m2[k][j] +
+            						 m1[i][k + 1] * m2[k + 1][j] +
+									 m1[i][k + 2] * m2[k + 2][j] +
+									 m1[i][k + 3] * m2[k + 3][j];
+            }
+        }
+    }
+
+}
+
+void multi_Matrix_optimized(int **m1, int **m2, int size) {
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            result_optimized[i][j] = 0;
+
+            // Unroll the inner loop for better performance
+            for (int k = 0; k < size; k += UNROLL_FACTOR) {
+            	result_optimized[i][j] += m1[i][k] * m2[k][j] +
+            							  m1[i][k + 1] * m2[k + 1][j] +
+										  m1[i][k + 2] * m2[k + 2][j] +
+										  m1[i][k + 3] * m2[k + 3][j];
+            }
+        }
+    }
+}

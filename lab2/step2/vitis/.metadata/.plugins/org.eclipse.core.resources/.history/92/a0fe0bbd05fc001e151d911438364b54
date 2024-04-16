@@ -1,0 +1,108 @@
+#include "xil_printf.h"
+#include "timer_util.h"
+#include <sleep.h>
+#include <stdlib.h>
+
+#define SIZE 700-1 // number of SIZE in Matrix-1
+
+int m1[SIZE][SIZE];
+int m2[SIZE][SIZE];
+int result [SIZE][SIZE];
+
+void multi_Matrix(int m1[][SIZE], int m2[][SIZE]);
+void multi_Matrix_optimize (int m1[][SIZE], int m2[][SIZE]);
+void *add_matrix (int m1[][SIZE/2], int m2[][SIZE/2]);
+void multi_Matrix_optimize (int m1[][SIZE], int m2[][SIZE]);
+
+int main (void)
+{
+	xil_printf("\r\nCreating arrays\r\n");
+
+    // Fill the arrays with random values
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            m1[i][j] = rand();
+            m2[i][j] = rand();
+        }
+    }
+
+	xil_printf("***Starting Slow***\r\n");
+
+//Slow Multiplication.
+	start_time();
+
+    // Function call
+	multi_Matrix(m1, m2);
+
+	stop_time();
+	CORE_TICKS total_time = get_time();
+	secs_ret secs_passed_slow = time_in_secs(total_time);
+
+	xil_printf("***Starting Optimized***\r\n");
+
+//Optimized Multiplication.
+	start_time();
+
+    // Function call
+	multi_Matrix(m1, m2);
+
+	stop_time();
+	total_time = get_time();
+	secs_ret secs_passed_optimized = time_in_secs(total_time);
+
+	xil_printf("Results:\r\n");
+	xil_printf("Slow\r\nTime Passed: %d\r\n", secs_passed_slow);
+	xil_printf("Optimized\r\nTime Passed: %d\r\n", secs_passed_optimized);
+
+	xil_printf("Finished!\r\n");
+
+  return 0;
+}
+
+void multi_Matrix(int m1[][SIZE], int m2[][SIZE]) {
+
+    for (int i = 0; i < SIZE; i++) {
+    	//xil_printf("Row: %d\r\n", i);
+        for (int j = 0; j < SIZE; j++) {
+            result[i][j] = 0;
+
+            for (int k = 0; k < SIZE; k++) {
+                result[i][j] += m1[i][k] * m2[k][j];
+            }
+        }
+    }
+}
+
+void multi_Matrix_optimize (int m1[][SIZE], int m2[][SIZE]) {
+	int m2_transformed[SIZE][SIZE];
+
+	for(int i = 0; i < SIZE; i++) {
+		for (int j = 0; j < SIZE; j++) {
+			m2_transformed[j][i] = m2[i][j];
+		}
+	}
+
+	multi_Matrix(m1, m2_transformed);
+}
+
+int *add_matrix (int m1[][SIZE/2], int m2[][SIZE/2]) {
+	int m_result[SIZE/2][SIZE/2];
+
+	for (int i; i < SIZE/2; i++) {
+		for (int j; j < SIZE/2; j++) {
+			m_result[i][j] = m1[i][j] + m1[i][j];
+		}
+	}
+
+	return m_result;
+}
+
+void sub_matrix (int m1[][SIZE/2], int m2[][SIZE/2]) {
+	int m_result[SIZE/2][SIZE/2];
+
+	for (int i; i < SIZE/2; i++) {
+		for (int j; j < SIZE/2; j++) {
+			m_result[i][j] = m1[i][j] - m1[i][j];
+		}
+	}
+}

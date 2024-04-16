@@ -41,13 +41,17 @@
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.estimate" value="false"/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.hw_spec.path" value="${sdxTcfLaunchFile:project=profiling_arm_app;fileType=hw;}"/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.ingore.peer.conflict" value="false"/>
+    <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.is_default_gdb" value="true"/>
+    <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.is_default_gdb_port" value="true"/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.launch.work.dir" value=""/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.performance.analysis" value="false"/>
-    <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.performance.analysis.linux.hw.target" value=""/>
+    <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.performance.analysis.linux.hw.target" value="Local"/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.sdsoc.project" value="profiling_arm_app"/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.secure.debug" value="false"/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.secure.debug.image" value=""/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.trace" value="false"/>
+    <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.user_gdb" value=""/>
+    <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.user_gdb_port" value=""/>
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.versal.system.emulation" value="false"/>
     <stringAttribute key="ide.launch.pdi.path" value=""/>
     <stringAttribute key="ide.launch.program.device" value="false"/>

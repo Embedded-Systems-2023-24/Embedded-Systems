@@ -3,56 +3,99 @@
 #include <sleep.h>
 #include <stdlib.h>
 
-#define ROWS 700 // number of rows in Matrix-1
-#define COLS 700 // number of columns in Matrix-1
+#define SIZE 699 // number of SIZE in Matrix-1
+#define UNROLL_FACTOR 16
 
-int m1[ROWS][COLS];
-int m2[ROWS][COLS];
-int result [ROWS][COLS];
+int m1[SIZE][SIZE];
+int m2[SIZE][SIZE];
+int result_slow[SIZE][SIZE];
+int result_optimized[SIZE][SIZE];
 
-void multi_Matrix(int m1[][COLS], int m2[][COLS]);
+void multi_Matrix();
+void multi_Matrix_optimized();
 
 int main (void)
 {
-	xil_printf("Creating arrays\r\n");
+	xil_printf("\r\nCreating arrays\r\n");
 
     // Fill the arrays with random values
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLS; j++) {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
             m1[i][j] = rand();
             m2[i][j] = rand();
         }
-
-        xil_printf("Row: %d\r\n", i);
     }
 
-	xil_printf("***Starting***\r\n");
+	xil_printf("***Starting Slow***\r\n");
 
+//Slow Multiplication.
 	start_time();
 
     // Function call
-	multi_Matrix(m1, m2);
+	//multi_Matrix();
 
 	stop_time();
 	CORE_TICKS total_time = get_time();
-	secs_ret secs_passed = time_in_secs(total_time);
+	secs_ret secs_passed_slow = time_in_secs(total_time);
 
-	xil_printf("Time Passed: %d\r\n", secs_passed);
+	xil_printf("***Starting Optimized***\r\n");
+
+//Optimized Multiplication.
+	start_time();
+
+    // Function call
+	multi_Matrix_optimized();
+
+	stop_time();
+	total_time = get_time();
+	secs_ret secs_passed_optimized = time_in_secs(total_time);
+
+	xil_printf("Results:\r\n");
+	xil_printf("Slow      Time Passed: %d\r\n", secs_passed_slow);
+	xil_printf("Optimized Time Passed: %d\r\n", secs_passed_optimized);
+
 	xil_printf("Finished!\r\n");
 
   return 0;
 }
 
-void multi_Matrix(int m1[][COLS], int m2[][COLS])
-{
+void multi_Matrix() {
 
-    for (int i = 0; i < ROWS; i++) {
-    	xil_printf("Row: %d\r\n", i);
-        for (int j = 0; j < COLS; j++) {
-            result[i][j] = 0;
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+        	result_slow[i][j] = 0;
 
-            for (int k = 0; k < ROWS; k++) {
-                result[i][j] += m1[i][k] * m2[k][l];
+            for (int k = 0; k < SIZE; k++) {
+            	result_slow[i][j] += m1[i][k] * m2[k][j];
+            }
+        }
+    }
+}
+
+void multi_Matrix_optimized() {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            result_optimized[i][j] = 0;
+
+            // Loop Unrolling
+            for (int k = 0; k < SIZE; k += UNROLL_FACTOR) {
+            	result_optimized[i][j] += m1[i][k] * m2[k][j] +
+            							  m1[i][k + 1] * m2[k + 1][j] +
+										  m1[i][k + 2] * m2[k + 2][j] +
+										  m1[i][k + 3] * m2[k + 3][j] +
+										  m1[i][k + 4] * m2[k + 4][j] +
+										  m1[i][k + 5] * m2[k + 5][j] +
+										  m1[i][k + 6] * m2[k + 6][j] +
+										  m1[i][k + 7] * m2[k + 7][j] +
+										  m1[i][k + 8] * m2[k + 8][j] +
+										  m1[i][k + 9] * m2[k + 9][j] +
+										  m1[i][k + 10] * m2[k + 10][j] +
+										  m1[i][k + 11] * m2[k + 11][j] +
+										  m1[i][k + 12] * m2[k + 12][j] +
+										  m1[i][k + 13] * m2[k + 13][j] +
+										  m1[i][k + 14] * m2[k + 14][j] +
+										  m1[i][k + 15] * m2[k + 15][j];
+
             }
         }
     }
