@@ -1,0 +1,25 @@
+09:27:35 **** Build of configuration Debug for project interrupt_arm_app ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+ 
+make --no-print-directory main-build
+Building file: ../src/lab2_interrupt.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab2_interrupt.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/sw/interrupt_add_platform/standalone_domain/bspinclude/include -MMD -MP -MF"src/lab2_interrupt.d" -MT"src/lab2_interrupt.o" -o "src/lab2_interrupt.o" "../src/lab2_interrupt.c"
+Finished building: ../src/lab2_interrupt.c
+ 
+Building target: interrupt_arm_app.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/sw/interrupt_add_platform/standalone_domain/bsplib/lib -o "interrupt_arm_app.elf"  ./src/lab2_interrupt.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: interrupt_arm_app.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size interrupt_arm_app.elf  |tee "interrupt_arm_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27748	   1952	  22616	  52316	   cc5c	interrupt_arm_app.elf
+Finished building: interrupt_arm_app.elf.size
+ 
+
+09:27:36 Build Finished (took 1s.143ms)
+

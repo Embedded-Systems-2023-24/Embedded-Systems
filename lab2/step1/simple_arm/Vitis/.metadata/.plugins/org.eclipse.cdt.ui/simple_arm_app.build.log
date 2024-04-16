@@ -1,4 +1,4 @@
-10:49:05 **** Build of configuration Debug for project simple_arm_app ****
+09:23:53 **** Build of configuration Debug for project simple_arm_app ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -21,5 +21,5 @@ arm-none-eabi-size simple_arm_app.elf  |tee "simple_arm_app.elf.size"
 Finished building: simple_arm_app.elf.size
  
 
-10:49:06 Build Finished (took 571ms)
+09:23:54 Build Finished (took 861ms)
 

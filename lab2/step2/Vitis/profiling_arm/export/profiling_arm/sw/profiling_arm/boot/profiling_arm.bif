@@ -1,7 +1,0 @@
-/*profiling_arm*/
-the_ROM_image:
-{
-  [bootloader]<profiling_arm/boot/fsbl.elf>
-   <bitstream> 
-  <elf,ps7_cortexa9_0>
-}

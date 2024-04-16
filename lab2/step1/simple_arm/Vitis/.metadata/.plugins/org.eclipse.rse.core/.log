@@ -1,4 +1,4 @@
-Thu Apr 11 10:49:38 EEST 2024
+Tue Apr 16 09:23:25 EEST 2024
 ERROR org.eclipse.rse.core  Unexpected Exception
 java.net.UnknownHostException: localhost.localdomain: localhost.localdomain: Το όνομα ή η υπηρεσία δεν είναι γνωστά
 	at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1642)

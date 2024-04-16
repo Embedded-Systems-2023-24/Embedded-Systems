@@ -1,0 +1,48 @@
+09:23:18 INFO  : Launching XSCT server: xsct -n  -interactive /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/temp_xsdb_launch_script.tcl
+09:23:22 INFO  : XSCT server has started successfully.
+09:23:22 INFO  : plnx-install-location is set to ''
+09:23:22 INFO  : Successfully done setting XSCT server connection channel  
+09:23:22 INFO  : Successfully done setting workspace for the tool. 
+09:23:23 INFO  : Platform repository initialization has completed.
+09:23:24 INFO  : Registering command handlers for Vitis TCF services
+09:23:24 INFO  : Successfully done query RDI_DATADIR 
+09:23:47 INFO  : Result from executing command 'getProjects': simple_arm_platform
+09:23:47 INFO  : Result from executing command 'getPlatforms': simple_arm_platform|/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/simple_arm_platform.xpfm;zedboard_202020_1|/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+09:23:51 INFO  : Checking for BSP changes to sync application flags for project 'simple_arm_app'...
+09:29:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:29:56 INFO  : Jtag cable 'Digilent Zed 210248A49BC7' is selected.
+09:29:56 INFO  : 'jtag frequency' command is executed.
+09:29:56 INFO  : Context for 'APU' is selected.
+09:29:56 INFO  : System reset is completed.
+09:29:59 INFO  : 'after 3000' command is executed.
+09:29:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248A49BC7" && level==0 && jtag_device_ctx=="jsn-Zed-210248A49BC7-23727093-0"}' command is executed.
+09:30:01 INFO  : Device configured successfully with "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_app/_ide/bitstream/Cortex_A9_wrapper.bit"
+09:30:02 INFO  : Context for 'APU' is selected.
+09:30:02 INFO  : Hardware design and registers information is loaded from '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/hw/Cortex_A9_wrapper.xsa'.
+09:30:02 INFO  : 'configparams force-mem-access 1' command is executed.
+09:30:02 INFO  : Context for 'APU' is selected.
+09:30:02 INFO  : Sourcing of '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_app/_ide/psinit/ps7_init.tcl' is done.
+09:30:02 INFO  : 'ps7_init' command is executed.
+09:30:02 INFO  : 'ps7_post_config' command is executed.
+09:30:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:30:02 INFO  : The application '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_app/Debug/simple_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:30:02 INFO  : 'configparams force-mem-access 0' command is executed.
+09:30:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248A49BC7" && level==0 && jtag_device_ctx=="jsn-Zed-210248A49BC7-23727093-0"}
+fpga -file /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_app/_ide/bitstream/Cortex_A9_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/hw/Cortex_A9_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_app/Debug/simple_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+

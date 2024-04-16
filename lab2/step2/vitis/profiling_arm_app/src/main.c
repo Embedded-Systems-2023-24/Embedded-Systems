@@ -1,0 +1,59 @@
+#include "xil_printf.h"
+#include "timer_util.h"
+#include <sleep.h>
+#include <stdlib.h>
+
+#define ROWS 700 // number of rows in Matrix-1
+#define COLS 700 // number of columns in Matrix-1
+
+int m1[ROWS][COLS];
+int m2[ROWS][COLS];
+int result [ROWS][COLS];
+
+void multi_Matrix(int m1[][COLS], int m2[][COLS]);
+
+int main (void)
+{
+	xil_printf("Creating arrays\r\n");
+
+    // Fill the arrays with random values
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            m1[i][j] = rand();
+            m2[i][j] = rand();
+        }
+
+        xil_printf("Row: %d\r\n", i);
+    }
+
+	xil_printf("***Starting***\r\n");
+
+	start_time();
+
+    // Function call
+	multi_Matrix(m1, m2);
+
+	stop_time();
+	CORE_TICKS total_time = get_time();
+	secs_ret secs_passed = time_in_secs(total_time);
+
+	xil_printf("Time Passed: %d\r\n", secs_passed);
+	xil_printf("Finished!\r\n");
+
+  return 0;
+}
+
+void multi_Matrix(int m1[][COLS], int m2[][COLS])
+{
+
+    for (int i = 0; i < ROWS; i++) {
+    	xil_printf("Row: %d\r\n", i);
+        for (int j = 0; j < COLS; j++) {
+            result[i][j] = 0;
+
+            for (int k = 0; k < ROWS; k++) {
+                result[i][j] += m1[i][k] * m2[k][l];
+            }
+        }
+    }
+}

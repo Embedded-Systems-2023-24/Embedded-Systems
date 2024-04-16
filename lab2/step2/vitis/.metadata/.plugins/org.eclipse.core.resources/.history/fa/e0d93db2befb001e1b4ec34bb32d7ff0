@@ -1,0 +1,19 @@
+#include "xil_printf.h"
+#include "timer_util.h"
+
+int main (void)
+{
+	int i;
+	xil_printf("Starting...\r\n");
+
+	start_time();
+	//<code>
+	stop_time();
+	CORE_TICKS total_time = get_time();
+	secs_ret secs_passed = time_in_secs(total_time);
+
+
+	xil_printf("Finished!\r\n");
+
+  return 0;
+}
