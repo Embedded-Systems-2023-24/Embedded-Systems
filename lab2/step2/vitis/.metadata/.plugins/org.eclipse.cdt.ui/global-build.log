@@ -1,6 +1,6 @@
 Nothing to build in platform 'profiling_platform'
 
-19:48:58 **** Incremental Build of configuration Debug for project profiling_arm_app ****
+08:59:33 **** Incremental Build of configuration Debug for project profiling_arm_app ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step

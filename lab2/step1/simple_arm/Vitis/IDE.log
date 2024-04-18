@@ -46,3 +46,12 @@ dow /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Viti
 configparams force-mem-access 0
 ----------------End of Script----------------
 
+09:00:58 INFO  : Launching XSCT server: xsct -n  -interactive /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/temp_xsdb_launch_script.tcl
+09:01:02 INFO  : XSCT server has started successfully.
+09:01:02 INFO  : plnx-install-location is set to ''
+09:01:02 INFO  : Successfully done setting XSCT server connection channel  
+09:01:02 INFO  : Successfully done setting workspace for the tool. 
+09:01:04 INFO  : Platform repository initialization has completed.
+09:01:04 INFO  : Successfully done query RDI_DATADIR 
+09:01:05 INFO  : Registering command handlers for Vitis TCF services
+09:01:13 INFO  : Checking for BSP changes to sync application flags for project 'simple_arm_app'...

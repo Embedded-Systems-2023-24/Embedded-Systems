@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Tue Apr 16 22:16:13 2024
+-- Date        : Thu Apr 18 10:19:09 2024
 -- Host        : localhost.localdomain running 64-bit openSUSE Leap 15.4
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/fpadd_arm/fpadd_arm.gen/sources_1/bd/Cortex_A9/ip/Cortex_A9_fpadd_ip_0_0/Cortex_A9_fpadd_ip_0_0_sim_netlist.vhdl
@@ -16,16 +16,18 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity Cortex_A9_fpadd_ip_0_0_DataMemory is
   port (
-    D : out STD_LOGIC_VECTOR ( 13 downto 0 );
+    \pointer_reg[0]_0\ : out STD_LOGIC;
     \pointer_reg[2]_0\ : out STD_LOGIC;
-    \pointer_reg[2]_1\ : out STD_LOGIC;
     \pointer_reg[3]_0\ : out STD_LOGIC;
-    \pointer_reg[0]_0\ : out STD_LOGIC_VECTOR ( 17 downto 0 );
+    D : out STD_LOGIC_VECTOR ( 17 downto 0 );
+    \pointer_reg[3]_1\ : out STD_LOGIC;
+    numB : out STD_LOGIC_VECTOR ( 13 downto 0 );
     numA : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    numB : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    rst : in STD_LOGIC;
+    \pointer_reg[2]_1\ : out STD_LOGIC;
     current_state : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_aclk : in STD_LOGIC
+    s00_axi_aresetn : in STD_LOGIC;
+    s00_axi_aclk : in STD_LOGIC;
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of Cortex_A9_fpadd_ip_0_0_DataMemory : entity is "DataMemory";
@@ -75,7 +77,7 @@ architecture STRUCTURE of Cortex_A9_fpadd_ip_0_0_DataMemory is
   attribute SOFT_HLUTNM of \B[28]_i_1\ : label is "soft_lutpair20";
   attribute SOFT_HLUTNM of \B[2]_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \B[30]_i_1\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \B[31]_i_2\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \B[31]_i_1\ : label is "soft_lutpair10";
   attribute SOFT_HLUTNM of \B[4]_i_1\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \pointer[0]_i_1\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \pointer[1]_i_1\ : label is "soft_lutpair2";
@@ -91,7 +93,7 @@ begin
       I1 => pointer_reg(3),
       I2 => pointer_reg(1),
       I3 => pointer_reg(0),
-      O => \pointer_reg[0]_0\(0)
+      O => D(0)
     );
 \A[11]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -102,7 +104,7 @@ begin
       I1 => pointer_reg(2),
       I2 => pointer_reg(3),
       I3 => pointer_reg(1),
-      O => \pointer_reg[0]_0\(3)
+      O => D(3)
     );
 \A[12]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -113,7 +115,7 @@ begin
       I1 => pointer_reg(0),
       I2 => pointer_reg(3),
       I3 => pointer_reg(2),
-      O => \pointer_reg[0]_0\(4)
+      O => D(4)
     );
 \A[13]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -124,7 +126,7 @@ begin
       I1 => pointer_reg(3),
       I2 => pointer_reg(1),
       I3 => pointer_reg(0),
-      O => \pointer_reg[0]_0\(5)
+      O => D(5)
     );
 \A[14]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -135,7 +137,7 @@ begin
       I1 => pointer_reg(0),
       I2 => pointer_reg(2),
       I3 => pointer_reg(3),
-      O => \pointer_reg[0]_0\(6)
+      O => D(6)
     );
 \A[15]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -146,7 +148,7 @@ begin
       I1 => pointer_reg(3),
       I2 => pointer_reg(1),
       I3 => pointer_reg(0),
-      O => \pointer_reg[0]_0\(7)
+      O => D(7)
     );
 \A[16]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -189,7 +191,7 @@ begin
       I1 => pointer_reg(2),
       I2 => pointer_reg(3),
       I3 => pointer_reg(1),
-      O => \pointer_reg[0]_0\(8)
+      O => D(8)
     );
 \A[22]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -199,7 +201,7 @@ begin
       I0 => pointer_reg(1),
       I1 => pointer_reg(3),
       I2 => pointer_reg(2),
-      O => \pointer_reg[0]_0\(9)
+      O => D(9)
     );
 \A[23]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -210,7 +212,7 @@ begin
       I1 => pointer_reg(3),
       I2 => pointer_reg(0),
       I3 => pointer_reg(1),
-      O => \pointer_reg[0]_0\(10)
+      O => D(10)
     );
 \A[24]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -221,7 +223,7 @@ begin
       I1 => pointer_reg(3),
       I2 => pointer_reg(1),
       I3 => pointer_reg(0),
-      O => \pointer_reg[0]_0\(11)
+      O => D(11)
     );
 \A[25]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -231,7 +233,7 @@ begin
       I0 => pointer_reg(1),
       I1 => pointer_reg(3),
       I2 => pointer_reg(2),
-      O => \pointer_reg[0]_0\(12)
+      O => D(12)
     );
 \A[26]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -242,7 +244,7 @@ begin
       I1 => pointer_reg(2),
       I2 => pointer_reg(0),
       I3 => pointer_reg(1),
-      O => \pointer_reg[0]_0\(13)
+      O => D(13)
     );
 \A[27]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -253,7 +255,7 @@ begin
       I1 => pointer_reg(2),
       I2 => pointer_reg(3),
       I3 => pointer_reg(0),
-      O => \pointer_reg[0]_0\(14)
+      O => D(14)
     );
 \A[28]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -264,7 +266,7 @@ begin
       I1 => pointer_reg(0),
       I2 => pointer_reg(1),
       I3 => pointer_reg(3),
-      O => \pointer_reg[0]_0\(15)
+      O => D(15)
     );
 \A[30]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -273,7 +275,7 @@ begin
         port map (
       I0 => pointer_reg(1),
       I1 => pointer_reg(3),
-      O => \pointer_reg[0]_0\(16)
+      O => D(16)
     );
 \A[31]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -283,7 +285,7 @@ begin
       I0 => pointer_reg(0),
       I1 => pointer_reg(1),
       I2 => pointer_reg(3),
-      O => \pointer_reg[0]_0\(17)
+      O => D(17)
     );
 \A[4]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -294,7 +296,7 @@ begin
       I1 => pointer_reg(3),
       I2 => pointer_reg(1),
       I3 => pointer_reg(0),
-      O => \pointer_reg[0]_0\(1)
+      O => D(1)
     );
 \A[5]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -305,7 +307,7 @@ begin
       I1 => pointer_reg(1),
       I2 => pointer_reg(3),
       I3 => pointer_reg(2),
-      O => \pointer_reg[0]_0\(2)
+      O => D(2)
     );
 \A[8]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -325,7 +327,7 @@ begin
       I1 => pointer_reg(3),
       I2 => pointer_reg(1),
       I3 => pointer_reg(0),
-      O => D(1)
+      O => numB(1)
     );
 \B[11]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -336,7 +338,7 @@ begin
       I1 => pointer_reg(3),
       I2 => pointer_reg(1),
       I3 => pointer_reg(0),
-      O => D(2)
+      O => numB(2)
     );
 \B[12]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -347,7 +349,7 @@ begin
       I1 => pointer_reg(1),
       I2 => pointer_reg(3),
       I3 => pointer_reg(2),
-      O => D(3)
+      O => numB(3)
     );
 \B[13]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -358,7 +360,7 @@ begin
       I1 => pointer_reg(2),
       I2 => pointer_reg(0),
       I3 => pointer_reg(1),
-      O => D(4)
+      O => numB(4)
     );
 \B[14]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -368,7 +370,7 @@ begin
       I0 => pointer_reg(0),
       I1 => pointer_reg(1),
       I2 => pointer_reg(3),
-      O => D(5)
+      O => numB(5)
     );
 \B[15]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -379,19 +381,19 @@ begin
       I1 => pointer_reg(1),
       I2 => pointer_reg(0),
       I3 => pointer_reg(2),
-      O => D(6)
+      O => numB(6)
     );
 \B[16]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"00000010"
+      INIT => X"00100000"
     )
         port map (
       I0 => pointer_reg(2),
       I1 => pointer_reg(3),
       I2 => pointer_reg(1),
       I3 => pointer_reg(0),
-      I4 => rst,
-      O => \pointer_reg[2]_0\
+      I4 => s00_axi_aresetn,
+      O => \pointer_reg[2]_1\
     );
 \B[19]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -402,7 +404,7 @@ begin
       I1 => pointer_reg(1),
       I2 => pointer_reg(3),
       I3 => pointer_reg(2),
-      O => D(7)
+      O => numB(7)
     );
 \B[21]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -412,7 +414,7 @@ begin
       I0 => pointer_reg(1),
       I1 => pointer_reg(3),
       I2 => pointer_reg(2),
-      O => numB(1)
+      O => numB(8)
     );
 \B[22]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -423,7 +425,7 @@ begin
       I1 => pointer_reg(3),
       I2 => pointer_reg(0),
       I3 => pointer_reg(1),
-      O => \pointer_reg[2]_1\
+      O => \pointer_reg[2]_0\
     );
 \B[24]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -433,7 +435,7 @@ begin
       I0 => pointer_reg(3),
       I1 => pointer_reg(1),
       I2 => pointer_reg(0),
-      O => D(8)
+      O => numB(9)
     );
 \B[26]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -444,7 +446,7 @@ begin
       I1 => pointer_reg(2),
       I2 => pointer_reg(3),
       I3 => pointer_reg(1),
-      O => D(9)
+      O => numB(10)
     );
 \B[27]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -455,7 +457,7 @@ begin
       I1 => pointer_reg(2),
       I2 => pointer_reg(3),
       I3 => pointer_reg(1),
-      O => D(10)
+      O => numB(11)
     );
 \B[28]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -465,7 +467,7 @@ begin
       I0 => pointer_reg(3),
       I1 => pointer_reg(1),
       I2 => pointer_reg(0),
-      O => D(11)
+      O => numB(12)
     );
 \B[2]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -476,7 +478,7 @@ begin
       I1 => pointer_reg(1),
       I2 => pointer_reg(3),
       I3 => pointer_reg(2),
-      O => D(0)
+      O => \pointer_reg[0]_0\
     );
 \B[30]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -486,9 +488,9 @@ begin
       I0 => pointer_reg(3),
       I1 => pointer_reg(1),
       I2 => pointer_reg(0),
-      O => D(12)
+      O => \pointer_reg[3]_1\
     );
-\B[31]_i_2\: unisim.vcomponents.LUT4
+\B[31]_i_1\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"EC00"
     )
@@ -497,7 +499,7 @@ begin
       I1 => pointer_reg(3),
       I2 => pointer_reg(1),
       I3 => pointer_reg(0),
-      O => D(13)
+      O => numB(13)
     );
 \B[4]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -570,7 +572,7 @@ begin
      port map (
       C => s00_axi_aclk,
       CE => \pointer[3]_i_1_n_0\,
-      CLR => rst,
+      CLR => AS(0),
       D => \pointer[0]_i_1_n_0\,
       Q => pointer_reg(0)
     );
@@ -578,7 +580,7 @@ begin
      port map (
       C => s00_axi_aclk,
       CE => \pointer[3]_i_1_n_0\,
-      CLR => rst,
+      CLR => AS(0),
       D => \p_0_in__0\(1),
       Q => pointer_reg(1)
     );
@@ -586,7 +588,7 @@ begin
      port map (
       C => s00_axi_aclk,
       CE => \pointer[3]_i_1_n_0\,
-      CLR => rst,
+      CLR => AS(0),
       D => \p_0_in__0\(2),
       Q => pointer_reg(2)
     );
@@ -594,7 +596,7 @@ begin
      port map (
       C => s00_axi_aclk,
       CE => \pointer[3]_i_1_n_0\,
-      CLR => rst,
+      CLR => AS(0),
       D => \p_0_in__0\(3),
       Q => pointer_reg(3)
     );
@@ -608,7 +610,7 @@ entity Cortex_A9_fpadd_ip_0_0_SSD_clock_module is
     \counter_reg[4]_0\ : out STD_LOGIC;
     digit_sel_reg : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
-    rst : in STD_LOGIC
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of Cortex_A9_fpadd_ip_0_0_SSD_clock_module : entity is "SSD_clock_module";
@@ -679,7 +681,7 @@ begin
       C => s00_axi_aclk,
       CE => '1',
       D => \counter0__0\(0),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter_reg(0)
     );
 \counter_reg[1]\: unisim.vcomponents.FDPE
@@ -687,7 +689,7 @@ begin
       C => s00_axi_aclk,
       CE => '1',
       D => \counter[1]_i_1__0_n_0\,
-      PRE => rst,
+      PRE => AS(0),
       Q => counter_reg(1)
     );
 \counter_reg[2]\: unisim.vcomponents.FDPE
@@ -695,7 +697,7 @@ begin
       C => s00_axi_aclk,
       CE => '1',
       D => \counter0__0\(2),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter_reg(2)
     );
 \counter_reg[3]\: unisim.vcomponents.FDPE
@@ -703,7 +705,7 @@ begin
       C => s00_axi_aclk,
       CE => '1',
       D => \counter0__0\(3),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter_reg(3)
     );
 \counter_reg[4]\: unisim.vcomponents.FDPE
@@ -711,7 +713,7 @@ begin
       C => s00_axi_aclk,
       CE => '1',
       D => \counter0__0\(4),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter_reg(4)
     );
 \digit_sel_i_1__0\: unisim.vcomponents.LUT6
@@ -737,7 +739,7 @@ entity Cortex_A9_fpadd_ip_0_0_SSD_clock_module_1 is
     \counter_reg[4]_0\ : out STD_LOGIC;
     digit_sel_reg : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
-    rst : in STD_LOGIC
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of Cortex_A9_fpadd_ip_0_0_SSD_clock_module_1 : entity is "SSD_clock_module";
@@ -808,7 +810,7 @@ begin
       C => s00_axi_aclk,
       CE => '1',
       D => counter0(0),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter_reg(0)
     );
 \counter_reg[1]\: unisim.vcomponents.FDPE
@@ -816,7 +818,7 @@ begin
       C => s00_axi_aclk,
       CE => '1',
       D => \counter[1]_i_1_n_0\,
-      PRE => rst,
+      PRE => AS(0),
       Q => counter_reg(1)
     );
 \counter_reg[2]\: unisim.vcomponents.FDPE
@@ -824,7 +826,7 @@ begin
       C => s00_axi_aclk,
       CE => '1',
       D => counter0(2),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter_reg(2)
     );
 \counter_reg[3]\: unisim.vcomponents.FDPE
@@ -832,7 +834,7 @@ begin
       C => s00_axi_aclk,
       CE => '1',
       D => counter0(3),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter_reg(3)
     );
 \counter_reg[4]\: unisim.vcomponents.FDPE
@@ -840,7 +842,7 @@ begin
       C => s00_axi_aclk,
       CE => '1',
       D => counter0(4),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter_reg(4)
     );
 digit_sel_i_1: unisim.vcomponents.LUT6
@@ -870,12 +872,12 @@ entity Cortex_A9_fpadd_ip_0_0_compare_shift_module is
     S : in STD_LOGIC_VECTOR ( 3 downto 0 );
     Q : in STD_LOGIC_VECTOR ( 15 downto 0 );
     \pipe_Mantissa_shift_B_reg[21]\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \pipe_Mantissa_shift_A_reg[21]\ : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    \pipe_Mantissa_shift_A_reg[21]_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    EXP_B : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    \pipe_Mantissa_shift_A_reg[21]\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \pipe_Mantissa_shift_B_reg[23]\ : in STD_LOGIC;
     \pipe_Mantissa_shift_B_reg[22]\ : in STD_LOGIC;
     p_0_in : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    p_0_in1_in : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    p_0_in1_in : in STD_LOGIC_VECTOR ( 12 downto 0 );
     \pipe_Mantissa_shift_A_reg[22]\ : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -1103,10 +1105,10 @@ Mantissa_shift_A1_carry: unisim.vcomponents.CARRY4
       CO(1) => \Mantissa_shift_A1_inferred__1/i__carry_n_2\,
       CO(0) => \Mantissa_shift_A1_inferred__1/i__carry_n_3\,
       CYINIT => '1',
-      DI(3) => \pipe_Mantissa_shift_A_reg[21]\(9),
-      DI(2) => \pipe_Mantissa_shift_A_reg[21]\(10),
-      DI(1) => \pipe_Mantissa_shift_A_reg[21]\(8),
-      DI(0) => \pipe_Mantissa_shift_A_reg[21]\(10),
+      DI(3) => EXP_B(1),
+      DI(2) => EXP_B(2),
+      DI(1) => EXP_B(0),
+      DI(0) => EXP_B(2),
       O(3 downto 0) => Mantissa_shift_A11_out(3 downto 0),
       S(3) => \i__carry_i_1__0_n_0\,
       S(2) => \i__carry_i_2__0_n_0\,
@@ -1122,10 +1124,10 @@ Mantissa_shift_A1_carry: unisim.vcomponents.CARRY4
       CO(0) => \Mantissa_shift_A1_inferred__1/i__carry__0_n_3\,
       CYINIT => '0',
       DI(3) => '0',
-      DI(2) => \pipe_Mantissa_shift_A_reg[21]\(10),
-      DI(1 downto 0) => \pipe_Mantissa_shift_A_reg[21]\(11 downto 10),
+      DI(2) => EXP_B(2),
+      DI(1 downto 0) => EXP_B(3 downto 2),
       O(3 downto 0) => Mantissa_shift_A11_out(7 downto 4),
-      S(3 downto 0) => \pipe_Mantissa_shift_A_reg[21]_0\(3 downto 0)
+      S(3 downto 0) => \pipe_Mantissa_shift_A_reg[21]\(3 downto 0)
     );
 Mantissa_shift_B1_carry: unisim.vcomponents.CARRY4
      port map (
@@ -1161,7 +1163,7 @@ Mantissa_shift_B1_carry_i_1: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(9),
+      I0 => EXP_B(1),
       I1 => Q(13),
       O => Mantissa_shift_B1_carry_i_1_n_0
     );
@@ -1170,7 +1172,7 @@ Mantissa_shift_B1_carry_i_2: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(10),
+      I0 => EXP_B(2),
       I1 => Q(12),
       O => Mantissa_shift_B1_carry_i_2_n_0
     );
@@ -1179,7 +1181,7 @@ Mantissa_shift_B1_carry_i_3: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(8),
+      I0 => EXP_B(0),
       I1 => Q(11),
       O => Mantissa_shift_B1_carry_i_3_n_0
     );
@@ -1188,7 +1190,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(10),
+      I0 => EXP_B(2),
       I1 => Q(10),
       O => Mantissa_shift_B1_carry_i_4_n_0
     );
@@ -1197,7 +1199,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(9),
+      I0 => EXP_B(1),
       I1 => Q(13),
       O => \i__carry_i_1__0_n_0\
     );
@@ -1206,7 +1208,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(10),
+      I0 => EXP_B(2),
       I1 => Q(12),
       O => \i__carry_i_2__0_n_0\
     );
@@ -1215,7 +1217,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(8),
+      I0 => EXP_B(0),
       I1 => Q(11),
       O => \i__carry_i_3__0_n_0\
     );
@@ -1224,7 +1226,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"9"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(10),
+      I0 => EXP_B(2),
       I1 => Q(10),
       O => \i__carry_i_4_n_0\
     );
@@ -1707,7 +1709,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"30BB3088"
     )
         port map (
-      I0 => p_0_in1_in(4),
+      I0 => p_0_in1_in(12),
       I1 => Mantissa_shift_A11_out(3),
       I2 => p_0_in(2),
       I3 => Mantissa_shift_A11_out(4),
@@ -1827,7 +1829,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_A_reg[22]\,
-      I1 => p_0_in1_in(0),
+      I1 => p_0_in1_in(1),
       I2 => \pipe_Mantissa_shift_A[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_A[3]_i_2_n_0\,
       I4 => Mantissa_shift_A11_out(0),
@@ -1863,7 +1865,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       I1 => Mantissa_shift_A11_out(3),
       I2 => p_0_in(3),
       I3 => Mantissa_shift_A11_out(4),
-      I4 => p_0_in1_in(0),
+      I4 => p_0_in1_in(1),
       O => \pipe_Mantissa_shift_A[2]_i_4_n_0\
     );
 \pipe_Mantissa_shift_A[3]_i_1\: unisim.vcomponents.LUT6
@@ -1872,7 +1874,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_A_reg[22]\,
-      I1 => p_0_in1_in(3),
+      I1 => p_0_in1_in(11),
       I2 => \pipe_Mantissa_shift_A[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_A[4]_i_2_n_0\,
       I4 => Mantissa_shift_A11_out(0),
@@ -1896,7 +1898,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
         port map (
       I0 => Q(7),
       I1 => Mantissa_shift_A11_out(3),
-      I2 => p_0_in1_in(3),
+      I2 => p_0_in1_in(11),
       I3 => Mantissa_shift_A11_out(4),
       I4 => Mantissa_shift_A11_out(2),
       I5 => \pipe_Mantissa_shift_A[3]_i_4_n_0\,
@@ -1911,7 +1913,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       I1 => Mantissa_shift_A11_out(3),
       I2 => p_0_in(4),
       I3 => Mantissa_shift_A11_out(4),
-      I4 => p_0_in1_in(3),
+      I4 => p_0_in1_in(11),
       O => \pipe_Mantissa_shift_A[3]_i_4_n_0\
     );
 \pipe_Mantissa_shift_A[4]_i_1\: unisim.vcomponents.LUT6
@@ -1980,7 +1982,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
         port map (
       I0 => p_0_in(2),
       I1 => Mantissa_shift_A11_out(3),
-      I2 => p_0_in1_in(4),
+      I2 => p_0_in1_in(12),
       I3 => Mantissa_shift_A11_out(4),
       I4 => Mantissa_shift_A11_out(2),
       I5 => \pipe_Mantissa_shift_A[1]_i_3_n_0\,
@@ -1992,7 +1994,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_A_reg[22]\,
-      I1 => p_0_in1_in(2),
+      I1 => p_0_in1_in(9),
       I2 => \pipe_Mantissa_shift_A[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_A[7]_i_2_n_0\,
       I4 => Mantissa_shift_A11_out(0),
@@ -2031,7 +2033,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       I1 => Mantissa_shift_A11_out(3),
       I2 => Q(9),
       I3 => Mantissa_shift_A11_out(4),
-      I4 => p_0_in1_in(2),
+      I4 => p_0_in1_in(9),
       O => \pipe_Mantissa_shift_A[6]_i_4_n_0\
     );
 \pipe_Mantissa_shift_A[7]_i_1\: unisim.vcomponents.LUT6
@@ -2040,7 +2042,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_A_reg[22]\,
-      I1 => p_0_in1_in(3),
+      I1 => p_0_in1_in(11),
       I2 => \pipe_Mantissa_shift_A[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_A[8]_i_2_n_0\,
       I4 => Mantissa_shift_A11_out(0),
@@ -2077,7 +2079,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
         port map (
       I0 => Q(7),
       I1 => Mantissa_shift_A11_out(3),
-      I2 => p_0_in1_in(3),
+      I2 => p_0_in1_in(11),
       I3 => Mantissa_shift_A11_out(4),
       O => \pipe_Mantissa_shift_A[7]_i_4_n_0\
     );
@@ -2134,7 +2136,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_A_reg[22]\,
-      I1 => p_0_in1_in(4),
+      I1 => p_0_in1_in(12),
       I2 => \pipe_Mantissa_shift_A[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_A[10]_i_2_n_0\,
       I4 => Mantissa_shift_A11_out(0),
@@ -2171,7 +2173,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
         port map (
       I0 => p_0_in(2),
       I1 => Mantissa_shift_A11_out(3),
-      I2 => p_0_in1_in(4),
+      I2 => p_0_in1_in(12),
       I3 => Mantissa_shift_A11_out(4),
       O => \pipe_Mantissa_shift_A[9]_i_4_n_0\
     );
@@ -2181,7 +2183,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => \pipe_Mantissa_shift_A_reg[21]\(7),
+      I1 => p_0_in1_in(10),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[1]_i_2_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2208,9 +2210,9 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
         port map (
       I0 => p_0_in(0),
       I1 => Mantissa_shift_B10_out(3),
-      I2 => p_0_in1_in(1),
+      I2 => p_0_in1_in(8),
       I3 => Mantissa_shift_B10_out(4),
-      I4 => \pipe_Mantissa_shift_A_reg[21]\(7),
+      I4 => p_0_in1_in(10),
       O => \pipe_Mantissa_shift_B[0]_i_3_n_0\
     );
 \pipe_Mantissa_shift_B[0]_i_4\: unisim.vcomponents.LUT5
@@ -2218,11 +2220,11 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"30BB3088"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(3),
+      I0 => p_0_in1_in(4),
       I1 => Mantissa_shift_B10_out(3),
       I2 => p_0_in(5),
       I3 => Mantissa_shift_B10_out(4),
-      I4 => p_0_in1_in(0),
+      I4 => p_0_in1_in(1),
       O => \pipe_Mantissa_shift_B[0]_i_4_n_0\
     );
 \pipe_Mantissa_shift_B[10]_i_1\: unisim.vcomponents.LUT6
@@ -2231,7 +2233,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => \pipe_Mantissa_shift_A_reg[21]\(1),
+      I1 => p_0_in1_in(2),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[10]_i_2_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2253,9 +2255,9 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"00B8FFFF00B80000"
     )
         port map (
-      I0 => p_0_in1_in(4),
+      I0 => p_0_in1_in(12),
       I1 => Mantissa_shift_B10_out(3),
-      I2 => \pipe_Mantissa_shift_A_reg[21]\(5),
+      I2 => p_0_in1_in(6),
       I3 => Mantissa_shift_B10_out(4),
       I4 => Mantissa_shift_B10_out(2),
       I5 => \pipe_Mantissa_shift_B[10]_i_4_n_0\,
@@ -2268,7 +2270,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
         port map (
       I0 => p_0_in(3),
       I1 => Mantissa_shift_B10_out(3),
-      I2 => \pipe_Mantissa_shift_A_reg[21]\(1),
+      I2 => p_0_in1_in(2),
       I3 => Mantissa_shift_B10_out(4),
       O => \pipe_Mantissa_shift_B[10]_i_4_n_0\
     );
@@ -2278,7 +2280,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => \pipe_Mantissa_shift_A_reg[21]\(2),
+      I1 => p_0_in1_in(3),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[12]_i_2_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2300,11 +2302,11 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"00000000FCBBFC88"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(6),
+      I0 => p_0_in1_in(7),
       I1 => Mantissa_shift_B10_out(2),
-      I2 => \pipe_Mantissa_shift_A_reg[21]\(7),
+      I2 => p_0_in1_in(10),
       I3 => Mantissa_shift_B10_out(3),
-      I4 => \pipe_Mantissa_shift_A_reg[21]\(2),
+      I4 => p_0_in1_in(3),
       I5 => Mantissa_shift_B10_out(4),
       O => \pipe_Mantissa_shift_B[11]_i_3_n_0\
     );
@@ -2314,7 +2316,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => \pipe_Mantissa_shift_A_reg[21]\(3),
+      I1 => p_0_in1_in(4),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[13]_i_2_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2336,11 +2338,11 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"0000000030BB3088"
     )
         port map (
-      I0 => p_0_in1_in(1),
+      I0 => p_0_in1_in(8),
       I1 => Mantissa_shift_B10_out(2),
       I2 => p_0_in(5),
       I3 => Mantissa_shift_B10_out(3),
-      I4 => \pipe_Mantissa_shift_A_reg[21]\(3),
+      I4 => p_0_in1_in(4),
       I5 => Mantissa_shift_B10_out(4),
       O => \pipe_Mantissa_shift_B[12]_i_3_n_0\
     );
@@ -2350,7 +2352,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => \pipe_Mantissa_shift_A_reg[21]\(4),
+      I1 => p_0_in1_in(5),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[14]_i_2_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2372,11 +2374,11 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"0000000030BB3088"
     )
         port map (
-      I0 => p_0_in1_in(2),
+      I0 => p_0_in1_in(9),
       I1 => Mantissa_shift_B10_out(2),
-      I2 => p_0_in1_in(3),
+      I2 => p_0_in1_in(11),
       I3 => Mantissa_shift_B10_out(3),
-      I4 => \pipe_Mantissa_shift_A_reg[21]\(4),
+      I4 => p_0_in1_in(5),
       I5 => Mantissa_shift_B10_out(4),
       O => \pipe_Mantissa_shift_B[13]_i_3_n_0\
     );
@@ -2386,7 +2388,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => \pipe_Mantissa_shift_A_reg[21]\(5),
+      I1 => p_0_in1_in(6),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[15]_i_2_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2410,9 +2412,9 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
         port map (
       I0 => p_0_in(3),
       I1 => Mantissa_shift_B10_out(2),
-      I2 => p_0_in1_in(4),
+      I2 => p_0_in1_in(12),
       I3 => Mantissa_shift_B10_out(3),
-      I4 => \pipe_Mantissa_shift_A_reg[21]\(5),
+      I4 => p_0_in1_in(6),
       I5 => Mantissa_shift_B10_out(4),
       O => \pipe_Mantissa_shift_B[14]_i_3_n_0\
     );
@@ -2422,7 +2424,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => \pipe_Mantissa_shift_A_reg[21]\(6),
+      I1 => p_0_in1_in(7),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[15]_i_2_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2434,9 +2436,9 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"00B8FFFF00B80000"
     )
         port map (
-      I0 => p_0_in1_in(3),
+      I0 => p_0_in1_in(11),
       I1 => Mantissa_shift_B10_out(2),
-      I2 => p_0_in1_in(2),
+      I2 => p_0_in1_in(9),
       I3 => \pipe_Mantissa_shift_B[23]_i_6_n_0\,
       I4 => Mantissa_shift_B10_out(1),
       I5 => \pipe_Mantissa_shift_B[15]_i_3_n_0\,
@@ -2447,9 +2449,9 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"000033B8"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(7),
+      I0 => p_0_in1_in(10),
       I1 => Mantissa_shift_B10_out(2),
-      I2 => \pipe_Mantissa_shift_A_reg[21]\(6),
+      I2 => p_0_in1_in(7),
       I3 => Mantissa_shift_B10_out(3),
       I4 => Mantissa_shift_B10_out(4),
       O => \pipe_Mantissa_shift_B[15]_i_3_n_0\
@@ -2460,7 +2462,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => p_0_in1_in(1),
+      I1 => p_0_in1_in(8),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[17]_i_3_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2484,7 +2486,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
         port map (
       I0 => p_0_in(5),
       I1 => Mantissa_shift_B10_out(2),
-      I2 => p_0_in1_in(1),
+      I2 => p_0_in1_in(8),
       I3 => Mantissa_shift_B10_out(3),
       I4 => Mantissa_shift_B10_out(4),
       O => \pipe_Mantissa_shift_B[16]_i_3_n_0\
@@ -2495,7 +2497,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => p_0_in1_in(2),
+      I1 => p_0_in1_in(9),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[18]_i_2_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2518,11 +2520,11 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"00000000FCBBFC88"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(7),
+      I0 => p_0_in1_in(10),
       I1 => Mantissa_shift_B10_out(1),
-      I2 => p_0_in1_in(3),
+      I2 => p_0_in1_in(11),
       I3 => Mantissa_shift_B10_out(2),
-      I4 => p_0_in1_in(2),
+      I4 => p_0_in1_in(9),
       I5 => \pipe_Mantissa_shift_B[23]_i_6_n_0\,
       O => \pipe_Mantissa_shift_B[17]_i_3_n_0\
     );
@@ -2557,7 +2559,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"000000B8"
     )
         port map (
-      I0 => p_0_in1_in(4),
+      I0 => p_0_in1_in(12),
       I1 => Mantissa_shift_B10_out(2),
       I2 => p_0_in(3),
       I3 => Mantissa_shift_B10_out(3),
@@ -2570,7 +2572,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => \pipe_Mantissa_shift_A_reg[21]\(7),
+      I1 => p_0_in1_in(10),
       I2 => \pipe_Mantissa_shift_B[20]_i_3_n_0\,
       I3 => Mantissa_shift_B10_out(0),
       I4 => \pipe_Mantissa_shift_B[19]_i_2_n_0\,
@@ -2582,8 +2584,8 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"FFFFFFF5FFFFFF03"
     )
         port map (
-      I0 => p_0_in1_in(3),
-      I1 => \pipe_Mantissa_shift_A_reg[21]\(7),
+      I0 => p_0_in1_in(11),
+      I1 => p_0_in1_in(10),
       I2 => Mantissa_shift_B10_out(2),
       I3 => Mantissa_shift_B10_out(4),
       I4 => Mantissa_shift_B10_out(3),
@@ -2620,10 +2622,10 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"3808"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(4),
+      I0 => p_0_in1_in(5),
       I1 => Mantissa_shift_B10_out(3),
       I2 => Mantissa_shift_B10_out(4),
-      I3 => p_0_in1_in(3),
+      I3 => p_0_in1_in(11),
       O => \pipe_Mantissa_shift_B[1]_i_3_n_0\
     );
 \pipe_Mantissa_shift_B[1]_i_4\: unisim.vcomponents.LUT5
@@ -2633,7 +2635,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
         port map (
       I0 => p_0_in(3),
       I1 => Mantissa_shift_B10_out(3),
-      I2 => p_0_in1_in(2),
+      I2 => p_0_in1_in(9),
       I3 => Mantissa_shift_B10_out(4),
       I4 => p_0_in(1),
       O => \pipe_Mantissa_shift_B[1]_i_4_n_0\
@@ -2658,7 +2660,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
         port map (
       I0 => Mantissa_shift_B10_out(1),
       I1 => Mantissa_shift_B10_out(2),
-      I2 => p_0_in1_in(3),
+      I2 => p_0_in1_in(11),
       I3 => Mantissa_shift_B10_out(3),
       I4 => Mantissa_shift_B10_out(4),
       O => \pipe_Mantissa_shift_B[20]_i_2_n_0\
@@ -2673,7 +2675,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       I2 => Mantissa_shift_B10_out(2),
       I3 => p_0_in(5),
       I4 => Mantissa_shift_B10_out(1),
-      I5 => p_0_in1_in(4),
+      I5 => p_0_in1_in(12),
       O => \pipe_Mantissa_shift_B[20]_i_3_n_0\
     );
 \pipe_Mantissa_shift_B[20]_i_4\: unisim.vcomponents.LUT4
@@ -2693,7 +2695,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => p_0_in1_in(3),
+      I1 => p_0_in1_in(11),
       I2 => \pipe_Mantissa_shift_B[21]_i_2_n_0\,
       I3 => Mantissa_shift_B10_out(5),
       I4 => Mantissa_shift_B10_out(6),
@@ -2705,11 +2707,11 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"FFFFFFFFFFC4FFC7"
     )
         port map (
-      I0 => p_0_in1_in(4),
+      I0 => p_0_in1_in(12),
       I1 => Mantissa_shift_B10_out(0),
       I2 => Mantissa_shift_B10_out(1),
       I3 => Mantissa_shift_B10_out(2),
-      I4 => p_0_in1_in(3),
+      I4 => p_0_in1_in(11),
       I5 => \pipe_Mantissa_shift_B[23]_i_6_n_0\,
       O => \pipe_Mantissa_shift_B[21]_i_2_n_0\
     );
@@ -2719,7 +2721,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => Mantissa_shift_B10_out(0),
-      I1 => p_0_in1_in(4),
+      I1 => p_0_in1_in(12),
       I2 => \pipe_Mantissa_shift_B_reg[22]\,
       I3 => \pipe_Mantissa_shift_B[23]_i_3_n_0\,
       O => D(22)
@@ -2763,7 +2765,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => \pipe_Mantissa_shift_A_reg[21]\(0),
+      I1 => p_0_in1_in(0),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[3]_i_2_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2795,11 +2797,11 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"30BB3088"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(1),
+      I0 => p_0_in1_in(2),
       I1 => Mantissa_shift_B10_out(3),
       I2 => p_0_in(3),
       I3 => Mantissa_shift_B10_out(4),
-      I4 => \pipe_Mantissa_shift_A_reg[21]\(0),
+      I4 => p_0_in1_in(0),
       O => \pipe_Mantissa_shift_B[2]_i_4_n_0\
     );
 \pipe_Mantissa_shift_B[3]_i_1\: unisim.vcomponents.LUT6
@@ -2808,7 +2810,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => p_0_in1_in(3),
+      I1 => p_0_in1_in(11),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[3]_i_2_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2830,10 +2832,10 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"3B38FFFF3B380000"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(6),
+      I0 => p_0_in1_in(7),
       I1 => Mantissa_shift_B10_out(3),
       I2 => Mantissa_shift_B10_out(4),
-      I3 => p_0_in1_in(3),
+      I3 => p_0_in1_in(11),
       I4 => Mantissa_shift_B10_out(2),
       I5 => \pipe_Mantissa_shift_B[3]_i_4_n_0\,
       O => \pipe_Mantissa_shift_B[3]_i_3_n_0\
@@ -2843,11 +2845,11 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"30BB3088"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(2),
+      I0 => p_0_in1_in(3),
       I1 => Mantissa_shift_B10_out(3),
-      I2 => \pipe_Mantissa_shift_A_reg[21]\(7),
+      I2 => p_0_in1_in(10),
       I3 => Mantissa_shift_B10_out(4),
-      I4 => p_0_in1_in(3),
+      I4 => p_0_in1_in(11),
       O => \pipe_Mantissa_shift_B[3]_i_4_n_0\
     );
 \pipe_Mantissa_shift_B[4]_i_1\: unisim.vcomponents.LUT6
@@ -2856,7 +2858,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => p_0_in1_in(0),
+      I1 => p_0_in1_in(1),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[5]_i_2_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2878,7 +2880,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"00B8FFFF00B80000"
     )
         port map (
-      I0 => p_0_in1_in(1),
+      I0 => p_0_in1_in(8),
       I1 => Mantissa_shift_B10_out(3),
       I2 => p_0_in(0),
       I3 => Mantissa_shift_B10_out(4),
@@ -2915,7 +2917,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       I0 => p_0_in(3),
       I1 => Mantissa_shift_B10_out(4),
       I2 => Mantissa_shift_B10_out(3),
-      I3 => p_0_in1_in(2),
+      I3 => p_0_in1_in(9),
       I4 => Mantissa_shift_B10_out(2),
       I5 => \pipe_Mantissa_shift_B[1]_i_3_n_0\,
       O => \pipe_Mantissa_shift_B[5]_i_3_n_0\
@@ -2926,7 +2928,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => \pipe_Mantissa_shift_A_reg[21]\(7),
+      I1 => p_0_in1_in(10),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[7]_i_2_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2950,7 +2952,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
         port map (
       I0 => p_0_in(3),
       I1 => Mantissa_shift_B10_out(3),
-      I2 => \pipe_Mantissa_shift_A_reg[21]\(1),
+      I2 => p_0_in1_in(2),
       I3 => Mantissa_shift_B10_out(4),
       I4 => Mantissa_shift_B10_out(2),
       I5 => \pipe_Mantissa_shift_B[6]_i_4_n_0\,
@@ -2961,11 +2963,11 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"30BB3088"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(5),
+      I0 => p_0_in1_in(6),
       I1 => Mantissa_shift_B10_out(3),
-      I2 => p_0_in1_in(4),
+      I2 => p_0_in1_in(12),
       I3 => Mantissa_shift_B10_out(4),
-      I4 => \pipe_Mantissa_shift_A_reg[21]\(7),
+      I4 => p_0_in1_in(10),
       O => \pipe_Mantissa_shift_B[6]_i_4_n_0\
     );
 \pipe_Mantissa_shift_B[7]_i_1\: unisim.vcomponents.LUT6
@@ -2974,7 +2976,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
     )
         port map (
       I0 => \pipe_Mantissa_shift_B_reg[22]\,
-      I1 => p_0_in1_in(3),
+      I1 => p_0_in1_in(11),
       I2 => \pipe_Mantissa_shift_B[17]_i_2_n_0\,
       I3 => \pipe_Mantissa_shift_B[8]_i_2_n_0\,
       I4 => Mantissa_shift_B10_out(0),
@@ -2996,9 +2998,9 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"00B8FFFF00B80000"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(7),
+      I0 => p_0_in1_in(10),
       I1 => Mantissa_shift_B10_out(3),
-      I2 => \pipe_Mantissa_shift_A_reg[21]\(2),
+      I2 => p_0_in1_in(3),
       I3 => Mantissa_shift_B10_out(4),
       I4 => Mantissa_shift_B10_out(2),
       I5 => \pipe_Mantissa_shift_B[7]_i_4_n_0\,
@@ -3009,10 +3011,10 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"3B38"
     )
         port map (
-      I0 => \pipe_Mantissa_shift_A_reg[21]\(6),
+      I0 => p_0_in1_in(7),
       I1 => Mantissa_shift_B10_out(3),
       I2 => Mantissa_shift_B10_out(4),
-      I3 => p_0_in1_in(3),
+      I3 => p_0_in1_in(11),
       O => \pipe_Mantissa_shift_B[7]_i_4_n_0\
     );
 \pipe_Mantissa_shift_B[8]_i_1\: unisim.vcomponents.LUT6
@@ -3045,7 +3047,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
         port map (
       I0 => p_0_in(5),
       I1 => Mantissa_shift_B10_out(3),
-      I2 => \pipe_Mantissa_shift_A_reg[21]\(3),
+      I2 => p_0_in1_in(4),
       I3 => Mantissa_shift_B10_out(4),
       I4 => Mantissa_shift_B10_out(2),
       I5 => \pipe_Mantissa_shift_B[8]_i_4_n_0\,
@@ -3056,7 +3058,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"00B8"
     )
         port map (
-      I0 => p_0_in1_in(1),
+      I0 => p_0_in1_in(8),
       I1 => Mantissa_shift_B10_out(3),
       I2 => p_0_in(0),
       I3 => Mantissa_shift_B10_out(4),
@@ -3090,9 +3092,9 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       INIT => X"00B8FFFF00B80000"
     )
         port map (
-      I0 => p_0_in1_in(3),
+      I0 => p_0_in1_in(11),
       I1 => Mantissa_shift_B10_out(3),
-      I2 => \pipe_Mantissa_shift_A_reg[21]\(4),
+      I2 => p_0_in1_in(5),
       I3 => Mantissa_shift_B10_out(4),
       I4 => Mantissa_shift_B10_out(2),
       I5 => \pipe_Mantissa_shift_B[9]_i_4_n_0\,
@@ -3106,7 +3108,7 @@ Mantissa_shift_B1_carry_i_4: unisim.vcomponents.LUT2
       I0 => p_0_in(3),
       I1 => Mantissa_shift_B10_out(4),
       I2 => Mantissa_shift_B10_out(3),
-      I3 => p_0_in1_in(2),
+      I3 => p_0_in1_in(9),
       O => \pipe_Mantissa_shift_B[9]_i_4_n_0\
     );
 end STRUCTURE;
@@ -3119,7 +3121,7 @@ entity Cortex_A9_fpadd_ip_0_0_debounce_module is
     current_state : out STD_LOGIC_VECTOR ( 1 downto 0 );
     Q : in STD_LOGIC_VECTOR ( 0 to 0 );
     s00_axi_aclk : in STD_LOGIC;
-    rst : in STD_LOGIC
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of Cortex_A9_fpadd_ip_0_0_debounce_module : entity is "debounce_module";
@@ -3319,7 +3321,7 @@ begin
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => \FSM_sequential_current_state[0]_i_1_n_0\,
       Q => \^current_state\(0)
     );
@@ -3327,7 +3329,7 @@ begin
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => \FSM_sequential_current_state[1]_i_1_n_0\,
       Q => \^current_state\(1)
     );
@@ -3850,7 +3852,7 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(0),
       Q => counter(0)
     );
@@ -3859,14 +3861,14 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => '1',
       D => p_0_in(10),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter(10)
     );
 \counter_reg[11]\: unisim.vcomponents.FDCE
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(11),
       Q => counter(11)
     );
@@ -3875,14 +3877,14 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => '1',
       D => p_0_in(12),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter(12)
     );
 \counter_reg[13]\: unisim.vcomponents.FDCE
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(13),
       Q => counter(13)
     );
@@ -3890,7 +3892,7 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(14),
       Q => counter(14)
     );
@@ -3899,14 +3901,14 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => '1',
       D => p_0_in(15),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter(15)
     );
 \counter_reg[16]\: unisim.vcomponents.FDCE
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(16),
       Q => counter(16)
     );
@@ -3914,7 +3916,7 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(17),
       Q => counter(17)
     );
@@ -3922,7 +3924,7 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(18),
       Q => counter(18)
     );
@@ -3931,14 +3933,14 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => '1',
       D => p_0_in(19),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter(19)
     );
 \counter_reg[1]\: unisim.vcomponents.FDCE
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(1),
       Q => counter(1)
     );
@@ -3947,14 +3949,14 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => '1',
       D => p_0_in(20),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter(20)
     );
 \counter_reg[21]\: unisim.vcomponents.FDCE
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(21),
       Q => counter(21)
     );
@@ -3962,7 +3964,7 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(22),
       Q => counter(22)
     );
@@ -3971,14 +3973,14 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => '1',
       D => p_0_in(23),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter(23)
     );
 \counter_reg[2]\: unisim.vcomponents.FDCE
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(2),
       Q => counter(2)
     );
@@ -3986,7 +3988,7 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(3),
       Q => counter(3)
     );
@@ -3994,7 +3996,7 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(4),
       Q => counter(4)
     );
@@ -4002,7 +4004,7 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(5),
       Q => counter(5)
     );
@@ -4010,7 +4012,7 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(6),
       Q => counter(6)
     );
@@ -4019,14 +4021,14 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => '1',
       D => p_0_in(7),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter(7)
     );
 \counter_reg[8]\: unisim.vcomponents.FDCE
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => p_0_in(8),
       Q => counter(8)
     );
@@ -4035,7 +4037,7 @@ counter0_carry_i_4: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => '1',
       D => p_0_in(9),
-      PRE => rst,
+      PRE => AS(0),
       Q => counter(9)
     );
 end STRUCTURE;
@@ -4112,10 +4114,10 @@ architecture STRUCTURE of Cortex_A9_fpadd_ip_0_0_mantissas_addition_module is
   signal \out[6]_i_11_n_0\ : STD_LOGIC;
   signal \out[6]_i_12_n_0\ : STD_LOGIC;
   signal \out[6]_i_9_n_0\ : STD_LOGIC;
-  signal \out[7]_i_19_n_0\ : STD_LOGIC;
   signal \out[7]_i_20_n_0\ : STD_LOGIC;
   signal \out[7]_i_21_n_0\ : STD_LOGIC;
   signal \out[7]_i_22_n_0\ : STD_LOGIC;
+  signal \out[7]_i_23_n_0\ : STD_LOGIC;
   signal \out_reg[18]_i_3_n_0\ : STD_LOGIC;
   signal \out_reg[18]_i_3_n_1\ : STD_LOGIC;
   signal \out_reg[18]_i_3_n_2\ : STD_LOGIC;
@@ -4136,10 +4138,10 @@ architecture STRUCTURE of Cortex_A9_fpadd_ip_0_0_mantissas_addition_module is
   signal \out_reg[6]_i_3_n_1\ : STD_LOGIC;
   signal \out_reg[6]_i_3_n_2\ : STD_LOGIC;
   signal \out_reg[6]_i_3_n_3\ : STD_LOGIC;
-  signal \out_reg[7]_i_12_n_0\ : STD_LOGIC;
-  signal \out_reg[7]_i_12_n_1\ : STD_LOGIC;
-  signal \out_reg[7]_i_12_n_2\ : STD_LOGIC;
-  signal \out_reg[7]_i_12_n_3\ : STD_LOGIC;
+  signal \out_reg[7]_i_13_n_0\ : STD_LOGIC;
+  signal \out_reg[7]_i_13_n_1\ : STD_LOGIC;
+  signal \out_reg[7]_i_13_n_2\ : STD_LOGIC;
+  signal \out_reg[7]_i_13_n_3\ : STD_LOGIC;
   signal p_2_in : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal NLW_S_result1_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_S_result1_carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -4164,8 +4166,8 @@ architecture STRUCTURE of Cortex_A9_fpadd_ip_0_0_mantissas_addition_module is
   attribute METHODOLOGY_DRC_VIOS of \out_reg[6]_i_3\ : label is "{SYNTH-8 {cell *THIS*}}";
   attribute ADDER_THRESHOLD of \out_reg[6]_i_4\ : label is 35;
   attribute METHODOLOGY_DRC_VIOS of \out_reg[6]_i_4\ : label is "{SYNTH-8 {cell *THIS*}}";
-  attribute ADDER_THRESHOLD of \out_reg[7]_i_12\ : label is 35;
-  attribute METHODOLOGY_DRC_VIOS of \out_reg[7]_i_12\ : label is "{SYNTH-8 {cell *THIS*}}";
+  attribute ADDER_THRESHOLD of \out_reg[7]_i_13\ : label is 35;
+  attribute METHODOLOGY_DRC_VIOS of \out_reg[7]_i_13\ : label is "{SYNTH-8 {cell *THIS*}}";
 begin
 S_result1_carry: unisim.vcomponents.CARRY4
      port map (
@@ -4862,7 +4864,7 @@ S_result1_carry_i_8: unisim.vcomponents.LUT4
       I3 => \out_reg[21]_i_3_0\(7),
       O => \out[6]_i_9_n_0\
     );
-\out[7]_i_15\: unisim.vcomponents.LUT5
+\out[7]_i_16\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"ABBAA88A"
     )
@@ -4874,7 +4876,7 @@ S_result1_carry_i_8: unisim.vcomponents.LUT4
       I4 => Q(11),
       O => p_2_in(11)
     );
-\out[7]_i_16\: unisim.vcomponents.LUT5
+\out[7]_i_17\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"ABBAA88A"
     )
@@ -4886,7 +4888,7 @@ S_result1_carry_i_8: unisim.vcomponents.LUT4
       I4 => Q(10),
       O => p_2_in(10)
     );
-\out[7]_i_17\: unisim.vcomponents.LUT5
+\out[7]_i_18\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"ABBAA88A"
     )
@@ -4898,7 +4900,7 @@ S_result1_carry_i_8: unisim.vcomponents.LUT4
       I4 => Q(9),
       O => p_2_in(9)
     );
-\out[7]_i_18\: unisim.vcomponents.LUT5
+\out[7]_i_19\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"ABBAA88A"
     )
@@ -4910,7 +4912,7 @@ S_result1_carry_i_8: unisim.vcomponents.LUT4
       I4 => Q(8),
       O => p_2_in(8)
     );
-\out[7]_i_19\: unisim.vcomponents.LUT4
+\out[7]_i_20\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"6996"
     )
@@ -4919,9 +4921,9 @@ S_result1_carry_i_8: unisim.vcomponents.LUT4
       I1 => pipe_S_B,
       I2 => pipe_S_A,
       I3 => \out_reg[21]_i_3_0\(11),
-      O => \out[7]_i_19_n_0\
+      O => \out[7]_i_20_n_0\
     );
-\out[7]_i_20\: unisim.vcomponents.LUT4
+\out[7]_i_21\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"6996"
     )
@@ -4930,9 +4932,9 @@ S_result1_carry_i_8: unisim.vcomponents.LUT4
       I1 => pipe_S_B,
       I2 => pipe_S_A,
       I3 => \out_reg[21]_i_3_0\(10),
-      O => \out[7]_i_20_n_0\
+      O => \out[7]_i_21_n_0\
     );
-\out[7]_i_21\: unisim.vcomponents.LUT4
+\out[7]_i_22\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"6996"
     )
@@ -4941,9 +4943,9 @@ S_result1_carry_i_8: unisim.vcomponents.LUT4
       I1 => pipe_S_B,
       I2 => pipe_S_A,
       I3 => \out_reg[21]_i_3_0\(9),
-      O => \out[7]_i_21_n_0\
+      O => \out[7]_i_22_n_0\
     );
-\out[7]_i_22\: unisim.vcomponents.LUT4
+\out[7]_i_23\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"6996"
     )
@@ -4952,7 +4954,7 @@ S_result1_carry_i_8: unisim.vcomponents.LUT4
       I1 => pipe_S_B,
       I2 => pipe_S_A,
       I3 => \out_reg[21]_i_3_0\(8),
-      O => \out[7]_i_22_n_0\
+      O => \out[7]_i_23_n_0\
     );
 \out_reg[18]_i_3\: unisim.vcomponents.CARRY4
      port map (
@@ -5002,7 +5004,7 @@ S_result1_carry_i_8: unisim.vcomponents.LUT4
     );
 \out_reg[31]_i_4\: unisim.vcomponents.CARRY4
      port map (
-      CI => \out_reg[7]_i_12_n_0\,
+      CI => \out_reg[7]_i_13_n_0\,
       CO(3) => \out_reg[31]_i_4_n_0\,
       CO(2) => \out_reg[31]_i_4_n_1\,
       CO(1) => \out_reg[31]_i_4_n_2\,
@@ -5041,20 +5043,20 @@ S_result1_carry_i_8: unisim.vcomponents.LUT4
       S(3 downto 1) => B"000",
       S(0) => \out_reg[0]\(0)
     );
-\out_reg[7]_i_12\: unisim.vcomponents.CARRY4
+\out_reg[7]_i_13\: unisim.vcomponents.CARRY4
      port map (
       CI => \out_reg[6]_i_3_n_0\,
-      CO(3) => \out_reg[7]_i_12_n_0\,
-      CO(2) => \out_reg[7]_i_12_n_1\,
-      CO(1) => \out_reg[7]_i_12_n_2\,
-      CO(0) => \out_reg[7]_i_12_n_3\,
+      CO(3) => \out_reg[7]_i_13_n_0\,
+      CO(2) => \out_reg[7]_i_13_n_1\,
+      CO(1) => \out_reg[7]_i_13_n_2\,
+      CO(0) => \out_reg[7]_i_13_n_3\,
       CYINIT => '0',
       DI(3 downto 0) => p_2_in(11 downto 8),
       O(3 downto 0) => data0(10 downto 7),
-      S(3) => \out[7]_i_19_n_0\,
-      S(2) => \out[7]_i_20_n_0\,
-      S(1) => \out[7]_i_21_n_0\,
-      S(0) => \out[7]_i_22_n_0\
+      S(3) => \out[7]_i_20_n_0\,
+      S(2) => \out[7]_i_21_n_0\,
+      S(1) => \out[7]_i_22_n_0\,
+      S(0) => \out[7]_i_23_n_0\
     );
 end STRUCTURE;
 library IEEE;
@@ -5077,12 +5079,12 @@ entity Cortex_A9_fpadd_ip_0_0_post_normalization_module is
     \out_reg[31]_i_4_1\ : out STD_LOGIC;
     \out_reg[21]_i_3_0\ : out STD_LOGIC;
     \i__carry_i_12_0\ : out STD_LOGIC;
-    \out_reg[7]_i_12\ : out STD_LOGIC;
+    \out_reg[7]_i_13\ : out STD_LOGIC;
     \out_reg[6]_i_3_0\ : out STD_LOGIC;
     \out_reg[18]_i_3_1\ : out STD_LOGIC;
     \out_reg[21]_i_3_1\ : out STD_LOGIC;
     D : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    \out_reg[7]_i_12_0\ : out STD_LOGIC;
+    \out_reg[7]_i_13_0\ : out STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 6 downto 0 );
     \out_reg[0]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     data0 : in STD_LOGIC_VECTOR ( 22 downto 0 );
@@ -5142,8 +5144,8 @@ architecture STRUCTURE of Cortex_A9_fpadd_ip_0_0_post_normalization_module is
   signal \^out_reg[6]_i_3\ : STD_LOGIC;
   signal \^out_reg[6]_i_3_0\ : STD_LOGIC;
   signal \^out_reg[6]_i_4\ : STD_LOGIC;
-  signal \^out_reg[7]_i_12\ : STD_LOGIC;
-  signal \^out_reg[7]_i_12_0\ : STD_LOGIC;
+  signal \^out_reg[7]_i_13\ : STD_LOGIC;
+  signal \^out_reg[7]_i_13_0\ : STD_LOGIC;
   signal \NLW__inferred__1/i__carry__0_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   attribute ADDER_THRESHOLD : integer;
   attribute ADDER_THRESHOLD of \_inferred__1/i__carry\ : label is 35;
@@ -5190,8 +5192,8 @@ begin
   \out_reg[6]_i_3\ <= \^out_reg[6]_i_3\;
   \out_reg[6]_i_3_0\ <= \^out_reg[6]_i_3_0\;
   \out_reg[6]_i_4\ <= \^out_reg[6]_i_4\;
-  \out_reg[7]_i_12\ <= \^out_reg[7]_i_12\;
-  \out_reg[7]_i_12_0\ <= \^out_reg[7]_i_12_0\;
+  \out_reg[7]_i_13\ <= \^out_reg[7]_i_13\;
+  \out_reg[7]_i_13_0\ <= \^out_reg[7]_i_13_0\;
 \_inferred__1/i__carry\: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
@@ -5324,7 +5326,7 @@ begin
       INIT => X"00000002"
     )
         port map (
-      I0 => \^out_reg[7]_i_12_0\,
+      I0 => \^out_reg[7]_i_13_0\,
       I1 => data0(14),
       I2 => data0(13),
       I3 => data0(12),
@@ -5388,7 +5390,7 @@ begin
       INIT => X"7777777777777775"
     )
         port map (
-      I0 => \^out_reg[7]_i_12_0\,
+      I0 => \^out_reg[7]_i_13_0\,
       I1 => \^out_reg[6]_i_3\,
       I2 => data0(1),
       I3 => data0(2),
@@ -5442,7 +5444,7 @@ begin
       I3 => \i__carry_i_26_n_0\,
       I4 => data0(9),
       I5 => data0(10),
-      O => \^out_reg[7]_i_12\
+      O => \^out_reg[7]_i_13\
     );
 \i__carry_i_18\: unisim.vcomponents.LUT6
     generic map(
@@ -5610,7 +5612,7 @@ begin
       INIT => X"FFFFFFFFFFFF00F4"
     )
         port map (
-      I0 => \^out_reg[7]_i_12\,
+      I0 => \^out_reg[7]_i_13\,
       I1 => \^out_reg[6]_i_3_0\,
       I2 => \^out_reg[18]_i_3_1\,
       I3 => \^out_reg[21]_i_3_1\,
@@ -5662,7 +5664,7 @@ begin
       I0 => \out_reg[0]\(0),
       I1 => \^out_reg[21]_i_3\,
       I2 => \^out_reg[18]_i_3\,
-      I3 => \^out_reg[7]_i_12_0\,
+      I3 => \^out_reg[7]_i_13_0\,
       I4 => \^out_reg[31]_i_4_0\,
       O => \^i__carry_i_12_0\
     );
@@ -5747,14 +5749,14 @@ begin
       I1 => data0(8),
       I2 => data0(9),
       I3 => data0(10),
-      O => \^out_reg[7]_i_12_0\
+      O => \^out_reg[7]_i_13_0\
     );
-\out[7]_i_6\: unisim.vcomponents.LUT6
+\out[7]_i_7\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFFFFFF00F4"
     )
         port map (
-      I0 => \^out_reg[7]_i_12\,
+      I0 => \^out_reg[7]_i_13\,
       I1 => \^out_reg[6]_i_3_0\,
       I2 => \^out_reg[18]_i_3_1\,
       I3 => \^out_reg[21]_i_3_1\,
@@ -5771,7 +5773,7 @@ entity Cortex_A9_fpadd_ip_0_0_SSDisplays_module is
   port (
     digit_sel_reg_0 : out STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
-    rst : in STD_LOGIC
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of Cortex_A9_fpadd_ip_0_0_SSDisplays_module : entity is "SSDisplays_module";
@@ -5784,16 +5786,16 @@ begin
   digit_sel_reg_0 <= \^digit_sel_reg_0\;
 SSD_clock_inst: entity work.Cortex_A9_fpadd_ip_0_0_SSD_clock_module_1
      port map (
+      AS(0) => AS(0),
       \counter_reg[4]_0\ => SSD_clock_inst_n_0,
       digit_sel_reg => \^digit_sel_reg_0\,
-      rst => rst,
       s00_axi_aclk => s00_axi_aclk
     );
 digit_sel_reg: unisim.vcomponents.FDCE
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => SSD_clock_inst_n_0,
       Q => \^digit_sel_reg_0\
     );
@@ -5806,7 +5808,7 @@ entity Cortex_A9_fpadd_ip_0_0_SSDisplays_module_0 is
   port (
     digit_sel_reg_0 : out STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
-    rst : in STD_LOGIC
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of Cortex_A9_fpadd_ip_0_0_SSDisplays_module_0 : entity is "SSDisplays_module";
@@ -5819,16 +5821,16 @@ begin
   digit_sel_reg_0 <= \^digit_sel_reg_0\;
 SSD_clock_inst: entity work.Cortex_A9_fpadd_ip_0_0_SSD_clock_module
      port map (
+      AS(0) => AS(0),
       \counter_reg[4]_0\ => SSD_clock_inst_n_0,
       digit_sel_reg => \^digit_sel_reg_0\,
-      rst => rst,
       s00_axi_aclk => s00_axi_aclk
     );
 digit_sel_reg: unisim.vcomponents.FDCE
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => AS(0),
       D => SSD_clock_inst_n_0,
       Q => \^digit_sel_reg_0\
     );
@@ -5839,6 +5841,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity Cortex_A9_fpadd_ip_0_0_fpadd_pipelined is
   port (
+    AS : out STD_LOGIC_VECTOR ( 0 to 0 );
     leds : out STD_LOGIC_VECTOR ( 7 downto 0 );
     e0 : out STD_LOGIC;
     c0 : out STD_LOGIC;
@@ -5854,15 +5857,16 @@ entity Cortex_A9_fpadd_ip_0_0_fpadd_pipelined is
     f1 : out STD_LOGIC;
     b1 : out STD_LOGIC;
     a1 : out STD_LOGIC;
-    s00_axi_aclk : in STD_LOGIC;
-    rst : in STD_LOGIC;
-    numA : in STD_LOGIC_VECTOR ( 19 downto 0 );
+    s00_axi_aresetn : in STD_LOGIC;
     numB : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    s00_axi_aclk : in STD_LOGIC;
+    \B_reg[30]_0\ : in STD_LOGIC;
+    \B_reg[2]_0\ : in STD_LOGIC;
+    \B_reg[16]_0\ : in STD_LOGIC;
+    numA : in STD_LOGIC_VECTOR ( 19 downto 0 );
     \A_reg[17]_0\ : in STD_LOGIC;
     \B_reg[22]_0\ : in STD_LOGIC;
-    \A_reg[20]_0\ : in STD_LOGIC;
-    D : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    \A_reg[14]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
+    D : in STD_LOGIC_VECTOR ( 0 to 0 );
     a0_0 : in STD_LOGIC;
     a1_0 : in STD_LOGIC
   );
@@ -5871,7 +5875,7 @@ entity Cortex_A9_fpadd_ip_0_0_fpadd_pipelined is
 end Cortex_A9_fpadd_ip_0_0_fpadd_pipelined;
 
 architecture STRUCTURE of Cortex_A9_fpadd_ip_0_0_fpadd_pipelined is
-  signal \B[31]_i_1_n_0\ : STD_LOGIC;
+  signal \^as\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal EXP_A : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal EXP_B : STD_LOGIC_VECTOR ( 7 downto 1 );
   signal EXP_normal_result : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -5956,13 +5960,13 @@ architecture STRUCTURE of Cortex_A9_fpadd_ip_0_0_fpadd_pipelined is
   signal \out[6]_i_2_n_0\ : STD_LOGIC;
   signal \out[7]_i_10_n_0\ : STD_LOGIC;
   signal \out[7]_i_11_n_0\ : STD_LOGIC;
-  signal \out[7]_i_13_n_0\ : STD_LOGIC;
+  signal \out[7]_i_12_n_0\ : STD_LOGIC;
   signal \out[7]_i_14_n_0\ : STD_LOGIC;
-  signal \out[7]_i_2_n_0\ : STD_LOGIC;
+  signal \out[7]_i_15_n_0\ : STD_LOGIC;
   signal \out[7]_i_3_n_0\ : STD_LOGIC;
   signal \out[7]_i_4_n_0\ : STD_LOGIC;
   signal \out[7]_i_5_n_0\ : STD_LOGIC;
-  signal \out[7]_i_7_n_0\ : STD_LOGIC;
+  signal \out[7]_i_6_n_0\ : STD_LOGIC;
   signal \out[7]_i_8_n_0\ : STD_LOGIC;
   signal \out[7]_i_9_n_0\ : STD_LOGIC;
   signal p_0_in : STD_LOGIC_VECTOR ( 22 downto 0 );
@@ -6014,9 +6018,9 @@ architecture STRUCTURE of Cortex_A9_fpadd_ip_0_0_fpadd_pipelined is
   attribute SOFT_HLUTNM of \out[31]_i_3\ : label is "soft_lutpair78";
   attribute SOFT_HLUTNM of \out[3]_i_2\ : label is "soft_lutpair76";
   attribute SOFT_HLUTNM of \out[4]_i_2\ : label is "soft_lutpair75";
-  attribute SOFT_HLUTNM of \out[7]_i_10\ : label is "soft_lutpair77";
-  attribute SOFT_HLUTNM of \out[7]_i_3\ : label is "soft_lutpair74";
-  attribute SOFT_HLUTNM of \out[7]_i_8\ : label is "soft_lutpair77";
+  attribute SOFT_HLUTNM of \out[7]_i_11\ : label is "soft_lutpair77";
+  attribute SOFT_HLUTNM of \out[7]_i_4\ : label is "soft_lutpair74";
+  attribute SOFT_HLUTNM of \out[7]_i_9\ : label is "soft_lutpair77";
   attribute SOFT_HLUTNM of \pipe_EXP_result[1]_i_1\ : label is "soft_lutpair87";
   attribute SOFT_HLUTNM of \pipe_EXP_result[2]_i_1\ : label is "soft_lutpair85";
   attribute SOFT_HLUTNM of \pipe_EXP_result[3]_i_1\ : label is "soft_lutpair86";
@@ -6028,10 +6032,11 @@ architecture STRUCTURE of Cortex_A9_fpadd_ip_0_0_fpadd_pipelined is
   attribute SOFT_HLUTNM of \pipe_Mantissa_shift_B[23]_i_4\ : label is "soft_lutpair79";
   attribute SOFT_HLUTNM of \pipe_Mantissa_shift_B[23]_i_7\ : label is "soft_lutpair86";
 begin
+  AS(0) <= \^as\(0);
 \A_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(0),
       Q => p_0_in(0),
       R => '0'
@@ -6039,7 +6044,7 @@ begin
 \A_reg[11]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(4),
       Q => p_0_in(11),
       R => '0'
@@ -6047,7 +6052,7 @@ begin
 \A_reg[12]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(5),
       Q => p_0_in(12),
       R => '0'
@@ -6055,7 +6060,7 @@ begin
 \A_reg[13]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(6),
       Q => p_0_in(13),
       R => '0'
@@ -6063,15 +6068,15 @@ begin
 \A_reg[14]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
-      D => \A_reg[14]_0\(0),
+      CE => s00_axi_aresetn,
+      D => D(0),
       Q => p_0_in(14),
       R => '0'
     );
 \A_reg[15]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(7),
       Q => p_0_in(15),
       R => '0'
@@ -6079,7 +6084,7 @@ begin
 \A_reg[16]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(8),
       Q => p_0_in(16),
       R => '0'
@@ -6087,15 +6092,15 @@ begin
 \A_reg[17]\: unisim.vcomponents.FDSE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => \A_reg[17]_0\,
       Q => p_0_in(17),
-      S => \A_reg[20]_0\
+      S => \B_reg[16]_0\
     );
 \A_reg[18]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(9),
       Q => p_0_in(18),
       R => '0'
@@ -6103,23 +6108,23 @@ begin
 \A_reg[19]\: unisim.vcomponents.FDSE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(7),
       Q => p_0_in(19),
-      S => \A_reg[20]_0\
+      S => \B_reg[16]_0\
     );
 \A_reg[20]\: unisim.vcomponents.FDSE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(13),
       Q => p_0_in(20),
-      S => \A_reg[20]_0\
+      S => \B_reg[16]_0\
     );
 \A_reg[21]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(10),
       Q => p_0_in(21),
       R => '0'
@@ -6127,7 +6132,7 @@ begin
 \A_reg[22]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(11),
       Q => p_0_in(22),
       R => '0'
@@ -6135,7 +6140,7 @@ begin
 \A_reg[23]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(12),
       Q => EXP_A(0),
       R => '0'
@@ -6143,7 +6148,7 @@ begin
 \A_reg[24]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(13),
       Q => EXP_A(1),
       R => '0'
@@ -6151,7 +6156,7 @@ begin
 \A_reg[25]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(14),
       Q => EXP_A(2),
       R => '0'
@@ -6159,7 +6164,7 @@ begin
 \A_reg[26]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(15),
       Q => EXP_A(3),
       R => '0'
@@ -6167,7 +6172,7 @@ begin
 \A_reg[27]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(16),
       Q => EXP_A(4),
       R => '0'
@@ -6175,7 +6180,7 @@ begin
 \A_reg[28]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(17),
       Q => EXP_A(5),
       R => '0'
@@ -6183,7 +6188,7 @@ begin
 \A_reg[30]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(18),
       Q => EXP_A(7),
       R => '0'
@@ -6191,7 +6196,7 @@ begin
 \A_reg[31]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(19),
       Q => S_A,
       R => '0'
@@ -6199,7 +6204,7 @@ begin
 \A_reg[4]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(1),
       Q => p_0_in(4),
       R => '0'
@@ -6207,7 +6212,7 @@ begin
 \A_reg[5]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(2),
       Q => p_0_in(5),
       R => '0'
@@ -6215,23 +6220,15 @@ begin
 \A_reg[8]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numA(3),
       Q => p_0_in(8),
       R => '0'
     );
-\B[31]_i_1\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => rst,
-      O => \B[31]_i_1_n_0\
-    );
 \B_reg[10]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(1),
       Q => p_0_in1_in(10),
       R => '0'
@@ -6239,7 +6236,7 @@ begin
 \B_reg[11]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(2),
       Q => p_0_in1_in(11),
       R => '0'
@@ -6247,7 +6244,7 @@ begin
 \B_reg[12]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(3),
       Q => p_0_in1_in(12),
       R => '0'
@@ -6255,7 +6252,7 @@ begin
 \B_reg[13]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(4),
       Q => p_0_in1_in(13),
       R => '0'
@@ -6263,7 +6260,7 @@ begin
 \B_reg[14]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(5),
       Q => p_0_in1_in(14),
       R => '0'
@@ -6271,7 +6268,7 @@ begin
 \B_reg[15]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(6),
       Q => p_0_in1_in(15),
       R => '0'
@@ -6279,15 +6276,15 @@ begin
 \B_reg[16]\: unisim.vcomponents.FDSE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(4),
       Q => p_0_in1_in(16),
-      S => \A_reg[20]_0\
+      S => \B_reg[16]_0\
     );
 \B_reg[17]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => \A_reg[17]_0\,
       Q => p_0_in1_in(17),
       R => '0'
@@ -6295,7 +6292,7 @@ begin
 \B_reg[19]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(7),
       Q => p_0_in1_in(19),
       R => '0'
@@ -6303,7 +6300,7 @@ begin
 \B_reg[21]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(8),
       Q => p_0_in1_in(21),
       R => '0'
@@ -6311,7 +6308,7 @@ begin
 \B_reg[22]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => \B_reg[22]_0\,
       Q => p_0_in1_in(22),
       R => '0'
@@ -6319,7 +6316,7 @@ begin
 \B_reg[24]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(9),
       Q => EXP_B(1),
       R => '0'
@@ -6327,7 +6324,7 @@ begin
 \B_reg[26]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(10),
       Q => EXP_B(3),
       R => '0'
@@ -6335,7 +6332,7 @@ begin
 \B_reg[27]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(11),
       Q => EXP_B(4),
       R => '0'
@@ -6343,7 +6340,7 @@ begin
 \B_reg[28]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(12),
       Q => EXP_B(5),
       R => '0'
@@ -6351,23 +6348,23 @@ begin
 \B_reg[2]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
-      D => D(0),
+      CE => s00_axi_aresetn,
+      D => \B_reg[2]_0\,
       Q => p_0_in1_in(2),
       R => '0'
     );
 \B_reg[30]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
-      D => D(1),
+      CE => s00_axi_aresetn,
+      D => \B_reg[30]_0\,
       Q => EXP_B(7),
       R => '0'
     );
 \B_reg[31]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(13),
       Q => S_B,
       R => '0'
@@ -6375,7 +6372,7 @@ begin
 \B_reg[4]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => \B[31]_i_1_n_0\,
+      CE => s00_axi_aresetn,
       D => numB(0),
       Q => p_0_in1_in(4),
       R => '0'
@@ -6761,6 +6758,8 @@ compare_shift_inst: entity work.Cortex_A9_fpadd_ip_0_0_compare_shift_module
       DI(2) => Mantissa_shift_A1_carry_i_2_n_0,
       DI(1) => Mantissa_shift_A1_carry_i_3_n_0,
       DI(0) => Mantissa_shift_A1_carry_i_4_n_0,
+      EXP_B(3 downto 1) => EXP_B(5 downto 3),
+      EXP_B(0) => EXP_B(1),
       Q(15 downto 10) => EXP_A(5 downto 0),
       Q(9 downto 8) => p_0_in(22 downto 21),
       Q(7 downto 3) => p_0_in(15 downto 11),
@@ -6772,18 +6771,15 @@ compare_shift_inst: entity work.Cortex_A9_fpadd_ip_0_0_compare_shift_module
       S(0) => Mantissa_shift_A1_carry_i_8_n_0,
       p_0_in(5 downto 1) => p_0_in(20 downto 16),
       p_0_in(0) => p_0_in(8),
-      p_0_in1_in(4 downto 3) => p_0_in1_in(22 downto 21),
-      p_0_in1_in(2 downto 1) => p_0_in1_in(17 downto 16),
-      p_0_in1_in(0) => p_0_in1_in(4),
-      \pipe_Mantissa_shift_A_reg[21]\(11 downto 9) => EXP_B(5 downto 3),
-      \pipe_Mantissa_shift_A_reg[21]\(8) => EXP_B(1),
-      \pipe_Mantissa_shift_A_reg[21]\(7) => p_0_in1_in(19),
-      \pipe_Mantissa_shift_A_reg[21]\(6 downto 1) => p_0_in1_in(15 downto 10),
-      \pipe_Mantissa_shift_A_reg[21]\(0) => p_0_in1_in(2),
-      \pipe_Mantissa_shift_A_reg[21]_0\(3) => \i__carry__0_i_1__0_n_0\,
-      \pipe_Mantissa_shift_A_reg[21]_0\(2) => \i__carry__0_i_2__0_n_0\,
-      \pipe_Mantissa_shift_A_reg[21]_0\(1) => \i__carry__0_i_3__0_n_0\,
-      \pipe_Mantissa_shift_A_reg[21]_0\(0) => \i__carry__0_i_4__0_n_0\,
+      p_0_in1_in(12 downto 11) => p_0_in1_in(22 downto 21),
+      p_0_in1_in(10) => p_0_in1_in(19),
+      p_0_in1_in(9 downto 2) => p_0_in1_in(17 downto 10),
+      p_0_in1_in(1) => p_0_in1_in(4),
+      p_0_in1_in(0) => p_0_in1_in(2),
+      \pipe_Mantissa_shift_A_reg[21]\(3) => \i__carry__0_i_1__0_n_0\,
+      \pipe_Mantissa_shift_A_reg[21]\(2) => \i__carry__0_i_2__0_n_0\,
+      \pipe_Mantissa_shift_A_reg[21]\(1) => \i__carry__0_i_3__0_n_0\,
+      \pipe_Mantissa_shift_A_reg[21]\(0) => \i__carry__0_i_4__0_n_0\,
       \pipe_Mantissa_shift_A_reg[22]\ => \pipe_Mantissa_shift_A[22]_i_2_n_0\,
       \pipe_Mantissa_shift_B_reg[21]\(3) => \Mantissa_shift_B1_carry__0_i_1_n_0\,
       \pipe_Mantissa_shift_B_reg[21]\(2) => \Mantissa_shift_B1_carry__0_i_2_n_0\,
@@ -6961,7 +6957,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
         port map (
       I0 => post_normalization_inst_n_1,
       I1 => \out[1]_i_2_n_0\,
-      I2 => \out[7]_i_2_n_0\,
+      I2 => \out[7]_i_3_n_0\,
       I3 => mantissas_addition_inst_n_25,
       I4 => data0(0),
       O => Mantissa_normal_result(0)
@@ -6974,7 +6970,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I0 => data0(16),
       I1 => mantissas_addition_inst_n_25,
       I2 => \out[16]_i_2_n_0\,
-      I3 => \out[7]_i_2_n_0\,
+      I3 => \out[7]_i_3_n_0\,
       I4 => \out[17]_i_2_n_0\,
       O => Mantissa_normal_result(16)
     );
@@ -7011,7 +7007,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
         port map (
       I0 => \out[17]_i_2_n_0\,
       I1 => post_normalization_inst_n_2,
-      I2 => \out[7]_i_2_n_0\,
+      I2 => \out[7]_i_3_n_0\,
       I3 => \out[18]_i_2_n_0\,
       I4 => mantissas_addition_inst_n_25,
       I5 => data0(17),
@@ -7048,7 +7044,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       INIT => X"DDD0DDD00000DDD0"
     )
         port map (
-      I0 => \out[7]_i_2_n_0\,
+      I0 => \out[7]_i_3_n_0\,
       I1 => \out[19]_i_2_n_0\,
       I2 => post_normalization_inst_n_2,
       I3 => \out[18]_i_2_n_0\,
@@ -7089,7 +7085,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
         port map (
       I0 => \out[19]_i_2_n_0\,
       I1 => post_normalization_inst_n_2,
-      I2 => \out[7]_i_2_n_0\,
+      I2 => \out[7]_i_3_n_0\,
       I3 => \out[20]_i_2_n_0\,
       I4 => mantissas_addition_inst_n_25,
       I5 => data0(19),
@@ -7128,7 +7124,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
         port map (
       I0 => \out[1]_i_2_n_0\,
       I1 => post_normalization_inst_n_1,
-      I2 => \out[7]_i_2_n_0\,
+      I2 => \out[7]_i_3_n_0\,
       I3 => \out[1]_i_3_n_0\,
       I4 => data0(1),
       I5 => mantissas_addition_inst_n_25,
@@ -7141,7 +7137,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
         port map (
       I0 => post_normalization_inst_n_0,
       I1 => mantissas_addition_inst_n_24,
-      I2 => \out[7]_i_8_n_0\,
+      I2 => \out[7]_i_9_n_0\,
       O => \out[1]_i_2_n_0\
     );
 \out[1]_i_3\: unisim.vcomponents.LUT3
@@ -7151,7 +7147,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
         port map (
       I0 => post_normalization_inst_n_0,
       I1 => data0(0),
-      I2 => \out[7]_i_8_n_0\,
+      I2 => \out[7]_i_9_n_0\,
       O => \out[1]_i_3_n_0\
     );
 \out[20]_i_1\: unisim.vcomponents.LUT6
@@ -7161,7 +7157,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
         port map (
       I0 => \out[20]_i_2_n_0\,
       I1 => post_normalization_inst_n_2,
-      I2 => \out[7]_i_2_n_0\,
+      I2 => \out[7]_i_3_n_0\,
       I3 => \out[21]_i_2_n_0\,
       I4 => mantissas_addition_inst_n_25,
       I5 => data0(20),
@@ -7200,7 +7196,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
         port map (
       I0 => \out[21]_i_2_n_0\,
       I1 => post_normalization_inst_n_2,
-      I2 => \out[7]_i_2_n_0\,
+      I2 => \out[7]_i_3_n_0\,
       I3 => \out[22]_i_5_n_0\,
       I4 => mantissas_addition_inst_n_25,
       I5 => data0(21),
@@ -7227,7 +7223,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I0 => data0(9),
       I1 => post_normalization_inst_n_13,
       I2 => data0(17),
-      I3 => \out[7]_i_14_n_0\,
+      I3 => \out[7]_i_15_n_0\,
       I4 => mantissas_addition_inst_n_25,
       I5 => data0(1),
       O => \out[21]_i_4_n_0\
@@ -7267,7 +7263,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I1 => post_normalization_inst_n_13,
       I2 => data0(0),
       I3 => mantissas_addition_inst_n_25,
-      I4 => \out[7]_i_14_n_0\,
+      I4 => \out[7]_i_15_n_0\,
       I5 => data0(16),
       O => \out[22]_i_10_n_0\
     );
@@ -7279,7 +7275,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I0 => data0(10),
       I1 => post_normalization_inst_n_13,
       I2 => data0(18),
-      I3 => \out[7]_i_14_n_0\,
+      I3 => \out[7]_i_15_n_0\,
       I4 => mantissas_addition_inst_n_25,
       I5 => data0(2),
       O => \out[22]_i_11_n_0\
@@ -7331,7 +7327,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I1 => \out[22]_i_7_n_0\,
       I2 => post_normalization_inst_n_0,
       I3 => \out[22]_i_8_n_0\,
-      I4 => \out[7]_i_2_n_0\,
+      I4 => \out[7]_i_3_n_0\,
       O => \out[22]_i_2_n_0\
     );
 \out[22]_i_3\: unisim.vcomponents.LUT5
@@ -7342,7 +7338,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I0 => data0(13),
       I1 => post_normalization_inst_n_13,
       I2 => data0(21),
-      I3 => \out[7]_i_10_n_0\,
+      I3 => \out[7]_i_11_n_0\,
       I4 => data0(5),
       O => \out[22]_i_3_n_0\
     );
@@ -7352,7 +7348,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
     )
         port map (
       I0 => data0(1),
-      I1 => \out[7]_i_10_n_0\,
+      I1 => \out[7]_i_11_n_0\,
       I2 => data0(17),
       I3 => post_normalization_inst_n_13,
       I4 => data0(9),
@@ -7387,7 +7383,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
     )
         port map (
       I0 => data0(15),
-      I1 => \out[7]_i_14_n_0\,
+      I1 => \out[7]_i_15_n_0\,
       I2 => mantissas_addition_inst_n_24,
       I3 => mantissas_addition_inst_n_25,
       I4 => \out[22]_i_13_n_0\,
@@ -7402,7 +7398,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I0 => data0(11),
       I1 => post_normalization_inst_n_13,
       I2 => data0(19),
-      I3 => \out[7]_i_14_n_0\,
+      I3 => \out[7]_i_15_n_0\,
       I4 => mantissas_addition_inst_n_25,
       I5 => data0(3),
       O => \out[22]_i_8_n_0\
@@ -7415,7 +7411,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I0 => data0(12),
       I1 => data0(4),
       I2 => mantissas_addition_inst_n_25,
-      I3 => \out[7]_i_14_n_0\,
+      I3 => \out[7]_i_15_n_0\,
       I4 => data0(20),
       I5 => \out[22]_i_13_n_0\,
       O => \out[22]_i_9_n_0\
@@ -7426,7 +7422,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
     )
         port map (
       I0 => \out[3]_i_2_n_0\,
-      I1 => \out[7]_i_2_n_0\,
+      I1 => \out[7]_i_3_n_0\,
       I2 => mantissas_addition_inst_n_25,
       I3 => data0(2),
       I4 => \out[2]_i_3_n_0\,
@@ -7439,7 +7435,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
     )
         port map (
       I0 => post_normalization_inst_n_1,
-      I1 => \out[7]_i_8_n_0\,
+      I1 => \out[7]_i_9_n_0\,
       I2 => data0(0),
       I3 => post_normalization_inst_n_0,
       O => \out[2]_i_3_n_0\
@@ -7521,7 +7517,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
         port map (
       I0 => post_normalization_inst_n_2,
       I1 => \out[3]_i_2_n_0\,
-      I2 => \out[7]_i_2_n_0\,
+      I2 => \out[7]_i_3_n_0\,
       I3 => \out[4]_i_2_n_0\,
       I4 => data0(3),
       I5 => mantissas_addition_inst_n_25,
@@ -7536,7 +7532,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I1 => post_normalization_inst_n_1,
       I2 => post_normalization_inst_n_0,
       I3 => mantissas_addition_inst_n_24,
-      I4 => \out[7]_i_8_n_0\,
+      I4 => \out[7]_i_9_n_0\,
       O => \out[3]_i_2_n_0\
     );
 \out[4]_i_1\: unisim.vcomponents.LUT6
@@ -7545,7 +7541,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
     )
         port map (
       I0 => \out[5]_i_2_n_0\,
-      I1 => \out[7]_i_2_n_0\,
+      I1 => \out[7]_i_3_n_0\,
       I2 => data0(4),
       I3 => mantissas_addition_inst_n_25,
       I4 => post_normalization_inst_n_2,
@@ -7561,7 +7557,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I1 => post_normalization_inst_n_1,
       I2 => post_normalization_inst_n_0,
       I3 => data0(0),
-      I4 => \out[7]_i_8_n_0\,
+      I4 => \out[7]_i_9_n_0\,
       O => \out[4]_i_2_n_0\
     );
 \out[5]_i_1\: unisim.vcomponents.LUT5
@@ -7572,7 +7568,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I0 => \out[6]_i_2_n_0\,
       I1 => mantissas_addition_inst_n_25,
       I2 => data0(5),
-      I3 => \out[7]_i_2_n_0\,
+      I3 => \out[7]_i_3_n_0\,
       I4 => \out[5]_i_2_n_0\,
       O => Mantissa_normal_result(5)
     );
@@ -7586,7 +7582,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I2 => post_normalization_inst_n_1,
       I3 => post_normalization_inst_n_0,
       I4 => data0(1),
-      I5 => \out[7]_i_8_n_0\,
+      I5 => \out[7]_i_9_n_0\,
       O => \out[5]_i_2_n_0\
     );
 \out[6]_i_1\: unisim.vcomponents.LUT5
@@ -7594,9 +7590,9 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       INIT => X"FF1B1B1B"
     )
         port map (
-      I0 => \out[7]_i_2_n_0\,
+      I0 => \out[7]_i_3_n_0\,
       I1 => \out[6]_i_2_n_0\,
-      I2 => \out[7]_i_5_n_0\,
+      I2 => \out[7]_i_6_n_0\,
       I3 => data0(6),
       I4 => mantissas_addition_inst_n_25,
       O => Mantissa_normal_result(6)
@@ -7619,7 +7615,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I1 => data0(0),
       I2 => post_normalization_inst_n_1,
       I3 => post_normalization_inst_n_0,
-      I4 => \out[7]_i_8_n_0\,
+      I4 => \out[7]_i_9_n_0\,
       I5 => data0(2),
       O => \out[6]_i_2_n_0\
     );
@@ -7628,138 +7624,15 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       INIT => X"000000005D5D005D"
     )
         port map (
-      I0 => \out[7]_i_2_n_0\,
-      I1 => \out[7]_i_3_n_0\,
-      I2 => \out[7]_i_4_n_0\,
-      I3 => \out[7]_i_5_n_0\,
+      I0 => \out[7]_i_3_n_0\,
+      I1 => \out[7]_i_4_n_0\,
+      I2 => \out[7]_i_5_n_0\,
+      I3 => \out[7]_i_6_n_0\,
       I4 => post_normalization_inst_n_2,
-      I5 => \out[7]_i_7_n_0\,
+      I5 => \out[7]_i_8_n_0\,
       O => Mantissa_normal_result(7)
     );
-\out[7]_i_10\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"BABBAAAA"
-    )
-        port map (
-      I0 => mantissas_addition_inst_n_25,
-      I1 => post_normalization_inst_n_6,
-      I2 => post_normalization_inst_n_5,
-      I3 => post_normalization_inst_n_4,
-      I4 => post_normalization_inst_n_3,
-      O => \out[7]_i_10_n_0\
-    );
-\out[7]_i_11\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFCDFFFFFFFD"
-    )
-        port map (
-      I0 => data0(3),
-      I1 => mantissas_addition_inst_n_25,
-      I2 => \out[7]_i_13_n_0\,
-      I3 => post_normalization_inst_n_13,
-      I4 => \out[7]_i_14_n_0\,
-      I5 => mantissas_addition_inst_n_24,
-      O => \out[7]_i_11_n_0\
-    );
-\out[7]_i_13\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000FFFF001F"
-    )
-        port map (
-      I0 => post_normalization_inst_n_4,
-      I1 => post_normalization_inst_n_5,
-      I2 => post_normalization_inst_n_26,
-      I3 => post_normalization_inst_n_9,
-      I4 => post_normalization_inst_n_8,
-      I5 => post_normalization_inst_n_7,
-      O => \out[7]_i_13_n_0\
-    );
-\out[7]_i_14\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000004404"
-    )
-        port map (
-      I0 => post_normalization_inst_n_9,
-      I1 => post_normalization_inst_n_26,
-      I2 => post_normalization_inst_n_4,
-      I3 => post_normalization_inst_n_5,
-      I4 => post_normalization_inst_n_7,
-      I5 => post_normalization_inst_n_8,
-      O => \out[7]_i_14_n_0\
-    );
-\out[7]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"4544454445454544"
-    )
-        port map (
-      I0 => mantissas_addition_inst_n_25,
-      I1 => data0(22),
-      I2 => post_normalization_inst_n_17,
-      I3 => post_normalization_inst_n_16,
-      I4 => post_normalization_inst_n_15,
-      I5 => post_normalization_inst_n_14,
-      O => \out[7]_i_2_n_0\
-    );
-\out[7]_i_3\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"AAFEAABA"
-    )
-        port map (
-      I0 => post_normalization_inst_n_1,
-      I1 => post_normalization_inst_n_0,
-      I2 => data0(0),
-      I3 => \out[7]_i_8_n_0\,
-      I4 => data0(4),
-      O => \out[7]_i_3_n_0\
-    );
-\out[7]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"5454545555555455"
-    )
-        port map (
-      I0 => \out[7]_i_9_n_0\,
-      I1 => \out[7]_i_10_n_0\,
-      I2 => post_normalization_inst_n_13,
-      I3 => data0(2),
-      I4 => post_normalization_inst_n_0,
-      I5 => data0(6),
-      O => \out[7]_i_4_n_0\
-    );
-\out[7]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"F1FDFFFFF1FD0000"
-    )
-        port map (
-      I0 => data0(1),
-      I1 => post_normalization_inst_n_0,
-      I2 => \out[7]_i_8_n_0\,
-      I3 => data0(5),
-      I4 => post_normalization_inst_n_1,
-      I5 => \out[7]_i_11_n_0\,
-      O => \out[7]_i_5_n_0\
-    );
-\out[7]_i_7\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => mantissas_addition_inst_n_25,
-      I1 => data0(7),
-      O => \out[7]_i_7_n_0\
-    );
-\out[7]_i_8\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FFFF00DF"
-    )
-        port map (
-      I0 => post_normalization_inst_n_4,
-      I1 => post_normalization_inst_n_5,
-      I2 => post_normalization_inst_n_3,
-      I3 => post_normalization_inst_n_6,
-      I4 => mantissas_addition_inst_n_25,
-      O => \out[7]_i_8_n_0\
-    );
-\out[7]_i_9\: unisim.vcomponents.LUT6
+\out[7]_i_10\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"00000000FFFFFFFE"
     )
@@ -7770,13 +7643,144 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
       I3 => data0(16),
       I4 => post_normalization_inst_n_11,
       I5 => post_normalization_inst_n_10,
+      O => \out[7]_i_10_n_0\
+    );
+\out[7]_i_11\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"BABBAAAA"
+    )
+        port map (
+      I0 => mantissas_addition_inst_n_25,
+      I1 => post_normalization_inst_n_6,
+      I2 => post_normalization_inst_n_5,
+      I3 => post_normalization_inst_n_4,
+      I4 => post_normalization_inst_n_3,
+      O => \out[7]_i_11_n_0\
+    );
+\out[7]_i_12\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFCDFFFFFFFD"
+    )
+        port map (
+      I0 => data0(3),
+      I1 => mantissas_addition_inst_n_25,
+      I2 => \out[7]_i_14_n_0\,
+      I3 => post_normalization_inst_n_13,
+      I4 => \out[7]_i_15_n_0\,
+      I5 => mantissas_addition_inst_n_24,
+      O => \out[7]_i_12_n_0\
+    );
+\out[7]_i_14\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00000000FFFF001F"
+    )
+        port map (
+      I0 => post_normalization_inst_n_4,
+      I1 => post_normalization_inst_n_5,
+      I2 => post_normalization_inst_n_26,
+      I3 => post_normalization_inst_n_9,
+      I4 => post_normalization_inst_n_8,
+      I5 => post_normalization_inst_n_7,
+      O => \out[7]_i_14_n_0\
+    );
+\out[7]_i_15\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000000004404"
+    )
+        port map (
+      I0 => post_normalization_inst_n_9,
+      I1 => post_normalization_inst_n_26,
+      I2 => post_normalization_inst_n_4,
+      I3 => post_normalization_inst_n_5,
+      I4 => post_normalization_inst_n_7,
+      I5 => post_normalization_inst_n_8,
+      O => \out[7]_i_15_n_0\
+    );
+\out[7]_i_2\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => s00_axi_aresetn,
+      O => \^as\(0)
+    );
+\out[7]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"4544454445454544"
+    )
+        port map (
+      I0 => mantissas_addition_inst_n_25,
+      I1 => data0(22),
+      I2 => post_normalization_inst_n_17,
+      I3 => post_normalization_inst_n_16,
+      I4 => post_normalization_inst_n_15,
+      I5 => post_normalization_inst_n_14,
+      O => \out[7]_i_3_n_0\
+    );
+\out[7]_i_4\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"AAFEAABA"
+    )
+        port map (
+      I0 => post_normalization_inst_n_1,
+      I1 => post_normalization_inst_n_0,
+      I2 => data0(0),
+      I3 => \out[7]_i_9_n_0\,
+      I4 => data0(4),
+      O => \out[7]_i_4_n_0\
+    );
+\out[7]_i_5\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"5454545555555455"
+    )
+        port map (
+      I0 => \out[7]_i_10_n_0\,
+      I1 => \out[7]_i_11_n_0\,
+      I2 => post_normalization_inst_n_13,
+      I3 => data0(2),
+      I4 => post_normalization_inst_n_0,
+      I5 => data0(6),
+      O => \out[7]_i_5_n_0\
+    );
+\out[7]_i_6\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"F1FDFFFFF1FD0000"
+    )
+        port map (
+      I0 => data0(1),
+      I1 => post_normalization_inst_n_0,
+      I2 => \out[7]_i_9_n_0\,
+      I3 => data0(5),
+      I4 => post_normalization_inst_n_1,
+      I5 => \out[7]_i_12_n_0\,
+      O => \out[7]_i_6_n_0\
+    );
+\out[7]_i_8\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => mantissas_addition_inst_n_25,
+      I1 => data0(7),
+      O => \out[7]_i_8_n_0\
+    );
+\out[7]_i_9\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FFFF00DF"
+    )
+        port map (
+      I0 => post_normalization_inst_n_4,
+      I1 => post_normalization_inst_n_5,
+      I2 => post_normalization_inst_n_3,
+      I3 => post_normalization_inst_n_6,
+      I4 => mantissas_addition_inst_n_25,
       O => \out[7]_i_9_n_0\
     );
 \out_reg[0]\: unisim.vcomponents.FDCE
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(0),
       Q => leds(0)
     );
@@ -7784,7 +7788,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(16),
       Q => fp_out(16)
     );
@@ -7792,7 +7796,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(17),
       Q => fp_out(17)
     );
@@ -7800,7 +7804,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(18),
       Q => fp_out(18)
     );
@@ -7808,7 +7812,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(19),
       Q => fp_out(19)
     );
@@ -7816,7 +7820,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(1),
       Q => leds(1)
     );
@@ -7824,7 +7828,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(20),
       Q => fp_out(20)
     );
@@ -7832,7 +7836,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(21),
       Q => fp_out(21)
     );
@@ -7840,7 +7844,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(22),
       Q => fp_out(22)
     );
@@ -7848,7 +7852,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_normal_result(0),
       Q => fp_out(23)
     );
@@ -7856,7 +7860,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_normal_result(1),
       Q => fp_out(24)
     );
@@ -7864,7 +7868,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_normal_result(2),
       Q => fp_out(25)
     );
@@ -7872,7 +7876,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_normal_result(3),
       Q => fp_out(26)
     );
@@ -7880,7 +7884,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_normal_result(4),
       Q => fp_out(27)
     );
@@ -7888,7 +7892,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_normal_result(5),
       Q => fp_out(28)
     );
@@ -7896,7 +7900,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_normal_result(6),
       Q => fp_out(29)
     );
@@ -7904,7 +7908,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(2),
       Q => leds(2)
     );
@@ -7912,7 +7916,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_normal_result(7),
       Q => fp_out(30)
     );
@@ -7920,7 +7924,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => result(31),
       Q => fp_out(31)
     );
@@ -7928,7 +7932,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(3),
       Q => leds(3)
     );
@@ -7936,7 +7940,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(4),
       Q => leds(4)
     );
@@ -7944,7 +7948,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(5),
       Q => leds(5)
     );
@@ -7952,7 +7956,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(6),
       Q => leds(6)
     );
@@ -7960,7 +7964,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_normal_result(7),
       Q => leds(7)
     );
@@ -8038,7 +8042,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_result(0),
       Q => pipe_EXP_result(0)
     );
@@ -8046,7 +8050,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_result(1),
       Q => pipe_EXP_result(1)
     );
@@ -8054,7 +8058,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_result(2),
       Q => pipe_EXP_result(2)
     );
@@ -8062,7 +8066,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_result(3),
       Q => pipe_EXP_result(3)
     );
@@ -8070,7 +8074,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_result(4),
       Q => pipe_EXP_result(4)
     );
@@ -8078,7 +8082,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_result(5),
       Q => pipe_EXP_result(5)
     );
@@ -8086,7 +8090,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => EXP_result(7),
       Q => pipe_EXP_result(7)
     );
@@ -8103,7 +8107,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(0),
       Q => pipe_Mantissa_shift_A(0)
     );
@@ -8111,7 +8115,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(10),
       Q => pipe_Mantissa_shift_A(10)
     );
@@ -8119,7 +8123,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(11),
       Q => pipe_Mantissa_shift_A(11)
     );
@@ -8127,7 +8131,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(12),
       Q => pipe_Mantissa_shift_A(12)
     );
@@ -8135,7 +8139,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(13),
       Q => pipe_Mantissa_shift_A(13)
     );
@@ -8143,7 +8147,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(14),
       Q => pipe_Mantissa_shift_A(14)
     );
@@ -8151,7 +8155,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(15),
       Q => pipe_Mantissa_shift_A(15)
     );
@@ -8159,7 +8163,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(16),
       Q => pipe_Mantissa_shift_A(16)
     );
@@ -8167,7 +8171,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(17),
       Q => pipe_Mantissa_shift_A(17)
     );
@@ -8175,7 +8179,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(18),
       Q => pipe_Mantissa_shift_A(18)
     );
@@ -8183,7 +8187,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(19),
       Q => pipe_Mantissa_shift_A(19)
     );
@@ -8191,7 +8195,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(1),
       Q => pipe_Mantissa_shift_A(1)
     );
@@ -8199,7 +8203,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(20),
       Q => pipe_Mantissa_shift_A(20)
     );
@@ -8207,7 +8211,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(21),
       Q => pipe_Mantissa_shift_A(21)
     );
@@ -8215,7 +8219,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(22),
       Q => pipe_Mantissa_shift_A(22)
     );
@@ -8223,7 +8227,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => compare_shift_inst_n_25,
       Q => pipe_Mantissa_shift_A(23)
     );
@@ -8231,7 +8235,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(2),
       Q => pipe_Mantissa_shift_A(2)
     );
@@ -8239,7 +8243,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(3),
       Q => pipe_Mantissa_shift_A(3)
     );
@@ -8247,7 +8251,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(4),
       Q => pipe_Mantissa_shift_A(4)
     );
@@ -8255,7 +8259,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(5),
       Q => pipe_Mantissa_shift_A(5)
     );
@@ -8263,7 +8267,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(6),
       Q => pipe_Mantissa_shift_A(6)
     );
@@ -8271,7 +8275,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(7),
       Q => pipe_Mantissa_shift_A(7)
     );
@@ -8279,7 +8283,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(8),
       Q => pipe_Mantissa_shift_A(8)
     );
@@ -8287,7 +8291,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_A(9),
       Q => pipe_Mantissa_shift_A(9)
     );
@@ -8350,7 +8354,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(0),
       Q => pipe_Mantissa_shift_B(0)
     );
@@ -8358,7 +8362,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(10),
       Q => pipe_Mantissa_shift_B(10)
     );
@@ -8366,7 +8370,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(11),
       Q => pipe_Mantissa_shift_B(11)
     );
@@ -8374,7 +8378,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(12),
       Q => pipe_Mantissa_shift_B(12)
     );
@@ -8382,7 +8386,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(13),
       Q => pipe_Mantissa_shift_B(13)
     );
@@ -8390,7 +8394,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(14),
       Q => pipe_Mantissa_shift_B(14)
     );
@@ -8398,7 +8402,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(15),
       Q => pipe_Mantissa_shift_B(15)
     );
@@ -8406,7 +8410,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(16),
       Q => pipe_Mantissa_shift_B(16)
     );
@@ -8414,7 +8418,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(17),
       Q => pipe_Mantissa_shift_B(17)
     );
@@ -8422,7 +8426,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(18),
       Q => pipe_Mantissa_shift_B(18)
     );
@@ -8430,7 +8434,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(19),
       Q => pipe_Mantissa_shift_B(19)
     );
@@ -8438,7 +8442,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(1),
       Q => pipe_Mantissa_shift_B(1)
     );
@@ -8446,7 +8450,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(20),
       Q => pipe_Mantissa_shift_B(20)
     );
@@ -8454,7 +8458,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(21),
       Q => pipe_Mantissa_shift_B(21)
     );
@@ -8462,7 +8466,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(22),
       Q => pipe_Mantissa_shift_B(22)
     );
@@ -8470,7 +8474,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => compare_shift_inst_n_1,
       Q => pipe_Mantissa_shift_B(23)
     );
@@ -8478,7 +8482,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(2),
       Q => pipe_Mantissa_shift_B(2)
     );
@@ -8486,7 +8490,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(3),
       Q => pipe_Mantissa_shift_B(3)
     );
@@ -8494,7 +8498,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(4),
       Q => pipe_Mantissa_shift_B(4)
     );
@@ -8502,7 +8506,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(5),
       Q => pipe_Mantissa_shift_B(5)
     );
@@ -8510,7 +8514,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(6),
       Q => pipe_Mantissa_shift_B(6)
     );
@@ -8518,7 +8522,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(7),
       Q => pipe_Mantissa_shift_B(7)
     );
@@ -8526,7 +8530,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(8),
       Q => pipe_Mantissa_shift_B(8)
     );
@@ -8534,7 +8538,7 @@ mantissas_addition_inst: entity work.Cortex_A9_fpadd_ip_0_0_mantissas_addition_m
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => Mantissa_shift_B(9),
       Q => pipe_Mantissa_shift_B(9)
     );
@@ -8542,7 +8546,7 @@ pipe_S_A_reg: unisim.vcomponents.FDCE
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => S_A,
       Q => pipe_S_A
     );
@@ -8550,7 +8554,7 @@ pipe_S_B_reg: unisim.vcomponents.FDCE
      port map (
       C => s00_axi_aclk,
       CE => '1',
-      CLR => rst,
+      CLR => \^as\(0),
       D => S_B,
       Q => pipe_S_B
     );
@@ -8580,8 +8584,8 @@ post_normalization_inst: entity work.Cortex_A9_fpadd_ip_0_0_post_normalization_m
       \out_reg[6]_i_3\ => post_normalization_inst_n_5,
       \out_reg[6]_i_3_0\ => post_normalization_inst_n_15,
       \out_reg[6]_i_4\ => post_normalization_inst_n_2,
-      \out_reg[7]_i_12\ => post_normalization_inst_n_14,
-      \out_reg[7]_i_12_0\ => post_normalization_inst_n_26
+      \out_reg[7]_i_13\ => post_normalization_inst_n_14,
+      \out_reg[7]_i_13_0\ => post_normalization_inst_n_26
     );
 end STRUCTURE;
 library IEEE;
@@ -8591,8 +8595,8 @@ use UNISIM.VCOMPONENTS.ALL;
 entity Cortex_A9_fpadd_ip_0_0_fpadd_system is
   port (
     digit_sel_reg : out STD_LOGIC;
+    SR : out STD_LOGIC_VECTOR ( 0 to 0 );
     digit_sel_reg_0 : out STD_LOGIC;
-    leds : out STD_LOGIC_VECTOR ( 7 downto 0 );
     e0 : out STD_LOGIC;
     c0 : out STD_LOGIC;
     d0 : out STD_LOGIC;
@@ -8607,84 +8611,89 @@ entity Cortex_A9_fpadd_ip_0_0_fpadd_system is
     f1 : out STD_LOGIC;
     b1 : out STD_LOGIC;
     a1 : out STD_LOGIC;
+    leds : out STD_LOGIC_VECTOR ( 7 downto 0 );
     s00_axi_aclk : in STD_LOGIC;
-    rst : in STD_LOGIC;
-    Q : in STD_LOGIC_VECTOR ( 0 to 0 )
+    Q : in STD_LOGIC_VECTOR ( 0 to 0 );
+    s00_axi_aresetn : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of Cortex_A9_fpadd_ip_0_0_fpadd_system : entity is "fpadd_system";
 end Cortex_A9_fpadd_ip_0_0_fpadd_system;
 
 architecture STRUCTURE of Cortex_A9_fpadd_ip_0_0_fpadd_system is
+  signal DataMemory_inst_n_0 : STD_LOGIC;
   signal DataMemory_inst_n_1 : STD_LOGIC;
-  signal DataMemory_inst_n_13 : STD_LOGIC;
   signal DataMemory_inst_n_14 : STD_LOGIC;
-  signal DataMemory_inst_n_15 : STD_LOGIC;
-  signal DataMemory_inst_n_16 : STD_LOGIC;
-  signal DataMemory_inst_n_28 : STD_LOGIC;
+  signal DataMemory_inst_n_2 : STD_LOGIC;
+  signal DataMemory_inst_n_21 : STD_LOGIC;
+  signal DataMemory_inst_n_39 : STD_LOGIC;
+  signal \^sr\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal current_state : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \^digit_sel_reg\ : STD_LOGIC;
   signal \^digit_sel_reg_0\ : STD_LOGIC;
   signal numA : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal numB : STD_LOGIC_VECTOR ( 31 downto 4 );
 begin
+  SR(0) <= \^sr\(0);
   digit_sel_reg <= \^digit_sel_reg\;
   digit_sel_reg_0 <= \^digit_sel_reg_0\;
 DataMemory_inst: entity work.Cortex_A9_fpadd_ip_0_0_DataMemory
      port map (
-      D(13) => numB(31),
-      D(12) => DataMemory_inst_n_1,
-      D(11 downto 9) => numB(28 downto 26),
-      D(8) => numB(24),
-      D(7) => numB(19),
-      D(6 downto 1) => numB(15 downto 10),
-      D(0) => DataMemory_inst_n_13,
+      AS(0) => \^sr\(0),
+      D(17 downto 16) => numA(31 downto 30),
+      D(15 downto 8) => numA(28 downto 21),
+      D(7) => numA(15),
+      D(6) => DataMemory_inst_n_14,
+      D(5 downto 3) => numA(13 downto 11),
+      D(2 downto 1) => numA(5 downto 4),
+      D(0) => numA(0),
       current_state(1 downto 0) => current_state(1 downto 0),
       numA(2) => numA(18),
       numA(1) => numA(16),
       numA(0) => numA(8),
-      numB(1) => numB(21),
+      numB(13) => numB(31),
+      numB(12 downto 10) => numB(28 downto 26),
+      numB(9) => numB(24),
+      numB(8) => numB(21),
+      numB(7) => numB(19),
+      numB(6 downto 1) => numB(15 downto 10),
       numB(0) => numB(4),
-      \pointer_reg[0]_0\(17 downto 16) => numA(31 downto 30),
-      \pointer_reg[0]_0\(15 downto 8) => numA(28 downto 21),
-      \pointer_reg[0]_0\(7) => numA(15),
-      \pointer_reg[0]_0\(6) => DataMemory_inst_n_28,
-      \pointer_reg[0]_0\(5 downto 3) => numA(13 downto 11),
-      \pointer_reg[0]_0\(2 downto 1) => numA(5 downto 4),
-      \pointer_reg[0]_0\(0) => numA(0),
-      \pointer_reg[2]_0\ => DataMemory_inst_n_14,
-      \pointer_reg[2]_1\ => DataMemory_inst_n_15,
-      \pointer_reg[3]_0\ => DataMemory_inst_n_16,
-      rst => rst,
-      s00_axi_aclk => s00_axi_aclk
+      \pointer_reg[0]_0\ => DataMemory_inst_n_0,
+      \pointer_reg[2]_0\ => DataMemory_inst_n_1,
+      \pointer_reg[2]_1\ => DataMemory_inst_n_39,
+      \pointer_reg[3]_0\ => DataMemory_inst_n_2,
+      \pointer_reg[3]_1\ => DataMemory_inst_n_21,
+      s00_axi_aclk => s00_axi_aclk,
+      s00_axi_aresetn => s00_axi_aresetn
     );
 SSDisplays_inst0: entity work.Cortex_A9_fpadd_ip_0_0_SSDisplays_module
      port map (
+      AS(0) => \^sr\(0),
       digit_sel_reg_0 => \^digit_sel_reg\,
-      rst => rst,
       s00_axi_aclk => s00_axi_aclk
     );
 SSDisplays_inst1: entity work.Cortex_A9_fpadd_ip_0_0_SSDisplays_module_0
      port map (
+      AS(0) => \^sr\(0),
       digit_sel_reg_0 => \^digit_sel_reg_0\,
-      rst => rst,
       s00_axi_aclk => s00_axi_aclk
     );
 debounce_inst: entity work.Cortex_A9_fpadd_ip_0_0_debounce_module
      port map (
+      AS(0) => \^sr\(0),
       Q(0) => Q(0),
       current_state(1 downto 0) => current_state(1 downto 0),
-      rst => rst,
       s00_axi_aclk => s00_axi_aclk
     );
 fpadd_pipelined_inst: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_pipelined
      port map (
-      \A_reg[14]_0\(0) => DataMemory_inst_n_28,
-      \A_reg[17]_0\ => DataMemory_inst_n_16,
-      \A_reg[20]_0\ => DataMemory_inst_n_14,
-      \B_reg[22]_0\ => DataMemory_inst_n_15,
-      D(1) => DataMemory_inst_n_1,
-      D(0) => DataMemory_inst_n_13,
+      AS(0) => \^sr\(0),
+      \A_reg[17]_0\ => DataMemory_inst_n_2,
+      \B_reg[16]_0\ => DataMemory_inst_n_39,
+      \B_reg[22]_0\ => DataMemory_inst_n_1,
+      \B_reg[2]_0\ => DataMemory_inst_n_0,
+      \B_reg[30]_0\ => DataMemory_inst_n_21,
+      D(0) => DataMemory_inst_n_14,
       a0 => a0,
       a0_0 => \^digit_sel_reg\,
       a1 => a1,
@@ -8717,8 +8726,8 @@ fpadd_pipelined_inst: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_pipelined
       numB(7) => numB(19),
       numB(6 downto 1) => numB(15 downto 10),
       numB(0) => numB(4),
-      rst => rst,
-      s00_axi_aclk => s00_axi_aclk
+      s00_axi_aclk => s00_axi_aclk,
+      s00_axi_aresetn => s00_axi_aresetn
     );
 end STRUCTURE;
 library IEEE;
@@ -8750,8 +8759,8 @@ entity Cortex_A9_fpadd_ip_0_0_fpadd_ip_v1_0_S00_AXI is
     a1 : out STD_LOGIC;
     s00_axi_rvalid : out STD_LOGIC;
     s00_axi_bvalid : out STD_LOGIC;
-    rst : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_wvalid : in STD_LOGIC;
     s00_axi_awvalid : in STD_LOGIC;
@@ -8759,7 +8768,6 @@ entity Cortex_A9_fpadd_ip_0_0_fpadd_ip_v1_0_S00_AXI is
     s00_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_arvalid : in STD_LOGIC;
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_aresetn : in STD_LOGIC;
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
@@ -8780,12 +8788,12 @@ architecture STRUCTURE of Cortex_A9_fpadd_ip_0_0_fpadd_ip_v1_0_S00_AXI is
   signal \axi_awaddr[2]_i_1_n_0\ : STD_LOGIC;
   signal \axi_awaddr[3]_i_1_n_0\ : STD_LOGIC;
   signal axi_awready0 : STD_LOGIC;
-  signal axi_awready_i_1_n_0 : STD_LOGIC;
   signal axi_bvalid_i_1_n_0 : STD_LOGIC;
   signal axi_rvalid_i_1_n_0 : STD_LOGIC;
   signal axi_wready0 : STD_LOGIC;
   signal p_0_in : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal p_1_in : STD_LOGIC_VECTOR ( 31 downto 7 );
+  signal pls_work_n_1 : STD_LOGIC;
   signal reg_data_out : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \^s00_axi_bvalid\ : STD_LOGIC;
   signal \^s00_axi_rvalid\ : STD_LOGIC;
@@ -8868,7 +8876,7 @@ aw_en_reg: unisim.vcomponents.FDSE
       CE => '1',
       D => aw_en_i_1_n_0,
       Q => aw_en_reg_n_0,
-      S => axi_awready_i_1_n_0
+      S => pls_work_n_1
     );
 \axi_araddr[2]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -8898,7 +8906,7 @@ aw_en_reg: unisim.vcomponents.FDSE
       CE => '1',
       D => \axi_araddr[2]_i_1_n_0\,
       Q => axi_araddr(2),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_araddr_reg[3]\: unisim.vcomponents.FDRE
      port map (
@@ -8906,7 +8914,7 @@ aw_en_reg: unisim.vcomponents.FDSE
       CE => '1',
       D => \axi_araddr[3]_i_1_n_0\,
       Q => axi_araddr(3),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 axi_arready_i_1: unisim.vcomponents.LUT2
     generic map(
@@ -8923,7 +8931,7 @@ axi_arready_reg: unisim.vcomponents.FDRE
       CE => '1',
       D => axi_arready0,
       Q => \^s_axi_arready\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_awaddr[2]_i_1\: unisim.vcomponents.LUT6
     generic map(
@@ -8957,7 +8965,7 @@ axi_arready_reg: unisim.vcomponents.FDRE
       CE => '1',
       D => \axi_awaddr[2]_i_1_n_0\,
       Q => p_0_in(0),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_awaddr_reg[3]\: unisim.vcomponents.FDRE
      port map (
@@ -8965,17 +8973,9 @@ axi_arready_reg: unisim.vcomponents.FDRE
       CE => '1',
       D => \axi_awaddr[3]_i_1_n_0\,
       Q => p_0_in(1),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
-axi_awready_i_1: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => s00_axi_aresetn,
-      O => axi_awready_i_1_n_0
-    );
-axi_awready_i_2: unisim.vcomponents.LUT4
+axi_awready_i_1: unisim.vcomponents.LUT4
     generic map(
       INIT => X"2000"
     )
@@ -8992,7 +8992,7 @@ axi_awready_reg: unisim.vcomponents.FDRE
       CE => '1',
       D => axi_awready0,
       Q => \^s_axi_awready\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 axi_bvalid_i_1: unisim.vcomponents.LUT6
     generic map(
@@ -9013,7 +9013,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => '1',
       D => axi_bvalid_i_1_n_0,
       Q => \^s00_axi_bvalid\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
@@ -9437,7 +9437,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(0),
       Q => s00_axi_rdata(0),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[10]\: unisim.vcomponents.FDRE
      port map (
@@ -9445,7 +9445,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(10),
       Q => s00_axi_rdata(10),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[11]\: unisim.vcomponents.FDRE
      port map (
@@ -9453,7 +9453,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(11),
       Q => s00_axi_rdata(11),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[12]\: unisim.vcomponents.FDRE
      port map (
@@ -9461,7 +9461,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(12),
       Q => s00_axi_rdata(12),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[13]\: unisim.vcomponents.FDRE
      port map (
@@ -9469,7 +9469,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(13),
       Q => s00_axi_rdata(13),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[14]\: unisim.vcomponents.FDRE
      port map (
@@ -9477,7 +9477,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(14),
       Q => s00_axi_rdata(14),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[15]\: unisim.vcomponents.FDRE
      port map (
@@ -9485,7 +9485,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(15),
       Q => s00_axi_rdata(15),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[16]\: unisim.vcomponents.FDRE
      port map (
@@ -9493,7 +9493,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(16),
       Q => s00_axi_rdata(16),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[17]\: unisim.vcomponents.FDRE
      port map (
@@ -9501,7 +9501,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(17),
       Q => s00_axi_rdata(17),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[18]\: unisim.vcomponents.FDRE
      port map (
@@ -9509,7 +9509,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(18),
       Q => s00_axi_rdata(18),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[19]\: unisim.vcomponents.FDRE
      port map (
@@ -9517,7 +9517,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(19),
       Q => s00_axi_rdata(19),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[1]\: unisim.vcomponents.FDRE
      port map (
@@ -9525,7 +9525,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(1),
       Q => s00_axi_rdata(1),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[20]\: unisim.vcomponents.FDRE
      port map (
@@ -9533,7 +9533,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(20),
       Q => s00_axi_rdata(20),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[21]\: unisim.vcomponents.FDRE
      port map (
@@ -9541,7 +9541,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(21),
       Q => s00_axi_rdata(21),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[22]\: unisim.vcomponents.FDRE
      port map (
@@ -9549,7 +9549,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(22),
       Q => s00_axi_rdata(22),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[23]\: unisim.vcomponents.FDRE
      port map (
@@ -9557,7 +9557,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(23),
       Q => s00_axi_rdata(23),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[24]\: unisim.vcomponents.FDRE
      port map (
@@ -9565,7 +9565,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(24),
       Q => s00_axi_rdata(24),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[25]\: unisim.vcomponents.FDRE
      port map (
@@ -9573,7 +9573,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(25),
       Q => s00_axi_rdata(25),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[26]\: unisim.vcomponents.FDRE
      port map (
@@ -9581,7 +9581,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(26),
       Q => s00_axi_rdata(26),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[27]\: unisim.vcomponents.FDRE
      port map (
@@ -9589,7 +9589,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(27),
       Q => s00_axi_rdata(27),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[28]\: unisim.vcomponents.FDRE
      port map (
@@ -9597,7 +9597,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(28),
       Q => s00_axi_rdata(28),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[29]\: unisim.vcomponents.FDRE
      port map (
@@ -9605,7 +9605,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(29),
       Q => s00_axi_rdata(29),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[2]\: unisim.vcomponents.FDRE
      port map (
@@ -9613,7 +9613,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(2),
       Q => s00_axi_rdata(2),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[30]\: unisim.vcomponents.FDRE
      port map (
@@ -9621,7 +9621,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(30),
       Q => s00_axi_rdata(30),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[31]\: unisim.vcomponents.FDRE
      port map (
@@ -9629,7 +9629,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(31),
       Q => s00_axi_rdata(31),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[3]\: unisim.vcomponents.FDRE
      port map (
@@ -9637,7 +9637,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(3),
       Q => s00_axi_rdata(3),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[4]\: unisim.vcomponents.FDRE
      port map (
@@ -9645,7 +9645,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(4),
       Q => s00_axi_rdata(4),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[5]\: unisim.vcomponents.FDRE
      port map (
@@ -9653,7 +9653,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(5),
       Q => s00_axi_rdata(5),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[6]\: unisim.vcomponents.FDRE
      port map (
@@ -9661,7 +9661,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(6),
       Q => s00_axi_rdata(6),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[7]\: unisim.vcomponents.FDRE
      port map (
@@ -9669,7 +9669,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(7),
       Q => s00_axi_rdata(7),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[8]\: unisim.vcomponents.FDRE
      port map (
@@ -9677,7 +9677,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(8),
       Q => s00_axi_rdata(8),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \axi_rdata_reg[9]\: unisim.vcomponents.FDRE
      port map (
@@ -9685,7 +9685,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       CE => \slv_reg_rden__0\,
       D => reg_data_out(9),
       Q => s00_axi_rdata(9),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 axi_rvalid_i_1: unisim.vcomponents.LUT4
     generic map(
@@ -9704,7 +9704,7 @@ axi_rvalid_reg: unisim.vcomponents.FDRE
       CE => '1',
       D => axi_rvalid_i_1_n_0,
       Q => \^s00_axi_rvalid\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 axi_wready_i_1: unisim.vcomponents.LUT4
     generic map(
@@ -9723,11 +9723,12 @@ axi_wready_reg: unisim.vcomponents.FDRE
       CE => '1',
       D => axi_wready0,
       Q => \^s_axi_wready\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
      port map (
       Q(0) => slv_reg0(0),
+      SR(0) => pls_work_n_1,
       a0 => a0,
       a1 => a1,
       b0 => b0,
@@ -9745,8 +9746,8 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       g0 => g0,
       g1 => g1,
       leds(7 downto 0) => leds(7 downto 0),
-      rst => rst,
-      s00_axi_aclk => s00_axi_aclk
+      s00_axi_aclk => s00_axi_aclk,
+      s00_axi_aresetn => s00_axi_aresetn
     );
 \slv_reg0[15]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -9809,7 +9810,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[7]_i_1_n_0\,
       D => s00_axi_wdata(0),
       Q => slv_reg0(0),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[10]\: unisim.vcomponents.FDRE
      port map (
@@ -9817,7 +9818,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[15]_i_1_n_0\,
       D => s00_axi_wdata(10),
       Q => \slv_reg0_reg_n_0_[10]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[11]\: unisim.vcomponents.FDRE
      port map (
@@ -9825,7 +9826,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[15]_i_1_n_0\,
       D => s00_axi_wdata(11),
       Q => \slv_reg0_reg_n_0_[11]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[12]\: unisim.vcomponents.FDRE
      port map (
@@ -9833,7 +9834,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[15]_i_1_n_0\,
       D => s00_axi_wdata(12),
       Q => \slv_reg0_reg_n_0_[12]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[13]\: unisim.vcomponents.FDRE
      port map (
@@ -9841,7 +9842,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[15]_i_1_n_0\,
       D => s00_axi_wdata(13),
       Q => \slv_reg0_reg_n_0_[13]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[14]\: unisim.vcomponents.FDRE
      port map (
@@ -9849,7 +9850,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[15]_i_1_n_0\,
       D => s00_axi_wdata(14),
       Q => \slv_reg0_reg_n_0_[14]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[15]\: unisim.vcomponents.FDRE
      port map (
@@ -9857,7 +9858,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[15]_i_1_n_0\,
       D => s00_axi_wdata(15),
       Q => \slv_reg0_reg_n_0_[15]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[16]\: unisim.vcomponents.FDRE
      port map (
@@ -9865,7 +9866,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[23]_i_1_n_0\,
       D => s00_axi_wdata(16),
       Q => \slv_reg0_reg_n_0_[16]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[17]\: unisim.vcomponents.FDRE
      port map (
@@ -9873,7 +9874,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[23]_i_1_n_0\,
       D => s00_axi_wdata(17),
       Q => \slv_reg0_reg_n_0_[17]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[18]\: unisim.vcomponents.FDRE
      port map (
@@ -9881,7 +9882,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[23]_i_1_n_0\,
       D => s00_axi_wdata(18),
       Q => \slv_reg0_reg_n_0_[18]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[19]\: unisim.vcomponents.FDRE
      port map (
@@ -9889,7 +9890,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[23]_i_1_n_0\,
       D => s00_axi_wdata(19),
       Q => \slv_reg0_reg_n_0_[19]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[1]\: unisim.vcomponents.FDRE
      port map (
@@ -9897,7 +9898,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[7]_i_1_n_0\,
       D => s00_axi_wdata(1),
       Q => \slv_reg0_reg_n_0_[1]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[20]\: unisim.vcomponents.FDRE
      port map (
@@ -9905,7 +9906,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[23]_i_1_n_0\,
       D => s00_axi_wdata(20),
       Q => \slv_reg0_reg_n_0_[20]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[21]\: unisim.vcomponents.FDRE
      port map (
@@ -9913,7 +9914,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[23]_i_1_n_0\,
       D => s00_axi_wdata(21),
       Q => \slv_reg0_reg_n_0_[21]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[22]\: unisim.vcomponents.FDRE
      port map (
@@ -9921,7 +9922,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[23]_i_1_n_0\,
       D => s00_axi_wdata(22),
       Q => \slv_reg0_reg_n_0_[22]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[23]\: unisim.vcomponents.FDRE
      port map (
@@ -9929,7 +9930,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[23]_i_1_n_0\,
       D => s00_axi_wdata(23),
       Q => \slv_reg0_reg_n_0_[23]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[24]\: unisim.vcomponents.FDRE
      port map (
@@ -9937,7 +9938,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[31]_i_1_n_0\,
       D => s00_axi_wdata(24),
       Q => \slv_reg0_reg_n_0_[24]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[25]\: unisim.vcomponents.FDRE
      port map (
@@ -9945,7 +9946,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[31]_i_1_n_0\,
       D => s00_axi_wdata(25),
       Q => \slv_reg0_reg_n_0_[25]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[26]\: unisim.vcomponents.FDRE
      port map (
@@ -9953,7 +9954,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[31]_i_1_n_0\,
       D => s00_axi_wdata(26),
       Q => \slv_reg0_reg_n_0_[26]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[27]\: unisim.vcomponents.FDRE
      port map (
@@ -9961,7 +9962,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[31]_i_1_n_0\,
       D => s00_axi_wdata(27),
       Q => \slv_reg0_reg_n_0_[27]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[28]\: unisim.vcomponents.FDRE
      port map (
@@ -9969,7 +9970,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[31]_i_1_n_0\,
       D => s00_axi_wdata(28),
       Q => \slv_reg0_reg_n_0_[28]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[29]\: unisim.vcomponents.FDRE
      port map (
@@ -9977,7 +9978,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[31]_i_1_n_0\,
       D => s00_axi_wdata(29),
       Q => \slv_reg0_reg_n_0_[29]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[2]\: unisim.vcomponents.FDRE
      port map (
@@ -9985,7 +9986,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[7]_i_1_n_0\,
       D => s00_axi_wdata(2),
       Q => \slv_reg0_reg_n_0_[2]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[30]\: unisim.vcomponents.FDRE
      port map (
@@ -9993,7 +9994,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[31]_i_1_n_0\,
       D => s00_axi_wdata(30),
       Q => \slv_reg0_reg_n_0_[30]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[31]\: unisim.vcomponents.FDRE
      port map (
@@ -10001,7 +10002,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[31]_i_1_n_0\,
       D => s00_axi_wdata(31),
       Q => \slv_reg0_reg_n_0_[31]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[3]\: unisim.vcomponents.FDRE
      port map (
@@ -10009,7 +10010,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[7]_i_1_n_0\,
       D => s00_axi_wdata(3),
       Q => \slv_reg0_reg_n_0_[3]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[4]\: unisim.vcomponents.FDRE
      port map (
@@ -10017,7 +10018,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[7]_i_1_n_0\,
       D => s00_axi_wdata(4),
       Q => \slv_reg0_reg_n_0_[4]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[5]\: unisim.vcomponents.FDRE
      port map (
@@ -10025,7 +10026,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[7]_i_1_n_0\,
       D => s00_axi_wdata(5),
       Q => \slv_reg0_reg_n_0_[5]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[6]\: unisim.vcomponents.FDRE
      port map (
@@ -10033,7 +10034,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[7]_i_1_n_0\,
       D => s00_axi_wdata(6),
       Q => \slv_reg0_reg_n_0_[6]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[7]\: unisim.vcomponents.FDRE
      port map (
@@ -10041,7 +10042,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[7]_i_1_n_0\,
       D => s00_axi_wdata(7),
       Q => \slv_reg0_reg_n_0_[7]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[8]\: unisim.vcomponents.FDRE
      port map (
@@ -10049,7 +10050,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[15]_i_1_n_0\,
       D => s00_axi_wdata(8),
       Q => \slv_reg0_reg_n_0_[8]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg0_reg[9]\: unisim.vcomponents.FDRE
      port map (
@@ -10057,7 +10058,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg0[15]_i_1_n_0\,
       D => s00_axi_wdata(9),
       Q => \slv_reg0_reg_n_0_[9]\,
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1[15]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -10109,7 +10110,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(0),
       Q => slv_reg1(0),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[10]\: unisim.vcomponents.FDRE
      port map (
@@ -10117,7 +10118,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[15]_i_1_n_0\,
       D => s00_axi_wdata(10),
       Q => slv_reg1(10),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[11]\: unisim.vcomponents.FDRE
      port map (
@@ -10125,7 +10126,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[15]_i_1_n_0\,
       D => s00_axi_wdata(11),
       Q => slv_reg1(11),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[12]\: unisim.vcomponents.FDRE
      port map (
@@ -10133,7 +10134,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[15]_i_1_n_0\,
       D => s00_axi_wdata(12),
       Q => slv_reg1(12),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[13]\: unisim.vcomponents.FDRE
      port map (
@@ -10141,7 +10142,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[15]_i_1_n_0\,
       D => s00_axi_wdata(13),
       Q => slv_reg1(13),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[14]\: unisim.vcomponents.FDRE
      port map (
@@ -10149,7 +10150,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[15]_i_1_n_0\,
       D => s00_axi_wdata(14),
       Q => slv_reg1(14),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[15]\: unisim.vcomponents.FDRE
      port map (
@@ -10157,7 +10158,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[15]_i_1_n_0\,
       D => s00_axi_wdata(15),
       Q => slv_reg1(15),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[16]\: unisim.vcomponents.FDRE
      port map (
@@ -10165,7 +10166,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[23]_i_1_n_0\,
       D => s00_axi_wdata(16),
       Q => slv_reg1(16),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[17]\: unisim.vcomponents.FDRE
      port map (
@@ -10173,7 +10174,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[23]_i_1_n_0\,
       D => s00_axi_wdata(17),
       Q => slv_reg1(17),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[18]\: unisim.vcomponents.FDRE
      port map (
@@ -10181,7 +10182,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[23]_i_1_n_0\,
       D => s00_axi_wdata(18),
       Q => slv_reg1(18),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[19]\: unisim.vcomponents.FDRE
      port map (
@@ -10189,7 +10190,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[23]_i_1_n_0\,
       D => s00_axi_wdata(19),
       Q => slv_reg1(19),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[1]\: unisim.vcomponents.FDRE
      port map (
@@ -10197,7 +10198,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(1),
       Q => slv_reg1(1),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[20]\: unisim.vcomponents.FDRE
      port map (
@@ -10205,7 +10206,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[23]_i_1_n_0\,
       D => s00_axi_wdata(20),
       Q => slv_reg1(20),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[21]\: unisim.vcomponents.FDRE
      port map (
@@ -10213,7 +10214,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[23]_i_1_n_0\,
       D => s00_axi_wdata(21),
       Q => slv_reg1(21),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[22]\: unisim.vcomponents.FDRE
      port map (
@@ -10221,7 +10222,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[23]_i_1_n_0\,
       D => s00_axi_wdata(22),
       Q => slv_reg1(22),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[23]\: unisim.vcomponents.FDRE
      port map (
@@ -10229,7 +10230,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[23]_i_1_n_0\,
       D => s00_axi_wdata(23),
       Q => slv_reg1(23),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[24]\: unisim.vcomponents.FDRE
      port map (
@@ -10237,7 +10238,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[31]_i_1_n_0\,
       D => s00_axi_wdata(24),
       Q => slv_reg1(24),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[25]\: unisim.vcomponents.FDRE
      port map (
@@ -10245,7 +10246,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[31]_i_1_n_0\,
       D => s00_axi_wdata(25),
       Q => slv_reg1(25),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[26]\: unisim.vcomponents.FDRE
      port map (
@@ -10253,7 +10254,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[31]_i_1_n_0\,
       D => s00_axi_wdata(26),
       Q => slv_reg1(26),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[27]\: unisim.vcomponents.FDRE
      port map (
@@ -10261,7 +10262,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[31]_i_1_n_0\,
       D => s00_axi_wdata(27),
       Q => slv_reg1(27),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[28]\: unisim.vcomponents.FDRE
      port map (
@@ -10269,7 +10270,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[31]_i_1_n_0\,
       D => s00_axi_wdata(28),
       Q => slv_reg1(28),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[29]\: unisim.vcomponents.FDRE
      port map (
@@ -10277,7 +10278,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[31]_i_1_n_0\,
       D => s00_axi_wdata(29),
       Q => slv_reg1(29),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[2]\: unisim.vcomponents.FDRE
      port map (
@@ -10285,7 +10286,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(2),
       Q => slv_reg1(2),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[30]\: unisim.vcomponents.FDRE
      port map (
@@ -10293,7 +10294,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[31]_i_1_n_0\,
       D => s00_axi_wdata(30),
       Q => slv_reg1(30),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[31]\: unisim.vcomponents.FDRE
      port map (
@@ -10301,7 +10302,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[31]_i_1_n_0\,
       D => s00_axi_wdata(31),
       Q => slv_reg1(31),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[3]\: unisim.vcomponents.FDRE
      port map (
@@ -10309,7 +10310,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(3),
       Q => slv_reg1(3),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[4]\: unisim.vcomponents.FDRE
      port map (
@@ -10317,7 +10318,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(4),
       Q => slv_reg1(4),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[5]\: unisim.vcomponents.FDRE
      port map (
@@ -10325,7 +10326,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(5),
       Q => slv_reg1(5),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[6]\: unisim.vcomponents.FDRE
      port map (
@@ -10333,7 +10334,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(6),
       Q => slv_reg1(6),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[7]\: unisim.vcomponents.FDRE
      port map (
@@ -10341,7 +10342,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[7]_i_1_n_0\,
       D => s00_axi_wdata(7),
       Q => slv_reg1(7),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[8]\: unisim.vcomponents.FDRE
      port map (
@@ -10349,7 +10350,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[15]_i_1_n_0\,
       D => s00_axi_wdata(8),
       Q => slv_reg1(8),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg1_reg[9]\: unisim.vcomponents.FDRE
      port map (
@@ -10357,7 +10358,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg1[15]_i_1_n_0\,
       D => s00_axi_wdata(9),
       Q => slv_reg1(9),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2[15]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -10409,7 +10410,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(0),
       Q => slv_reg2(0),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[10]\: unisim.vcomponents.FDRE
      port map (
@@ -10417,7 +10418,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(10),
       Q => slv_reg2(10),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[11]\: unisim.vcomponents.FDRE
      port map (
@@ -10425,7 +10426,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(11),
       Q => slv_reg2(11),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[12]\: unisim.vcomponents.FDRE
      port map (
@@ -10433,7 +10434,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(12),
       Q => slv_reg2(12),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[13]\: unisim.vcomponents.FDRE
      port map (
@@ -10441,7 +10442,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(13),
       Q => slv_reg2(13),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[14]\: unisim.vcomponents.FDRE
      port map (
@@ -10449,7 +10450,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(14),
       Q => slv_reg2(14),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[15]\: unisim.vcomponents.FDRE
      port map (
@@ -10457,7 +10458,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(15),
       Q => slv_reg2(15),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[16]\: unisim.vcomponents.FDRE
      port map (
@@ -10465,7 +10466,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(16),
       Q => slv_reg2(16),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[17]\: unisim.vcomponents.FDRE
      port map (
@@ -10473,7 +10474,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(17),
       Q => slv_reg2(17),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[18]\: unisim.vcomponents.FDRE
      port map (
@@ -10481,7 +10482,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(18),
       Q => slv_reg2(18),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[19]\: unisim.vcomponents.FDRE
      port map (
@@ -10489,7 +10490,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(19),
       Q => slv_reg2(19),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[1]\: unisim.vcomponents.FDRE
      port map (
@@ -10497,7 +10498,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(1),
       Q => slv_reg2(1),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[20]\: unisim.vcomponents.FDRE
      port map (
@@ -10505,7 +10506,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(20),
       Q => slv_reg2(20),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[21]\: unisim.vcomponents.FDRE
      port map (
@@ -10513,7 +10514,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(21),
       Q => slv_reg2(21),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[22]\: unisim.vcomponents.FDRE
      port map (
@@ -10521,7 +10522,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(22),
       Q => slv_reg2(22),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[23]\: unisim.vcomponents.FDRE
      port map (
@@ -10529,7 +10530,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(23),
       Q => slv_reg2(23),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[24]\: unisim.vcomponents.FDRE
      port map (
@@ -10537,7 +10538,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(24),
       Q => slv_reg2(24),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[25]\: unisim.vcomponents.FDRE
      port map (
@@ -10545,7 +10546,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(25),
       Q => slv_reg2(25),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[26]\: unisim.vcomponents.FDRE
      port map (
@@ -10553,7 +10554,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(26),
       Q => slv_reg2(26),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[27]\: unisim.vcomponents.FDRE
      port map (
@@ -10561,7 +10562,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(27),
       Q => slv_reg2(27),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[28]\: unisim.vcomponents.FDRE
      port map (
@@ -10569,7 +10570,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(28),
       Q => slv_reg2(28),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[29]\: unisim.vcomponents.FDRE
      port map (
@@ -10577,7 +10578,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(29),
       Q => slv_reg2(29),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[2]\: unisim.vcomponents.FDRE
      port map (
@@ -10585,7 +10586,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(2),
       Q => slv_reg2(2),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[30]\: unisim.vcomponents.FDRE
      port map (
@@ -10593,7 +10594,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(30),
       Q => slv_reg2(30),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[31]\: unisim.vcomponents.FDRE
      port map (
@@ -10601,7 +10602,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(31),
       Q => slv_reg2(31),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[3]\: unisim.vcomponents.FDRE
      port map (
@@ -10609,7 +10610,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(3),
       Q => slv_reg2(3),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[4]\: unisim.vcomponents.FDRE
      port map (
@@ -10617,7 +10618,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(4),
       Q => slv_reg2(4),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[5]\: unisim.vcomponents.FDRE
      port map (
@@ -10625,7 +10626,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(5),
       Q => slv_reg2(5),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[6]\: unisim.vcomponents.FDRE
      port map (
@@ -10633,7 +10634,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(6),
       Q => slv_reg2(6),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[7]\: unisim.vcomponents.FDRE
      port map (
@@ -10641,7 +10642,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(7),
       Q => slv_reg2(7),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[8]\: unisim.vcomponents.FDRE
      port map (
@@ -10649,7 +10650,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(8),
       Q => slv_reg2(8),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg2_reg[9]\: unisim.vcomponents.FDRE
      port map (
@@ -10657,7 +10658,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(9),
       Q => slv_reg2(9),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3[15]_i_1\: unisim.vcomponents.LUT4
     generic map(
@@ -10709,7 +10710,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(7),
       D => s00_axi_wdata(0),
       Q => slv_reg3(0),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[10]\: unisim.vcomponents.FDRE
      port map (
@@ -10717,7 +10718,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(15),
       D => s00_axi_wdata(10),
       Q => slv_reg3(10),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[11]\: unisim.vcomponents.FDRE
      port map (
@@ -10725,7 +10726,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(15),
       D => s00_axi_wdata(11),
       Q => slv_reg3(11),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[12]\: unisim.vcomponents.FDRE
      port map (
@@ -10733,7 +10734,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(15),
       D => s00_axi_wdata(12),
       Q => slv_reg3(12),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[13]\: unisim.vcomponents.FDRE
      port map (
@@ -10741,7 +10742,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(15),
       D => s00_axi_wdata(13),
       Q => slv_reg3(13),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[14]\: unisim.vcomponents.FDRE
      port map (
@@ -10749,7 +10750,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(15),
       D => s00_axi_wdata(14),
       Q => slv_reg3(14),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[15]\: unisim.vcomponents.FDRE
      port map (
@@ -10757,7 +10758,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(15),
       D => s00_axi_wdata(15),
       Q => slv_reg3(15),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[16]\: unisim.vcomponents.FDRE
      port map (
@@ -10765,7 +10766,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(23),
       D => s00_axi_wdata(16),
       Q => slv_reg3(16),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[17]\: unisim.vcomponents.FDRE
      port map (
@@ -10773,7 +10774,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(23),
       D => s00_axi_wdata(17),
       Q => slv_reg3(17),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[18]\: unisim.vcomponents.FDRE
      port map (
@@ -10781,7 +10782,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(23),
       D => s00_axi_wdata(18),
       Q => slv_reg3(18),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[19]\: unisim.vcomponents.FDRE
      port map (
@@ -10789,7 +10790,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(23),
       D => s00_axi_wdata(19),
       Q => slv_reg3(19),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[1]\: unisim.vcomponents.FDRE
      port map (
@@ -10797,7 +10798,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(7),
       D => s00_axi_wdata(1),
       Q => slv_reg3(1),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[20]\: unisim.vcomponents.FDRE
      port map (
@@ -10805,7 +10806,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(23),
       D => s00_axi_wdata(20),
       Q => slv_reg3(20),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[21]\: unisim.vcomponents.FDRE
      port map (
@@ -10813,7 +10814,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(23),
       D => s00_axi_wdata(21),
       Q => slv_reg3(21),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[22]\: unisim.vcomponents.FDRE
      port map (
@@ -10821,7 +10822,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(23),
       D => s00_axi_wdata(22),
       Q => slv_reg3(22),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[23]\: unisim.vcomponents.FDRE
      port map (
@@ -10829,7 +10830,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(23),
       D => s00_axi_wdata(23),
       Q => slv_reg3(23),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[24]\: unisim.vcomponents.FDRE
      port map (
@@ -10837,7 +10838,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(31),
       D => s00_axi_wdata(24),
       Q => slv_reg3(24),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[25]\: unisim.vcomponents.FDRE
      port map (
@@ -10845,7 +10846,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(31),
       D => s00_axi_wdata(25),
       Q => slv_reg3(25),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[26]\: unisim.vcomponents.FDRE
      port map (
@@ -10853,7 +10854,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(31),
       D => s00_axi_wdata(26),
       Q => slv_reg3(26),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[27]\: unisim.vcomponents.FDRE
      port map (
@@ -10861,7 +10862,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(31),
       D => s00_axi_wdata(27),
       Q => slv_reg3(27),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[28]\: unisim.vcomponents.FDRE
      port map (
@@ -10869,7 +10870,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(31),
       D => s00_axi_wdata(28),
       Q => slv_reg3(28),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[29]\: unisim.vcomponents.FDRE
      port map (
@@ -10877,7 +10878,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(31),
       D => s00_axi_wdata(29),
       Q => slv_reg3(29),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[2]\: unisim.vcomponents.FDRE
      port map (
@@ -10885,7 +10886,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(7),
       D => s00_axi_wdata(2),
       Q => slv_reg3(2),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[30]\: unisim.vcomponents.FDRE
      port map (
@@ -10893,7 +10894,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(31),
       D => s00_axi_wdata(30),
       Q => slv_reg3(30),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[31]\: unisim.vcomponents.FDRE
      port map (
@@ -10901,7 +10902,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(31),
       D => s00_axi_wdata(31),
       Q => slv_reg3(31),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[3]\: unisim.vcomponents.FDRE
      port map (
@@ -10909,7 +10910,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(7),
       D => s00_axi_wdata(3),
       Q => slv_reg3(3),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[4]\: unisim.vcomponents.FDRE
      port map (
@@ -10917,7 +10918,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(7),
       D => s00_axi_wdata(4),
       Q => slv_reg3(4),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[5]\: unisim.vcomponents.FDRE
      port map (
@@ -10925,7 +10926,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(7),
       D => s00_axi_wdata(5),
       Q => slv_reg3(5),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[6]\: unisim.vcomponents.FDRE
      port map (
@@ -10933,7 +10934,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(7),
       D => s00_axi_wdata(6),
       Q => slv_reg3(6),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[7]\: unisim.vcomponents.FDRE
      port map (
@@ -10941,7 +10942,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(7),
       D => s00_axi_wdata(7),
       Q => slv_reg3(7),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[8]\: unisim.vcomponents.FDRE
      port map (
@@ -10949,7 +10950,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(15),
       D => s00_axi_wdata(8),
       Q => slv_reg3(8),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 \slv_reg3_reg[9]\: unisim.vcomponents.FDRE
      port map (
@@ -10957,7 +10958,7 @@ pls_work: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_system
       CE => p_1_in(15),
       D => s00_axi_wdata(9),
       Q => slv_reg3(9),
-      R => axi_awready_i_1_n_0
+      R => pls_work_n_1
     );
 slv_reg_rden: unisim.vcomponents.LUT3
     generic map(
@@ -10999,8 +11000,8 @@ entity Cortex_A9_fpadd_ip_0_0_fpadd_ip_v1_0 is
     a1 : out STD_LOGIC;
     s00_axi_rvalid : out STD_LOGIC;
     s00_axi_bvalid : out STD_LOGIC;
-    rst : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_wvalid : in STD_LOGIC;
     s00_axi_awvalid : in STD_LOGIC;
@@ -11008,7 +11009,6 @@ entity Cortex_A9_fpadd_ip_0_0_fpadd_ip_v1_0 is
     s00_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_arvalid : in STD_LOGIC;
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_aresetn : in STD_LOGIC;
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
@@ -11040,7 +11040,6 @@ fpadd_ip_v1_0_S00_AXI_inst: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_ip_v1_0_S00
       g0 => g0,
       g1 => g1,
       leds(7 downto 0) => leds(7 downto 0),
-      rst => rst,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_araddr(1 downto 0) => s00_axi_araddr(1 downto 0),
       s00_axi_aresetn => s00_axi_aresetn,
@@ -11063,7 +11062,6 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity Cortex_A9_fpadd_ip_0_0 is
   port (
-    rst : in STD_LOGIC;
     leds : out STD_LOGIC_VECTOR ( 7 downto 0 );
     an0 : out STD_LOGIC;
     a0 : out STD_LOGIC;
@@ -11116,10 +11114,8 @@ end Cortex_A9_fpadd_ip_0_0;
 architecture STRUCTURE of Cortex_A9_fpadd_ip_0_0 is
   signal \<const0>\ : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
-  attribute X_INTERFACE_INFO of rst : signal is "xilinx.com:signal:reset:1.0 rst RST";
-  attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of rst : signal is "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s00_axi_aclk : signal is "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK";
+  attribute X_INTERFACE_PARAMETER : string;
   attribute X_INTERFACE_PARAMETER of s00_axi_aclk : signal is "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn:rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN Cortex_A9_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s00_axi_aresetn : signal is "xilinx.com:signal:reset:1.0 S00_AXI_RST RST";
   attribute X_INTERFACE_PARAMETER of s00_axi_aresetn : signal is "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0";
@@ -11174,7 +11170,6 @@ inst: entity work.Cortex_A9_fpadd_ip_0_0_fpadd_ip_v1_0
       g0 => g0,
       g1 => g1,
       leds(7 downto 0) => leds(7 downto 0),
-      rst => rst,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_araddr(1 downto 0) => s00_axi_araddr(3 downto 2),
       s00_axi_aresetn => s00_axi_aresetn,

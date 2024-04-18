@@ -2855,3 +2855,13 @@ con
 ----------------End of Script----------------
 
 19:49:32 INFO  : Disconnected from the channel tcfchan#8.
+08:58:55 INFO  : Launching XSCT server: xsct -n  -interactive /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step2/vitis/temp_xsdb_launch_script.tcl
+08:58:59 INFO  : XSCT server has started successfully.
+08:58:59 INFO  : plnx-install-location is set to ''
+08:58:59 INFO  : Successfully done setting XSCT server connection channel  
+08:58:59 INFO  : Successfully done setting workspace for the tool. 
+08:59:01 INFO  : Platform repository initialization has completed.
+08:59:02 INFO  : Registering command handlers for Vitis TCF services
+08:59:02 INFO  : Successfully done query RDI_DATADIR 
+08:59:24 INFO  : Checking for BSP changes to sync application flags for project 'profiling_arm_app'...
+08:59:33 INFO  : Checking for BSP changes to sync application flags for project 'profiling_arm_app'...

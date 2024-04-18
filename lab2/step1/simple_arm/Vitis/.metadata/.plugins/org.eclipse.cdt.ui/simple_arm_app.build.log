@@ -1,25 +1,10 @@
-09:23:53 **** Build of configuration Debug for project simple_arm_app ****
+09:01:14 **** Incremental Build of configuration Debug for project simple_arm_app ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
  
 make --no-print-directory main-build
-Building file: ../src/lab2.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab2.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/sw/simple_arm_platform/standalone_domain/bspinclude/include -MMD -MP -MF"src/lab2.d" -MT"src/lab2.o" -o "src/lab2.o" "../src/lab2.c"
-Finished building: ../src/lab2.c
- 
-Building target: simple_arm_app.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/simple_arm/Vitis/simple_arm_platform/export/simple_arm_platform/sw/simple_arm_platform/standalone_domain/bsplib/lib -o "simple_arm_app.elf"  ./src/lab2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: simple_arm_app.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size simple_arm_app.elf  |tee "simple_arm_app.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  23088	   1176	  22584	  46848	   b700	simple_arm_app.elf
-Finished building: simple_arm_app.elf.size
- 
+make[1]: Nothing to be done for 'main-build'.
 
-09:23:54 Build Finished (took 861ms)
+09:01:15 Build Finished (took 402ms)
 

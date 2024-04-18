@@ -32,7 +32,7 @@ int main (void)
 	start_time();
 
     // Function call
-	//multi_Matrix();
+	multi_Matrix();
 
 	stop_time();
 	CORE_TICKS total_time = get_time();

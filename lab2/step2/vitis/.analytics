@@ -145,3 +145,8 @@ timestamp=[2024-04-16 19:43:20], mode=BUILD, duration=0:00:00.635, duration_ms=6
 timestamp=[2024-04-16 19:44:31], mode=BUILD, duration=0:00:00.635, duration_ms=635, data={name=profiling_arm_app, configuration=Debug, clean_build=false}
 timestamp=[2024-04-16 19:48:41], mode=BUILD, duration=0:00:00.686, duration_ms=686, data={name=profiling_arm_app, configuration=Debug, clean_build=false}
 timestamp=[2024-04-16 19:48:59], mode=BUILD, duration=0:00:00.398, duration_ms=398, data={name=profiling_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-18 08:59:01], mode=WORKBENCH_START, duration=0:00:13.380, duration_ms=13380, data={}
+timestamp=[2024-04-18 08:59:01], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.169, duration_ms=169, data={}
+timestamp=[2024-04-18 08:59:02], mode=WORKBENCH_UI_INIT, duration=0:00:01.272, duration_ms=1272, data={editors_count=1, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,profiling_arm_app,profiling_arm_app_system,profiling_platform}
+timestamp=[2024-04-18 08:59:27], mode=BUILD, duration=0:00:01.128, duration_ms=1128, data={name=profiling_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-18 08:59:33], mode=BUILD, duration=0:00:00.367, duration_ms=367, data={name=profiling_arm_app, configuration=Debug, clean_build=false}

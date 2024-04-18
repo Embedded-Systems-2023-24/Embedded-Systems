@@ -183,7 +183,6 @@ proc create_root_design { parentCell } {
   set g0_0 [ create_bd_port -dir O g0_0 ]
   set g1_0 [ create_bd_port -dir O g1_0 ]
   set leds_0 [ create_bd_port -dir O -from 7 -to 0 leds_0 ]
-  set rst_0 [ create_bd_port -dir I -type rst rst_0 ]
 
   # Create instance: btns_5bit, and set properties
   set btns_5bit [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 btns_5bit ]
@@ -643,13 +642,12 @@ proc create_root_design { parentCell } {
   connect_bd_net -net fpadd_ip_0_leds [get_bd_ports leds_0] [get_bd_pins fpadd_ip_0/leds]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins btns_5bit/s_axi_aclk] [get_bd_pins fpadd_ip_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins sw_8bit/s_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
-  connect_bd_net -net rst_0_1 [get_bd_ports rst_0] [get_bd_pins fpadd_ip_0/rst]
   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins btns_5bit/s_axi_aresetn] [get_bd_pins fpadd_ip_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins sw_8bit/s_axi_aresetn]
 
   # Create address segments
   assign_bd_address -offset 0x41200000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs sw_8bit/S_AXI/Reg] -force
   assign_bd_address -offset 0x41210000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs btns_5bit/S_AXI/Reg] -force
-  assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs fpadd_ip_0/S00_AXI/S00_AXI_reg] -force
+  assign_bd_address -offset 0x41220000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs fpadd_ip_0/S00_AXI/S00_AXI_reg] -force
 
 
   # Restore current instance

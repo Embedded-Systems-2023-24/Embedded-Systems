@@ -2706,3 +2706,120 @@ error cannot find a jtag device with node id $node_id}], Result: [null, ]. Thr
 
 !ENTRY com.xilinx.sdk.utils 0 0 2024-04-16 09:29:42.427
 !MESSAGE XSCT command with result: [disconnect tcfchan#1], Result: [null, ]. Thread: Thread-107
+!SESSION 2024-04-18 08:59:52.359 -----------------------------------------------
+eclipse.buildId=2020.2
+java.version=11.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2024-04-18 09:00:01.205
+!MESSAGE Plug-in 'org.eclipse.ui.editors' contributed an invalid Menu Extension (Path: 'navigate' is invalid): org.eclipse.ui.edit.text.gotoLastEditPosition
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:07.245
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-18
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:07.248
+!MESSAGE XSCT Command: [plnx-install-path  ; ::scw::scw_mode gui], Thread: Thread-10
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:07.250
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-18
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:07.251
+!MESSAGE XSCT command with result: [plnx-install-path  ; ::scw::scw_mode gui], Result: [null, ]. Thread: Thread-10
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:07.253
+!MESSAGE XSCT Command: [setws /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis], Thread: Thread-18
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:07.256
+!MESSAGE XSCT command with result: [setws /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis], Result: [null, ]. Thread: Thread-18
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:09.282
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:09.396
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:09.397
+!MESSAGE XSCT Command: [set query_var1 $::env(RDI_DATADIR)], Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:09.405
+!MESSAGE XSCT command with result: [set query_var1 $::env(RDI_DATADIR)], Result: [null, /opt/Xilinx/Vitis/2020.2/data]. Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY org.eclipse.rse.core 4 0 2024-04-18 09:00:10.113
+!MESSAGE Unexpected Exception
+!STACK 0
+java.net.UnknownHostException: localhost.localdomain: localhost.localdomain: Το όνομα ή η υπηρεσία δεν είναι γνωστά
+	at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1642)
+	at org.eclipse.rse.core.RSECorePlugin.getLocalMachineName(RSECorePlugin.java:265)
+	at org.eclipse.rse.core.RSEPreferencesManager.getDefaultPrivateSystemProfileName(RSEPreferencesManager.java:358)
+	at org.eclipse.rse.core.RSEPreferencesManager.initDefaults(RSEPreferencesManager.java:337)
+	at org.eclipse.rse.internal.core.RSEPreferenceInitializer.initializeDefaultPreferences(RSEPreferenceInitializer.java:23)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper$1.run(PreferenceServiceRegistryHelper.java:307)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.runInitializer(PreferenceServiceRegistryHelper.java:310)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.applyRuntimeDefaults(PreferenceServiceRegistryHelper.java:134)
+	at org.eclipse.core.internal.preferences.PreferencesService.applyRuntimeDefaults(PreferencesService.java:374)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.applyRuntimeDefaults(DefaultPreferences.java:225)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.load(DefaultPreferences.java:279)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:370)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:624)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.node(DefaultPreferences.java:150)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.getDefaultPreferences(PreferenceForwarder.java:136)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.getInt(PreferenceForwarder.java:490)
+	at org.eclipse.rse.logging.Logger.initialize(Logger.java:249)
+	at org.eclipse.rse.logging.Logger.<init>(Logger.java:135)
+	at org.eclipse.rse.logging.LoggerFactory.getLogger(LoggerFactory.java:45)
+	at org.eclipse.rse.core.RSECorePlugin.getLogger(RSECorePlugin.java:392)
+	at org.eclipse.rse.internal.core.RSEInitJob.<init>(RSEInitJob.java:133)
+	at org.eclipse.rse.internal.core.RSEInitJob.<clinit>(RSEInitJob.java:65)
+	at org.eclipse.rse.core.RSECorePlugin.waitForInitCompletion(RSECorePlugin.java:142)
+	at org.eclipse.rse.internal.ui.RSEUIInitJob.run(RSEUIInitJob.java:32)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.UnknownHostException: localhost.localdomain: Το όνομα ή η υπηρεσία δεν είναι γνωστά
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+	at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1637)
+	... 25 more
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:28.444
+!MESSAGE XSCT Command: [::hsi::utils::openhw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/hw/design_interrupt_wrapper.xsa], Thread: Worker-3: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:29.891
+!MESSAGE XSCT command with result: [::hsi::utils::openhw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/hw/design_interrupt_wrapper.xsa], Result: [null, ]. Thread: Worker-3: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:29.946
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/hw/design_interrupt_wrapper.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/sw/interrupt_add_platform/standalone_domain/system.mss ], Thread: Worker-3: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:29.959
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/hw/design_interrupt_wrapper.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/sw/interrupt_add_platform/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-3: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:29.961
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/hw/design_interrupt_wrapper.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/sw/interrupt_add_platform/standalone_domain/system.mss], Thread: Worker-3: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:29.964
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/hw/design_interrupt_wrapper.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/sw/interrupt_add_platform/standalone_domain/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.3",
+}]. Thread: Worker-3: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2024-04-18 09:00:29.967
+!MESSAGE Generating MD5 hash for file: /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/sw/interrupt_add_platform/standalone_domain/system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:29.982
+!MESSAGE XSCT Command: [::hsi::utils::closesw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/sw/interrupt_add_platform/standalone_domain/system.mss], Thread: Worker-3: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 09:00:29.985
+!MESSAGE XSCT command with result: [::hsi::utils::closesw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step1/interrupt_arm/vitis/interrupt_add_platform/export/interrupt_add_platform/sw/interrupt_add_platform/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-3: Build Project
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-04-18 09:00:32.066
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-04-18 09:00:32.068
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-04-18 09:00:32.069
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType

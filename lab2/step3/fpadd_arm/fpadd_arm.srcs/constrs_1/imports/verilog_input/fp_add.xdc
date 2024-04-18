@@ -255,8 +255,8 @@
 #set_property PACKAGE_PIN Y9 [get_ports clk]
 #set_property IOSTANDARD LVCMOS33 [get_ports clk]
 
-set_property PACKAGE_PIN P16 [get_ports rst_0]
-set_property IOSTANDARD LVCMOS33 [get_ports rst_0]
+#set_property PACKAGE_PIN P16 [get_ports rst_0]
+#set_property IOSTANDARD LVCMOS33 [get_ports rst_0]
 
 #set_property PACKAGE_PIN T18 [get_ports button]
 #set_property IOSTANDARD LVCMOS33 [get_ports button]

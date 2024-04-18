@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-//Date        : Tue Apr 16 22:14:03 2024
+//Date        : Thu Apr 18 10:20:10 2024
 //Host        : localhost.localdomain running 64-bit openSUSE Leap 15.4
 //Command     : generate_target Cortex_A9_wrapper.bd
 //Design      : Cortex_A9_wrapper
@@ -49,7 +49,6 @@ module Cortex_A9_wrapper
     g0_0,
     g1_0,
     leds_0,
-    rst_0,
     swsbntsdd_8bits_tri_i);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
@@ -90,7 +89,6 @@ module Cortex_A9_wrapper
   output g0_0;
   output g1_0;
   output [7:0]leds_0;
-  input rst_0;
   input [7:0]swsbntsdd_8bits_tri_i;
 
   wire [14:0]DDR_addr;
@@ -132,7 +130,6 @@ module Cortex_A9_wrapper
   wire g0_0;
   wire g1_0;
   wire [7:0]leds_0;
-  wire rst_0;
   wire [7:0]swsbntsdd_8bits_tri_i;
 
   Cortex_A9 Cortex_A9_i
@@ -175,6 +172,5 @@ module Cortex_A9_wrapper
         .g0_0(g0_0),
         .g1_0(g1_0),
         .leds_0(leds_0),
-        .rst_0(rst_0),
         .swsbntsdd_8bits_tri_i(swsbntsdd_8bits_tri_i));
 endmodule

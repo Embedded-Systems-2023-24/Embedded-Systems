@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-//Date        : Tue Apr 16 22:14:03 2024
+//Date        : Thu Apr 18 10:20:10 2024
 //Host        : localhost.localdomain running 64-bit openSUSE Leap 15.4
 //Command     : generate_target Cortex_A9.bd
 //Design      : Cortex_A9
@@ -50,7 +50,6 @@ module Cortex_A9
     g0_0,
     g1_0,
     leds_0,
-    rst_0,
     swsbntsdd_8bits_tri_i);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
@@ -91,7 +90,6 @@ module Cortex_A9
   output g0_0;
   output g1_0;
   output [7:0]leds_0;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RST_0 RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RST_0, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input rst_0;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 swsbntsdd_8bits TRI_I" *) input [7:0]swsbntsdd_8bits_tri_i;
 
   wire [7:0]axi_gpio_0_GPIO_TRI_I;
@@ -228,7 +226,6 @@ module Cortex_A9
   wire ps7_0_axi_periph_M02_AXI_WREADY;
   wire [3:0]ps7_0_axi_periph_M02_AXI_WSTRB;
   wire ps7_0_axi_periph_M02_AXI_WVALID;
-  wire rst_0_1;
   wire [0:0]rst_ps7_0_100M_peripheral_aresetn;
 
   assign a0_0 = fpadd_ip_0_a0;
@@ -250,7 +247,6 @@ module Cortex_A9
   assign g0_0 = fpadd_ip_0_g0;
   assign g1_0 = fpadd_ip_0_g1;
   assign leds_0[7:0] = fpadd_ip_0_leds;
-  assign rst_0_1 = rst_0;
   Cortex_A9_axi_gpio_1_0 btns_5bit
        (.gpio_io_i(btns_5bit_GPIO_TRI_I),
         .ip2intc_irpt(btns_5bit_ip2intc_irpt),
@@ -291,7 +287,6 @@ module Cortex_A9
         .g0(fpadd_ip_0_g0),
         .g1(fpadd_ip_0_g1),
         .leds(fpadd_ip_0_leds),
-        .rst(rst_0_1),
         .s00_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axi_araddr(ps7_0_axi_periph_M02_AXI_ARADDR[3:0]),
         .s00_axi_aresetn(rst_ps7_0_100M_peripheral_aresetn),

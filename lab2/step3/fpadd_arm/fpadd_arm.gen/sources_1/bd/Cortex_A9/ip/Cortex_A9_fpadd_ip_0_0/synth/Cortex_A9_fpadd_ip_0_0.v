@@ -48,14 +48,13 @@
 
 
 // IP VLNV: xilinx.com:user:fpadd_ip:1.0
-// IP Revision: 7
+// IP Revision: 8
 
 (* X_CORE_INFO = "fpadd_ip_v1_0,Vivado 2020.2" *)
 (* CHECK_LICENSE_TYPE = "Cortex_A9_fpadd_ip_0_0,fpadd_ip_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "Cortex_A9_fpadd_ip_0_0,fpadd_ip_v1_0,{x_ipProduct=Vivado 2020.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=fpadd_ip,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
+(* CORE_GENERATION_INFO = "Cortex_A9_fpadd_ip_0_0,fpadd_ip_v1_0,{x_ipProduct=Vivado 2020.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=fpadd_ip,x_ipVersion=1.0,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module Cortex_A9_fpadd_ip_0_0 (
-  rst,
   leds,
   an0,
   a0,
@@ -96,9 +95,6 @@ module Cortex_A9_fpadd_ip_0_0 (
   s00_axi_rready
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
-input wire rst;
 output wire [7 : 0] leds;
 output wire an0;
 output wire a0;
@@ -167,7 +163,6 @@ input wire s00_axi_rready;
     .C_S00_AXI_DATA_WIDTH(32),  // Width of S_AXI data bus
     .C_S00_AXI_ADDR_WIDTH(4)  // Width of S_AXI address bus
   ) inst (
-    .rst(rst),
     .leds(leds),
     .an0(an0),
     .a0(a0),
