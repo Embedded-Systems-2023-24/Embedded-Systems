@@ -8,6 +8,7 @@
 // Parameter definitions
 #define INTC_DEVICE_ID 		   XPAR_PS7_SCUGIC_0_DEVICE_ID
 #define BTNS_DEVICE_ID		   XPAR_GPIO_0_DEVICE_ID
+#define FPADD_DEVICE_ID		   XPAR_FPADD_IP_0_DEVICE_ID
 #define FPADD_ADDR			   XPAR_FPADD_IP_0_S00_AXI_BASEADDR
 #define INTC_GPIO_INTERRUPT_ID XPAR_FABRIC_BTNS_5BIT_IP2INTC_IRPT_INTR
 
@@ -24,7 +25,6 @@ static int counter_value = 0;
 static void BTN_Intr_Handler(void *baseaddr_p);
 static int InterruptSystemSetup(XScuGic *XScuGicInstancePtr);
 static int IntcInitFunction(u16 DeviceId, XGpio *GpioInstancePtr);
-void fpadder_trigger ();
 
 //----------------------------------------------------
 // INTERRUPT HANDLER FUNCTIONS
@@ -50,7 +50,9 @@ void BTN_Intr_Handler(void *InstancePtr)
 	counter_value += btn_value;
 	if (btn_value == 1) {
 		counter_value = 0;
-		fpadder_trigger();
+		Xil_Out32(FPADD_ADDR, 1);
+		for (int i=0; i<9999999; i++);
+		Xil_Out32(FPADD_ADDR, 0);
 	}
 
     (void)XGpio_InterruptClear(&BTNInst, BTN_INT);
@@ -69,13 +71,13 @@ int main (void)
   //----------------------------------------------------
   // INITIALIZE THE PERIPHERALS & SET DIRECTIONS OF GPIO
   //----------------------------------------------------
-  // Initialize Push Buttons
+  // Initialise Push Buttons
   status = XGpio_Initialize(&BTNInst, BTNS_DEVICE_ID);
   if(status != XST_SUCCESS) return XST_FAILURE;
   // Set all buttons direction to inputs
   XGpio_SetDataDirection(&BTNInst, 1, 0xFF);
 
-  // Initialize Switches Buttons
+  // Initialise Switches Buttons
   XGpio_Initialize(&dip, XPAR_SW_8BIT_DEVICE_ID);
   XGpio_SetDataDirection(&dip, 1, 0xffffffff);
 
@@ -144,8 +146,3 @@ int IntcInitFunction(u16 DeviceId, XGpio *GpioInstancePtr)
 	return XST_SUCCESS;
 }
 
-void fpadder_trigger () {
-	Xil_Out32(FPADD_ADDR, 1);
-	for (int i=0; i<9999999; i++);
-	Xil_Out32(FPADD_ADDR, 0);
-}

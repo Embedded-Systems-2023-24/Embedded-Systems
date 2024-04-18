@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="fpadd_arm_app" location="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app" platform="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/fpadd_arm_platform.xpfm" platformUID="xilinx:zed::0.0(custom)" systemProject="fpadd_arm_app_system" sysConfig="fpadd_arm_platform" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="f25a2a2661fd29edd0e3359e878d3a60">
-  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.1809551165">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.210994602">
     <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
     <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
   </configuration>
-  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.476512212" dirty="true">
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1353857210" dirty="true">
     <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
   </configuration>
-  <template appTemplateName="empty_application"/>
+  <template appTemplateName="hello_world"/>
 </sdkproject:SdkProject>

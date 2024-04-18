@@ -1,6 +1,6 @@
 Nothing to build in platform 'fpadd_arm_platform'
 
-10:43:16 **** Incremental Build of configuration Debug for project fpadd_arm_app ****
+10:53:01 **** Incremental Build of configuration Debug for project fpadd_arm_app ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -19,6 +19,6 @@ Finished building target: fpadd_arm_app.elf
 Invoking: ARM v7 Print Size
 arm-none-eabi-size fpadd_arm_app.elf  |tee "fpadd_arm_app.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  27964	   1952	  22616	  52532	   cd34	fpadd_arm_app.elf
+  28028	   1952	  22616	  52596	   cd74	fpadd_arm_app.elf
 Finished building: fpadd_arm_app.elf.size
  

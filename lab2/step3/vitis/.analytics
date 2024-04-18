@@ -22,3 +22,10 @@ timestamp=[2024-04-18 10:37:53], mode=BUILD, duration=0:00:00.804, duration_ms=8
 timestamp=[2024-04-18 10:39:49], mode=BUILD, duration=0:00:00.494, duration_ms=494, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
 timestamp=[2024-04-18 10:41:24], mode=BUILD, duration=0:00:00.871, duration_ms=871, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
 timestamp=[2024-04-18 10:43:17], mode=BUILD, duration=0:00:00.754, duration_ms=754, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-18 10:50:14], mode=BUILD, duration=0:00:00.846, duration_ms=846, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-18 10:50:31], mode=BUILD, duration=0:00:00.760, duration_ms=760, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-18 10:51:05], mode=BUILD, duration=0:00:00.821, duration_ms=821, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-18 10:52:47], mode=WORKBENCH_START, duration=0:00:10.554, duration_ms=10554, data={}
+timestamp=[2024-04-18 10:52:48], mode=WORKBENCH_UI_INIT, duration=0:00:01.079, duration_ms=1079, data={editors_count=2, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,fpadd_arm_app,fpadd_arm_app_system,fpadd_arm_platform}
+timestamp=[2024-04-18 10:52:53], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.066, duration_ms=66, data={}
+timestamp=[2024-04-18 10:53:02], mode=BUILD, duration=0:00:00.727, duration_ms=727, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}

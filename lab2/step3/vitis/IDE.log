@@ -436,3 +436,93 @@ con
 ----------------End of Script----------------
 
 10:43:42 INFO  : Launch script is exported to file '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app_system/_ide/scripts/debugger_fpadd_arm_app-default.tcl'
+10:50:13 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+10:50:30 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+10:51:04 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+10:51:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:51:10 INFO  : Jtag cable 'Digilent Zed 210248650917' is selected.
+10:51:10 INFO  : 'jtag frequency' command is executed.
+10:51:11 INFO  : Context for 'APU' is selected.
+10:51:11 INFO  : System reset is completed.
+10:51:14 INFO  : 'after 3000' command is executed.
+10:51:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}' command is executed.
+10:51:16 INFO  : Device configured successfully with "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/bitstream/fpadd_arm.bit"
+10:51:16 INFO  : Context for 'APU' is selected.
+10:51:16 INFO  : Hardware design and registers information is loaded from '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa'.
+10:51:16 INFO  : 'configparams force-mem-access 1' command is executed.
+10:51:16 INFO  : Context for 'APU' is selected.
+10:51:16 INFO  : Sourcing of '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+10:51:17 INFO  : 'ps7_init' command is executed.
+10:51:17 INFO  : 'ps7_post_config' command is executed.
+10:51:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:51:17 INFO  : The application '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:51:17 INFO  : 'configparams force-mem-access 0' command is executed.
+10:51:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}
+fpga -file /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/bitstream/fpadd_arm.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:51:58 INFO  : Disconnected from the channel tcfchan#9.
+10:52:32 WARN  : channel "tcfchan#9" closed
+10:52:42 INFO  : Launching XSCT server: xsct -n  -interactive /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/temp_xsdb_launch_script.tcl
+10:52:46 INFO  : XSCT server has started successfully.
+10:52:46 INFO  : Successfully done setting XSCT server connection channel  
+10:52:46 INFO  : plnx-install-location is set to ''
+10:52:46 INFO  : Successfully done setting workspace for the tool. 
+10:52:52 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+10:52:52 ERROR : Failed to get platform details for the project 'fpadd_arm_app'. Cannot sync application flags.
+10:52:53 INFO  : Platform repository initialization has completed.
+10:52:53 INFO  : Registering command handlers for Vitis TCF services
+10:52:54 INFO  : Successfully done query RDI_DATADIR 
+10:53:00 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+10:53:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:53:09 INFO  : Jtag cable 'Digilent Zed 210248650917' is selected.
+10:53:09 INFO  : 'jtag frequency' command is executed.
+10:53:09 INFO  : Context for 'APU' is selected.
+10:53:09 INFO  : System reset is completed.
+10:53:12 INFO  : 'after 3000' command is executed.
+10:53:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}' command is executed.
+10:53:15 INFO  : Device configured successfully with "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/bitstream/fpadd_arm.bit"
+10:53:15 INFO  : Context for 'APU' is selected.
+10:53:15 INFO  : Hardware design and registers information is loaded from '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa'.
+10:53:15 INFO  : 'configparams force-mem-access 1' command is executed.
+10:53:15 INFO  : Context for 'APU' is selected.
+10:53:15 INFO  : Sourcing of '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+10:53:15 INFO  : 'ps7_init' command is executed.
+10:53:15 INFO  : 'ps7_post_config' command is executed.
+10:53:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:53:15 INFO  : The application '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:53:15 INFO  : 'configparams force-mem-access 0' command is executed.
+10:53:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}
+fpga -file /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/bitstream/fpadd_arm.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+

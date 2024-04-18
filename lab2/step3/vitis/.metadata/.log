@@ -11262,3 +11262,2467 @@ Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-18: Launc
 
 !ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:43:42.861
 !MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-18: Launching Debugger_fpadd_arm_app-Default
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:50:13.700
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss ], Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:50:13.708
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:50:13.710
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:50:13.719
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.3",
+}]. Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2024-04-18 10:50:13.720
+!MESSAGE Generating MD5 hash for file: /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:50:13.723
+!MESSAGE XSCT Command: [::hsi::utils::closesw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:50:13.726
+!MESSAGE XSCT command with result: [::hsi::utils::closesw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:50:30.517
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss ], Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:50:30.523
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:50:30.525
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:50:30.529
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.3",
+}]. Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2024-04-18 10:50:30.531
+!MESSAGE Generating MD5 hash for file: /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:50:30.533
+!MESSAGE XSCT Command: [::hsi::utils::closesw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:50:30.536
+!MESSAGE XSCT command with result: [::hsi::utils::closesw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:04.855
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss ], Thread: Worker-24: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:04.862
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-24: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:04.864
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Thread: Worker-24: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:04.868
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.3",
+}]. Thread: Worker-24: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2024-04-18 10:51:04.869
+!MESSAGE Generating MD5 hash for file: /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:04.870
+!MESSAGE XSCT Command: [::hsi::utils::closesw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Thread: Worker-24: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:04.872
+!MESSAGE XSCT command with result: [::hsi::utils::closesw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-24: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.735
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.737
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#9]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.738
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.751
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248650917]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.752
+!MESSAGE XSCT Command: [version -server], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.755
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2020.2]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.756
+!MESSAGE XSCT Command: [version], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.758
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2020.2
+SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.759
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.768
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248650917]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.769
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.802
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.805
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.812
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248650917]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.814
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.841
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.843
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.850
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248650917]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.851
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.867
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.869
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.875
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248650917]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.877
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.910
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.912
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.920
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248650917]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.921
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.940
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.942
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.949
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248650917]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.950
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.967
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.968
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Zed 210248650917" && level == 0}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.986
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Zed 210248650917" && level == 0}], Result: [null, ]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.987
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.989
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.990
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:10.999
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:11.000
+!MESSAGE XSCT Command: [rst -system], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:11.150
+!MESSAGE XSCT command with result: [rst -system], Result: [null, ]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:11.152
+!MESSAGE XSCT Command: [after 3000], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:14.162
+!MESSAGE XSCT command with result: [after 3000], Result: [null, ]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:14.193
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:14.203
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248650917]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:14.205
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:14.241
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:14.245
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:14.312
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:14.315
+!MESSAGE XSCT Command: [fpga -file /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/bitstream/fpadd_arm.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:16.650
+!MESSAGE XSCT command with result: [fpga -file /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/bitstream/fpadd_arm.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:16.688
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:16.707
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:16.708
+!MESSAGE XSCT Command: [loadhw -hw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:16.715
+!MESSAGE XSCT command with result: [loadhw -hw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Result: [null, Cortex_A9_wrapper_4]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:16.717
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:16.720
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:16.722
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:16.740
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:16.742
+!MESSAGE XSCT Command: [source /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/psinit/ps7_init.tcl], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:16.745
+!MESSAGE XSCT command with result: [source /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/psinit/ps7_init.tcl], Result: [null, ]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:16.747
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:17.035
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:17.037
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:17.045
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:17.047
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:17.057
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:17.058
+!MESSAGE XSCT Command: [dow /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/Debug/fpadd_arm_app.elf], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:17.181
+!MESSAGE XSCT command with result: [dow /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/Debug/fpadd_arm_app.elf], Result: [null, ]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:17.183
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:17.190
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-25: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:58.979
+!MESSAGE XSCT Command: [disconnect tcfchan#9], Thread: Thread-729
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:51:58.986
+!MESSAGE XSCT command with result: [disconnect tcfchan#9], Result: [null, ]. Thread: Thread-729
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:52:32.769
+!MESSAGE XSCT Command: [disconnect tcfchan#9], Thread: Thread-733
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:52:32.774
+!MESSAGE XSCT command with result: [disconnect tcfchan#9], Result: [{Format=channel "tcfchan#9" closed, Time=1713426752772, Code=1}, ]. Thread: Thread-733
+!SESSION 2024-04-18 10:52:34.941 -----------------------------------------------
+eclipse.buildId=2020.2
+java.version=11.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -data file:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/ -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2024-04-18 10:52:39.507
+!MESSAGE Plug-in 'org.eclipse.ui.editors' contributed an invalid Menu Extension (Path: 'navigate' is invalid): org.eclipse.ui.edit.text.gotoLastEditPosition
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:52:46.598
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-18
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:52:46.600
+!MESSAGE XSCT Command: [plnx-install-path  ; ::scw::scw_mode gui], Thread: Thread-10
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:52:46.602
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-18
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:52:46.603
+!MESSAGE XSCT command with result: [plnx-install-path  ; ::scw::scw_mode gui], Result: [null, ]. Thread: Thread-10
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:52:46.611
+!MESSAGE XSCT Command: [setws /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis], Thread: Thread-18
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:52:46.613
+!MESSAGE XSCT command with result: [setws /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis], Result: [null, ]. Thread: Thread-18
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:52:53.885
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:52:54.015
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:52:54.017
+!MESSAGE XSCT Command: [set query_var1 $::env(RDI_DATADIR)], Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:52:54.021
+!MESSAGE XSCT command with result: [set query_var1 $::env(RDI_DATADIR)], Result: [null, /opt/Xilinx/Vitis/2020.2/data]. Thread: Worker-0: Initializing s/w repositories
+
+!ENTRY org.eclipse.rse.core 4 0 2024-04-18 10:52:54.403
+!MESSAGE Unexpected Exception
+!STACK 0
+java.net.UnknownHostException: localhost.localdomain: localhost.localdomain: Το όνομα ή η υπηρεσία δεν είναι γνωστά
+	at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1642)
+	at org.eclipse.rse.core.RSECorePlugin.getLocalMachineName(RSECorePlugin.java:265)
+	at org.eclipse.rse.core.RSEPreferencesManager.getDefaultPrivateSystemProfileName(RSEPreferencesManager.java:358)
+	at org.eclipse.rse.core.RSEPreferencesManager.initDefaults(RSEPreferencesManager.java:337)
+	at org.eclipse.rse.internal.core.RSEPreferenceInitializer.initializeDefaultPreferences(RSEPreferenceInitializer.java:23)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper$1.run(PreferenceServiceRegistryHelper.java:307)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.runInitializer(PreferenceServiceRegistryHelper.java:310)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.applyRuntimeDefaults(PreferenceServiceRegistryHelper.java:134)
+	at org.eclipse.core.internal.preferences.PreferencesService.applyRuntimeDefaults(PreferencesService.java:374)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.applyRuntimeDefaults(DefaultPreferences.java:225)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.load(DefaultPreferences.java:279)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:370)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:624)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.node(DefaultPreferences.java:150)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.getDefaultPreferences(PreferenceForwarder.java:136)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.getInt(PreferenceForwarder.java:490)
+	at org.eclipse.rse.logging.Logger.initialize(Logger.java:249)
+	at org.eclipse.rse.logging.Logger.<init>(Logger.java:135)
+	at org.eclipse.rse.logging.LoggerFactory.getLogger(LoggerFactory.java:45)
+	at org.eclipse.rse.core.RSECorePlugin.getLogger(RSECorePlugin.java:392)
+	at org.eclipse.rse.internal.core.RSEInitJob.<init>(RSEInitJob.java:133)
+	at org.eclipse.rse.internal.core.RSEInitJob.<clinit>(RSEInitJob.java:65)
+	at org.eclipse.rse.core.RSECorePlugin.waitForInitCompletion(RSECorePlugin.java:142)
+	at org.eclipse.rse.internal.ui.RSEUIInitJob.run(RSEUIInitJob.java:32)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.UnknownHostException: localhost.localdomain: Το όνομα ή η υπηρεσία δεν είναι γνωστά
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
+	at java.base/java.net.InetAddress.getLocalHost(InetAddress.java:1637)
+	... 25 more
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-04-18 10:52:57.409
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-04-18 10:52:57.412
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-04-18 10:52:57.413
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:00.217
+!MESSAGE XSCT Command: [::hsi::utils::openhw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa], Thread: Worker-4: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:01.667
+!MESSAGE XSCT command with result: [::hsi::utils::openhw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa], Result: [null, ]. Thread: Worker-4: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:01.674
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss ], Thread: Worker-4: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:01.678
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-4: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:01.679
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Thread: Worker-4: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:01.683
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.3",
+}]. Thread: Worker-4: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2024-04-18 10:53:01.688
+!MESSAGE Generating MD5 hash for file: /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:01.703
+!MESSAGE XSCT Command: [::hsi::utils::closesw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Thread: Worker-4: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:01.708
+!MESSAGE XSCT command with result: [::hsi::utils::closesw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/sw/fpadd_arm_platform/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-4: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:07.423
+!MESSAGE XSCT Command: [::hsi::utils::get_design_properties -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:07.429
+!MESSAGE XSCT command with result: [::hsi::utils::get_design_properties -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa], Result: [null, {"device": "7z020",
+"family": "zynq",
+"timestamp": "Thu Apr 18 10:20:11 2024",
+"vivado_version": "2020.2",
+"part": "xc7z020clg484-1",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.459
+!MESSAGE XSCT Command: [::hsi::utils::get_all_periphs -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.472
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_periphs -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa], Result: [null, {"btns_5bit": {"hier_name": "btns_5bit",
+"type": "axi_gpio",
+"version": "2.0",
+"ip_type": "PERIPHERAL",
+},
+"fpadd_ip_0": {"hier_name": "fpadd_ip_0",
+"type": "fpadd_ip",
+"version": "1.0",
+"ip_type": "PERIPHERAL",
+},
+"processing_system7_0": {"hier_name": "processing_system7_0",
+"type": "processing_system7",
+"version": "5.5",
+"ip_type": "",
+},
+"ps7_0_axi_periph": {"hier_name": "ps7_0_axi_periph",
+"type": "axi_interconnect",
+"version": "2.1",
+"ip_type": "BUS",
+},
+"rst_ps7_0_100M": {"hier_name": "rst_ps7_0_100M",
+"type": "proc_sys_reset",
+"version": "5.0",
+"ip_type": "PERIPHERAL",
+},
+"sw_8bit": {"hier_name": "sw_8bit",
+"type": "axi_gpio",
+"version": "2.0",
+"ip_type": "PERIPHERAL",
+},
+"ps7_clockc_0": {"hier_name": "ps7_clockc_0",
+"type": "ps7_clockc",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_uart_1": {"hier_name": "ps7_uart_1",
+"type": "ps7_uart",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_pl310_0": {"hier_name": "ps7_pl310_0",
+"type": "ps7_pl310",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_pmu_0": {"hier_name": "ps7_pmu_0",
+"type": "ps7_pmu",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_axi_interconnect_0": {"hier_name": "ps7_axi_interconnect_0",
+"type": "ps7_axi_interconnect",
+"version": "1.00.a",
+"ip_type": "BUS",
+},
+"ps7_cortexa9_0": {"hier_name": "ps7_cortexa9_0",
+"type": "ps7_cortexa9",
+"version": "5.2",
+"ip_type": "PROCESSOR",
+},
+"ps7_cortexa9_1": {"hier_name": "ps7_cortexa9_1",
+"type": "ps7_cortexa9",
+"version": "5.2",
+"ip_type": "PROCESSOR",
+},
+"ps7_ddr_0": {"hier_name": "ps7_ddr_0",
+"type": "ps7_ddr",
+"version": "1.00.a",
+"ip_type": "MEMORY_CNTLR",
+},
+"ps7_ddrc_0": {"hier_name": "ps7_ddrc_0",
+"type": "ps7_ddrc",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_dev_cfg_0": {"hier_name": "ps7_dev_cfg_0",
+"type": "ps7_dev_cfg",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_xadc_0": {"hier_name": "ps7_xadc_0",
+"type": "ps7_xadc",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_ocmc_0": {"hier_name": "ps7_ocmc_0",
+"type": "ps7_ocmc",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_coresight_comp_0": {"hier_name": "ps7_coresight_comp_0",
+"type": "ps7_coresight_comp",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_gpv_0": {"hier_name": "ps7_gpv_0",
+"type": "ps7_gpv",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_scuc_0": {"hier_name": "ps7_scuc_0",
+"type": "ps7_scuc",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_globaltimer_0": {"hier_name": "ps7_globaltimer_0",
+"type": "ps7_globaltimer",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_intc_dist_0": {"hier_name": "ps7_intc_dist_0",
+"type": "ps7_intc_dist",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_l2cachec_0": {"hier_name": "ps7_l2cachec_0",
+"type": "ps7_l2cachec",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_dma_s": {"hier_name": "ps7_dma_s",
+"type": "ps7_dma",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_iop_bus_config_0": {"hier_name": "ps7_iop_bus_config_0",
+"type": "ps7_iop_bus_config",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_ram_0": {"hier_name": "ps7_ram_0",
+"type": "ps7_ram",
+"version": "1.00.a",
+"ip_type": "MEMORY_CNTLR",
+},
+"ps7_ram_1": {"hier_name": "ps7_ram_1",
+"type": "ps7_ram",
+"version": "1.00.a",
+"ip_type": "MEMORY_CNTLR",
+},
+"ps7_scugic_0": {"hier_name": "ps7_scugic_0",
+"type": "ps7_scugic",
+"version": "1.00.a",
+"ip_type": "INTERRUPT_CNTLR",
+},
+"ps7_scutimer_0": {"hier_name": "ps7_scutimer_0",
+"type": "ps7_scutimer",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_scuwdt_0": {"hier_name": "ps7_scuwdt_0",
+"type": "ps7_scuwdt",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_slcr_0": {"hier_name": "ps7_slcr_0",
+"type": "ps7_slcr",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_dma_ns": {"hier_name": "ps7_dma_ns",
+"type": "ps7_dma",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_afi_0": {"hier_name": "ps7_afi_0",
+"type": "ps7_afi",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_afi_1": {"hier_name": "ps7_afi_1",
+"type": "ps7_afi",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_afi_2": {"hier_name": "ps7_afi_2",
+"type": "ps7_afi",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_afi_3": {"hier_name": "ps7_afi_3",
+"type": "ps7_afi",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+"ps7_m_axi_gp0": {"hier_name": "ps7_m_axi_gp0",
+"type": "ps7_m_axi_gp",
+"version": "1.00.a",
+"ip_type": "PERIPHERAL",
+},
+}]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.475
+!MESSAGE XSCT Command: [::hsi::utils::get_ps_config_params -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.488
+!MESSAGE XSCT command with result: [::hsi::utils::get_ps_config_params -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa], Result: [null, {"PCW_APU_PERIPHERAL_FREQMHZ": "666.666667",
+"PCW_DDR_HPRLPR_QUEUE_PARTITION": "HPR(0)/LPR(32)",
+"PCW_DDR_HPR_TO_CRITICAL_PRIORITY_LEVEL": "15",
+"PCW_DDR_LPR_TO_CRITICAL_PRIORITY_LEVEL": "2",
+"PCW_DDR_PORT0_HPR_ENABLE": "0",
+"PCW_DDR_PORT1_HPR_ENABLE": "0",
+"PCW_DDR_PORT2_HPR_ENABLE": "0",
+"PCW_DDR_PORT3_HPR_ENABLE": "0",
+"PCW_DDR_WRITE_TO_CRITICAL_PRIORITY_LEVEL": "2",
+"PCW_FPGA0_PERIPHERAL_FREQMHZ": "100.000000",
+"PCW_UIPARAM_DDR_BUS_WIDTH": "32 Bit",
+"PCW_UIPARAM_DDR_FREQ_MHZ": "533.333313",
+}]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.490
+!MESSAGE XSCT Command: [::hsi::utils::get_all_register_data -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.513
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_register_data -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0], Result: [null, {"btns_5bit": {"GPIO_DATA": {"description": "Channel-1 AXI GPIO Data register",
+"address_offset": "0x0",
+"access": "read-write",
+"size": "5",
+"interface": "S_AXI",
+"fields": {"Channel_1_GPIO_DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "5",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681728,
+},
+"GPIO_TRI": {"description": "Channel-1 AXI GPIO 3-State Control register",
+"address_offset": "0x4",
+"access": "read-write",
+"size": "5",
+"interface": "S_AXI",
+"fields": {"Channel_1_GPIO_TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "5",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681732,
+},
+"GPIO2_DATA": {"description": "Channel-2 AXI GPIO Data register",
+"address_offset": "0x8",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_2_GPIO_DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681736,
+},
+"GPIO2_TRI": {"description": "Channel-2 AXI GPIO 3-State Control register",
+"address_offset": "0xC",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_2_GPIO_TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681740,
+},
+"GIER": {"description": "Global_Interrupt_Enable register",
+"address_offset": "0x11C",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Global_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "31",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Master enable for the device interrupt output
+  0 - Disabled
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092682012,
+},
+"IP_IER": {"description": "IP Interrupt Enable register",
+"address_offset": "0x128",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_1_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 1 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel_2_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 2 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092682024,
+},
+"IP_ISR": {"description": "IP Interrupt Status register",
+"address_offset": "0x120",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_1_Interrupt_Status": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 1 Interrupt Status
+  0 - No Channel 1 input interrupt
+  1 - Channel 1 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel_2_Interrupt_Status": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 2 Interrupt Status
+  0 - No Channel 2 input interrupt
+  1 - Channel 2 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092682016,
+},
+},
+"fpadd_ip_0": {},
+"ps7_afi_0": {},
+"ps7_afi_1": {},
+"ps7_afi_2": {},
+"ps7_afi_3": {},
+"ps7_coresight_comp_0": {},
+"ps7_ddr_0": {},
+"ps7_ddrc_0": {},
+"ps7_dev_cfg_0": {},
+"ps7_dma_ns": {},
+"ps7_dma_s": {},
+"ps7_globaltimer_0": {},
+"ps7_gpv_0": {},
+"ps7_intc_dist_0": {},
+"ps7_iop_bus_config_0": {},
+"ps7_l2cachec_0": {},
+"ps7_ocmc_0": {},
+"ps7_pl310_0": {},
+"ps7_pmu_0": {},
+"ps7_ram_0": {},
+"ps7_ram_1": {},
+"ps7_scuc_0": {},
+"ps7_scugic_0": {},
+"ps7_scutimer_0": {},
+"ps7_scuwdt_0": {},
+"ps7_slcr_0": {},
+"ps7_uart_1": {},
+"ps7_xadc_0": {},
+"sw_8bit": {"GPIO_DATA": {"description": "Channel-1 AXI GPIO Data register",
+"address_offset": "0x0",
+"access": "read-write",
+"size": "8",
+"interface": "S_AXI",
+"fields": {"Channel_1_GPIO_DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616192,
+},
+"GPIO_TRI": {"description": "Channel-1 AXI GPIO 3-State Control register",
+"address_offset": "0x4",
+"access": "read-write",
+"size": "8",
+"interface": "S_AXI",
+"fields": {"Channel_1_GPIO_TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616196,
+},
+"GPIO2_DATA": {"description": "Channel-2 AXI GPIO Data register",
+"address_offset": "0x8",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_2_GPIO_DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616200,
+},
+"GPIO2_TRI": {"description": "Channel-2 AXI GPIO 3-State Control register",
+"address_offset": "0xC",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_2_GPIO_TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616204,
+},
+"GIER": {"description": "Global_Interrupt_Enable register",
+"address_offset": "0x11C",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Global_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "31",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Master enable for the device interrupt output
+  0 - Disabled
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616476,
+},
+"IP_IER": {"description": "IP Interrupt Enable register",
+"address_offset": "0x128",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_1_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 1 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel_2_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 2 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616488,
+},
+"IP_ISR": {"description": "IP Interrupt Status register",
+"address_offset": "0x120",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_1_Interrupt_Status": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 1 Interrupt Status
+  0 - No Channel 1 input interrupt
+  1 - Channel 1 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel_2_Interrupt_Status": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 2 Interrupt Status
+  0 - No Channel 2 input interrupt
+  1 - Channel 2 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616480,
+},
+},
+}]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.518
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.534
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0], Result: [null, {"sw_8bit_S_AXI": {"name": "sw_8bit",
+"base": "0x41200000",
+"high": "0x4120FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"btns_5bit_S_AXI": {"name": "btns_5bit",
+"base": "0x41210000",
+"high": "0x4121FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"fpadd_ip_0_S00_AXI": {"name": "fpadd_ip_0",
+"base": "0x41220000",
+"high": "0x4122FFFF",
+"size": "65536",
+"slaveintf": "S00_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_0": {"name": "ps7_afi_0",
+"base": "0xF8008000",
+"high": "0xF8008FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_1": {"name": "ps7_afi_1",
+"base": "0xF8009000",
+"high": "0xF8009FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_2": {"name": "ps7_afi_2",
+"base": "0xF800A000",
+"high": "0xF800AFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_3": {"name": "ps7_afi_3",
+"base": "0xF800B000",
+"high": "0xF800BFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_coresight_comp_0": {"name": "ps7_coresight_comp_0",
+"base": "0xF8800000",
+"high": "0xF88FFFFF",
+"size": "1048576",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ddrc_0": {"name": "ps7_ddrc_0",
+"base": "0xF8006000",
+"high": "0xF8006FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_dev_cfg_0": {"name": "ps7_dev_cfg_0",
+"base": "0xF8007000",
+"high": "0xF80070FF",
+"size": "256",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_dma_ns": {"name": "ps7_dma_ns",
+"base": "0xF8004000",
+"high": "0xF8004FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_dma_s": {"name": "ps7_dma_s",
+"base": "0xF8003000",
+"high": "0xF8003FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_globaltimer_0": {"name": "ps7_globaltimer_0",
+"base": "0xF8F00200",
+"high": "0xF8F002FF",
+"size": "256",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_gpv_0": {"name": "ps7_gpv_0",
+"base": "0xF8900000",
+"high": "0xF89FFFFF",
+"size": "1048576",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_intc_dist_0": {"name": "ps7_intc_dist_0",
+"base": "0xF8F01000",
+"high": "0xF8F01FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_iop_bus_config_0": {"name": "ps7_iop_bus_config_0",
+"base": "0xE0200000",
+"high": "0xE0200FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_l2cachec_0": {"name": "ps7_l2cachec_0",
+"base": "0xF8F02000",
+"high": "0xF8F02FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ocmc_0": {"name": "ps7_ocmc_0",
+"base": "0xF800C000",
+"high": "0xF800CFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_pl310_0": {"name": "ps7_pl310_0",
+"base": "0xF8F02000",
+"high": "0xF8F02FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_pmu_0": {"name": "ps7_pmu_0",
+"base": "0xF8893000",
+"high": "0xF8893FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scuc_0": {"name": "ps7_scuc_0",
+"base": "0xF8F00000",
+"high": "0xF8F000FC",
+"size": "253",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scugic_0": {"name": "ps7_scugic_0",
+"base": "0xF8F00100",
+"high": "0xF8F001FF",
+"size": "256",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scutimer_0": {"name": "ps7_scutimer_0",
+"base": "0xF8F00600",
+"high": "0xF8F0061F",
+"size": "32",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scuwdt_0": {"name": "ps7_scuwdt_0",
+"base": "0xF8F00620",
+"high": "0xF8F006FF",
+"size": "224",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_slcr_0": {"name": "ps7_slcr_0",
+"base": "0xF8000000",
+"high": "0xF8000FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_uart_1": {"name": "ps7_uart_1",
+"base": "0xE0001000",
+"high": "0xE0001FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_xadc_0": {"name": "ps7_xadc_0",
+"base": "0xF8007100",
+"high": "0xF8007120",
+"size": "33",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ddr_0": {"name": "ps7_ddr_0",
+"base": "0x00100000",
+"high": "0x1FFFFFFF",
+"size": "535822336",
+"slaveintf": "",
+"type": "MEMORY",
+"flags": "7",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ram_0": {"name": "ps7_ram_0",
+"base": "0x00000000",
+"high": "0x0002FFFF",
+"size": "196608",
+"slaveintf": "",
+"type": "MEMORY",
+"flags": "7",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ram_1": {"name": "ps7_ram_1",
+"base": "0xFFFF0000",
+"high": "0xFFFFFDFF",
+"size": "65024",
+"slaveintf": "",
+"type": "MEMORY",
+"flags": "7",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+}]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.539
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0 C_DEBUG_ENABLED], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.547
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0 C_DEBUG_ENABLED], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.549
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0 C_DEBUG_EVENT_COUNTERS], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.553
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0 C_DEBUG_EVENT_COUNTERS], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.554
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0 C_DEBUG_LATENCY_COUNTERS], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.560
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0 C_DEBUG_LATENCY_COUNTERS], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.561
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0 C_DEBUG_COUNTER_WIDTH], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.564
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0 C_DEBUG_COUNTER_WIDTH], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.565
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0 C_FREQ], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.567
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0 C_FREQ], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.575
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0 C_CPU_CLK_FREQ_HZ], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.578
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0 C_CPU_CLK_FREQ_HZ], Result: [null, 666666687]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.583
+!MESSAGE XSCT Command: [::hsi::utils::get_cpu_nr -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.592
+!MESSAGE XSCT command with result: [::hsi::utils::get_cpu_nr -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa], Result: [null, {"ps7_cortexa9_0": {"bscan": "",
+"index": "0",
+},
+"ps7_cortexa9_1": {"bscan": "",
+"index": "1",
+},
+}]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.595
+!MESSAGE XSCT Command: [::hsi::utils::get_all_register_data -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.618
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_register_data -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1], Result: [null, {"btns_5bit": {"GPIO_DATA": {"description": "Channel-1 AXI GPIO Data register",
+"address_offset": "0x0",
+"access": "read-write",
+"size": "5",
+"interface": "S_AXI",
+"fields": {"Channel_1_GPIO_DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "5",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681728,
+},
+"GPIO_TRI": {"description": "Channel-1 AXI GPIO 3-State Control register",
+"address_offset": "0x4",
+"access": "read-write",
+"size": "5",
+"interface": "S_AXI",
+"fields": {"Channel_1_GPIO_TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "5",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681732,
+},
+"GPIO2_DATA": {"description": "Channel-2 AXI GPIO Data register",
+"address_offset": "0x8",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_2_GPIO_DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681736,
+},
+"GPIO2_TRI": {"description": "Channel-2 AXI GPIO 3-State Control register",
+"address_offset": "0xC",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_2_GPIO_TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092681740,
+},
+"GIER": {"description": "Global_Interrupt_Enable register",
+"address_offset": "0x11C",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Global_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "31",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Master enable for the device interrupt output
+  0 - Disabled
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092682012,
+},
+"IP_IER": {"description": "IP Interrupt Enable register",
+"address_offset": "0x128",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_1_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 1 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel_2_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 2 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092682024,
+},
+"IP_ISR": {"description": "IP Interrupt Status register",
+"address_offset": "0x120",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_1_Interrupt_Status": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 1 Interrupt Status
+  0 - No Channel 1 input interrupt
+  1 - Channel 1 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel_2_Interrupt_Status": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 2 Interrupt Status
+  0 - No Channel 2 input interrupt
+  1 - Channel 2 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092682016,
+},
+},
+"fpadd_ip_0": {},
+"ps7_afi_0": {},
+"ps7_afi_1": {},
+"ps7_afi_2": {},
+"ps7_afi_3": {},
+"ps7_coresight_comp_0": {},
+"ps7_ddr_0": {},
+"ps7_ddrc_0": {},
+"ps7_dev_cfg_0": {},
+"ps7_dma_ns": {},
+"ps7_dma_s": {},
+"ps7_globaltimer_0": {},
+"ps7_gpv_0": {},
+"ps7_intc_dist_0": {},
+"ps7_iop_bus_config_0": {},
+"ps7_l2cachec_0": {},
+"ps7_ocmc_0": {},
+"ps7_pl310_0": {},
+"ps7_pmu_0": {},
+"ps7_ram_0": {},
+"ps7_ram_1": {},
+"ps7_scuc_0": {},
+"ps7_scugic_0": {},
+"ps7_scutimer_0": {},
+"ps7_scuwdt_0": {},
+"ps7_slcr_0": {},
+"ps7_uart_1": {},
+"ps7_xadc_0": {},
+"sw_8bit": {"GPIO_DATA": {"description": "Channel-1 AXI GPIO Data register",
+"address_offset": "0x0",
+"access": "read-write",
+"size": "8",
+"interface": "S_AXI",
+"fields": {"Channel_1_GPIO_DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616192,
+},
+"GPIO_TRI": {"description": "Channel-1 AXI GPIO 3-State Control register",
+"address_offset": "0x4",
+"access": "read-write",
+"size": "8",
+"interface": "S_AXI",
+"fields": {"Channel_1_GPIO_TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616196,
+},
+"GPIO2_DATA": {"description": "Channel-2 AXI GPIO Data register",
+"address_offset": "0x8",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_2_GPIO_DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616200,
+},
+"GPIO2_TRI": {"description": "Channel-2 AXI GPIO 3-State Control register",
+"address_offset": "0xC",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_2_GPIO_TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616204,
+},
+"GIER": {"description": "Global_Interrupt_Enable register",
+"address_offset": "0x11C",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Global_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "31",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Master enable for the device interrupt output
+  0 - Disabled
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616476,
+},
+"IP_IER": {"description": "IP Interrupt Enable register",
+"address_offset": "0x128",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_1_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 1 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel_2_Interrupt_Enable": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 2 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616488,
+},
+"IP_ISR": {"description": "IP Interrupt Status register",
+"address_offset": "0x120",
+"access": "read-write",
+"size": "32",
+"interface": "S_AXI",
+"fields": {"Channel_1_Interrupt_Status": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 1 Interrupt Status
+  0 - No Channel 1 input interrupt
+  1 - Channel 1 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel_2_Interrupt_Status": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 2 Interrupt Status
+  0 - No Channel 2 input interrupt
+  1 - Channel 2 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+"memoryAddr": 1092616480,
+},
+},
+}]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.623
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.642
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1], Result: [null, {"sw_8bit_S_AXI": {"name": "sw_8bit",
+"base": "0x41200000",
+"high": "0x4120FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"btns_5bit_S_AXI": {"name": "btns_5bit",
+"base": "0x41210000",
+"high": "0x4121FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"fpadd_ip_0_S00_AXI": {"name": "fpadd_ip_0",
+"base": "0x41220000",
+"high": "0x4122FFFF",
+"size": "65536",
+"slaveintf": "S00_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_0": {"name": "ps7_afi_0",
+"base": "0xF8008000",
+"high": "0xF8008FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_1": {"name": "ps7_afi_1",
+"base": "0xF8009000",
+"high": "0xF8009FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_2": {"name": "ps7_afi_2",
+"base": "0xF800A000",
+"high": "0xF800AFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_afi_3": {"name": "ps7_afi_3",
+"base": "0xF800B000",
+"high": "0xF800BFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_coresight_comp_0": {"name": "ps7_coresight_comp_0",
+"base": "0xF8800000",
+"high": "0xF88FFFFF",
+"size": "1048576",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ddrc_0": {"name": "ps7_ddrc_0",
+"base": "0xF8006000",
+"high": "0xF8006FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_dev_cfg_0": {"name": "ps7_dev_cfg_0",
+"base": "0xF8007000",
+"high": "0xF80070FF",
+"size": "256",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_dma_ns": {"name": "ps7_dma_ns",
+"base": "0xF8004000",
+"high": "0xF8004FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_dma_s": {"name": "ps7_dma_s",
+"base": "0xF8003000",
+"high": "0xF8003FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_globaltimer_0": {"name": "ps7_globaltimer_0",
+"base": "0xF8F00200",
+"high": "0xF8F002FF",
+"size": "256",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_gpv_0": {"name": "ps7_gpv_0",
+"base": "0xF8900000",
+"high": "0xF89FFFFF",
+"size": "1048576",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_intc_dist_0": {"name": "ps7_intc_dist_0",
+"base": "0xF8F01000",
+"high": "0xF8F01FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_iop_bus_config_0": {"name": "ps7_iop_bus_config_0",
+"base": "0xE0200000",
+"high": "0xE0200FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_l2cachec_0": {"name": "ps7_l2cachec_0",
+"base": "0xF8F02000",
+"high": "0xF8F02FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ocmc_0": {"name": "ps7_ocmc_0",
+"base": "0xF800C000",
+"high": "0xF800CFFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_pl310_0": {"name": "ps7_pl310_0",
+"base": "0xF8F02000",
+"high": "0xF8F02FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_pmu_0": {"name": "ps7_pmu_0",
+"base": "0xF8893000",
+"high": "0xF8893FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scuc_0": {"name": "ps7_scuc_0",
+"base": "0xF8F00000",
+"high": "0xF8F000FC",
+"size": "253",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scugic_0": {"name": "ps7_scugic_0",
+"base": "0xF8F00100",
+"high": "0xF8F001FF",
+"size": "256",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scutimer_0": {"name": "ps7_scutimer_0",
+"base": "0xF8F00600",
+"high": "0xF8F0061F",
+"size": "32",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_scuwdt_0": {"name": "ps7_scuwdt_0",
+"base": "0xF8F00620",
+"high": "0xF8F006FF",
+"size": "224",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_slcr_0": {"name": "ps7_slcr_0",
+"base": "0xF8000000",
+"high": "0xF8000FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_uart_1": {"name": "ps7_uart_1",
+"base": "0xE0001000",
+"high": "0xE0001FFF",
+"size": "4096",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_xadc_0": {"name": "ps7_xadc_0",
+"base": "0xF8007100",
+"high": "0xF8007120",
+"size": "33",
+"slaveintf": "",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ddr_0": {"name": "ps7_ddr_0",
+"base": "0x00100000",
+"high": "0x1FFFFFFF",
+"size": "535822336",
+"slaveintf": "",
+"type": "MEMORY",
+"flags": "7",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ram_0": {"name": "ps7_ram_0",
+"base": "0x00000000",
+"high": "0x0002FFFF",
+"size": "196608",
+"slaveintf": "",
+"type": "MEMORY",
+"flags": "7",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"ps7_ram_1": {"name": "ps7_ram_1",
+"base": "0xFFFF0000",
+"high": "0xFFFFFDFF",
+"size": "65024",
+"slaveintf": "",
+"type": "MEMORY",
+"flags": "7",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+}]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.645
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1 C_DEBUG_ENABLED], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.648
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1 C_DEBUG_ENABLED], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.650
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1 C_DEBUG_EVENT_COUNTERS], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.651
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1 C_DEBUG_EVENT_COUNTERS], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.653
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1 C_DEBUG_LATENCY_COUNTERS], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.655
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1 C_DEBUG_LATENCY_COUNTERS], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.656
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1 C_DEBUG_COUNTER_WIDTH], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.658
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1 C_DEBUG_COUNTER_WIDTH], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.660
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1 C_FREQ], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.662
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1 C_FREQ], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.663
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1 C_CPU_CLK_FREQ_HZ], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.672
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_1 C_CPU_CLK_FREQ_HZ], Result: [null, 666666687]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.676
+!MESSAGE XSCT Command: [::hsi::utils::get_connected_periphs /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.679
+!MESSAGE XSCT command with result: [::hsi::utils::get_connected_periphs /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa ps7_cortexa9_0], Result: [null, btns_5bit fpadd_ip_0 ps7_afi_0 ps7_afi_1 ps7_afi_2 ps7_afi_3 ps7_coresight_comp_0 ps7_ddr_0 ps7_ddrc_0 ps7_dev_cfg_0 ps7_dma_ns ps7_dma_s ps7_globaltimer_0 ps7_gpv_0 ps7_intc_dist_0 ps7_iop_bus_config_0 ps7_l2cachec_0 ps7_ocmc_0 ps7_pl310_0 ps7_pmu_0 ps7_ram_0 ps7_ram_1 ps7_scuc_0 ps7_scugic_0 ps7_scutimer_0 ps7_scuwdt_0 ps7_slcr_0 ps7_uart_1 ps7_xadc_0 sw_8bit]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.690
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_files_on_hw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa bit], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.692
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_files_on_hw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa bit], Result: [null, fpadd_arm.bit]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:08.695
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.257
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.262
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.384
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Zed 210248650917]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.386
+!MESSAGE XSCT Command: [version -server], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.388
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2020.2]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.390
+!MESSAGE XSCT Command: [version], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.391
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2020.2
+SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.396
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.402
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Zed 210248650917]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.404
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.421
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.427
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.436
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Zed 210248650917]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.437
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.454
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.457
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.463
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Zed 210248650917]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.464
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.480
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.484
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.490
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Zed 210248650917]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.492
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.508
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.509
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.516
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Zed 210248650917]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.517
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.533
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.539
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.546
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Zed 210248650917]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.548
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.565
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.567
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Zed 210248650917" && level == 0}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.583
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Zed 210248650917" && level == 0}], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.585
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.587
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.588
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.604
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.609
+!MESSAGE XSCT Command: [rst -system], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.680
+!MESSAGE XSCT command with result: [rst -system], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:09.681
+!MESSAGE XSCT Command: [after 3000], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:12.686
+!MESSAGE XSCT command with result: [after 3000], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:12.736
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:12.758
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248650917]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:12.761
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:12.794
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:12.803
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:12.855
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:12.856
+!MESSAGE XSCT Command: [fpga -file /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/bitstream/fpadd_arm.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.211
+!MESSAGE XSCT command with result: [fpga -file /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/bitstream/fpadd_arm.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.256
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.306
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.308
+!MESSAGE XSCT Command: [loadhw -hw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.393
+!MESSAGE XSCT command with result: [loadhw -hw /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_platform/export/fpadd_arm_platform/hw/fpadd_arm.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Result: [null, Cortex_A9_wrapper]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.395
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.399
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.400
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.414
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.416
+!MESSAGE XSCT Command: [source /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/psinit/ps7_init.tcl], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.419
+!MESSAGE XSCT command with result: [source /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/_ide/psinit/ps7_init.tcl], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.423
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.692
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.694
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.702
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.703
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.713
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.715
+!MESSAGE XSCT Command: [dow /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/Debug/fpadd_arm_app.elf], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.857
+!MESSAGE XSCT command with result: [dow /home/inf2021/iathanasi/embedded/Embedded-Systems/lab2/step3/vitis/fpadd_arm_app/Debug/fpadd_arm_app.elf], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.888
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-04-18 10:53:15.892
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-4: Launching Debugger_fpadd_arm_app-GDB
