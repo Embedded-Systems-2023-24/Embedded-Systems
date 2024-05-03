@@ -8,7 +8,8 @@ This repository was created in order to upload the labs of ***Embedeed Systems**
 - ***Lab 2:*** Adding FPA ***Custon IP*** to the *FPGA-based System On Chip (SoC)* block using *AXI4 Interconnect* and ***developing*** the ***application*** to control the *functionality* of our *custom IP*.
 
 ## Developed By
-Stavros Stathoudakis
+Stavros Stathoudakis,
+
 Ioannis Athanasiadis
 
 2023-24
