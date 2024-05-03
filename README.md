@@ -9,7 +9,6 @@ This repository was created in order to upload the labs of ***Embedeed Systems**
 
 ## Developed By
 Stavros Stathoudakis,
-
 Ioannis Athanasiadis
 
 2023-24
