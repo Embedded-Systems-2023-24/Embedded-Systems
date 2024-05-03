@@ -6,6 +6,7 @@ This repository was created in order to upload the labs of ***Embedeed Systems**
 
 - ***Lab 1:*** Floating Point Adder *(and bonus exercise FPU)* written in ***Verilog*** for *Vivado*.
 - ***Lab 2:*** Adding FPA ***Custon IP*** to the *FPGA-based System On Chip (SoC)* block using *AXI4 Interconnect* and ***developing*** the ***application*** to control the *functionality* of our *custom IP*.
+- ***Lab 3:*** Developing an ***accelerator*** for the *Local Sequence Alignment Algorithm (LSAL)* and profiling its performance through ***roofline model*** comparing performance of our design to *x86* and *arm* CPUs using *Vitis HLS*.
 
 ## Developed By
 Stavros Stathoudakis,
