@@ -10,19 +10,15 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-// #define N 256
-// #define M 2048
-
-const short GAP_i = -1;
-const short GAP_d = -1;
-const short MATCH = 2;
-const short MISS_MATCH = -1;
-const short CENTER = 0;
-const short NORTH = 1;
-const short NORTH_WEST = 2;
-const short WEST = 3;
-// static long int cnt_ops=0;
-// static long int cnt_bytes=0;
+#define GAP_i -1
+#define GAP_d -1
+#define MATCH 2
+#define MISS_MATCH -1
+#define CENTER 0
+#define NORTH 1
+#define NORTH_WEST 2
+#define WEST 3
+#define index i+j*N
 
 /**********************************************************************************************
  * LSAL algorithm
@@ -37,57 +33,37 @@ const short WEST = 3;
 
 void compute_matrices(
 	char *string1, char *string2,
-	int *max_index, int *similarity_matrix, short *direction_matrix, int N, int M)
+	int *max_index, int *similarity_matrix, char *direction_matrix, int N, int M)
 {
 
-    int index = 0;
-    int i = 0;
-	int j = 0;
-	int match;
 	int test_val;
 	int val;
-	int dir;
+	char dir;
+	
+	int max_value = 0;
 
     // Following values are used for the N, W, and NW values wrt. similarity_matrix[i]
     int north = 0;
 	int west = 0;
 	int northwest = 0;
-	int max_value = 0;
 
 	//Here the real computation starts. Place your code whenever is required. 
 	// Scan the N*M array row-wise starting from the second row.
-   for(index = N; index < N*M; index++) {
+   //for(index = N + 1; index < N*M; index++) {
+	for(int j = 1; j < M; j++) {
+		val = 0;
+		dir = CENTER;
 
-   	  i = index % N; // column index
-	  j = index / N; // row index
-	  val = 0;
-	  dir = CENTER;
+		// first column. 
 
-   	   if (i == 0) {  
-			// first column. 
-			west = 0;
-			northwest = 0;
-		} else {
-			northwest = similarity_matrix[index - N - 1];
-			west = similarity_matrix[index - 1];
-		}
-
-		if (j == 0) {
-			// first row.
-			north = 0;
-		}
-		else {
-			north = similarity_matrix[index - N]; 
-		}
-		
 		//1st case.
-        match = ( string1[i] == string2[j] ) ? MATCH : MISS_MATCH; 
-		test_val = northwest + match;
+		test_val = ( string1[0] == string2[j] ) ? MATCH : MISS_MATCH; 
 		if(test_val > 0){
 			val = test_val;
 			dir = NORTH_WEST;
 		}
-        
+
+		north = similarity_matrix[j*N - N];
 		//2nd case.
 		test_val = north + GAP_i;
 		if(test_val > val){
@@ -95,23 +71,62 @@ void compute_matrices(
 			dir = NORTH;
 		}
 
-		//3rd case.
-		test_val = west + GAP_d;
-		if(test_val > val){
-			val = test_val;
-			dir = west;
-		}
-
-        //Save results.
-		similarity_matrix[index] = val;
-		direction_matrix[index] = dir;
+		//Save results.
+		similarity_matrix[j*N] = val;
+		direction_matrix[j*N] = dir;
 
 		if (val > max_value) {
 			max_value = val;
-			*max_index = index;
+			*max_index = j*N;
 		}
 
+	  for(int i = 1; i < N; i++) {
 
+		val = 0;
+		dir = CENTER;
+
+
+		northwest = similarity_matrix[index - N - 1];
+		west = similarity_matrix[index - 1];
+
+		//1st case.
+		test_val = northwest + (( string1[i] == string2[j] ) ? MATCH : MISS_MATCH);
+			if(test_val > 0){
+				val = test_val;
+				dir = NORTH_WEST;
+			}
+	
+			if (j == 0) {
+				// first row.
+				north = 0;
+			}
+			else {
+				north = similarity_matrix[index - N];
+				//2nd case.
+				test_val = north + GAP_i;
+				if(test_val > val){
+					val = test_val;
+					dir = NORTH;
+				}
+			}
+
+			//3rd case.
+			test_val = west + GAP_d;
+			if(test_val > val){
+				val = test_val;
+				dir = WEST;
+			}
+
+			//Save results.
+			similarity_matrix[index] = val;
+			direction_matrix[index] = dir;
+
+			if (val > max_value) {
+				max_value = val;
+				*max_index = index;
+			}
+
+	  }
 	}   // end of for-loop
 }  // end of function
 
@@ -169,7 +184,7 @@ int main(int argc, char** argv) {
     char *query = (char*) malloc(sizeof(char) * N);
 	char *database = (char*) malloc(sizeof(char) * M);
 	int *similarity_matrix = (int*) malloc(sizeof(int) * N * M);
-	short *direction_matrix = (short*) malloc(sizeof(short) * N * M);
+	char *direction_matrix = (char*) malloc(sizeof(short) * N * M);
 	int *max_index = (int *) malloc(sizeof(int));
 
 /* Create the two input strings by calling a random number generator */
