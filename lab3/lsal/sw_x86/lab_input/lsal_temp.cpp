@@ -43,10 +43,6 @@ void compute_matrices(
     int index = 0;
     int i = 0;
 	int j = 0;
-	int match;
-	int test_val;
-	int val;
-	int dir;
 
     // Following values are used for the N, W, and NW values wrt. similarity_matrix[i]
     int north = 0;
@@ -60,59 +56,24 @@ void compute_matrices(
 
    	  i = index % N; // column index
 	  j = index / N; // row index
-	  val = 0;
-	  dir = CENTER;
-
    	   if (i == 0) {  
 			// first column. 
 			west = 0;
 			northwest = 0;
-		} else {
-			northwest = similarity_matrix[index - N - 1];
-			west = similarity_matrix[index - 1];
-		}
+		} else {      
 
-		if (j == 0) {
-			// first row.
-			north = 0;
-		}
-		else {
-			north = similarity_matrix[index - N]; 
-		}
-		
-		//1st case.
-        match = ( string1[i] == string2[j] ) ? MATCH : MISS_MATCH; 
-		test_val = northwest + match;
-		if(test_val > 0){
-			val = test_val;
-			dir = NORTH_WEST;
-		}
-        
-		//2nd case.
-		test_val = north + GAP_i;
-		if(test_val > val){
-			val = test_val;
-			dir = NORTH;
-		}
-
-		//3rd case.
-		test_val = west + GAP_d;
-		if(test_val > val){
-			val = test_val;
-			dir = west;
-		}
-
-        //Save results.
-		similarity_matrix[index] = val;
-		direction_matrix[index] = dir;
-
-		if (val > max_value) {
-			max_value = val;
-			*max_index = index;
-		}
+           north = similarity_matrix[index - N]; 
+           match = ( string1[i] == string2[j] ) ? MATCH : MISS_MATCH; 
+			test_val = northwest + match;
+			if(test_val > val){
+				val = test_val;
+				dir = NORTH_WEST;
+			}
+        //////// 
+        }
 
 
-	}   // end of for-loop
+}   // end of for-loop
 }  // end of function
 
 /************************************************************************/
@@ -189,8 +150,6 @@ int main(int argc, char** argv) {
 	free(similarity_matrix);
 	free(direction_matrix);
 	free(max_index);
-	free(query);
-	free(database);
 
     // printf("cnt_ops=%d, cnt_bytes=%d\n", cnt_ops, cnt_bytes);
 	return EXIT_SUCCESS;
