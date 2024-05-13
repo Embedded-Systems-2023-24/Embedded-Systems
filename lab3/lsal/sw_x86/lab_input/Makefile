@@ -1,16 +1,20 @@
 CFLAG:= -O3 -mavx2
 
 optimized: lsal_optimized.cpp
-	gcc -g lsal_optimized.cpp -o lsal $(CFLAG)
+	gcc -g lsal_optimized.cpp -o lsal_sw_x86 $(CFLAG)
+
+arm: 
+	/tools/Xilinx/Vitis/2020.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin/arm-linux-gnueabihf-g++ -o ./lsal_sw_arm ./lsal_optimized.cpp -Wall -O3 -g -std=c++11
 
 valgrind: optimized
-	valgrind --tool=callgrind ./lsal 32 65536
+	valgrind --tool=callgrind ./lsal_sw_x86 32 65536
 	kcachegrind ./callgrind.out*
 	rm call*
 
 unoptimized:
-	gcc -g lsal_unoptimized.cpp -o lsal $(CFLAG)
+	gcc -g lsal_unoptimized.cpp -o lsal_sw_x86 $(CFLAG)
 
 rm:
-	rm lsal
+	rm lsal_sw_x86
+	rm lsal_sw_arm
 	rm call*
