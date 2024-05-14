@@ -20,6 +20,8 @@
 #define WEST 3
 #define index i+j*N
 
+//#define DEBUG
+
 /**********************************************************************************************
  * LSAL algorithm
  * Inputs:
@@ -47,7 +49,57 @@ void compute_matrices(
 	int west = 0;
 	int northwest = 0;
 
-	//Here the real computation starts. Place your code whenever is required. 
+	//Here the real computation starts. Place your code whenever is required.
+
+	// Scan the first row of the array.
+	for(int j = 0; j < 1; j++) {
+	  for(int i = 1; i < N; i++) {
+
+		val = 0;
+		dir = CENTER;
+
+		west = similarity_matrix[index - 1];
+
+		//1st case.
+		test_val = northwest + (( string1[i] == string2[j] ) ? MATCH : MISS_MATCH);
+			if(test_val > 0){
+				val = test_val;
+				dir = NORTH_WEST;
+			}
+	
+			if (j == 0) {
+				// first row.
+				north = 0;
+			}
+			else {
+				north = similarity_matrix[index - N];
+				//2nd case.
+				test_val = north + GAP_i;
+				if(test_val > val){
+					val = test_val;
+					dir = NORTH;
+				}
+			}
+
+			//3rd case.
+			test_val = west + GAP_d;
+			if(test_val > val){
+				val = test_val;
+				dir = WEST;
+			}
+
+			//Save results.
+			similarity_matrix[index] = val;
+			direction_matrix[index] = dir;
+
+			if (val > max_value) {
+				max_value = val;
+				*max_index = index;
+			}
+
+	  }
+	}
+
 	// Scan the N*M array row-wise starting from the second row.
    //for(index = N + 1; index < N*M; index++) {
 	for(int j = 1; j < M; j++) {
@@ -147,6 +199,36 @@ int rand_lim(int limit) {
 	return retval;
 }
 
+#ifdef DEBUG
+void print_direction_matrix (char *direction_matrix, int N, int M) {
+
+	for (int j=0; j < M; j++) {
+		for (int i=0; i < N; i++) {
+			if (direction_matrix[index] == CENTER)
+				printf(" C ");
+			else if (direction_matrix[index] == NORTH_WEST)
+				printf("NW ");
+			else if (direction_matrix[index] == NORTH)
+				printf(" N ");
+			else
+				printf(" W ");
+		}
+		printf("\n");
+	}
+
+}
+void print_similarity_matrix (int *similarity_matrix, int N, int M) {
+
+	for (int j=0; j < M; j++) {
+		for (int i=0; i < N; i++) {
+			printf("%d ", similarity_matrix[index]);
+		}
+		printf("\n");
+	}
+
+}
+#endif /*DEBUG*/
+
 /*
  Fill the string with random values
  */
@@ -194,9 +276,24 @@ int main(int argc, char** argv) {
 	memset(similarity_matrix, 0, sizeof(int) * N * M);
 	memset(direction_matrix, 0, sizeof(short) * N * M);
 
+	char queryTest[] = "TGTTACGG";
+	char databaseTest[] = "GGTTGACTA";
+
     t1 = clock();
+#ifdef DEBUG
+	compute_matrices(queryTest, databaseTest, max_index, similarity_matrix, direction_matrix, N, M);
+#else
 	compute_matrices(query, database, max_index, similarity_matrix, direction_matrix, N, M);
+#endif
 	t2 = clock();
+
+#ifdef DEBUG
+	printf("\n******** Simularity Matrix ********\n");
+	print_similarity_matrix(similarity_matrix, N, M);
+
+	printf("\n******** Direction Matrix ********\n");
+	print_direction_matrix(direction_matrix, N, M);
+#endif /*DEBUG*/
 
     printf(" max index is in position (%d, %d) \n", max_index[0]/N, max_index[0]%N );
 	printf(" execution time of LSAL SW algorithm is %f sec \n", (double)(t2-t1) / CLOCKS_PER_SEC);

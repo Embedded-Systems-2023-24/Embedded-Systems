@@ -6,6 +6,6 @@
 *.ip_user_files
 vivado.jou
 vivado.log
-/lsal
 lsal_sw_arm
 lsal_sw_x86
+lsal_debug
