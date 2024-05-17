@@ -1,4 +1,4 @@
-CFLAG:= -O3 -mavx2
+CFLAG:= -O3 -mavx2 -fsanitize=address
 
 optimized: lsal_optimized.cpp
 	gcc -g lsal_optimized.cpp -o lsal_sw_x86 $(CFLAG)
@@ -16,7 +16,7 @@ valgrind: optimized
 	rm call*
 
 unoptimized:
-	gcc -g lsal_unoptimized.cpp -o lsal_sw_x86 $(CFLAG)
+	gcc -g lsal_unoptimized.cpp -o lsal_sw_x86_unoptimized $(CFLAG)
 
 rm:
 	rm lsal_sw_x86

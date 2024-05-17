@@ -1,0 +1,10 @@
+
+=== Start: [2024/05/17 11:30:20] === 
+Peak bandwidth measurement started...
+Peak bandwidth measurement finished.
+Analysis started...
+Result file: /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/unoptimised/e000/trc000/trc000.advixe 
+Application exit code: 0 
+Result file: /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/unoptimised/e000/trc000/trc000.advixe 
+Analysis completed
+=== End: [2024/05/17 11:30:45] === 

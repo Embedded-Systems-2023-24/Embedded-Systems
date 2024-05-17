@@ -52,52 +52,36 @@ void compute_matrices(
 	//Here the real computation starts. Place your code whenever is required.
 
 	// Scan the first row of the array.
-	for(int j = 0; j < 1; j++) {
-	  for(int i = 1; i < N; i++) {
+		for(int i = 1; i < N; i++) {
+			val = 0;
+			dir = CENTER;
 
-		val = 0;
-		dir = CENTER;
+			west = similarity_matrix[i - 1];
 
-		west = similarity_matrix[index - 1];
-
-		//1st case.
-		test_val = northwest + (( string1[i] == string2[j] ) ? MATCH : MISS_MATCH);
-			if(test_val > 0){
-				val = test_val;
-				dir = NORTH_WEST;
-			}
-	
-			if (j == 0) {
-				// first row.
+			//1st case.
+			test_val = northwest + (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
+				if(test_val > 0){
+					val = test_val;
+					dir = NORTH_WEST;
+				}
+		
 				north = 0;
-			}
-			else {
-				north = similarity_matrix[index - N];
-				//2nd case.
-				test_val = north + GAP_i;
+
+				//3rd case.
+				test_val = west + GAP_d;
 				if(test_val > val){
 					val = test_val;
-					dir = NORTH;
+					dir = WEST;
 				}
-			}
 
-			//3rd case.
-			test_val = west + GAP_d;
-			if(test_val > val){
-				val = test_val;
-				dir = WEST;
-			}
+				//Save results.
+				similarity_matrix[i] = val;
+				direction_matrix[i] = dir;
 
-			//Save results.
-			similarity_matrix[index] = val;
-			direction_matrix[index] = dir;
-
-			if (val > max_value) {
-				max_value = val;
-				*max_index = index;
-			}
-
-	  }
+				if (val > max_value) {
+					max_value = val;
+					*max_index = i;
+				}
 	}
 
 	// Scan the N*M array row-wise starting from the second row.
@@ -280,11 +264,13 @@ int main(int argc, char** argv) {
 	char databaseTest[] = "GGTTGACTA";
 
     t1 = clock();
+
 #ifdef DEBUG
 	compute_matrices(queryTest, databaseTest, max_index, similarity_matrix, direction_matrix, N, M);
 #else
 	compute_matrices(query, database, max_index, similarity_matrix, direction_matrix, N, M);
 #endif
+
 	t2 = clock();
 
 #ifdef DEBUG

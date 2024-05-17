@@ -10,6 +10,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
+//#define DEBUG
+
 // #define N 256
 // #define M 2048
 
@@ -149,6 +151,36 @@ void fillRandom(char* string, int dimension) {
 
 }
 
+#ifdef DEBUG
+void print_direction_matrix (short *direction_matrix, int N, int M) {
+
+	for (int j=0; j < M; j++) {
+		for (int i=0; i < N; i++) {
+			if (direction_matrix[i+j*N] == CENTER)
+				printf(" C ");
+			else if (direction_matrix[i+j*N] == NORTH_WEST)
+				printf("NW ");
+			else if (direction_matrix[i+j*N] == NORTH)
+				printf(" N ");
+			else
+				printf(" W ");
+		}
+		printf("\n");
+	}
+
+}
+void print_similarity_matrix (int *similarity_matrix, int N, int M) {
+
+	for (int j=0; j < M; j++) {
+		for (int i=0; i < N; i++) {
+			printf("%d ", similarity_matrix[i+j*N]);
+		}
+		printf("\n");
+	}
+
+}
+#endif /*DEBUG*/
+
 /* ******************************************************************/
 int main(int argc, char** argv) {
 
@@ -179,9 +211,24 @@ int main(int argc, char** argv) {
 	memset(similarity_matrix, 0, sizeof(int) * N * M);
 	memset(direction_matrix, 0, sizeof(short) * N * M);
 
+	char queryTest[] = "TGTTACGG";
+	char databaseTest[] = "GGTTGACTA";
+
     t1 = clock();
+#ifdef DEBUG
+	compute_matrices(queryTest, databaseTest, max_index, similarity_matrix, direction_matrix, N, M);
+#else
 	compute_matrices(query, database, max_index, similarity_matrix, direction_matrix, N, M);
+#endif
 	t2 = clock();
+
+#ifdef DEBUG
+	printf("\n******** Simularity Matrix ********\n");
+	print_similarity_matrix(similarity_matrix, N, M);
+
+	printf("\n******** Direction Matrix ********\n");
+	print_direction_matrix(direction_matrix, N, M);
+#endif /*DEBUG*/
 
     printf(" max index is in position (%d, %d) \n", max_index[0]/N, max_index[0]%N );
 	printf(" execution time of LSAL SW algorithm is %f sec \n", (double)(t2-t1) / CLOCKS_PER_SEC);

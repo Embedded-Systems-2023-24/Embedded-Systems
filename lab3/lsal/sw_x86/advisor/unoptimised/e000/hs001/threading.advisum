@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- <!DOCTYPE IntelParallelAdvisorSummaryCollection SYSTEM  "IntelParallelAdvisorSummaryCollection.dtd"> -->
+
+<IntelParallelAdvisorSummary version="" 
+                             kind="DATAKIND_SURVEY_EX" >
+  <hotspot filename="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_unoptimized.cpp"
+           line_no="61"
+           routine="compute_matrices"
+           is_vectorized="0"
+           self_time="1.371841E+00"
+           total_time="1.371841E+00"
+           trip_counts="76799744"
+           func_instance="4"
+           priority="0"/>
+</IntelParallelAdvisorSummary >
