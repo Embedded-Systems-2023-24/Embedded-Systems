@@ -21,4 +21,5 @@ unoptimized:
 clear:
 	-rm lsal_sw_x86
 	-rm lsal_sw_arm
+	-rm lsal_debug
 	-rm call*
