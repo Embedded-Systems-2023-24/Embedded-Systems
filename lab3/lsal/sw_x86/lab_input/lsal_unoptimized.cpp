@@ -10,7 +10,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-//#define DEBUG
+#define DEBUG
 
 // #define N 256
 // #define M 2048
@@ -57,6 +57,40 @@ void compute_matrices(
 	int max_value = 0;
 
 	//Here the real computation starts. Place your code whenever is required. 
+
+	// Scan the first row of the array.
+		for(int i = 1; i < N; i++) {
+			val = 0;
+			dir = CENTER;
+
+			west = similarity_matrix[i - 1];
+
+			//1st case.
+			test_val = northwest + (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
+				if(test_val > 0){
+					val = test_val;
+					dir = NORTH_WEST;
+				}
+		
+				north = 0;
+
+				//3rd case.
+				test_val = west + GAP_d;
+				if(test_val > val){
+					val = test_val;
+					dir = WEST;
+				}
+
+				//Save results.
+				similarity_matrix[i] = val;
+				direction_matrix[i] = dir;
+
+				if (val > max_value) {
+					max_value = val;
+					*max_index = i;
+				}
+	}
+
 	// Scan the N*M array row-wise starting from the second row.
    for(index = N; index < N*M; index++) {
 
