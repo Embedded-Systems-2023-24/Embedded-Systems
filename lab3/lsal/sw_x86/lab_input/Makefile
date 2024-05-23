@@ -18,7 +18,7 @@ valgrind: optimized
 unoptimized:
 	gcc -g lsal_unoptimized.cpp -o lsal_sw_x86_unoptimized $(CFLAG)
 
-rm:
-	rm lsal_sw_x86
-	rm lsal_sw_arm
-	rm call*
+clear:
+	-rm lsal_sw_x86
+	-rm lsal_sw_arm
+	-rm call*
