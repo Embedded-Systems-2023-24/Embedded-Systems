@@ -12,9 +12,13 @@
  </SurveyView>
  <workflow int:selected="0" boolean:accuracyEnable="false">
   <pmVectorization>
+   <commonKnobs>
+    <accuracy id="accuracy" boolean:visibility="true" boolean:readOnly="false" value="low"/>
+    <overheadIndicator id="overheadIndicator" boolean:visibility="true" boolean:readOnly="false"/>
+   </commonKnobs>
    <checked boolean:a1="true" boolean:a3="true" boolean:a6="false" boolean:a7="false"/>
   </pmVectorization>
  </workflow>
  <MainView int:SidebarWidth="345"/>
- <FilterView boolean:VectorizedButtonChecked="true" boolean:NotVectorizedButtonChecked="true" boolean:FakeLoopButtonChecked="false" boolean:LibrariesButtonChecked="false" ModuleFilterValue="All Modules" SourceFilterValue="All Sources" LoopModeFilterValue="Loops And Functions" ThreadFilterValue="All Threads"/>
+ <FilterView boolean:VectorizedButtonChecked="true" boolean:NotVectorizedButtonChecked="true" boolean:FakeLoopButtonChecked="false" boolean:LibrariesButtonChecked="false" ModuleFilterValue="All Modules" SourceFilterValue="lsal_optimized.cpp" LoopModeFilterValue="Loops And Functions" ThreadFilterValue="All Threads"/>
 </bag>

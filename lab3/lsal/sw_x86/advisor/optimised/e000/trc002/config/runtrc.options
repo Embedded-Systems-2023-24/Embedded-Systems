@@ -1,0 +1,15 @@
+-r
+/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Optimised/e000/trc002
+--return-app-exitcode
+--cs-mode=no-count-loops,no-count-flops,stl-profiling,stack-stitching
+--count-flops
+--benchmarks=dram,mcdram,cpu_cache,flop_peak,int,
+--cs-file=/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Optimised/e000/callstacks.def
+--jit-profiling
+--gpu-carm
+--target-gpu=none
+--app-working-dir=/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input
+--
+/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86
+256
+300000

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
  <rdmgr>
-  <timestamp type="u64_t">1715934188</timestamp>
+  <timestamp type="u64_t">1716559960</timestamp>
   <hostname type="string">localhost.localdomain</hostname>
   <os type="string">linux</os>
   <product type="string">Intel® Advisor 2022.1</product>

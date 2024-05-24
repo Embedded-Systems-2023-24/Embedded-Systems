@@ -1,0 +1,48 @@
+Collection status has changed. 1
+Collection has been started.
+Collection has stopped. Application exit code:  0
+Finalizing results
+Finalizing the result
+Clearing the database
+The database has been cleared, elapsed time is 0.458 seconds.
+Loading raw data to the database
+Loading 'systemcollector-21478-localhost.localdomain.sc' file
+Loading '21478-21495.0.trace' file
+Loading 'tripcounts_19888_0.tcs' file
+Error: Cannot load data file `/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Optimised/e000/hs003/data.1/advixe-runtrc.txt' ().
+Updating precomputed scalar metrics
+Raw data has been loaded to the database, elapsed time is 0.269 seconds.
+Processing profile metrics and debug information
+Data transformations have been finished, elapsed time is 0.040 seconds.
+Setting data model parameters
+Resolving module symbols
+Resolving information for `lsal_sw_x86'
+Resolving information for `libasan.so.4'
+Resolving information for `libc.so.6'
+Warning: Cannot locate debugging information for file `/usr/lib64/libasan.so.4'.
+Warning: Cannot locate debugging information for file `/lib64/libc.so.6'.
+Resolving bottom user stack information
+Resolving thread name information
+Resolving call target names for dynamic code
+Symbol resolution has been finished, elapsed time is 0.228 seconds.
+Processing profile metrics and debug information
+Resolving FLOP information
+Deferred data transformations have been finished, elapsed time is 0.038 seconds.
+Setting data model parameters
+Data model parameters have been set, elapsed time is 0.037 seconds.
+Precomputing frequently used data
+Precomputing frequently used data
+Updating precomputed scalar metrics
+Precomputing frequently used data has been finished, elapsed time is 0.260 seconds.
+Discarding redundant overtime data
+Saving the result
+Redundant overtime data has been discarded, elapsed time is 0.006 seconds.
+Raw collector data has been discarded, elapsed time is 0.000 seconds.
+Finalizing the result took 1.607 seconds.
+Preparing data for display of survey call tree
+Resolving module symbols
+Resolving information for dangling locations
+Resolving bottom user stack information
+Resolving thread name information
+Resolving call target names for dynamic code
+Precomputing frequently used data

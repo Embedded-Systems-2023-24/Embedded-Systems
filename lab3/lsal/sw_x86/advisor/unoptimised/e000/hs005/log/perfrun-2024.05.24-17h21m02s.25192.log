@@ -1,0 +1,50 @@
+13 [139700470449088] INFO perfrun.launcher <> - Launcher main begin
+15 [139700470449088] INFO perfrun.launcher <> - MessageCatalogInit finished
+15 [139700470449088] INFO perfrun.launcher <> - Launcher instance created
+15 [139700470449088] INFO perfrun.launcher <> - argc = 6; cmdline = /opt/intel/oneapi/advisor/2022.1.0/bin64/advixe-runss --ui-output-format xml --ui-output-fd 98 --context-value-list 
+87 [139700470449088] INFO perfrun.launcher <> - create msngr2::ICliToolContext
+88 [139700470449088] INFO perfrun.launcher <> - create file finder object
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = targetOS; value = Linux
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = OS; value = Linux
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = OSBuildNumber; value = 21
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = OSBitness; value = 64
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = RootPrivileges; value = false
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isPtraceScopeLimited; value = false
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isCATSupportedByCPU; value = true
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isL3CATAvailable; value = true
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = L3CATDetails; value = COS=16;ways=20
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isL2CATAvailable; value = false
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isL3MonitoringSupportedByCPU; value = true
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = LLCSize; value = 10485760
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = cacheMonitoringUpscalingFactor; value = 16384
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isL3CacheOccupancyAvailable; value = true
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isL3TotalBWAvailable; value = true
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isL3LocalBWAvailable; value = true
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isTSXAvailable; value = true
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isPTAvailable; value = true
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isHTEnabled; value = false
+106 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = fpgaOnBoard; value = None
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = omniPathOnBoard; value = None
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = genArchOnBoard; value = 0
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = pciClassParts; value = 
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = tidValuesForIO; value = 
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = populatedIoParts; value = 
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = populatedIoUnits; value = 
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = populatedTidValuesForIO; value = 
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isSGXAvailable; value = false
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = LinuxRelease; value = 5.14.21-150400.24.18-default
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = is3DXPPresent; value = false
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = is3DXP2LMMode; value = false
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = is3DXPAppDirectMode; value = false
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = IsNUMANodeWithoutCPUsPresent; value = false
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = Hypervisor; value = None
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = PerfmonVersion; value = 3
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isMaxDRAMBandwidthMeasurementSupported; value = false
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = preferedGpuAdapter; value = none
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isEHFIAvailable; value = false
+107 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = i915Status; value = MissingDriver
+108 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isTPSSAvailable; value = true
+108 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = isPytraceAvailable; value = true
+108 [139700470449088] INFO perfrun.launcher <> - Put into the variant bag the context value: name = forceShowInlines; value = false
+108 [139700470449088] INFO perfrun.launcher <> - Application exit code: 0
+108 [139700470449088] INFO perfrun.launcher <> - Exit code: 0

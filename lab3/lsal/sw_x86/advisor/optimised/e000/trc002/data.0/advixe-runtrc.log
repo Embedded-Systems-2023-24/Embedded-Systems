@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<log version="1.0" tool="runtool">
+
+<msg id="1" tool="runtool">
+  <type>log-start</type>
+  <arg>2024/05/24 17:16:56</arg>
+</msg>
+<msg id="2" tool="runtool">
+  <type>bandwidth-measurement-starts</type>
+</msg>
+<msg id="3" tool="runtool">
+  <type>bandwidth-measurement-done</type>
+</msg>
+<msg id="4" tool="runtool">
+  <type>collector-starts</type>
+</msg>
+<msg id="5" tool="runtool">
+  <type>marker-file</type>
+  <arg>/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Optimised/e000/trc002/trc002.advixe</arg>
+</msg>
+<msg id="6" tool="trc">
+  <type>PROCESS_START</type>
+  <arg>/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</arg>
+  <arg>21799</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:07 2024</timestamp>
+</msg>
+<msg id="7" tool="trc">
+  <type>PROCESS_ANALYSIS_MODE</type>
+  <arg>full</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:07 2024</timestamp>
+</msg>
+<msg id="8" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</arg>
+  <arg>0x400000</arg>
+  <arg>0x60225f</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:07 2024</timestamp>
+</msg>
+<msg id="9" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib64/ld-linux-x86-64.so.2</arg>
+  <arg>0x7f32dfc84000</arg>
+  <arg>0x7f32dfeb0747</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:07 2024</timestamp>
+</msg>
+<msg id="10" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>[vdso]</arg>
+  <arg>0x7ffe891dd000</arg>
+  <arg>0x7ffe891de04b</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:07 2024</timestamp>
+</msg>
+<msg id="11" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/usr/lib64/libasan.so.4</arg>
+  <arg>0x7f32c8a48000</arg>
+  <arg>0x7f32c99faa67</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:07 2024</timestamp>
+</msg>
+<msg id="12" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib64/libc.so.6</arg>
+  <arg>0x7f32c85ea000</arg>
+  <arg>0x7f32c89de837</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:07 2024</timestamp>
+</msg>
+<msg id="13" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib64/libdl.so.2</arg>
+  <arg>0x7f32c834c000</arg>
+  <arg>0x7f32c854f12f</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:07 2024</timestamp>
+</msg>
+<msg id="14" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib64/librt.so.1</arg>
+  <arg>0x7f32c8143000</arg>
+  <arg>0x7f32c834bbdf</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:07 2024</timestamp>
+</msg>
+<msg id="15" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib64/libpthread.so.0</arg>
+  <arg>0x7f32c7f20000</arg>
+  <arg>0x7f32c8142ab7</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:07 2024</timestamp>
+</msg>
+<msg id="16" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/usr/lib64/libstdc++.so.6</arg>
+  <arg>0x7f32c7afd000</arg>
+  <arg>0x7f32c7f1f87f</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:07 2024</timestamp>
+</msg>
+<msg id="17" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib64/libm.so.6</arg>
+  <arg>0x7f32c77b2000</arg>
+  <arg>0x7f32c7afca57</arg>
+  <arg>yes</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:07 2024</timestamp>
+</msg>
+<msg id="18" tool="trc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib64/libgcc_s.so.1</arg>
+  <arg>0x7f32c7599000</arg>
+  <arg>0x7f32c77b1447</arg>
+  <arg>no</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:07 2024</timestamp>
+</msg>
+<msg id="19" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:15 2024</timestamp>
+</msg>
+<msg id="20" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib64/ld-linux-x86-64.so.2</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:15 2024</timestamp>
+</msg>
+<msg id="21" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>[vdso]</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:15 2024</timestamp>
+</msg>
+<msg id="22" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/usr/lib64/libasan.so.4</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:15 2024</timestamp>
+</msg>
+<msg id="23" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib64/libc.so.6</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:15 2024</timestamp>
+</msg>
+<msg id="24" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib64/libdl.so.2</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:15 2024</timestamp>
+</msg>
+<msg id="25" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib64/librt.so.1</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:15 2024</timestamp>
+</msg>
+<msg id="26" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib64/libpthread.so.0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:15 2024</timestamp>
+</msg>
+<msg id="27" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/usr/lib64/libstdc++.so.6</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:15 2024</timestamp>
+</msg>
+<msg id="28" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib64/libm.so.6</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:15 2024</timestamp>
+</msg>
+<msg id="29" tool="trc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib64/libgcc_s.so.1</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:15 2024</timestamp>
+</msg>
+<msg id="30" tool="trc">
+  <type>PROCESS_FINISH</type>
+  <arg>/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</arg>
+  <arg>21799</arg>
+  <arg>0x0</arg>
+  <severity>INFO</severity>
+  <timestamp>Fri May 24 17:17:15 2024</timestamp>
+</msg>
+<msg id="31" tool="runtool">
+  <type>app-exit-code</type>
+  <arg>0</arg>
+</msg>
+<msg id="32" tool="runtool">
+  <type>marker-file</type>
+  <arg>/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Optimised/e000/trc002/trc002.advixe</arg>
+</msg>
+<msg id="33" tool="runtool">
+  <type>collector-done</type>
+</msg>
+<msg id="34" tool="runtool">
+  <type>log-end</type>
+  <arg>2024/05/24 17:17:19</arg>
+</msg>
+
+</log>
+

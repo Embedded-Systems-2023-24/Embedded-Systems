@@ -2,7 +2,7 @@
 <root>
  <connectionOption type="string">localhost</connectionOption>
  <rdmgr>
-  <timestamp type="u64_t">1715934144</timestamp>
+  <timestamp type="u64_t">1716559933</timestamp>
   <hostname type="string">localhost.localdomain</hostname>
   <os type="string">linux</os>
   <product type="string">Intel® Advisor 2022.1</product>
@@ -19,9 +19,6 @@
  </rdmgr>
  <contextValues type="bag"/>
  <All_Configurations-All_Platforms>
-  <per_group_workloads>
-   <release type="string">release</release>
-  </per_group_workloads>
   <searchDirs>
    <searchCategory>
     <category type="u8_t">1</category>
@@ -42,7 +39,7 @@
     <localhost type="string">release</localhost>
    </selected_workload>
    <result_dir>
-    <localhost type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/optimised</localhost>
+    <localhost type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Optimised</localhost>
    </result_dir>
    <result_pattern>
     <localhost type="string">r@@@{at}</localhost>
@@ -54,7 +51,7 @@
        <targetName type="string">attach-survey</targetName>
        <use_app_dir_as_work_dir type="bool">false</use_app_dir_as_work_dir>
        <attach.pid type="null"></attach.pid>
-       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/optimised/r@@@{at}</result_directory.path>
+       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Optimised/r@@@{at}</result_directory.path>
        <search_directories type="bag"/>
        <context>
         <contextValue>
@@ -160,7 +157,7 @@
       <workload>
        <targetName type="string">projection</targetName>
        <use_app_dir_as_work_dir type="bool">true</use_app_dir_as_work_dir>
-       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/optimised/r@@@{at}</result_directory.path>
+       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Optimised/r@@@{at}</result_directory.path>
        <search_directories type="bag"/>
        <context>
         <contextValue>
@@ -337,13 +334,13 @@
      <suitability type="pointer" type_id="dasID_cctrl2::ApplicationWorkload" ptr_type="dasID_cctrl2::IWorkload">
       <workload>
        <targetName type="string">suitability</targetName>
-       <launch.userapppath type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_optimized.cpp</launch.userapppath>
-       <launch.userappworkdir type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input</launch.userappworkdir>
-       <launch_app.app_to_launch type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_optimized.cpp</launch_app.app_to_launch>
-       <launch_app.app_parameters type="string">256 300000</launch_app.app_parameters>
+       <launch.userapppath type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</launch.userapppath>
+       <launch.userappworkdir type="string"></launch.userappworkdir>
+       <launch_app.app_to_launch type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</launch_app.app_to_launch>
+       <launch_app.app_parameters type="string"></launch_app.app_parameters>
        <use_app_dir_as_work_dir type="bool">true</use_app_dir_as_work_dir>
        <launch_app.working_folder type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input</launch_app.working_folder>
-       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/optimised/r@@@{at}</result_directory.path>
+       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Optimised/r@@@{at}</result_directory.path>
        <search_directories type="bag"/>
        <context>
         <contextValue>
@@ -376,7 +373,7 @@
      <debug type="pointer" type_id="dasID_cctrl2::ApplicationWorkload" ptr_type="dasID_cctrl2::IWorkload">
       <workload>
        <targetName type="string">debug</targetName>
-       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/optimised/r@@@{at}</result_directory.path>
+       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Optimised/r@@@{at}</result_directory.path>
        <launch.userapppath type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</launch.userapppath>
        <launch.userappworkdir type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input</launch.userappworkdir>
        <launch_app.app_to_launch type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</launch_app.app_to_launch>
@@ -451,7 +448,7 @@
      <map type="pointer" type_id="dasID_cctrl2::ApplicationWorkload" ptr_type="dasID_cctrl2::IWorkload">
       <workload>
        <targetName type="string">map</targetName>
-       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/optimised/r@@@{at}</result_directory.path>
+       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Optimised/r@@@{at}</result_directory.path>
        <launch.userapppath type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</launch.userapppath>
        <launch.userappworkdir type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input</launch.userappworkdir>
        <launch_app.app_to_launch type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</launch_app.app_to_launch>
@@ -533,12 +530,12 @@
        <use_app_dir_as_work_dir type="bool">true</use_app_dir_as_work_dir>
        <launch_app.inherit_sys_environment type="bool">true</launch_app.inherit_sys_environment>
        <launch_app.mpi_run type="bool">false</launch_app.mpi_run>
-       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/optimised/r@@@{at}</result_directory.path>
-       <launch_app.app_parameters type="string">256 300000</launch_app.app_parameters>
-       <launch.userappworkdir type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input</launch.userappworkdir>
-       <launch_app.mpi_max_rank type="null"></launch_app.mpi_max_rank>
+       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Optimised/r@@@{at}</result_directory.path>
        <launch.userapppath type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</launch.userapppath>
        <launch_app.app_to_launch type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</launch_app.app_to_launch>
+       <launch.userappworkdir type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input</launch.userappworkdir>
+       <launch_app.mpi_max_rank type="null"></launch_app.mpi_max_rank>
+       <launch_app.app_parameters type="string">256 300000</launch_app.app_parameters>
        <launch_app.working_folder type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input</launch_app.working_folder>
        <search_directories type="bag"/>
        <context>
@@ -644,7 +641,7 @@
      <tripcounts type="pointer" type_id="dasID_cctrl2::ApplicationWorkload" ptr_type="dasID_cctrl2::IWorkload">
       <workload>
        <targetName type="string">tripcounts</targetName>
-       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/optimised/r@@@{at}</result_directory.path>
+       <result_directory.path type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Optimised/r@@@{at}</result_directory.path>
        <launch.userapppath type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</launch.userapppath>
        <launch.userappworkdir type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input</launch.userappworkdir>
        <launch_app.app_to_launch type="string">/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/lab_input/lsal_sw_x86</launch_app.app_to_launch>
@@ -799,5 +796,8 @@
     </localhost>
    </workloads>
   </target_settings>
+  <per_group_workloads>
+   <release type="string">release</release>
+  </per_group_workloads>
  </All_Configurations-All_Platforms>
 </root>

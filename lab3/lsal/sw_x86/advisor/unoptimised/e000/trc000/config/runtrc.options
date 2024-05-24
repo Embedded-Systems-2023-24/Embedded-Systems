@@ -1,10 +1,11 @@
 -r
-/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/unoptimised/e000/trc000
+/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Unoptimised/e000/trc000
 --return-app-exitcode
 --cs-mode=no-count-loops,no-count-flops,stl-profiling,stack-stitching
+--target-loops=n
 --count-flops
 --benchmarks=dram,mcdram,cpu_cache,flop_peak,int,
---cs-file=/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/unoptimised/e000/callstacks.def
+--cs-file=/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/sw_x86/advisor/Unoptimised/e000/callstacks.def
 --jit-profiling
 --gpu-carm
 --target-gpu=none

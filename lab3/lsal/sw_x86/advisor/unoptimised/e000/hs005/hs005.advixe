@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <rdmgr>
+  <timestamp type="u64_t">1716560461</timestamp>
+  <hostname type="string">localhost.localdomain</hostname>
+  <os type="string">linux</os>
+  <product type="string">Intel® Advisor 2022.1</product>
+  <buildNumber type="s32_t">613050</buildNumber>
+  <logicalCPUCount type="s32_t">4</logicalCPUCount>
+  <physicalCoreCount type="s32_t">4</physicalCoreCount>
+  <processorPackageCount type="s32_t">1</processorPackageCount>
+  <CPUFrequency type="s64_t">2800000000</CPUFrequency>
+  <CPUFamily type="s32_t">6</CPUFamily>
+  <CPUModel type="s32_t">79</CPUModel>
+  <CPUStepping type="s32_t">1</CPUStepping>
+  <CPUBrandName type="string">Intel(R) Xeon(R) CPU E5-1603 v4 @ 2.80GHz</CPUBrandName>
+  <isa type="string">avx2</isa>
+  <collectionTimeBegin type="u64_t">1716560462</collectionTimeBegin>
+  <collectionTimeEnd type="u64_t">1716560464</collectionTimeEnd>
+  <finalizationTimeBegin type="u64_t">1716560465</finalizationTimeBegin>
+  <finalizationTimeEnd type="u64_t">1716560467</finalizationTimeEnd>
+ </rdmgr>
+</root>
