@@ -8,7 +8,10 @@ debug: lsal_optimized.cpp
 	./lsal_debug 8 9
 
 arm: 
-	/tools/Xilinx/Vitis/2020.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin/arm-linux-gnueabihf-g++ -o ./lsal_sw_arm ./lsal_optimized.cpp -Wall -O3 -g -std=c++11
+	/opt/Xilinx/Vitis/2020.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin/arm-linux-gnueabihf-g++ -o ./lsal_sw_arm_opti ./lsal_optimized.cpp -Wall -O3 -g -std=c++11
+
+unoptimized_arm: 
+	/opt/Xilinx/Vitis/2020.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin/arm-linux-gnueabihf-g++ -o ./lsal_sw_arm_unopti ./lsal_unoptimized.cpp -Wall -O3 -g -std=c++11
 
 valgrind: optimized
 	valgrind --tool=callgrind ./lsal_sw_x86 32 65536

@@ -260,8 +260,10 @@ int main(int argc, char** argv) {
 	memset(similarity_matrix, 0, sizeof(int) * N * M);
 	memset(direction_matrix, 0, sizeof(short) * N * M);
 
+#ifdef DEBUG
 	char queryTest[] = "TGTTACGG";
 	char databaseTest[] = "GGTTGACTA";
+#endif
 
     t1 = clock();
 
