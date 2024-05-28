@@ -1,13 +1,13 @@
-Tue May 28 09:18:18 2024: Server was asked to start on port: '34877'
-Tue May 28 09:18:18 2024: Server is using token UUID: 'a4b22e02-f1ec-4c49-811c-067f3f4ff794'
-Tue May 28 09:18:18 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
-Tue May 28 09:18:18 2024: Attempting to start server on port '34877'
-Tue May 28 09:18:18 2024: XCD main fifo: created main fifo '/tmp/xcdmaina4b22e02-f1ec-4c49-811c-067f3f4ff794', fd read = 13
-Tue May 28 09:18:18 2024: Running Dispatch Server
-Tue May 28 09:18:18 2024: Version 2.1.0
-Tue May 28 09:18:27 2024: Dispatch Server: Accepted socket connection from client
-Tue May 28 09:18:27 2024: EXCHANGE_TOKEN received, server token: a4b22e02-f1ec-4c49-811c-067f3f4ff794, passed token: a4b22e02-f1ec-4c49-811c-067f3f4ff794
-Tue May 28 09:18:27 2024: SESSION_MGR: creating session with session uuid: '18c1bf9b-fe37-4146-b11c-cf485b5ad337' and name 'v++_compile_lsal'
-Tue May 28 09:18:27 2024: GUIDANCE_SMGR: creating guidance session with uuid: '18c1bf9b-fe37-4146-b11c-cf485b5ad337' and name 'v++_compile_lsal'
-Tue May 28 09:18:43 2024: SESSION_MGR: closing session for UUID '18c1bf9b-fe37-4146-b11c-cf485b5ad337' with name 'v++_compile_lsal'
-Tue May 28 09:18:43 2024: GUIDANCE_SMGR: closing session for UUID '18c1bf9b-fe37-4146-b11c-cf485b5ad337' with name 'v++_compile_lsal'
+Tue May 28 11:08:16 2024: Server was asked to start on port: '46111'
+Tue May 28 11:08:16 2024: Server is using token UUID: '4a8d2171-c681-46a5-b061-fb417aabeb26'
+Tue May 28 11:08:16 2024: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Tue May 28 11:08:16 2024: Attempting to start server on port '46111'
+Tue May 28 11:08:16 2024: XCD main fifo: created main fifo '/tmp/xcdmain4a8d2171-c681-46a5-b061-fb417aabeb26', fd read = 13
+Tue May 28 11:08:16 2024: Running Dispatch Server
+Tue May 28 11:08:16 2024: Version 2.1.0
+Tue May 28 11:08:25 2024: Dispatch Server: Accepted socket connection from client
+Tue May 28 11:08:25 2024: EXCHANGE_TOKEN received, server token: 4a8d2171-c681-46a5-b061-fb417aabeb26, passed token: 4a8d2171-c681-46a5-b061-fb417aabeb26
+Tue May 28 11:08:25 2024: SESSION_MGR: creating session with session uuid: 'c1da9998-9d8b-41a9-8fcb-c61186821273' and name 'v++_compile_lsal'
+Tue May 28 11:08:25 2024: GUIDANCE_SMGR: creating guidance session with uuid: 'c1da9998-9d8b-41a9-8fcb-c61186821273' and name 'v++_compile_lsal'
+Tue May 28 11:08:39 2024: SESSION_MGR: closing session for UUID 'c1da9998-9d8b-41a9-8fcb-c61186821273' with name 'v++_compile_lsal'
+Tue May 28 11:08:39 2024: GUIDANCE_SMGR: closing session for UUID 'c1da9998-9d8b-41a9-8fcb-c61186821273' with name 'v++_compile_lsal'

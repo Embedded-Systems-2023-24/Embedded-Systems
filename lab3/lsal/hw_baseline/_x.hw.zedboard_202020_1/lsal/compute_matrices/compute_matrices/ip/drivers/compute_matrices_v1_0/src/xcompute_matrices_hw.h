@@ -1,0 +1,66 @@
+// ==============================================================
+// Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+// ==============================================================
+// control
+// 0x00 : Control signals
+//        bit 0  - ap_start (Read/Write/COH)
+//        bit 1  - ap_done (Read)
+//        bit 2  - ap_idle (Read)
+//        bit 3  - ap_ready (Read)
+//        bit 4  - ap_continue (Read/Write/SC)
+//        bit 7  - auto_restart (Read/Write)
+//        others - reserved
+// 0x04 : Global Interrupt Enable Register
+//        bit 0  - Global Interrupt Enable (Read/Write)
+//        others - reserved
+// 0x08 : IP Interrupt Enable Register (Read/Write)
+//        bit 0  - enable ap_done interrupt (Read/Write)
+//        bit 1  - enable ap_ready interrupt (Read/Write)
+//        others - reserved
+// 0x0c : IP Interrupt Status Register (Read/TOW)
+//        bit 0  - ap_done (COR/TOW)
+//        bit 1  - ap_ready (COR/TOW)
+//        others - reserved
+// 0x10 : Data signal of string1
+//        bit 31~0 - string1[31:0] (Read/Write)
+// 0x14 : reserved
+// 0x18 : Data signal of string2
+//        bit 31~0 - string2[31:0] (Read/Write)
+// 0x1c : reserved
+// 0x20 : Data signal of max_index
+//        bit 31~0 - max_index[31:0] (Read/Write)
+// 0x24 : reserved
+// 0x28 : Data signal of similarity_matrix
+//        bit 31~0 - similarity_matrix[31:0] (Read/Write)
+// 0x2c : reserved
+// 0x30 : Data signal of direction_matrix
+//        bit 31~0 - direction_matrix[31:0] (Read/Write)
+// 0x34 : reserved
+// 0x38 : Data signal of N
+//        bit 31~0 - N[31:0] (Read/Write)
+// 0x3c : reserved
+// 0x40 : Data signal of M
+//        bit 31~0 - M[31:0] (Read/Write)
+// 0x44 : reserved
+// (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
+
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_AP_CTRL                0x00
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_GIE                    0x04
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_IER                    0x08
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_ISR                    0x0c
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_STRING1_DATA           0x10
+#define XCOMPUTE_MATRICES_CONTROL_BITS_STRING1_DATA           32
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_STRING2_DATA           0x18
+#define XCOMPUTE_MATRICES_CONTROL_BITS_STRING2_DATA           32
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_MAX_INDEX_DATA         0x20
+#define XCOMPUTE_MATRICES_CONTROL_BITS_MAX_INDEX_DATA         32
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_SIMILARITY_MATRIX_DATA 0x28
+#define XCOMPUTE_MATRICES_CONTROL_BITS_SIMILARITY_MATRIX_DATA 32
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_DIRECTION_MATRIX_DATA  0x30
+#define XCOMPUTE_MATRICES_CONTROL_BITS_DIRECTION_MATRIX_DATA  32
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_N_DATA                 0x38
+#define XCOMPUTE_MATRICES_CONTROL_BITS_N_DATA                 32
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_M_DATA                 0x40
+#define XCOMPUTE_MATRICES_CONTROL_BITS_M_DATA                 32
+

@@ -1,0 +1,27 @@
+{
+    "kernelContainerValues": [
+        "compute_matrices:xo"
+    ],
+    "profileDataTransferValues": [
+        "all:all:all"
+    ],
+    "profileExecutionValues": [
+        "all:all:all"
+    ],
+    "profileStallValues": [
+        "all:all:all"
+    ],
+    "compile": "false",
+    "debug": "false",
+    "exportScript": "false",
+    "gccHostCompile": "false",
+    "generateEstimateRpt": "false",
+    "keepSolution": "false",
+    "link": "false",
+    "logDir": "\/home\/inf2021\/iathanasi\/embedded\/Embedded-Systems\/lab3\/lsal\/hw_baseline\/build_dir.hw.zedboard_202020_1\/logs\/link",
+    "package": "false",
+    "reportDir": "\/home\/inf2021\/iathanasi\/embedded\/Embedded-Systems\/lab3\/lsal\/hw_baseline\/build_dir.hw.zedboard_202020_1\/reports\/link",
+    "saveTemps": "false",
+    "verbose": "false",
+    "vplNoIpCache": "false"
+}

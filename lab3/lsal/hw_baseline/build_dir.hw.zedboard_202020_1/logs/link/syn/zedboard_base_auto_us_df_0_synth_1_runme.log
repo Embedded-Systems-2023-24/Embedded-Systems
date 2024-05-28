@@ -1,0 +1,1363 @@
+
+*** Running vivado
+    with args -log zedboard_base_auto_us_df_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source zedboard_base_auto_us_df_0.tcl
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source zedboard_base_auto_us_df_0.tcl -notrace
+INFO: Dispatch client connection id - 37909
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/xo/ip_repo/xilinx_com_hls_compute_matrices_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/opt/Xilinx/Vitis/2020.2/data/cache/xilinx'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/.local/hw_platform/ipcache'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/opt/Xilinx/Vitis/2020.2/data/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.2/data/ip'.
+Command: synth_design -top zedboard_base_auto_us_df_0 -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 1 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 8169
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 2400.602 ; gain = 0.000 ; free physical = 21368 ; free virtual = 34162
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'zedboard_base_auto_us_df_0' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ip/zedboard_base_auto_us_df_0/synth/zedboard_base_auto_us_df_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_22_top' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:14462]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_S_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_SUPPORTS_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_AXI_SUPPORTS_WRITE bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_READ bound to: 1 - type: integer 
+	Parameter C_FIFO_MODE bound to: 1 - type: integer 
+	Parameter C_S_AXI_ACLK_RATIO bound to: 1 - type: integer 
+	Parameter C_M_AXI_ACLK_RATIO bound to: 2 - type: integer 
+	Parameter C_AXI_IS_ACLK_ASYNC bound to: 0 - type: integer 
+	Parameter C_MAX_SPLIT_BEATS bound to: 16 - type: integer 
+	Parameter C_PACKING_LEVEL bound to: 1 - type: integer 
+	Parameter C_SYNCHRONIZER_STAGE bound to: 3 - type: integer 
+	Parameter C_S_AXI_BYTES_LOG bound to: 2 - type: integer 
+	Parameter C_M_AXI_BYTES_LOG bound to: 3 - type: integer 
+	Parameter C_RATIO bound to: 0 - type: integer 
+	Parameter C_RATIO_LOG bound to: 0 - type: integer 
+	Parameter P_AXI4 bound to: 0 - type: integer 
+	Parameter P_AXI3 bound to: 1 - type: integer 
+	Parameter P_AXILITE bound to: 2 - type: integer 
+	Parameter P_CONVERSION bound to: 2 - type: integer 
+	Parameter P_MAX_SPLIT_BEATS bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_22_axi_upsizer' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:7038]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_S_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_SUPPORTS_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_AXI_SUPPORTS_WRITE bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_READ bound to: 1 - type: integer 
+	Parameter C_FIFO_MODE bound to: 1 - type: integer 
+	Parameter C_S_AXI_ACLK_RATIO bound to: 1 - type: integer 
+	Parameter C_M_AXI_ACLK_RATIO bound to: 2 - type: integer 
+	Parameter C_AXI_IS_ACLK_ASYNC bound to: 0 - type: integer 
+	Parameter C_PACKING_LEVEL bound to: 1 - type: integer 
+	Parameter C_SYNCHRONIZER_STAGE bound to: 3 - type: integer 
+	Parameter C_S_AXI_BYTES_LOG bound to: 2 - type: integer 
+	Parameter C_M_AXI_BYTES_LOG bound to: 3 - type: integer 
+	Parameter C_RATIO bound to: 2 - type: integer 
+	Parameter C_RATIO_LOG bound to: 1 - type: integer 
+	Parameter P_BYPASS bound to: 0 - type: integer 
+	Parameter P_LIGHTWT bound to: 7 - type: integer 
+	Parameter P_FWD_REV bound to: 1 - type: integer 
+	Parameter P_CONV_LIGHT_WT bound to: 0 - type: integer 
+	Parameter P_AXI4 bound to: 0 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 5 - type: integer 
+	Parameter P_SI_LT_MI bound to: 1'b1 
+	Parameter P_ACLK_RATIO bound to: 2 - type: integer 
+	Parameter P_NO_FIFO bound to: 0 - type: integer 
+	Parameter P_PKTFIFO bound to: 1 - type: integer 
+	Parameter P_PKTFIFO_CLK bound to: 2 - type: integer 
+	Parameter P_DATAFIFO bound to: 3 - type: integer 
+	Parameter P_DATAFIFO_CLK bound to: 4 - type: integer 
+	Parameter P_CLK_CONV bound to: 1'b0 
+	Parameter C_M_AXI_AW_REGISTER bound to: 0 - type: integer 
+	Parameter C_M_AXI_W_REGISTER bound to: 1 - type: integer 
+	Parameter C_M_AXI_AR_REGISTER bound to: 0 - type: integer 
+	Parameter C_S_AXI_R_REGISTER bound to: 0 - type: integer 
+	Parameter C_M_AXI_R_REGISTER bound to: 1 - type: integer 
+	Parameter P_RID_QUEUE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_22_w_upsizer_pktfifo' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:8667]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_CLK_CONV bound to: 1'b0 
+	Parameter C_S_AXI_ACLK_RATIO bound to: 1 - type: integer 
+	Parameter C_M_AXI_ACLK_RATIO bound to: 2 - type: integer 
+	Parameter C_AXI_IS_ACLK_ASYNC bound to: 0 - type: integer 
+	Parameter C_S_AXI_BYTES_LOG bound to: 2 - type: integer 
+	Parameter C_M_AXI_BYTES_LOG bound to: 3 - type: integer 
+	Parameter C_RATIO bound to: 2 - type: integer 
+	Parameter C_RATIO_LOG bound to: 1 - type: integer 
+	Parameter C_SYNCHRONIZER_STAGE bound to: 3 - type: integer 
+	Parameter P_SI_BYTES bound to: 4 - type: integer 
+	Parameter P_MI_BYTES bound to: 8 - type: integer 
+	Parameter P_MAX_BYTES bound to: 128 - type: integer 
+	Parameter P_SI_SIZE bound to: 2 - type: integer 
+	Parameter P_MI_SIZE bound to: 3 - type: integer 
+	Parameter P_RATIO bound to: 2 - type: integer 
+	Parameter P_RATIO_LOG bound to: 1 - type: integer 
+	Parameter P_NUM_BUF bound to: 4 - type: integer 
+	Parameter P_NUM_BUF_LOG bound to: 2 - type: integer 
+	Parameter P_AWFIFO_TRESHOLD bound to: 2 - type: integer 
+	Parameter P_M_WBUFFER_WIDTH bound to: 72 - type: integer 
+	Parameter P_M_WBUFFER_DEPTH bound to: 512 - type: integer 
+	Parameter P_M_WBUFFER_DEPTH_LOG bound to: 9 - type: integer 
+	Parameter P_M_WBUFFER_WORDS bound to: 128 - type: integer 
+	Parameter P_M_WBUFFER_WORDS_LOG bound to: 7 - type: integer 
+	Parameter P_MAX_RBUFFER_BYTES_LOG bound to: 14 - type: integer 
+	Parameter P_INCR bound to: 2'b01 
+	Parameter P_WRAP bound to: 2'b10 
+	Parameter P_FIXED bound to: 2'b00 
+	Parameter S_IDLE bound to: 2'b00 
+	Parameter S_WRITING bound to: 2'b01 
+	Parameter S_AWFULL bound to: 2'b11 
+	Parameter M_IDLE bound to: 3'b000 
+	Parameter M_ISSUE1 bound to: 3'b001 
+	Parameter M_WRITING1 bound to: 3'b011 
+	Parameter M_AW_STALL bound to: 3'b010 
+	Parameter M_AW_DONE1 bound to: 3'b110 
+	Parameter M_ISSUE2 bound to: 3'b111 
+	Parameter M_WRITING2 bound to: 3'b101 
+	Parameter M_AW_DONE2 bound to: 3'b100 
+	Parameter P_SI_LT_MI bound to: 1'b1 
+	Parameter P_ACLK_RATIO bound to: 2 - type: integer 
+	Parameter P_AWFIFO_WIDTH bound to: 64 - type: integer 
+	Parameter P_COMMON_CLOCK bound to: 1 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:9030]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:9067]
+INFO: [Synth 8-226] default block is never used [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:9865]
+WARNING: [Synth 8-7071] port 'deepsleep' of module 'blk_mem_gen_v8_4_4' is unconnected for instance 'w_buffer' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:10152]
+WARNING: [Synth 8-7071] port 'shutdown' of module 'blk_mem_gen_v8_4_4' is unconnected for instance 'w_buffer' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:10152]
+WARNING: [Synth 8-7071] port 'rsta_busy' of module 'blk_mem_gen_v8_4_4' is unconnected for instance 'w_buffer' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:10152]
+WARNING: [Synth 8-7071] port 'rstb_busy' of module 'blk_mem_gen_v8_4_4' is unconnected for instance 'w_buffer' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:10152]
+WARNING: [Synth 8-7023] instance 'w_buffer' of module 'blk_mem_gen_v8_4_4' has 63 connections declared, but only 59 given [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:10152]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_async_rst' [/opt/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_async_rst' (9#1) [/opt/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_22_axi_register_slice' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:3726]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 1 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 3 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_AW bound to: 7 - type: integer 
+	Parameter C_REG_CONFIG_W bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_B bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_AR bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_R bound to: 0 - type: integer 
+	Parameter C_RESERVE_MODE bound to: 0 - type: integer 
+	Parameter C_NUM_SLR_CROSSINGS bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_R bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_R bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_R bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 1 - type: integer 
+	Parameter P_FORWARD bound to: 0 - type: integer 
+	Parameter P_RESPONSE bound to: 1 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 52 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 53 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 54 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 58 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 65 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 52 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 53 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 54 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 58 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 63 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 38 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 3 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 37 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 1 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 3 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 65 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 38 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 4 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 63 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 52 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 53 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 54 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 58 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 65 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 52 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 53 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 54 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 58 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 63 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 38 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 3 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 37 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (27#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 1 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 3 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 65 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 38 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 4 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 63 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 52 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 53 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 54 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 58 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 65 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 52 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 53 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 54 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 58 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 63 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 38 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 3 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 37 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (28#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_DATA_WIDTH bound to: 65 - type: integer 
+	Parameter C_REG_CONFIG bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice' (29#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized0' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_DATA_WIDTH bound to: 38 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized0' (29#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized1' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_DATA_WIDTH bound to: 4 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized1' (29#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized2' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_DATA_WIDTH bound to: 63 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized2' (29#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized3' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_DATA_WIDTH bound to: 37 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized3' (29#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_22_axi_register_slice' (30#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:3726]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_22_axi_register_slice' is unconnected for instance 's_aw_reg' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:10660]
+WARNING: [Synth 8-7023] instance 's_aw_reg' of module 'axi_register_slice_v2_1_22_axi_register_slice' has 93 connections declared, but only 92 given [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:10660]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_22_w_upsizer_pktfifo' (31#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:8667]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_22_a_upsizer' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:3603]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_SUPPORTS_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_M_AXI_REGISTER bound to: 0 - type: integer 
+	Parameter C_AXI_CHANNEL bound to: 0 - type: integer 
+	Parameter C_PACKING_LEVEL bound to: 1 - type: integer 
+	Parameter C_FIFO_MODE bound to: 1 - type: integer 
+	Parameter C_ID_QUEUE bound to: 0 - type: integer 
+	Parameter C_S_AXI_BYTES_LOG bound to: 2 - type: integer 
+	Parameter C_M_AXI_BYTES_LOG bound to: 3 - type: integer 
+	Parameter C_S_AXI_NATIVE_SIZE bound to: 3'b010 
+	Parameter C_M_AXI_NATIVE_SIZE bound to: 3'b011 
+	Parameter C_DOUBLE_LEN bound to: 24'b000000000000000011111111 
+	Parameter C_FIX_BURST bound to: 2'b00 
+	Parameter C_INCR_BURST bound to: 2'b01 
+	Parameter C_WRAP_BURST bound to: 2'b10 
+	Parameter C_NEVER_PACK bound to: 0 - type: integer 
+	Parameter C_DEFAULT_PACK bound to: 1 - type: integer 
+	Parameter C_ALWAYS_PACK bound to: 2 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 5 - type: integer 
+	Parameter C_BURST_BYTES_LOG bound to: 6 - type: integer 
+	Parameter C_SI_UNUSED_LOG bound to: 30 - type: integer 
+	Parameter C_MI_UNUSED_LOG bound to: 29 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_22_a_upsizer' (32#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:3603]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_22_r_upsizer_pktfifo' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:11248]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_CLK_CONV bound to: 1'b0 
+	Parameter C_S_AXI_ACLK_RATIO bound to: 1 - type: integer 
+	Parameter C_M_AXI_ACLK_RATIO bound to: 2 - type: integer 
+	Parameter C_AXI_IS_ACLK_ASYNC bound to: 0 - type: integer 
+	Parameter C_S_AXI_BYTES_LOG bound to: 2 - type: integer 
+	Parameter C_M_AXI_BYTES_LOG bound to: 3 - type: integer 
+	Parameter C_RATIO bound to: 2 - type: integer 
+	Parameter C_RATIO_LOG bound to: 1 - type: integer 
+	Parameter C_SYNCHRONIZER_STAGE bound to: 3 - type: integer 
+	Parameter P_SI_BYTES bound to: 4 - type: integer 
+	Parameter P_MI_BYTES bound to: 8 - type: integer 
+	Parameter P_MAX_BYTES bound to: 128 - type: integer 
+	Parameter P_SI_SIZE bound to: 2 - type: integer 
+	Parameter P_MI_SIZE bound to: 3 - type: integer 
+	Parameter P_RATIO bound to: 2 - type: integer 
+	Parameter P_RATIO_LOG bound to: 1 - type: integer 
+	Parameter P_NUM_BUF bound to: 4 - type: integer 
+	Parameter P_BUF_LIMIT bound to: 3 - type: integer 
+	Parameter P_NUM_BUF_LOG bound to: 2 - type: integer 
+	Parameter P_M_RBUFFER_DEPTH bound to: 512 - type: integer 
+	Parameter P_M_RBUFFER_DEPTH_LOG bound to: 9 - type: integer 
+	Parameter P_S_RBUFFER_DEPTH bound to: 1024 - type: integer 
+	Parameter P_S_RBUFFER_DEPTH_LOG bound to: 10 - type: integer 
+	Parameter P_M_RBUFFER_WORDS bound to: 128 - type: integer 
+	Parameter P_M_RBUFFER_WORDS_LOG bound to: 7 - type: integer 
+	Parameter P_S_RBUFFER_WORDS bound to: 256 - type: integer 
+	Parameter P_S_RBUFFER_WORDS_LOG bound to: 8 - type: integer 
+	Parameter P_M_RBUFFER_BYTES bound to: 1024 - type: integer 
+	Parameter P_M_RBUFFER_BYTES_LOG bound to: 10 - type: integer 
+	Parameter P_MAX_RBUFFER_BYTES_LOG bound to: 14 - type: integer 
+	Parameter P_INCR bound to: 2'b01 
+	Parameter P_WRAP bound to: 2'b10 
+	Parameter P_FIXED bound to: 2'b00 
+	Parameter P_SI_LT_MI bound to: 1'b1 
+	Parameter P_ACLK_RATIO bound to: 2 - type: integer 
+	Parameter P_NUM_RAMB bound to: 2 - type: integer 
+	Parameter P_S_RAMB_WIDTH bound to: 16 - type: integer 
+	Parameter P_S_RAMB_PWIDTH bound to: 18 - type: integer 
+	Parameter P_S_CMD_WIDTH bound to: 28 - type: integer 
+	Parameter P_M_CMD_WIDTH bound to: 20 - type: integer 
+	Parameter P_ARFIFO_WIDTH bound to: 61 - type: integer 
+	Parameter P_COMMON_CLOCK bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'RAMB18E1' [/opt/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:74890]
+	Parameter DOA_REG bound to: 1 - type: integer 
+	Parameter DOB_REG bound to: 1 - type: integer 
+	Parameter INITP_00 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INITP_01 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INITP_02 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INITP_03 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INITP_04 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INITP_05 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INITP_06 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INITP_07 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_00 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_01 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_02 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_03 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_04 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_05 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_06 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_07 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_08 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_09 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_0A bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_0B bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_0C bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_0D bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_0E bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_0F bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_10 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_11 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_12 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_13 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_14 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_15 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_16 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_17 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_18 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_19 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_1A bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_1B bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_1C bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_1D bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_1E bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_1F bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_20 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_21 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_22 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_23 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_24 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_25 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_26 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_27 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_28 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_29 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_2A bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_2B bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_2C bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_2D bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_2E bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_2F bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_30 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_31 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_32 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_33 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_34 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_35 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_36 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_37 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_38 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_39 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_3A bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_3B bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_3C bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_3D bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_3E bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_3F bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter INIT_A bound to: 18'b000000000000000000 
+	Parameter INIT_B bound to: 18'b000000000000000000 
+	Parameter INIT_FILE bound to: NONE - type: string 
+	Parameter IS_CLKARDCLK_INVERTED bound to: 1'b0 
+	Parameter IS_CLKBWRCLK_INVERTED bound to: 1'b0 
+	Parameter IS_ENARDEN_INVERTED bound to: 1'b0 
+	Parameter IS_ENBWREN_INVERTED bound to: 1'b0 
+	Parameter IS_RSTRAMARSTRAM_INVERTED bound to: 1'b0 
+	Parameter IS_RSTRAMB_INVERTED bound to: 1'b0 
+	Parameter IS_RSTREGARSTREG_INVERTED bound to: 1'b0 
+	Parameter IS_RSTREGB_INVERTED bound to: 1'b0 
+	Parameter RAM_MODE bound to: SDP - type: string 
+	Parameter RDADDR_COLLISION_HWCONFIG bound to: PERFORMANCE - type: string 
+	Parameter READ_WIDTH_A bound to: 18 - type: integer 
+	Parameter READ_WIDTH_B bound to: 0 - type: integer 
+	Parameter RSTREG_PRIORITY_A bound to: RSTREG - type: string 
+	Parameter RSTREG_PRIORITY_B bound to: RSTREG - type: string 
+	Parameter SIM_COLLISION_CHECK bound to: NONE - type: string 
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+	Parameter SRVAL_A bound to: 18'b000000000000000000 
+	Parameter SRVAL_B bound to: 18'b000000000000000000 
+	Parameter WRITE_MODE_A bound to: WRITE_FIRST - type: string 
+	Parameter WRITE_MODE_B bound to: WRITE_FIRST - type: string 
+	Parameter WRITE_WIDTH_A bound to: 0 - type: integer 
+	Parameter WRITE_WIDTH_B bound to: 36 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RAMB18E1' (33#1) [/opt/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:74890]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:11741]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:11901]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:12099]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:12196]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:12242]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:11948]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:12145]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_22_r_upsizer_pktfifo' (34#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:11248]
+INFO: [Synth 8-6157] synthesizing module 'axi_dwidth_converter_v2_1_22_a_upsizer__parameterized0' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:3603]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_SUPPORTS_ID bound to: 0 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_M_AXI_REGISTER bound to: 0 - type: integer 
+	Parameter C_AXI_CHANNEL bound to: 1 - type: integer 
+	Parameter C_PACKING_LEVEL bound to: 1 - type: integer 
+	Parameter C_FIFO_MODE bound to: 1 - type: integer 
+	Parameter C_ID_QUEUE bound to: 0 - type: integer 
+	Parameter C_S_AXI_BYTES_LOG bound to: 2 - type: integer 
+	Parameter C_M_AXI_BYTES_LOG bound to: 3 - type: integer 
+	Parameter C_S_AXI_NATIVE_SIZE bound to: 3'b010 
+	Parameter C_M_AXI_NATIVE_SIZE bound to: 3'b011 
+	Parameter C_DOUBLE_LEN bound to: 24'b000000000000000011111111 
+	Parameter C_FIX_BURST bound to: 2'b00 
+	Parameter C_INCR_BURST bound to: 2'b01 
+	Parameter C_WRAP_BURST bound to: 2'b10 
+	Parameter C_NEVER_PACK bound to: 0 - type: integer 
+	Parameter C_DEFAULT_PACK bound to: 1 - type: integer 
+	Parameter C_ALWAYS_PACK bound to: 2 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 5 - type: integer 
+	Parameter C_BURST_BYTES_LOG bound to: 6 - type: integer 
+	Parameter C_SI_UNUSED_LOG bound to: 30 - type: integer 
+	Parameter C_MI_UNUSED_LOG bound to: 29 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_22_a_upsizer__parameterized0' (34#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:3603]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_22_axi_register_slice__parameterized0' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:3726]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_AW bound to: 7 - type: integer 
+	Parameter C_REG_CONFIG_W bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_B bound to: 7 - type: integer 
+	Parameter C_REG_CONFIG_AR bound to: 7 - type: integer 
+	Parameter C_REG_CONFIG_R bound to: 1 - type: integer 
+	Parameter C_RESERVE_MODE bound to: 0 - type: integer 
+	Parameter C_NUM_SLR_CROSSINGS bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MASTER_R bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_SLAVE_R bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_AW bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_W bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_B bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_AR bound to: 0 - type: integer 
+	Parameter C_PIPELINES_MIDDLE_R bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 1 - type: integer 
+	Parameter P_FORWARD bound to: 0 - type: integer 
+	Parameter P_RESPONSE bound to: 1 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 52 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 53 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 54 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 58 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 62 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 52 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 53 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 54 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 58 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 62 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 3 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 36 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 1 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 62 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 3 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 62 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 52 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 53 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 54 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 58 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 62 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 52 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 53 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 54 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 58 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 62 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 3 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 36 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (34#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 1 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 62 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 3 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 62 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 36 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 52 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 53 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 54 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 58 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 62 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 38 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 40 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 44 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 52 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 53 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 54 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 58 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 62 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 62 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 3 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 36 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (34#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized4' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_DATA_WIDTH bound to: 62 - type: integer 
+	Parameter C_REG_CONFIG bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized4' (34#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized5' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_DATA_WIDTH bound to: 37 - type: integer 
+	Parameter C_REG_CONFIG bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized5' (34#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized6' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_DATA_WIDTH bound to: 3 - type: integer 
+	Parameter C_REG_CONFIG bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized6' (34#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized7' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
+	Parameter C_REG_CONFIG bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_22_axic_register_slice__parameterized7' (34#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_22_axi_register_slice__parameterized0' (34#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/af2c/hdl/axi_register_slice_v2_1_vl_rfs.v:3726]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_22_axi_register_slice' is unconnected for instance 'si_register_slice_inst' [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:7379]
+WARNING: [Synth 8-7023] instance 'si_register_slice_inst' of module 'axi_register_slice_v2_1_22_axi_register_slice' has 93 connections declared, but only 92 given [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:7379]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_22_axi_upsizer' (35#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:7038]
+INFO: [Synth 8-6155] done synthesizing module 'axi_dwidth_converter_v2_1_22_top' (36#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ipshared/2394/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v:14462]
+INFO: [Synth 8-6155] done synthesizing module 'zedboard_base_auto_us_df_0' (37#1) [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ip/zedboard_base_auto_us_df_0/synth/zedboard_base_auto_us_df_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:27 ; elapsed = 00:00:44 . Memory (MB): peak = 2595.898 ; gain = 195.297 ; free physical = 21266 ; free virtual = 34067
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:47 . Memory (MB): peak = 2595.898 ; gain = 195.297 ; free physical = 21244 ; free virtual = 34048
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:47 . Memory (MB): peak = 2595.898 ; gain = 195.297 ; free physical = 21244 ; free virtual = 34048
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2595.898 ; gain = 0.000 ; free physical = 21223 ; free virtual = 34027
+INFO: [Netlist 29-17] Analyzing 23 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ip/zedboard_base_auto_us_df_0/zedboard_base_auto_us_df_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.gen/sources_1/bd/zedboard_base/ip/zedboard_base_auto_us_df_0/zedboard_base_auto_us_df_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.runs/zedboard_base_auto_us_df_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.runs/zedboard_base_auto_us_df_0_synth_1/dont_touch.xdc]
+INFO: [Project 1-1715] 1 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2625.711 ; gain = 0.000 ; free physical = 21072 ; free virtual = 33875
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.10 . Memory (MB): peak = 2625.711 ; gain = 0.000 ; free physical = 21088 ; free virtual = 33892
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:36 ; elapsed = 00:00:58 . Memory (MB): peak = 2625.711 ; gain = 225.109 ; free physical = 21101 ; free virtual = 33903
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:36 ; elapsed = 00:00:58 . Memory (MB): peak = 2625.711 ; gain = 225.109 ; free physical = 21101 ; free virtual = 33903
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.runs/zedboard_base_auto_us_df_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\gen_upsizer.gen_full_upsizer.axi_upsizer_inst /\USE_WRITE.gen_pktfifo_w_upsizer.pktfifo_write_data_inst /dw_fifogen_aw/inst_fifo_gen/\gaxi_full_lite.gwrite_ch.gwach2.axi_wach /\grf.rf /rstblk/\ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\gen_upsizer.gen_full_upsizer.axi_upsizer_inst /\USE_READ.gen_pktfifo_r_upsizer.pktfifo_read_data_inst /dw_fifogen_ar/inst_fifo_gen/\gaxi_full_lite.gread_ch.grach2.axi_rach /\grf.rf /rstblk/\ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst . (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:58 . Memory (MB): peak = 2625.711 ; gain = 225.109 ; free physical = 21099 ; free virtual = 33902
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'gpregsm2.curr_fwft_state_reg' in module 'rd_fwft'
+INFO: [Synth 8-802] inferred FSM for state register 'si_state_reg' in module 'axi_dwidth_converter_v2_1_22_w_upsizer_pktfifo'
+INFO: [Synth 8-802] inferred FSM for state register 'mi_state_reg' in module 'axi_dwidth_converter_v2_1_22_w_upsizer_pktfifo'
+INFO: [Synth 8-802] inferred FSM for state register 'gpregsm1.curr_fwft_state_reg' in module 'rd_fwft__parameterized0'
+INFO: [Synth 8-6159] Found Keep on FSM register 'gpregsm2.curr_fwft_state_reg' in module 'rd_fwft', re-encoding will not be performed
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                 invalid |                               00 |                               00
+            stage1_valid |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  M_IDLE |                              000 |                              000
+                M_ISSUE1 |                              001 |                              001
+              M_WRITING1 |                              010 |                              011
+              M_AW_DONE1 |                              011 |                              110
+                M_ISSUE2 |                              100 |                              111
+              M_WRITING2 |                              101 |                              101
+              M_AW_DONE2 |                              110 |                              100
+              M_AW_STALL |                              111 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'mi_state_reg' using encoding 'sequential' in module 'axi_dwidth_converter_v2_1_22_w_upsizer_pktfifo'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                               00 |                               00
+               S_WRITING |                               01 |                               01
+                S_AWFULL |                               10 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'si_state_reg' using encoding 'sequential' in module 'axi_dwidth_converter_v2_1_22_w_upsizer_pktfifo'
+INFO: [Synth 8-6159] Found Keep on FSM register 'gpregsm1.curr_fwft_state_reg' in module 'rd_fwft__parameterized0', re-encoding will not be performed
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 invalid |                               00 |                               00
+            stage1_valid |                               10 |                               10
+       both_stages_valid |                               11 |                               11
+            stage2_valid |                               01 |                               01
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:39 ; elapsed = 00:01:02 . Memory (MB): peak = 2625.711 ; gain = 225.109 ; free physical = 21224 ; free virtual = 34031
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 3     
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 4     
+	   2 Input    7 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 10    
+	   2 Input    4 Bit       Adders := 7     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 8     
+	   2 Input    1 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 116   
++---Registers : 
+	               65 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	               62 Bit    Registers := 2     
+	               61 Bit    Registers := 1     
+	               37 Bit    Registers := 2     
+	               36 Bit    Registers := 2     
+	               28 Bit    Registers := 2     
+	               20 Bit    Registers := 2     
+	               10 Bit    Registers := 4     
+	                9 Bit    Registers := 4     
+	                8 Bit    Registers := 7     
+	                7 Bit    Registers := 3     
+	                5 Bit    Registers := 18    
+	                4 Bit    Registers := 12    
+	                3 Bit    Registers := 11    
+	                2 Bit    Registers := 25    
+	                1 Bit    Registers := 109   
++---Muxes : 
+	   2 Input   37 Bit        Muxes := 2     
+	   2 Input   36 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 6     
+	   5 Input   10 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 12    
+	   4 Input   10 Bit        Muxes := 5     
+	   2 Input    8 Bit        Muxes := 16    
+	   4 Input    8 Bit        Muxes := 5     
+	   8 Input    8 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 5     
+	   2 Input    4 Bit        Muxes := 25    
+	   4 Input    4 Bit        Muxes := 4     
+	   8 Input    3 Bit        Muxes := 7     
+	   2 Input    3 Bit        Muxes := 22    
+	   4 Input    3 Bit        Muxes := 4     
+	   3 Input    3 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 48    
+	   5 Input    2 Bit        Muxes := 5     
+	   4 Input    2 Bit        Muxes := 4     
+	   3 Input    1 Bit        Muxes := 21    
+	   2 Input    1 Bit        Muxes := 152   
+	   8 Input    1 Bit        Muxes := 8     
+	   4 Input    1 Bit        Muxes := 35    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:01:08 . Memory (MB): peak = 2649.727 ; gain = 249.125 ; free physical = 21204 ; free virtual = 34017
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+--------------------------+
+|Module Name                                                                                                                 | RTL Object                                                                                                | Inference      | Size (Depth x Width) | Primitives               | 
++----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+--------------------------+
+|inst/\gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_WRITE.gen_pktfifo_w_upsizer.pktfifo_write_data_inst/dw_fifogen_aw   | inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg | User Attribute | 32 x 64              | RAM32M x 11	             | 
+|inst/\gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_READ.gen_pktfifo_r_upsizer.pktfifo_read_data_inst/dw_fifogen_ar     | inst_fifo_gen/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg  | User Attribute | 32 x 61              | RAM32M x 11	             | 
+|inst/\gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_READ.gen_pktfifo_r_upsizer.pktfifo_read_data_inst/s_cmd_fifo        | inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg                             | User Attribute | 32 x 28              | RAM32M x 5	              | 
+|inst/\gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_READ.gen_pktfifo_r_upsizer.pktfifo_read_data_inst/m_cmd_fifo        | inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg                             | User Attribute | 32 x 20              | RAM32M x 4	              | 
+|inst/\gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_READ.gen_pktfifo_r_upsizer.pktfifo_read_data_inst/dw_fifogen_rresp  | inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg                             | User Attribute | 512 x 4              | RAM64X1D x 8	RAM64M x 8	 | 
++----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+--------------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'inst/gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_READ.gen_pktfifo_r_upsizer.pktfifo_read_data_inst/dw_fifogen_ar/inst_fifo_gen/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/src_arst' to pin 'inst/gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_READ.gen_pktfifo_r_upsizer.pktfifo_read_data_inst/dw_fifogen_ar/inst_fifo_gen/inverted_reset_inferred/i_0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'inst/gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_WRITE.gen_pktfifo_w_upsizer.pktfifo_write_data_inst/dw_fifogen_aw/inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/src_arst' to pin 'inst/gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_WRITE.gen_pktfifo_w_upsizer.pktfifo_write_data_inst/dw_fifogen_aw/inst_fifo_gen/inverted_reset_inferred/i_0/O'
+INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:50 ; elapsed = 00:01:15 . Memory (MB): peak = 2649.727 ; gain = 249.125 ; free physical = 22399 ; free virtual = 35212
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:01:18 . Memory (MB): peak = 2649.727 ; gain = 249.125 ; free physical = 22326 ; free virtual = 35137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping	Report
++----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+--------------------------+
+|Module Name                                                                                                                 | RTL Object                                                                                                | Inference      | Size (Depth x Width) | Primitives               | 
++----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+--------------------------+
+|inst/\gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_WRITE.gen_pktfifo_w_upsizer.pktfifo_write_data_inst/dw_fifogen_aw   | inst_fifo_gen/gaxi_full_lite.gwrite_ch.gwach2.axi_wach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg | User Attribute | 32 x 64              | RAM32M x 11	             | 
+|inst/\gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_READ.gen_pktfifo_r_upsizer.pktfifo_read_data_inst/dw_fifogen_ar     | inst_fifo_gen/gaxi_full_lite.gread_ch.grach2.axi_rach/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg  | User Attribute | 32 x 61              | RAM32M x 11	             | 
+|inst/\gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_READ.gen_pktfifo_r_upsizer.pktfifo_read_data_inst/s_cmd_fifo        | inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg                             | User Attribute | 32 x 28              | RAM32M x 5	              | 
+|inst/\gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_READ.gen_pktfifo_r_upsizer.pktfifo_read_data_inst/m_cmd_fifo        | inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg                             | User Attribute | 32 x 20              | RAM32M x 4	              | 
+|inst/\gen_upsizer.gen_full_upsizer.axi_upsizer_inst/USE_READ.gen_pktfifo_r_upsizer.pktfifo_read_data_inst/dw_fifogen_rresp  | inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg                             | User Attribute | 512 x 4              | RAM64X1D x 8	RAM64M x 8	 | 
++----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+--------------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:01:19 . Memory (MB): peak = 2649.727 ; gain = 249.125 ; free physical = 22322 ; free virtual = 35134
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:57 ; elapsed = 00:01:22 . Memory (MB): peak = 2649.727 ; gain = 249.125 ; free physical = 22289 ; free virtual = 35103
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:57 ; elapsed = 00:01:22 . Memory (MB): peak = 2649.727 ; gain = 249.125 ; free physical = 22288 ; free virtual = 35102
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:57 ; elapsed = 00:01:23 . Memory (MB): peak = 2649.727 ; gain = 249.125 ; free physical = 22306 ; free virtual = 35120
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:57 ; elapsed = 00:01:23 . Memory (MB): peak = 2649.727 ; gain = 249.125 ; free physical = 22306 ; free virtual = 35120
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:01:23 . Memory (MB): peak = 2649.727 ; gain = 249.125 ; free physical = 22297 ; free virtual = 35111
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:57 ; elapsed = 00:01:23 . Memory (MB): peak = 2649.727 ; gain = 249.125 ; free physical = 22296 ; free virtual = 35110
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |     6|
+|2     |LUT1     |    61|
+|3     |LUT2     |    76|
+|4     |LUT3     |   102|
+|5     |LUT4     |   112|
+|6     |LUT5     |   164|
+|7     |LUT6     |   256|
+|8     |MUXCY    |    20|
+|9     |MUXF7    |    14|
+|10    |RAM32M   |    31|
+|11    |RAM64M   |     8|
+|12    |RAMB18E1 |     2|
+|13    |RAMB36E1 |     1|
+|14    |FDCE     |    42|
+|15    |FDPE     |    36|
+|16    |FDRE     |   729|
+|17    |FDSE     |    35|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:57 ; elapsed = 00:01:23 . Memory (MB): peak = 2649.727 ; gain = 249.125 ; free physical = 22294 ; free virtual = 35108
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:54 ; elapsed = 00:01:19 . Memory (MB): peak = 2649.727 ; gain = 219.312 ; free physical = 22355 ; free virtual = 35169
+Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:01:23 . Memory (MB): peak = 2649.734 ; gain = 249.125 ; free physical = 22354 ; free virtual = 35168
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2649.734 ; gain = 0.000 ; free physical = 22180 ; free virtual = 34994
+INFO: [Netlist 29-17] Analyzing 82 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2649.734 ; gain = 0.000 ; free physical = 21462 ; free virtual = 34272
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 47 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 8 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 31 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 8 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+92 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:08 ; elapsed = 00:01:30 . Memory (MB): peak = 2649.734 ; gain = 253.395 ; free physical = 21502 ; free virtual = 34313
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+INFO: [Common 17-1381] The checkpoint '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.runs/zedboard_base_auto_us_df_0_synth_1/zedboard_base_auto_us_df_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP zedboard_base_auto_us_df_0, cache-ID = 2e935aeb115b4f2a
+INFO: [Coretcl 2-1174] Renamed 93 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/prj/prj.runs/zedboard_base_auto_us_df_0_synth_1/zedboard_base_auto_us_df_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file zedboard_base_auto_us_df_0_utilization_synth.rpt -pb zedboard_base_auto_us_df_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue May 28 10:21:03 2024...

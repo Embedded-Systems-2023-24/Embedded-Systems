@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xd:repository xmlns:xd="http://www.xilinx.com/xd">
+    <xd:fcnMap xd:fcnName="compute_matrices" xd:type="hls_opencl" xd:clockId="0" xd:flow="explicit" xd:componentRef="compute_matrices">
+        <xd:interrupt xd:busInterfaceRef="interrupt"/>
+        <xd:ctrlReg xd:busInterface="s_axi_control" xd:portInterfaceType="axilite" xd:name="control" xd:type="ap_ctrl_chain" xd:offset="0x0"/>
+        <xd:arg xd:name="string1" xd:swRootName="string1" xd:dataWidth="64" xd:offset="0x10" xd:portInterfaceType="axilite" xd:direction="in" xd:id="0" xd:busInterfaceRef="s_axi_control" xd:aximmMasterRef="m_axi_gmem" xd:aximmMasterDirection="inout" xd:aximmMasterDataWidth="32"/>
+        <xd:arg xd:name="string2" xd:swRootName="string2" xd:dataWidth="64" xd:offset="0x18" xd:portInterfaceType="axilite" xd:direction="in" xd:id="1" xd:busInterfaceRef="s_axi_control" xd:aximmMasterRef="m_axi_gmem" xd:aximmMasterDirection="inout" xd:aximmMasterDataWidth="32"/>
+        <xd:arg xd:name="max_index" xd:swRootName="max_index" xd:dataWidth="64" xd:offset="0x20" xd:portInterfaceType="axilite" xd:direction="in" xd:id="2" xd:busInterfaceRef="s_axi_control" xd:aximmMasterRef="m_axi_gmem" xd:aximmMasterDirection="inout" xd:aximmMasterDataWidth="32"/>
+        <xd:arg xd:name="similarity_matrix" xd:swRootName="similarity_matrix" xd:dataWidth="64" xd:offset="0x28" xd:portInterfaceType="axilite" xd:direction="in" xd:id="3" xd:busInterfaceRef="s_axi_control" xd:aximmMasterRef="m_axi_gmem" xd:aximmMasterDirection="inout" xd:aximmMasterDataWidth="32"/>
+        <xd:arg xd:name="direction_matrix" xd:swRootName="direction_matrix" xd:dataWidth="64" xd:offset="0x30" xd:portInterfaceType="axilite" xd:direction="in" xd:id="4" xd:busInterfaceRef="s_axi_control" xd:aximmMasterRef="m_axi_gmem" xd:aximmMasterDirection="inout" xd:aximmMasterDataWidth="32"/>
+        <xd:arg xd:name="N" xd:swRootName="N" xd:dataWidth="32" xd:offset="0x38" xd:portInterfaceType="axilite" xd:direction="in" xd:id="5" xd:busInterfaceRef="s_axi_control"/>
+        <xd:arg xd:name="M" xd:swRootName="M" xd:dataWidth="32" xd:offset="0x40" xd:portInterfaceType="axilite" xd:direction="in" xd:id="6" xd:busInterfaceRef="s_axi_control"/>
+    </xd:fcnMap>
+</xd:repository>

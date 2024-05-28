@@ -1,0 +1,1345 @@
+<ENTRY>
+{
+ "thisFile": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/lsal.xclbin.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue May 28 10:01:17 2024",
+ "timestampMillis": "1716879677099",
+ "buildStep": {
+  "cmdId": "08e88265-2f7c-4e15-98d7-0467f3f72435",
+  "name": "v++",
+  "logFile": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/link.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2020.2/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"vivado_prop:run.impl_1.{STEPS.PLACE_DESIGN.ARGS.MORE OPTIONS}={-retiming}\" --xp vivado_prop:run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true --xp vivado_prop:run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -O3 -t hw --platform zedboard_202020_1 --save-temps -l -g --profile.data all:all:all --profile.stall all:all:all --profile.exec all:all:all --temp_dir ./build_dir.hw.zedboard_202020_1 -o./build_dir.hw.zedboard_202020_1/lsal.xclbin _x.hw.zedboard_202020_1/lsal.xo ",
+  "args": [
+   "-O3",
+   "-t",
+   "hw",
+   "--platform",
+   "zedboard_202020_1",
+   "--save-temps",
+   "-l",
+   "-g",
+   "--profile.data",
+   "all:all:all",
+   "--profile.stall",
+   "all:all:all",
+   "--profile.exec",
+   "all:all:all",
+   "--temp_dir",
+   "./build_dir.hw.zedboard_202020_1",
+   "-o./build_dir.hw.zedboard_202020_1/lsal.xclbin",
+   "_x.hw.zedboard_202020_1/lsal.xo"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:01:17 2024",
+ "timestampMillis": "1716879677101",
+ "status": {
+  "cmdId": "08e88265-2f7c-4e15-98d7-0467f3f72435",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Tue May 28 10:01:20 2024",
+ "timestampMillis": "1716879680444",
+ "buildSummary": {
+  "hardwarePlatform": "zedboard_202020_1.xpfm",
+  "hardwareDsa": "zedboard_202020_1.xsa",
+  "platformDirectory": "/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_HW",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "lsal",
+    "file": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/lsal.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "compute_matrices",
+     "file": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.hw.zedboard_202020_1/lsal.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/xo/compute_matrices/compute_matrices/cpu_sources/lsal.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "compute_matrices_1"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2020.2. SW Build (by xbuild) on 2020-11-18-05:13:29"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue May 28 10:01:20 2024",
+ "timestampMillis": "1716879680842",
+ "buildStep": {
+  "cmdId": "588b460f-7cc9-4256-8418-ff03659222d8",
+  "name": "system_link",
+  "logFile": "",
+  "commandLine": "system_link --xo /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.hw.zedboard_202020_1/lsal.xo -keep --xpfm /opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm --target hw --output_dir /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int --temp_dir /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/sys_link",
+  "args": [
+   "--xo",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.hw.zedboard_202020_1/lsal.xo",
+   "-keep",
+   "--xpfm",
+   "/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm",
+   "--target",
+   "hw",
+   "--output_dir",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int",
+   "--temp_dir",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/sys_link"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:01:20 2024",
+ "timestampMillis": "1716879680843",
+ "status": {
+  "cmdId": "588b460f-7cc9-4256-8418-ff03659222d8",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:01:37 2024",
+ "timestampMillis": "1716879697924",
+ "status": {
+  "cmdId": "588b460f-7cc9-4256-8418-ff03659222d8",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue May 28 10:01:37 2024",
+ "timestampMillis": "1716879697937",
+ "buildStep": {
+  "cmdId": "cc36fd91-5e0f-481c-b98c-d0ed92005f38",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -sdsl /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/sdsl.dat -rtd /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/cf2sw.rtd -nofilter /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/cf2sw_full.rtd -xclbin /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/xclbin_orig.xml -o /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/xclbin_orig.1.xml",
+  "args": [
+   "-sdsl",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/sdsl.dat",
+   "-rtd",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/cf2sw.rtd",
+   "-nofilter",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/cf2sw_full.rtd",
+   "-xclbin",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/xclbin_orig.xml",
+   "-o",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/xclbin_orig.1.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:01:37 2024",
+ "timestampMillis": "1716879697938",
+ "status": {
+  "cmdId": "cc36fd91-5e0f-481c-b98c-d0ed92005f38",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:01:41 2024",
+ "timestampMillis": "1716879701325",
+ "status": {
+  "cmdId": "cc36fd91-5e0f-481c-b98c-d0ed92005f38",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue May 28 10:01:41 2024",
+ "timestampMillis": "1716879701409",
+ "buildStep": {
+  "cmdId": "7d8c2dc0-83cc-4d70-abba-04cd3d61033b",
+  "name": "rtd2_system_diagram",
+  "logFile": "",
+  "commandLine": "rtd2SystemDiagram",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:01:41 2024",
+ "timestampMillis": "1716879701410",
+ "status": {
+  "cmdId": "7d8c2dc0-83cc-4d70-abba-04cd3d61033b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:01:42 2024",
+ "timestampMillis": "1716879702845",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:01:42 2024",
+ "timestampMillis": "1716879702847",
+ "status": {
+  "cmdId": "7d8c2dc0-83cc-4d70-abba-04cd3d61033b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue May 28 10:01:42 2024",
+ "timestampMillis": "1716879702868",
+ "buildStep": {
+  "cmdId": "3cd561c9-9f0b-439f-b5a1-9ee67ef197d6",
+  "name": "vpl",
+  "logFile": "",
+  "commandLine": "vpl -t hw -f zedboard_202020_1 -g --remote_ip_cache /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/.ipcache -s --output_dir /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int --log_dir /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/logs/link --report_dir /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link --config /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/vplConfig.ini -k /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link --no-info --iprepo /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/xo/ip_repo/xilinx_com_hls_compute_matrices_1_0 --messageDb /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/run_link/vpl.pb /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/dr.bd.tcl",
+  "args": [
+   "-t",
+   "hw",
+   "-f",
+   "zedboard_202020_1",
+   "-g",
+   "--remote_ip_cache",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/.ipcache",
+   "-s",
+   "--output_dir",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int",
+   "--log_dir",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/logs/link",
+   "--report_dir",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link",
+   "--config",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/vplConfig.ini",
+   "-k",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/kernel_info.dat",
+   "--webtalk_flag",
+   "Vitis",
+   "--temp_dir",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link",
+   "--no-info",
+   "--iprepo",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/xo/ip_repo/xilinx_com_hls_compute_matrices_1_0",
+   "--messageDb",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/run_link/vpl.pb",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/dr.bd.tcl"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/vplConfig.ini",
+    "content": "[advanced]\nmisc=report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.enablePerformanceTrace=1\nparam=hw_emu.enableDebugWaveform=1\nparam=hw_emu.enableProfiling=1\nparam=compiler.vppCurrentWorkingDir=/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline\nmisc=BinaryName=lsal\n\n[connectivity]\nnk=compute_matrices:1:compute_matrices_1\n\n[vivado]\nprop=run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\nprop=run.impl_1.{STEPS.PLACE_DESIGN.ARGS.MORE OPTIONS}={-retiming}\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true\n\n"
+   }
+  ],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:01:42 2024",
+ "timestampMillis": "1716879702871",
+ "status": {
+  "cmdId": "3cd561c9-9f0b-439f-b5a1-9ee67ef197d6",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue May 28 10:01:44 2024",
+ "timestampMillis": "1716879704969",
+ "buildStep": {
+  "cmdId": "106d77f7-ea62-40f8-a6f8-967179c4c5b2",
+  "name": "vpl",
+  "logFile": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/link.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2020.2/bin/unwrapped/lnx64.o/vpl -t hw -f zedboard_202020_1 -g --remote_ip_cache /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/.ipcache -s --output_dir /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int --log_dir /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/logs/link --report_dir /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link --config /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/vplConfig.ini -k /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link --no-info --iprepo /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/xo/ip_repo/xilinx_com_hls_compute_matrices_1_0 --messageDb /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/run_link/vpl.pb /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/dr.bd.tcl ",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:01:44 2024",
+ "timestampMillis": "1716879704970",
+ "status": {
+  "cmdId": "106d77f7-ea62-40f8-a6f8-967179c4c5b2",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_VivadoProject",
+ "dateTimestamp": "Tue May 28 10:01:50 2024",
+ "timestampMillis": "1716879710903",
+ "vivadoProject": {
+  "openDir": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl",
+  "openScript": "openprj.tcl",
+  "relativeProject": "prj/prj.xpr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue May 28 10:01:50 2024",
+ "timestampMillis": "1716879710906",
+ "buildStep": {
+  "cmdId": "fa8ec02e-e8e9-44a1-b871-67599945b4aa",
+  "name": "vivado",
+  "logFile": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/vivado.log",
+  "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
+  "args": [
+   "-log",
+   "vivado.log",
+   "-applog",
+   " -m64",
+   "-messageDb",
+   "vivado.pb",
+   "-mode",
+   "batch",
+   "-source",
+   "vpl.tcl",
+   "-notrace"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:01:50 2024",
+ "timestampMillis": "1716879710908",
+ "status": {
+  "cmdId": "fa8ec02e-e8e9-44a1-b871-67599945b4aa",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:02:50 2024",
+ "timestampMillis": "1716879770360",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/debug_ip_layout.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "DEBUG_IP_LAYOUT"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:28:55 2024",
+ "timestampMillis": "1716881335516",
+ "status": {
+  "cmdId": "fa8ec02e-e8e9-44a1-b871-67599945b4aa",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339006",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_slr_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339049",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_full_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339058",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_slr_util_placed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339064",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_full_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339070",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_slr_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339077",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_kernel_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339149",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_kernel_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339159",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_kernel_util_placed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339168",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_slr_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339239",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_kernel_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_ROUTE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339252",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_kernel_util_routed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_ROUTE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339259",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_full_util_synthed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339348",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_kernel_util_synthed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339421",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_full_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339783",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_axi_intc_0_0_synth_1_zedboard_base_axi_intc_0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339791",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_s01_regslice_0_synth_1_zedboard_base_s01_regslice_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339800",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_compute_matrices_1_0_synth_1_zedboard_base_compute_matrices_1_0_utilization_synth.rpt",
+  "name": "compute_matrices",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339809",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_xbar_1_synth_1_zedboard_base_xbar_1_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339816",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_xbar_0_synth_1_zedboard_base_xbar_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339821",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_xbar_3_synth_1_zedboard_base_xbar_3_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339826",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_dpa_converter_0_synth_1_zedboard_base_dpa_converter_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339832",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_dpa_cdc_0_synth_1_zedboard_base_dpa_cdc_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339837",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_dpa_hub_0_synth_1_zedboard_base_dpa_hub_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339845",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_dpa_fifo_0_synth_1_zedboard_base_dpa_fifo_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339851",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_dpa_mon0_0_synth_1_zedboard_base_dpa_mon0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339862",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_dpa_mon1_0_synth_1_zedboard_base_dpa_mon1_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339870",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_dpa_reg_slice_0_synth_1_zedboard_base_dpa_reg_slice_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339879",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_auto_pc_4_synth_1_zedboard_base_auto_pc_4_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339888",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_auto_pc_2_synth_1_zedboard_base_auto_pc_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339897",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_m01_regslice_2_synth_1_zedboard_base_m01_regslice_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339905",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_m02_regslice_2_synth_1_zedboard_base_m02_regslice_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339913",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_m00_regslice_0_synth_1_zedboard_base_m00_regslice_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339922",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_m01_regslice_3_synth_1_zedboard_base_m01_regslice_3_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339932",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_m03_regslice_3_synth_1_zedboard_base_m03_regslice_3_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339941",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_s00_regslice_2_synth_1_zedboard_base_s00_regslice_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339951",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_auto_pc_0_synth_1_zedboard_base_auto_pc_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339959",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_auto_us_df_0_synth_1_zedboard_base_auto_us_df_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339967",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/syn/zedboard_base_auto_us_0_synth_1_zedboard_base_auto_us_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:28:59 2024",
+ "timestampMillis": "1716881339995",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_zedboard_base_wrapper_timing_summary_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:29:00 2024",
+ "timestampMillis": "1716881340034",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_zedboard_base_wrapper_timing_summary_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:29:00 2024",
+ "timestampMillis": "1716881340060",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_zedboard_base_wrapper_timing_summary_postroute_physopted.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:29:00 2024",
+ "timestampMillis": "1716881340095",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/imp/impl_1_zedboard_base_wrapper_timing_summary_postroute_physopted.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:00 2024",
+ "timestampMillis": "1716881340298",
+ "status": {
+  "cmdId": "106d77f7-ea62-40f8-a6f8-967179c4c5b2",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:00 2024",
+ "timestampMillis": "1716881340404",
+ "status": {
+  "cmdId": "3cd561c9-9f0b-439f-b5a1-9ee67ef197d6",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue May 28 10:29:00 2024",
+ "timestampMillis": "1716881340419",
+ "buildStep": {
+  "cmdId": "aae90087-800c-4469-989d-caf5e8ab5184",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "rtdgen",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:00 2024",
+ "timestampMillis": "1716881340421",
+ "status": {
+  "cmdId": "aae90087-800c-4469-989d-caf5e8ab5184",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:29:00 2024",
+ "timestampMillis": "1716881340428",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue May 28 10:29:00 2024",
+ "timestampMillis": "1716881340443",
+ "buildStep": {
+  "cmdId": "e7ac2026-34c2-4f59-b672-a9e5fc73437f",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -a /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/address_map.xml -sdsl /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/sdsl.dat -xclbin /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/xclbin_orig.xml -rtd /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal.rtd -o /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal.xml",
+  "args": [
+   "-a",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/address_map.xml",
+   "-sdsl",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/sdsl.dat",
+   "-xclbin",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/xclbin_orig.xml",
+   "-rtd",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal.rtd",
+   "-o",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:00 2024",
+ "timestampMillis": "1716881340444",
+ "status": {
+  "cmdId": "e7ac2026-34c2-4f59-b672-a9e5fc73437f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:03 2024",
+ "timestampMillis": "1716881343586",
+ "status": {
+  "cmdId": "e7ac2026-34c2-4f59-b672-a9e5fc73437f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:29:03 2024",
+ "timestampMillis": "1716881343595",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/systemDiagramModelSlrBaseAddress.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue May 28 10:29:03 2024",
+ "timestampMillis": "1716881343595",
+ "buildStep": {
+  "cmdId": "238ea5c0-dc61-46c0-a886-e18bf2d019d0",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeSystemDiagram",
+  "args": [
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal.rtd",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/systemDiagramModelSlrBaseAddress.json"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:03 2024",
+ "timestampMillis": "1716881343597",
+ "status": {
+  "cmdId": "238ea5c0-dc61-46c0-a886-e18bf2d019d0",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:03 2024",
+ "timestampMillis": "1716881343605",
+ "status": {
+  "cmdId": "238ea5c0-dc61-46c0-a886-e18bf2d019d0",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:03 2024",
+ "timestampMillis": "1716881343608",
+ "status": {
+  "cmdId": "aae90087-800c-4469-989d-caf5e8ab5184",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue May 28 10:29:03 2024",
+ "timestampMillis": "1716881343632",
+ "buildStep": {
+  "cmdId": "4677b857-26af-4d6d-90c0-7ea982388beb",
+  "name": "xclbinutil",
+  "logFile": "",
+  "commandLine": "xclbinutil --add-section DEBUG_IP_LAYOUT:JSON:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/debug_ip_layout.rtd --add-section BITSTREAM:RAW:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/system.bit --force --target hw --key-value SYS:dfx_enable:false --add-section :JSON:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal_xml.rtd --add-section BUILD_METADATA:JSON:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal.xml --add-section SYSTEM_METADATA:RAW:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/systemDiagramModelSlrBaseAddress.json --key-value SYS:PlatformVBNV:xilinx.com_xd_zedboard_202020_1_202020_1 --output /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/./build_dir.hw.zedboard_202020_1/lsal.xclbin",
+  "args": [
+   "--add-section",
+   "DEBUG_IP_LAYOUT:JSON:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/debug_ip_layout.rtd",
+   "--add-section",
+   "BITSTREAM:RAW:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/system.bit",
+   "--force",
+   "--target",
+   "hw",
+   "--key-value",
+   "SYS:dfx_enable:false",
+   "--add-section",
+   ":JSON:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/lsal.xml",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/systemDiagramModelSlrBaseAddress.json",
+   "--key-value",
+   "SYS:PlatformVBNV:xilinx.com_xd_zedboard_202020_1_202020_1",
+   "--output",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/./build_dir.hw.zedboard_202020_1/lsal.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:03 2024",
+ "timestampMillis": "1716881343633",
+ "status": {
+  "cmdId": "4677b857-26af-4d6d-90c0-7ea982388beb",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:05 2024",
+ "timestampMillis": "1716881345577",
+ "status": {
+  "cmdId": "4677b857-26af-4d6d-90c0-7ea982388beb",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue May 28 10:29:05 2024",
+ "timestampMillis": "1716881345590",
+ "buildStep": {
+  "cmdId": "8ab8d8aa-066d-4b9f-aa3d-be8a344686a2",
+  "name": "xclbinutilinfo",
+  "logFile": "",
+  "commandLine": "xclbinutil --quiet --force --info /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/./build_dir.hw.zedboard_202020_1/lsal.xclbin.info --input /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/./build_dir.hw.zedboard_202020_1/lsal.xclbin",
+  "args": [
+   "--quiet",
+   "--force",
+   "--info",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/./build_dir.hw.zedboard_202020_1/lsal.xclbin.info",
+   "--input",
+   "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/./build_dir.hw.zedboard_202020_1/lsal.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:05 2024",
+ "timestampMillis": "1716881345592",
+ "status": {
+  "cmdId": "8ab8d8aa-066d-4b9f-aa3d-be8a344686a2",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:07 2024",
+ "timestampMillis": "1716881347028",
+ "status": {
+  "cmdId": "8ab8d8aa-066d-4b9f-aa3d-be8a344686a2",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue May 28 10:29:07 2024",
+ "timestampMillis": "1716881347043",
+ "buildStep": {
+  "cmdId": "b191f1e9-87d0-44ed-a0dd-2f7b4d3e751f",
+  "name": "generate_sc_driver",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:07 2024",
+ "timestampMillis": "1716881347044",
+ "status": {
+  "cmdId": "b191f1e9-87d0-44ed-a0dd-2f7b4d3e751f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:07 2024",
+ "timestampMillis": "1716881347051",
+ "status": {
+  "cmdId": "b191f1e9-87d0-44ed-a0dd-2f7b4d3e751f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:29:07 2024",
+ "timestampMillis": "1716881347093",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/system_estimate_lsal.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:29:07 2024",
+ "timestampMillis": "1716881347629",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/reports/link/v++_link_lsal_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:29:07 2024",
+ "timestampMillis": "1716881347630",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/v++_link_lsal_guidance.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:29:07 2024",
+ "timestampMillis": "1716881347651",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:07 2024",
+ "timestampMillis": "1716881347662",
+ "status": {
+  "cmdId": "08e88265-2f7c-4e15-98d7-0467f3f72435",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

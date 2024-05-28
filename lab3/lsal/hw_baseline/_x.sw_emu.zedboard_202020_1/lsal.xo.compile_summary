@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Tue May 28 09:18:27 2024",
- "timestampMillis": "1716877107472",
+ "dateTimestamp": "Tue May 28 11:08:25 2024",
+ "timestampMillis": "1716883705072",
  "buildStep": {
-  "cmdId": "93fcdd10-7796-4454-a7c8-1cada9ad78e0",
+  "cmdId": "a88b900b-4e43-4dd9-a3a9-eeb0ba885eb1",
   "name": "v++",
   "logFile": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.sw_emu.zedboard_202020_1/lsal/lsal.steps.log",
   "commandLine": "/opt/Xilinx/Vitis/2020.2/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"vivado_prop:run.impl_1.{STEPS.PLACE_DESIGN.ARGS.MORE OPTIONS}={-retiming}\" --xp vivado_prop:run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true --xp vivado_prop:run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -O3 -t sw_emu --platform zedboard_202020_1 --save-temps -g -c -k compute_matrices --temp_dir ./_x.sw_emu.zedboard_202020_1 -Isrc -o_x.sw_emu.zedboard_202020_1/lsal.xo src/lsal.cpp ",
@@ -41,10 +41,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Tue May 28 09:18:27 2024",
- "timestampMillis": "1716877107474",
+ "dateTimestamp": "Tue May 28 11:08:25 2024",
+ "timestampMillis": "1716883705073",
  "status": {
-  "cmdId": "93fcdd10-7796-4454-a7c8-1cada9ad78e0",
+  "cmdId": "a88b900b-4e43-4dd9-a3a9-eeb0ba885eb1",
   "state": "CS_RUNNING"
  }
 }
@@ -52,8 +52,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Tue May 28 09:18:29 2024",
- "timestampMillis": "1716877109667",
+ "dateTimestamp": "Tue May 28 11:08:27 2024",
+ "timestampMillis": "1716883707297",
  "buildSummary": {
   "hardwarePlatform": "zedboard_202020_1.xpfm",
   "hardwareDsa": "zedboard_202020_1.xsa",
@@ -88,10 +88,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Tue May 28 09:18:29 2024",
- "timestampMillis": "1716877109680",
+ "dateTimestamp": "Tue May 28 11:08:27 2024",
+ "timestampMillis": "1716883707309",
  "buildStep": {
-  "cmdId": "48c615d1-0132-4106-a13d-1203e8a7eef9",
+  "cmdId": "e9617c2d-f84c-4c0f-94ea-b0dd104cbff7",
   "name": "vitis_hls",
   "logFile": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.sw_emu.zedboard_202020_1/lsal/compute_matrices/vitis_hls.log",
   "commandLine": "vitis_hls -f /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.sw_emu.zedboard_202020_1/lsal/compute_matrices/compute_matrices.tcl -messageDb vitis_hls.pb",
@@ -110,10 +110,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Tue May 28 09:18:29 2024",
- "timestampMillis": "1716877109682",
+ "dateTimestamp": "Tue May 28 11:08:27 2024",
+ "timestampMillis": "1716883707311",
  "status": {
-  "cmdId": "48c615d1-0132-4106-a13d-1203e8a7eef9",
+  "cmdId": "e9617c2d-f84c-4c0f-94ea-b0dd104cbff7",
   "state": "CS_RUNNING"
  }
 }
@@ -121,10 +121,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Tue May 28 09:18:42 2024",
- "timestampMillis": "1716877122969",
+ "dateTimestamp": "Tue May 28 11:08:39 2024",
+ "timestampMillis": "1716883719365",
  "status": {
-  "cmdId": "48c615d1-0132-4106-a13d-1203e8a7eef9",
+  "cmdId": "e9617c2d-f84c-4c0f-94ea-b0dd104cbff7",
   "state": "CS_PASSED"
  }
 }
@@ -132,8 +132,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Tue May 28 09:18:43 2024",
- "timestampMillis": "1716877123133",
+ "dateTimestamp": "Tue May 28 11:08:39 2024",
+ "timestampMillis": "1716883719546",
  "report": {
   "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.sw_emu.zedboard_202020_1/reports/lsal/v++_compile_lsal_guidance.html",
   "name": "",
@@ -145,8 +145,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Tue May 28 09:18:43 2024",
- "timestampMillis": "1716877123133",
+ "dateTimestamp": "Tue May 28 11:08:39 2024",
+ "timestampMillis": "1716883719547",
  "report": {
   "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.sw_emu.zedboard_202020_1/v++_compile_lsal_guidance.pb",
   "name": "",
@@ -158,10 +158,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Tue May 28 09:18:43 2024",
- "timestampMillis": "1716877123143",
+ "dateTimestamp": "Tue May 28 11:08:39 2024",
+ "timestampMillis": "1716883719551",
  "status": {
-  "cmdId": "93fcdd10-7796-4454-a7c8-1cada9ad78e0",
+  "cmdId": "a88b900b-4e43-4dd9-a3a9-eeb0ba885eb1",
   "state": "CS_FAILED"
  }
 }

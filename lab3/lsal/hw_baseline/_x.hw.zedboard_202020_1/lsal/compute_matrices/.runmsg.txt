@@ -1,0 +1,2 @@
+performing high-level synthesis for kernel: compute_matrices
+Log file: /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.hw.zedboard_202020_1/lsal/compute_matrices/vitis_hls.log

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="lsal" dir="">
+  <FileSets>
+    <FileSet Name="kernel_compute_matrices" Type="DesignSrcs">
+      <File Path="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/src/lsal.cpp"/>
+      <Config/>
+    </FileSet>
+  </FileSets>
+  <Runs/>
+</project>

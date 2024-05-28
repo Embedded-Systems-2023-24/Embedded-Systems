@@ -1,0 +1,20 @@
+
+*** Running vivado
+    with args -log zedboard_base_m02_regslice_3.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source zedboard_base_m02_regslice_3.tcl
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source zedboard_base_m02_regslice_3.tcl -notrace
+INFO: Dispatch client connection id - 37909
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/int/xo/ip_repo/xilinx_com_hls_compute_matrices_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/opt/Xilinx/Vitis/2020.2/data/cache/xilinx'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/link/vivado/vpl/.local/hw_platform/ipcache'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/opt/Xilinx/Vitis/2020.2/data/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.2/data/ip'.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP zedboard_base_m02_regslice_3, cache-ID = 9a06ca75d0e0c768.
+INFO: [Common 17-206] Exiting Vivado at Tue May 28 10:17:57 2024...

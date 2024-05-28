@@ -1,0 +1,16 @@
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.sw_emu.zedboard_202020_1/reports/lsal
+	Log files: /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.sw_emu.zedboard_202020_1/logs/lsal
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.sw_emu.zedboard_202020_1/lsal.xo.compile_summary, at Tue May 28 09:58:11 2024
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Tue May 28 09:58:11 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.sw_emu.zedboard_202020_1/reports/lsal/v++_compile_lsal_guidance.html', at Tue May 28 09:58:12 2024
+INFO: [v++ 60-895]   Target platform: /opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/hw/zedboard_202020_1.xsa'
+INFO: [v++ 60-585] Compiling for software emulation target
+INFO: [v++ 60-423]   Target device: zedboard_202020_1
+INFO: [v++ 60-242] Creating kernel: 'compute_matrices'
+INFO: [v++ 60-594] Finished kernel compilation
+ERROR: [v++ 17-70] Application Exception: Failed to add kernel 'compute_matrices' to XO container because the kernel name '_Z16compute_matricesPcS_PiS0_Psii' defined in kernel.xml does not match.
+
+ERROR: [v++ 60-604] Unable to copy output file _x.sw_emu.zedboard_202020_1/lsal.xo
+INFO: [v++ 60-1653] Closing dispatch client.

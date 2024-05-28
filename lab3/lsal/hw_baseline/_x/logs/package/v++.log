@@ -1,0 +1,25 @@
+INFO: [v++ 60-1306] Additional information associated with this v++ package can be found at:
+	Reports: /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x/reports/package
+	Log files: /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x/logs/package
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/lsal.xclbin.package_summary, at Tue May 28 10:29:22 2024
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Tue May 28 10:29:22 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x/reports/package/v++_package_lsal_guidance.html', at Tue May 28 10:29:24 2024
+INFO: [v++ 60-895]   Target platform: /opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/hw/zedboard_202020_1.xsa'
+INFO: [v++ 60-2256] Packaging for hardware
+
+Section: 'SYSTEM_METADATA'(22) was successfully written.
+Format: RAW
+File  : '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x/package/extractedSystemDiagram.json'
+
+Section: 'BITSTREAM'(0) was successfully written.
+Format: RAW
+File  : '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x/package/system.bit'
+WARNING: [v++ 74-5] Encountered errors looking for platforms in /opt/Xilinx/Vitis/2020.2/platforms.
+WARNING: [v++ 82-1147] Kernel image is not specified for linux domain
+INFO: [v++ 82-1025] generating bootimage
+INFO: [v++ 82-1140] Deleting existing - /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/package.hw/sd_card/uImage
+INFO: [v++ 82-1011] creating sd_card directory
+INFO: [v++ 82-3558] mkfsimage command run: /opt/Xilinx/Vitis/2020.2/scripts/vitis/util/mkfsImage.sh -s /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/package.hw/sd_card/ -o /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/package.hw/sd_card.img -e /opt/Xilinx/Vitis/2020.2/platforms/sysroot/rootfs.ext4
+ERROR: [v++ 82-1081] Cannot generate EXT4 sd_card image
+ERROR: [v++ 60-702] Failed to finish packaging

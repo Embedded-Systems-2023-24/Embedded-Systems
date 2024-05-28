@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="lsal">
+  <platform vendor="xilinx.com" boardid="xd" name="zedboard_202020_1" featureRomTime="0">
+    <version major="202020" minor="1"/>
+    <description/>
+    <board name="em.avnet.com:zed:1.4" vendor="em.avnet.com" fpga="xc7z020clg484-1">
+      <interfaces/>
+      <images>
+        <image name="zed_board.jpg" type="HDPI"/>
+        <image name="" type="MDPI"/>
+        <image name="" type="LDPI"/>
+      </images>
+      <id>
+        <vendor/>
+        <device/>
+        <subsystem/>
+      </id>
+    </board>
+    <build_flow/>
+    <host architecture="unknown"/>
+    <device name="fpga0" fpgaDevice="zynq:xc7z020:clg484:-1" addrWidth="0">
+      <core name="OCL_REGION_0" target="bitstream" type="clc_region" clockFreq="0MHz" numComputeUnits="60">
+        <kernelClocks>
+          <clock port="KERNEL_CLK" frequency="142.187500MHz"/>
+          <clock port="DATA_CLK" frequency="100.000000MHz"/>
+        </kernelClocks>
+        <kernel name="compute_matrices" language="c" vlnv="xilinx.com:hls:compute_matrices:1.0" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" interrupt="true" hwControlProtocol="ap_ctrl_chain">
+          <module name="compute_matrices"/>
+          <port name="M_AXI_GMEM" mode="master" range="0xFFFFFFFF" dataWidth="32" portType="addressable" base="0x0"/>
+          <port name="S_AXI_CONTROL" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x0"/>
+          <arg name="string1" addressQualifier="1" id="0" port="M_AXI_GMEM" size="0x4" offset="0x10" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="string2" addressQualifier="1" id="1" port="M_AXI_GMEM" size="0x4" offset="0x18" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="max_index" addressQualifier="1" id="2" port="M_AXI_GMEM" size="0x4" offset="0x20" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="similarity_matrix" addressQualifier="1" id="3" port="M_AXI_GMEM" size="0x4" offset="0x28" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="direction_matrix" addressQualifier="1" id="4" port="M_AXI_GMEM" size="0x4" offset="0x30" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="N" addressQualifier="0" id="5" port="S_AXI_CONTROL" size="0x4" offset="0x38" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="M" addressQualifier="0" id="6" port="S_AXI_CONTROL" size="0x4" offset="0x40" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <compileWorkGroupSize x="1" y="1" z="1"/>
+          <maxWorkGroupSize x="1" y="1" z="1"/>
+          <string_table/>
+          <instance name="compute_matrices_1">
+            <addrRemap base="0x0" port="none"/>
+          </instance>
+          <FIFOInformation/>
+        </kernel>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="interconnect_axilite_M01_AXI" dstType="kernel" dstInst="compute_matrices_1" dstPort="S_AXI_CONTROL"/>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="axi_interconnect_lpd_S01_AXI" dstType="kernel" dstInst="compute_matrices_1" dstPort="M_AXI_GMEM"/>
+      </core>
+    </device>
+  </platform>
+</project>

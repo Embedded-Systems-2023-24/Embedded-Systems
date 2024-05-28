@@ -1,0 +1,131 @@
+<ENTRY>
+{
+ "thisFile": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/lsal.xclbin.package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue May 28 10:29:22 2024",
+ "timestampMillis": "1716881362789",
+ "buildStep": {
+  "cmdId": "f15d2827-d631-45eb-b6b1-e8f0ff6df40d",
+  "name": "v++",
+  "logFile": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x/package/package.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2020.2/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -p ./build_dir.hw.zedboard_202020_1/lsal.xclbin -t hw --platform zedboard_202020_1 --package.out_dir ./package.hw --package.rootfs /opt/Xilinx/Vitis/2020.2/platforms/sysroot//rootfs.ext4 --package.sd_file /opt/Xilinx/Vitis/2020.2/platforms/sysroot//uImage --package.sd_file xrt.ini --package.sd_file ./run_app.sh --package.sd_file ./lsal -o lsal.xclbin ",
+  "args": [
+   "-p",
+   "./build_dir.hw.zedboard_202020_1/lsal.xclbin",
+   "-t",
+   "hw",
+   "--platform",
+   "zedboard_202020_1",
+   "--package.out_dir",
+   "./package.hw",
+   "--package.rootfs",
+   "/opt/Xilinx/Vitis/2020.2/platforms/sysroot//rootfs.ext4",
+   "--package.sd_file",
+   "/opt/Xilinx/Vitis/2020.2/platforms/sysroot//uImage",
+   "--package.sd_file",
+   "xrt.ini",
+   "--package.sd_file",
+   "./run_app.sh",
+   "--package.sd_file",
+   "./lsal",
+   "-o",
+   "lsal.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:22 2024",
+ "timestampMillis": "1716881362790",
+ "status": {
+  "cmdId": "f15d2827-d631-45eb-b6b1-e8f0ff6df40d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Tue May 28 10:29:27 2024",
+ "timestampMillis": "1716881367792",
+ "buildSummary": {
+  "hardwarePlatform": "zedboard_202020_1.xpfm",
+  "hardwareDsa": "zedboard_202020_1.xsa",
+  "platformDirectory": "/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_PACKAGE",
+  "target": "TT_HW",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "lsal",
+    "file": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/lsal.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [],
+  "toolVersion": "Vitis V++ Compiler Release 2020.2. SW Build (by xbuild) on 2020-11-18-05:13:29",
+  "inputBinaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "lsal",
+    "file": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/build_dir.hw.zedboard_202020_1/lsal.xclbin",
+    "reports": [],
+    "uuid": "08e88265-2f7c-4e15-98d7-0467f3f72435"
+   },
+   "kernels": []
+  }
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:29:36 2024",
+ "timestampMillis": "1716881376322",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x/reports/package/v++_package_lsal_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue May 28 10:29:36 2024",
+ "timestampMillis": "1716881376323",
+ "report": {
+  "path": "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x/v++_package_lsal_guidance.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue May 28 10:29:36 2024",
+ "timestampMillis": "1716881376344",
+ "status": {
+  "cmdId": "f15d2827-d631-45eb-b6b1-e8f0ff6df40d",
+  "state": "CS_FAILED"
+ }
+}
+</ENTRY>
