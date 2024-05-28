@@ -1,0 +1,10 @@
+Tue May 28 09:18:28 2024: Server was asked to start on port: '37689'
+Tue May 28 09:18:28 2024: Server is using token UUID: '4e21c3e8-32f5-45c3-aeb1-242ed8970bad'
+Tue May 28 09:18:28 2024: Attempting to start server on port '37689'
+Tue May 28 09:18:28 2024: XRC main fifo: created main fifo '/tmp/xrcmain4e21c3e8-32f5-45c3-aeb1-242ed8970bad', fd read = 13
+Tue May 28 09:18:28 2024: Running Rule Check Server
+Tue May 28 09:18:28 2024: Version 1.6.1
+Tue May 28 09:18:29 2024: Rule Check Server: Accepted socket connection from client
+Tue May 28 09:18:29 2024: EXCHANGE_TOKEN received, server token: 4e21c3e8-32f5-45c3-aeb1-242ed8970bad, passed token: 4e21c3e8-32f5-45c3-aeb1-242ed8970bad
+Tue May 28 09:18:29 2024: SESSION_MGR: creating session with session uuid: '29c012fb-158b-4ed6-ad67-ac51bab1063f' and name 'v++_compile_lsal'
+Tue May 28 09:18:43 2024: SESSION_MGR: closing session for UUID '29c012fb-158b-4ed6-ad67-ac51bab1063f' with name 'v++_compile_lsal'
