@@ -1,3 +1,0 @@
-
-ç
-v++_package_lsal$e09bbfbd-9b70-4f3c-b7e6-ce2c8ea8fbc3Êv++  -p ./build_dir.hw.zedboard_202020_1/lsal.xclbin -t hw --platform zedboard_202020_1 --package.out_dir ./package.hw --package.rootfs /opt/Xilinx/Vitis/2020.2/platforms/sysroot//rootfs.ext4 --package.sd_file /opt/Xilinx/Vitis/2020.2/platforms/sysroot//uImage --package.sd_file xrt.ini --package.sd_file ./run_app.sh --package.sd_file ./lsal -o lsal.xclbin *}"y/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x/reports/package/v++_package_lsal_guidance.html2k"g/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x/v++_package_lsal_guidance.pb

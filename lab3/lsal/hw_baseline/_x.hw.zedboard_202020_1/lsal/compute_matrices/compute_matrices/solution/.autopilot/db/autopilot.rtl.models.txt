@@ -1,6 +1,0 @@
-compute_matrices_mul_32s_32s_32_2_1
-compute_matrices_srem_32ns_32s_32_36_1
-compute_matrices_sdiv_32ns_32s_32_36_1
-compute_matrices_control_s_axi
-compute_matrices_gmem_m_axi
-compute_matrices

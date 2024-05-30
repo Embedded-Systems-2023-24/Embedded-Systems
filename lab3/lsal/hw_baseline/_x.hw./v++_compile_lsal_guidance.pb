@@ -1,3 +1,0 @@
-
-¡
-v++_compile_lsal$ba9a632a-af9a-4cd8-86fe-c141b27bb23dvv++  -O3 -t hw --platform --save-temps -c -k compute_matrices --temp_dir ./_x.hw. -Isrc -o_x.hw./lsal.xo src/lsal.cpp *~"z/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.hw./reports/lsal/v++_compile_lsal_guidance.html2o"k/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.hw./v++_compile_lsal_guidance.pb

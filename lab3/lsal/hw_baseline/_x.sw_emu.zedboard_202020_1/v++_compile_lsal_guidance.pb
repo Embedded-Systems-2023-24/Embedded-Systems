@@ -1,3 +1,0 @@
-
-ì
-v++_compile_lsal$a6379ad0-8b8d-4fdb-90aa-8e822c82ac24πv++  -O3 -t sw_emu --platform zedboard_202020_1 --save-temps -g -c -k compute_matrices --temp_dir ./_x.sw_emu.zedboard_202020_1 -Isrc -o_x.sw_emu.zedboard_202020_1/lsal.xo src/lsal.cpp *î"è/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.sw_emu.zedboard_202020_1/reports/lsal/v++_compile_lsal_guidance.html2Ö"Ä/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/_x.sw_emu.zedboard_202020_1/v++_compile_lsal_guidance.pb

@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vitis_hls" Owner="iathanasi" Host="localhost.localdomain" Pid="14083" HostCore="4" HostMemory="32746020">
-    </Process>
-</ProcessHandle>
