@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'compute_matrices'
 ================================================================
 + General Information: 
-    * Date:           Thu May 30 09:17:11 2024
+    * Date:           Thu May 30 09:52:21 2024
     * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
     * Project:        LSAL_HW
     * Solution:       solution1 (Vitis Kernel Flow Target)
@@ -19,8 +19,8 @@
     |       Modules      |  Issue |       | Latency | Latency| Iteration|         | Trip |          |         |    |           |            |     |
     |       & Loops      |  Type  | Slack | (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF    |     LUT    | URAM|
     +--------------------+--------+-------+---------+--------+----------+---------+------+----------+---------+----+-----------+------------+-----+
-    |+ compute_matrices  |  Timing|   0.00|        -|       -|         -|        -|     -|        no|  2 (~0%)|   -|  8705 (8%)|  9034 (16%)|    -|
-    | o VITIS_LOOP_58_1  |      II|  -7.30|        -|       -|       145|        3|     -|       yes|        -|   -|          -|           -|    -|
-    | o VITIS_LOOP_91_2  |      II|  -7.30|        -|       -|       185|      147|     -|       yes|        -|   -|          -|           -|    -|
+    |+ compute_matrices  |  Timing|   0.00|        -|       -|         -|        -|     -|        no|  2 (~0%)|   -|  4790 (4%)|  7226 (13%)|    -|
+    | o first_row_scan   |       -|  -7.30|        -|       -|       213|        -|     -|        no|        -|   -|          -|           -|    -|
+    | o second_row_scan  |       -|  -7.30|        -|       -|       396|        -|     -|        no|        -|   -|          -|           -|    -|
     +--------------------+--------+-------+---------+--------+----------+---------+------+----------+---------+----+-----------+------------+-----+
 

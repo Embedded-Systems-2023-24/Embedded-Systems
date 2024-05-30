@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" top="compute_matrices" name="LSAL_HW">
+<project xmlns="com.autoesl.autopilot.project" name="LSAL_HW" top="compute_matrices">
     <includePaths/>
     <libraryPaths/>
     <Simulation argv="32 32">

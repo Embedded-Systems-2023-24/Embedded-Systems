@@ -10221,7 +10221,8 @@ void compute_matrices (
 
 
 
-  for(int i = 1; i < N; i++) {
+first_row_scan:
+ for(int i = 1; i < N; i++) {
    val = 0;
    dir = CENTER;
 
@@ -10254,6 +10255,7 @@ void compute_matrices (
  }
 
 
+second_row_scan:
    for(index = N; index < N*M; index++) {
 
       i = index % N;

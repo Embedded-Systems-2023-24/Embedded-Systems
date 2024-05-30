@@ -1,15 +1,3 @@
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-#include <time.h>
-#include <unistd.h>
-#include <assert.h>
-#include <stdbool.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-
 const short N = 256;
 const short M = 2048;
 
@@ -55,7 +43,8 @@ void compute_matrices (
 	//Here the real computation starts. Place your code whenever is required. 
 
 	// Scan the first row of the array.
-		for(int i = 1; i < N; i++) {
+first_row_scan:
+	for(int i = 1; i < N; i++) {
 			val = 0;
 			dir = CENTER;
 
@@ -88,6 +77,7 @@ void compute_matrices (
 	}
 
 	// Scan the N*M array row-wise starting from the second row.
+second_row_scan:
    for(index = N; index < N*M; index++) {
 
    	  i = index % N; // column index

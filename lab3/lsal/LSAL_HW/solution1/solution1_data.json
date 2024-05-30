@@ -190,14 +190,19 @@
   "HlsSolution": {
     "FlowTarget": "vitis",
     "ConfigTcl": [
-      "config_interface -m_axi_latency=64",
-      "config_interface -m_axi_alignment_byte_size=64",
-      "config_interface -m_axi_max_widen_bitwidth=512",
       "config_interface -default_interface=kernel",
+      "config_interface -m_axi_alignment_byte_size=64",
+      "config_interface -m_axi_latency=64",
+      "config_interface -m_axi_max_widen_bitwidth=512",
       "config_interface -m_axi_offset=slave",
       "config_rtl -register_reset_num=3"
     ],
-    "DirectiveTcl": ["set_directive_top compute_matrices -name compute_matrices"],
+    "DirectiveTcl": [
+      "set_directive_top compute_matrices -name compute_matrices",
+      "set_directive_pipeline compute_matrices\/second_row_scan -II 0",
+      "set_directive_pipeline compute_matrices\/first_row_scan -II 0",
+      "set_directive_top compute_matrices -name compute_matrices"
+    ],
     "ProfileOption": "0",
     "ProfileType": "none",
     "KernelName": "compute_matrices"
@@ -229,16 +234,16 @@
       "impl\/vhdl\/compute_matrices_control_s_axi.vhd",
       "impl\/vhdl\/compute_matrices_gmem_m_axi.vhd",
       "impl\/vhdl\/compute_matrices_mul_32s_32s_32_2_1.vhd",
-      "impl\/vhdl\/compute_matrices_sdiv_32ns_32s_32_36_1.vhd",
-      "impl\/vhdl\/compute_matrices_srem_32ns_32s_32_36_1.vhd",
+      "impl\/vhdl\/compute_matrices_sdiv_32ns_32s_32_36_seq_1.vhd",
+      "impl\/vhdl\/compute_matrices_srem_32ns_32s_32_36_seq_1.vhd",
       "impl\/vhdl\/compute_matrices.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/compute_matrices_control_s_axi.v",
       "impl\/verilog\/compute_matrices_gmem_m_axi.v",
       "impl\/verilog\/compute_matrices_mul_32s_32s_32_2_1.v",
-      "impl\/verilog\/compute_matrices_sdiv_32ns_32s_32_36_1.v",
-      "impl\/verilog\/compute_matrices_srem_32ns_32s_32_36_1.v",
+      "impl\/verilog\/compute_matrices_sdiv_32ns_32s_32_36_seq_1.v",
+      "impl\/verilog\/compute_matrices_srem_32ns_32s_32_36_seq_1.v",
       "impl\/verilog\/compute_matrices.v"
     ],
     "SwDriver": [
@@ -1076,18 +1081,22 @@
         },
         "Loops": [
           {
-            "Name": "VITIS_LOOP_58_1",
+            "Name": "first_row_scan",
             "TripCount": "",
             "Latency": "",
-            "PipelineII": "3",
-            "PipelineDepth": "145"
+            "PipelineII": "",
+            "PipelineDepthMin": "145",
+            "PipelineDepthMax": "213",
+            "PipelineDepth": "145 ~ 213"
           },
           {
-            "Name": "VITIS_LOOP_91_2",
+            "Name": "second_row_scan",
             "TripCount": "",
             "Latency": "",
-            "PipelineII": "147",
-            "PipelineDepth": "185"
+            "PipelineII": "",
+            "PipelineDepthMin": "185",
+            "PipelineDepthMax": "396",
+            "PipelineDepth": "185 ~ 396"
           }
         ],
         "Area": {
@@ -1097,12 +1106,12 @@
           "DSP": "0",
           "AVAIL_DSP": "220",
           "UTIL_DSP": "0",
-          "FF": "8705",
+          "FF": "4790",
           "AVAIL_FF": "106400",
-          "UTIL_FF": "8",
-          "LUT": "9034",
+          "UTIL_FF": "4",
+          "LUT": "7226",
           "AVAIL_LUT": "53200",
-          "UTIL_LUT": "16",
+          "UTIL_LUT": "13",
           "URAM": "0",
           "AVAIL_URAM": "0",
           "UTIL_URAM": "0"
@@ -1112,7 +1121,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2024-05-30 09:17:14 EEST",
+    "Time": "2024-05-30 09:52:26 EEST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.2"
   }

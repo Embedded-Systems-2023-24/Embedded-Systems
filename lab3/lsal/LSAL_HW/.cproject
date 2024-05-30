@@ -59,6 +59,8 @@
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include"/>
                                     									
+                                    <listOptionValue builtIn="false" value="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal"/>
+                                    									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
                                     								
                                 </option>
@@ -92,6 +94,8 @@
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
                                     								
@@ -156,6 +160,36 @@
                         </toolChain>
                         					
                     </folderInfo>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.568024526.153537861" name="lsal_test.cpp" rcbsApplicability="disable" resourcePath="testbench/lsal_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.324685378.654792874">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.324685378.654792874" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.324685378">
+                            							
+                            <option id="gnu.cpp.compiler.option.preprocessor.def.1334203186" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+                            							
+                            <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1809428983" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/systemc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal"/>
+                                								
+                                <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.other.other.774591517" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1700303433" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
                     					
                     <sourceEntries>
                         						
@@ -227,6 +261,8 @@
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include"/>
                                     									
+                                    <listOptionValue builtIn="false" value="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal"/>
+                                    									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
                                     								
                                 </option>
@@ -250,6 +286,8 @@
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
                                     								
@@ -304,6 +342,36 @@
                         </toolChain>
                         					
                     </folderInfo>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.102668770.1295780896" name="lsal_test.cpp" rcbsApplicability="disable" resourcePath="testbench/lsal_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.814843703.870524266">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.814843703.870524266" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.814843703">
+                            							
+                            <option id="gnu.cpp.compiler.option.preprocessor.def.1739653929" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+                            							
+                            <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1950007787" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/systemc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal"/>
+                                								
+                                <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.other.other.1363856592" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1124831638" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
                     					
                     <sourceEntries>
                         						

@@ -1,15 +1,3 @@
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-#include <time.h>
-#include <unistd.h>
-#include <assert.h>
-#include <stdbool.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-
 const short N = 256;
 const short M = 2048;
 
@@ -27,16 +15,17 @@ const short WEST = 3;
 /**********************************************************************************************
  * LSAL kernel code to be implemented in Hardware
  * Inputs:
- *          string1 is the query[N]
- *          string2 is the database[M]
- *          input sizes N, M
+ *          string1 is the query[n]
+ *          string2 is the database[m]
+ *          input sizes n, m
  * Outputs:
  *           max_index is the location of the highest similiarity score 
  *           similarity and direction matrices. Note that these two matrices are initialized with zeros.
  **********************************************************************************************/
+extern "C" {
 
 void compute_matrices (
-	char string1[N], char string2[M], int max_index[0], int similarity_matrix[N*M], short direction_matrix[N*M], int N, int M) {
+	char string1[N], char string2[M], int max_index[0], int similarity_matrix[N*M], short direction_matrix[N*M], int n, int m) {
 
     int index = 0;
     int i = 0;
@@ -46,7 +35,7 @@ void compute_matrices (
 	int val;
 	int dir;
 
-    // Following values are used for the N, W, and NW values wrt. similarity_matrix[i]
+    // Following values are used for the n, W, and NW values wrt. similarity_matrix[i]
     int north = 0;
 	int west = 0;
 	int northwest = 0;
@@ -55,7 +44,8 @@ void compute_matrices (
 	//Here the real computation starts. Place your code whenever is required. 
 
 	// Scan the first row of the array.
-		for(int i = 1; i < N; i++) {
+first_row_scan:
+	for(int i = 1; i < n; i++) {
 			val = 0;
 			dir = CENTER;
 
@@ -87,11 +77,12 @@ void compute_matrices (
 				}
 	}
 
-	// Scan the N*M array row-wise starting from the second row.
-   for(index = N; index < N*M; index++) {
+	// Scan the n*m array row-wise starting from the second row.
+second_row_scan:
+   for(index = n; index < n*m; index++) {
 
-   	  i = index % N; // column index
-	  j = index / N; // row index
+   	  i = index % n; // column index
+	  j = index / n; // row index
 	  val = 0;
 	  dir = CENTER;
 
@@ -100,7 +91,7 @@ void compute_matrices (
 			west = 0;
 			northwest = 0;
 		} else {
-			northwest = similarity_matrix[index - N - 1];
+			northwest = similarity_matrix[index - n - 1];
 			west = similarity_matrix[index - 1];
 		}
 
@@ -109,7 +100,7 @@ void compute_matrices (
 			north = 0;
 		}
 		else {
-			north = similarity_matrix[index - N]; 
+			north = similarity_matrix[index - n]; 
 		}
 		
 		//1st case.
@@ -148,3 +139,5 @@ void compute_matrices (
 }  // end of function
 
 /************************************************************************/
+
+}

@@ -16,8 +16,8 @@
 #include <CL/opencl.h>
 #include <CL/cl_ext.h>
 
-// #define N 256
-// #define M 2048
+// #define n 256
+// #define m 2048
 
 const short GAP_i = -1;
 const short GAP_d = -1;
@@ -35,11 +35,117 @@ const short WEST = 3;
   ***************************************************************************************/
 void compute_matrices_sw(
 	char *string1, char *string2,
-	int *max_index, int *similarity_matrix, short *direction_matrix, int N, int M)
+	int *max_index, int *similarity_matrix, short *direction_matrix, int n, int m)
 {
-	
-	
-}
+
+    int index = 0;
+    int i = 0;
+	int j = 0;
+	int match;
+	int test_val;
+	int val;
+	int dir;
+
+    // Following values are used for the n, W, and NW values wrt. similarity_matrix[i]
+    int north = 0;
+	int west = 0;
+	int northwest = 0;
+	int max_value = 0;
+
+	//Here the real computation starts. Place your code whenever is required.
+
+	// Scan the first row of the array.
+		for(int i = 1; i < n; i++) {
+			val = 0;
+			dir = CENTER;
+
+			west = similarity_matrix[i - 1];
+
+			//1st case.
+			test_val = northwest + (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
+				if(test_val > 0){
+					val = test_val;
+					dir = NORTH_WEST;
+				}
+
+				north = 0;
+
+				//3rd case.
+				test_val = west + GAP_d;
+				if(test_val > val){
+					val = test_val;
+					dir = WEST;
+				}
+
+				//Save results.
+				similarity_matrix[i] = val;
+				direction_matrix[i] = dir;
+
+				if (val > max_value) {
+					max_value = val;
+					*max_index = i;
+				}
+	}
+
+	// Scan the n*m array row-wise starting from the second row.
+   for(index = n; index < n*m; index++) {
+
+   	  i = index % n; // column index
+	  j = index / n; // row index
+	  val = 0;
+	  dir = CENTER;
+
+   	   if (i == 0) {
+			// first column.
+			west = 0;
+			northwest = 0;
+		} else {
+			northwest = similarity_matrix[index - n - 1];
+			west = similarity_matrix[index - 1];
+		}
+
+		if (j == 0) {
+			// first row.
+			north = 0;
+		}
+		else {
+			north = similarity_matrix[index - n];
+		}
+
+		//1st case.
+        match = ( string1[i] == string2[j] ) ? MATCH : MISS_MATCH;
+		test_val = northwest + match;
+		if(test_val > 0){
+			val = test_val;
+			dir = NORTH_WEST;
+		}
+
+		//2nd case.
+		test_val = north + GAP_i;
+		if(test_val > val){
+			val = test_val;
+			dir = NORTH;
+		}
+
+		//3rd case.
+		test_val = west + GAP_d;
+		if(test_val > val){
+			val = test_val;
+			dir = west;
+		}
+
+        //Save results.
+		similarity_matrix[index] = val;
+		direction_matrix[index] = dir;
+
+		if (val > max_value) {
+			max_value = val;
+			*max_index = index;
+		}
+
+
+	}   // end of for-loop
+}  // end of function
 
 /*
  Given an event, this function returns the kernel execution time in ms
@@ -124,21 +230,21 @@ int main(int argc, char** argv) {
 	cl_uint matrix_size;
 
     if (argc != 4) {
-		printf("%s <input xclbin file> <Query Size N> <DataBase Size M>\n", argv[0]);
+		printf("%s <input xclbin file> <Query Size n> <DataBase Size m>\n", argv[0]);
 		return EXIT_FAILURE;
 	}
 	
-    cl_uint N = atoi(argv[2]); 
-    cl_uint M = atoi(argv[3]);
-    if (N <= 0 || M <= 0) {
-    	printf("N and M should be positive numbers. \n");
+    cl_uint n = atoi(argv[2]); 
+    cl_uint m = atoi(argv[3]);
+    if (n <= 0 || m <= 0) {
+    	printf("n and m should be positive numbers. \n");
 		return EXIT_FAILURE;
 	}
 
-    matrix_size = N*M;
+    matrix_size = n*m;
 
-	char *query = (char*) malloc(sizeof(char) * N);
-	char *database = (char*) malloc(sizeof(char) * M);
+	char *query = (char*) malloc(sizeof(char) * n);
+	char *database = (char*) malloc(sizeof(char) * m);
 	int *similarity_matrix = (int*) malloc(sizeof(int) * matrix_size);
 	short *direction_matrix = (short*) malloc(sizeof(short) * matrix_size);
 	int *max_index = (int *) malloc(sizeof(int));
@@ -162,8 +268,8 @@ int main(int argc, char** argv) {
 	cl_mem output_direction_matrix;
 	cl_mem output_max_index;
 
-	fillRandom(query, N);
-	fillRandom(database, M);
+	fillRandom(query, n);
+	fillRandom(database, m);
 
 	memset(similarity_matrix, 0, sizeof(int) * matrix_size);
 	memset(direction_matrix, 0, sizeof(short) * matrix_size);
@@ -319,14 +425,14 @@ int main(int argc, char** argv) {
     * host application. We also do not need to use free for any reason.
     * See Xilinx UG1393 for detailed information.
     **************************************************************/
-	input_query = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(char) * N,
+	input_query = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(char) * n,
 	NULL, NULL);
-	input_database = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(char) * M,
+	input_database = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(char) * m,
 	NULL, NULL);
 	output_similarity_matrix = clCreateBuffer(context, CL_MEM_READ_WRITE,
-			sizeof(int) * M * N, NULL, NULL);
+			sizeof(int) * m * n, NULL, NULL);
 	output_direction_matrix = clCreateBuffer(context, CL_MEM_READ_WRITE,
-			sizeof(short) * M * N, NULL, NULL);
+			sizeof(short) * m * n, NULL, NULL);
 	output_max_index = clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(int),
 	NULL, NULL);
 
@@ -341,7 +447,7 @@ int main(int argc, char** argv) {
     * Step 8 : Write the Input Data to the Write Buffers of the device memory
     **************************************************************/
 	err = clEnqueueWriteBuffer(commands, input_query, CL_TRUE, 0,
-			sizeof(char) * N, query, 0, NULL, NULL);
+			sizeof(char) * n, query, 0, NULL, NULL);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to write to source array a!\n");
 		printf("Test failed\n");
@@ -349,7 +455,7 @@ int main(int argc, char** argv) {
 	}
 
 	err = clEnqueueWriteBuffer(commands, input_database, CL_TRUE, 0,
-			sizeof(char) * M, database, 0, NULL, NULL);
+			sizeof(char) * m, database, 0, NULL, NULL);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to write to source array a!\n");
 		printf("Test failed\n");
@@ -414,7 +520,7 @@ int main(int argc, char** argv) {
 	}
 	printf("set arg 5 \n");
 	err |= clSetKernelArg(kernel, 5, sizeof(cl_uint),
-			&N);
+			&n);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to set kernel arguments 5! %d\n", err);
 		printf("Test failed\n");
@@ -422,7 +528,7 @@ int main(int argc, char** argv) {
 	}
 	printf("set arg 6 \n");
 	err |= clSetKernelArg(kernel, 6, sizeof(cl_uint),
-			&M);
+			&m);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to set kernel arguments 6! %d\n", err);
 		printf("Test failed\n");
@@ -449,7 +555,7 @@ int main(int argc, char** argv) {
 	 **************************************************************/
 	cl_event readMax, readSimilarity, readDirections;
 	err = clEnqueueReadBuffer(commands, output_similarity_matrix, CL_TRUE, 0,
-			sizeof(char) * N * M, similarity_matrix, 0, NULL, &readSimilarity);
+			sizeof(char) * n * m, similarity_matrix, 0, NULL, &readSimilarity);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to read array! %d\n", err);
 		printf("Test failed\n");
@@ -457,7 +563,7 @@ int main(int argc, char** argv) {
 	}
 
 	err = clEnqueueReadBuffer(commands, output_direction_matrix, CL_TRUE, 0,
-			sizeof(short) * N * M, direction_matrix, 0, NULL,
+			sizeof(short) * n * m, direction_matrix, 0, NULL,
 			&readDirections);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to read array! %d\n", err);
@@ -501,7 +607,7 @@ int main(int argc, char** argv) {
 	for(cl_uint i = 0; i < matrix_size; i++){
 		similarity_matrix_sw[i] = 0;
 	}
-	compute_matrices_sw(query, database, max_index_sw, similarity_matrix_sw, direction_matrix_sw, N, M);
+	compute_matrices_sw(query, database, max_index_sw, similarity_matrix_sw, direction_matrix_sw, n, m);
 
 	printf("both ended\n");
 
@@ -520,9 +626,9 @@ int main(int argc, char** argv) {
 	 * Clean up everything and, then, shutdown 
 	 **************************************************************/
     
-   free(query);
-   free(database);
-   free(similarity_matrix);
+    free(query);
+    free(database);
+    free(similarity_matrix);
 	free(direction_matrix);
 	free(max_index);
 	free(similarity_matrix_sw);

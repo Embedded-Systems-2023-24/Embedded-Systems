@@ -10225,7 +10225,8 @@ void compute_matrices (
 
 
 
-  for(int i = 1; i < N; i++) {
+first_row_scan:
+ for(int i = 1; i < N; i++) {
    val = 0;
    dir = CENTER;
 
@@ -10258,6 +10259,7 @@ void compute_matrices (
  }
 
 
+second_row_scan:
    for(index = N; index < N*M; index++) {
 
       i = index % N;
@@ -10336,5 +10338,5 @@ apatb_compute_matrices_ir(string1, string2, max_index, similarity_matrix, direct
 return ;
 }
 #endif
-# 148 "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/Vitis_HLS/lsal.cpp"
+# 150 "/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/Vitis_HLS/lsal.cpp"
 
