@@ -37,8 +37,8 @@ port (
     max_index             :out  STD_LOGIC_VECTOR(63 downto 0);
     similarity_matrix     :out  STD_LOGIC_VECTOR(63 downto 0);
     direction_matrix      :out  STD_LOGIC_VECTOR(63 downto 0);
-    N                     :out  STD_LOGIC_VECTOR(31 downto 0);
-    M                     :out  STD_LOGIC_VECTOR(31 downto 0);
+    n                     :out  STD_LOGIC_VECTOR(31 downto 0);
+    m                     :out  STD_LOGIC_VECTOR(31 downto 0);
     ap_start              :out  STD_LOGIC;
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
@@ -92,11 +92,11 @@ end entity compute_matrices_control_s_axi;
 -- 0x44 : Data signal of direction_matrix
 --        bit 31~0 - direction_matrix[63:32] (Read/Write)
 -- 0x48 : reserved
--- 0x4c : Data signal of N
---        bit 31~0 - N[31:0] (Read/Write)
+-- 0x4c : Data signal of n
+--        bit 31~0 - n[31:0] (Read/Write)
 -- 0x50 : reserved
--- 0x54 : Data signal of M
---        bit 31~0 - M[31:0] (Read/Write)
+-- 0x54 : Data signal of m
+--        bit 31~0 - m[31:0] (Read/Write)
 -- 0x58 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -156,8 +156,8 @@ architecture behave of compute_matrices_control_s_axi is
     signal int_max_index       : UNSIGNED(63 downto 0) := (others => '0');
     signal int_similarity_matrix : UNSIGNED(63 downto 0) := (others => '0');
     signal int_direction_matrix : UNSIGNED(63 downto 0) := (others => '0');
-    signal int_N               : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_M               : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_n               : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_m               : UNSIGNED(31 downto 0) := (others => '0');
 
 
 begin
@@ -307,9 +307,9 @@ begin
                     when ADDR_DIRECTION_MATRIX_DATA_1 =>
                         rdata_data <= RESIZE(int_direction_matrix(63 downto 32), 32);
                     when ADDR_N_DATA_0 =>
-                        rdata_data <= RESIZE(int_N(31 downto 0), 32);
+                        rdata_data <= RESIZE(int_n(31 downto 0), 32);
                     when ADDR_M_DATA_0 =>
-                        rdata_data <= RESIZE(int_M(31 downto 0), 32);
+                        rdata_data <= RESIZE(int_m(31 downto 0), 32);
                     when others =>
                         NULL;
                     end case;
@@ -328,8 +328,8 @@ begin
     max_index            <= STD_LOGIC_VECTOR(int_max_index);
     similarity_matrix    <= STD_LOGIC_VECTOR(int_similarity_matrix);
     direction_matrix     <= STD_LOGIC_VECTOR(int_direction_matrix);
-    N                    <= STD_LOGIC_VECTOR(int_N);
-    M                    <= STD_LOGIC_VECTOR(int_M);
+    n                    <= STD_LOGIC_VECTOR(int_n);
+    m                    <= STD_LOGIC_VECTOR(int_m);
 
     process (ACLK)
     begin
@@ -573,7 +573,7 @@ begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_N_DATA_0) then
-                    int_N(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_N(31 downto 0));
+                    int_n(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_n(31 downto 0));
                 end if;
             end if;
         end if;
@@ -584,7 +584,7 @@ begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_M_DATA_0) then
-                    int_M(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_M(31 downto 0));
+                    int_m(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_m(31 downto 0));
                 end if;
             end if;
         end if;

@@ -160,7 +160,7 @@
         }
       ]
     },
-    "N": {
+    "n": {
       "index": "5",
       "direction": "in",
       "srcType": "int",
@@ -168,12 +168,12 @@
       "hwRefs": [{
           "type": "register",
           "interface": "s_axi_control",
-          "name": "N",
+          "name": "n",
           "usage": "data",
           "direction": "in"
         }]
     },
-    "M": {
+    "m": {
       "index": "6",
       "direction": "in",
       "srcType": "int",
@@ -181,7 +181,7 @@
       "hwRefs": [{
           "type": "register",
           "interface": "s_axi_control",
-          "name": "M",
+          "name": "m",
           "usage": "data",
           "direction": "in"
         }]
@@ -744,34 +744,34 @@
         },
         {
           "offset": "0x4c",
-          "name": "N",
+          "name": "n",
           "access": "W",
           "resetValue": "0x0",
-          "description": "Data signal of N",
+          "description": "Data signal of n",
           "range": "32",
           "fields": [{
               "offset": "0",
               "width": "32",
-              "name": "N",
+              "name": "n",
               "access": "W",
               "resetValue": "0",
-              "description": "Bit 31 to 0 of N"
+              "description": "Bit 31 to 0 of n"
             }]
         },
         {
           "offset": "0x54",
-          "name": "M",
+          "name": "m",
           "access": "W",
           "resetValue": "0x0",
-          "description": "Data signal of M",
+          "description": "Data signal of m",
           "range": "32",
           "fields": [{
               "offset": "0",
               "width": "32",
-              "name": "M",
+              "name": "m",
               "access": "W",
               "resetValue": "0",
-              "description": "Bit 31 to 0 of M"
+              "description": "Bit 31 to 0 of m"
             }]
         }
       ],
@@ -1121,7 +1121,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2024-05-30 09:52:26 EEST",
+    "Time": "2024-06-04 10:59:28 EEST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.2"
   }

@@ -178,14 +178,14 @@ u64 XCompute_matrices_Get_direction_matrix(XCompute_matrices *InstancePtr) {
     return Data;
 }
 
-void XCompute_matrices_Set_N(XCompute_matrices *InstancePtr, u32 Data) {
+void XCompute_matrices_Set_n(XCompute_matrices *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     XCompute_matrices_WriteReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_N_DATA, Data);
 }
 
-u32 XCompute_matrices_Get_N(XCompute_matrices *InstancePtr) {
+u32 XCompute_matrices_Get_n(XCompute_matrices *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
@@ -195,14 +195,14 @@ u32 XCompute_matrices_Get_N(XCompute_matrices *InstancePtr) {
     return Data;
 }
 
-void XCompute_matrices_Set_M(XCompute_matrices *InstancePtr, u32 Data) {
+void XCompute_matrices_Set_m(XCompute_matrices *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     XCompute_matrices_WriteReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_M_DATA, Data);
 }
 
-u32 XCompute_matrices_Get_M(XCompute_matrices *InstancePtr) {
+u32 XCompute_matrices_Get_m(XCompute_matrices *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);

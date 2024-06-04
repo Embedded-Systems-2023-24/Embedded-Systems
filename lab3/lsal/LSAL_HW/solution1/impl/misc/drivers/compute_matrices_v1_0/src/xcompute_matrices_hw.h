@@ -47,11 +47,11 @@
 // 0x44 : Data signal of direction_matrix
 //        bit 31~0 - direction_matrix[63:32] (Read/Write)
 // 0x48 : reserved
-// 0x4c : Data signal of N
-//        bit 31~0 - N[31:0] (Read/Write)
+// 0x4c : Data signal of n
+//        bit 31~0 - n[31:0] (Read/Write)
 // 0x50 : reserved
-// 0x54 : Data signal of M
-//        bit 31~0 - M[31:0] (Read/Write)
+// 0x54 : Data signal of m
+//        bit 31~0 - m[31:0] (Read/Write)
 // 0x58 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 

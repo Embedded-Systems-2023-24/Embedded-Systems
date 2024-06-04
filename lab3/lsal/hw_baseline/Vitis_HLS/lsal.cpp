@@ -15,16 +15,17 @@ const short WEST = 3;
 /**********************************************************************************************
  * LSAL kernel code to be implemented in Hardware
  * Inputs:
- *          string1 is the query[N]
- *          string2 is the database[M]
- *          input sizes N, M
+ *          string1 is the query[n]
+ *          string2 is the database[m]
+ *          input sizes n, m
  * Outputs:
  *           max_index is the location of the highest similiarity score 
  *           similarity and direction matrices. Note that these two matrices are initialized with zeros.
  **********************************************************************************************/
+//extern "C" {
 
 void compute_matrices (
-	char string1[N], char string2[M], int max_index[0], int similarity_matrix[N*M], short direction_matrix[N*M], int N, int M) {
+	char string1[N], char string2[M+2*(N-1)], int max_index[0], int similarity_matrix[(M+2*(N-1))*N], short direction_matrix[(M+2*(N-1))*N], int n, int m) {
 
     int index = 0;
     int i = 0;
@@ -34,24 +35,33 @@ void compute_matrices (
 	int val;
 	int dir;
 
-    // Following values are used for the N, W, and NW values wrt. similarity_matrix[i]
+    // Following values are used for the n, W, and NW values wrt. similarity_matrix[i]
     int north = 0;
 	int west = 0;
 	int northwest = 0;
 	int max_value = 0;
+	int current_diag[N] = {0};
+	int up_diag[N] = {0};
+	int upper_diag[N] = {0};
 
 	//Here the real computation starts. Place your code whenever is required. 
 
+diag_for:
+	for(int i = 0; i < M+2*(N-1); i++) {
+		
+
+	}
+/*
 	// Scan the first row of the array.
 first_row_scan:
-	for(int i = 1; i < N; i++) {
+	for(int i = 1; i < n; i++) {
 			val = 0;
 			dir = CENTER;
 
 			west = similarity_matrix[i - 1];
 
 			//1st case.
-			test_val = northwest + (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
+			test_val = (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
 				if(test_val > 0){
 					val = test_val;
 					dir = NORTH_WEST;
@@ -76,12 +86,12 @@ first_row_scan:
 				}
 	}
 
-	// Scan the N*M array row-wise starting from the second row.
+	// Scan the n*m array row-wise starting from the second row.
 second_row_scan:
-   for(index = N; index < N*M; index++) {
+   for(index = n; index < n*m; index++) {
 
-   	  i = index % N; // column index
-	  j = index / N; // row index
+   	  i = index % n; // column index
+	  j = index / n; // row index
 	  val = 0;
 	  dir = CENTER;
 
@@ -90,7 +100,7 @@ second_row_scan:
 			west = 0;
 			northwest = 0;
 		} else {
-			northwest = similarity_matrix[index - N - 1];
+			northwest = similarity_matrix[index - n - 1];
 			west = similarity_matrix[index - 1];
 		}
 
@@ -99,7 +109,7 @@ second_row_scan:
 			north = 0;
 		}
 		else {
-			north = similarity_matrix[index - N]; 
+			north = similarity_matrix[index - n]; 
 		}
 		
 		//1st case.
@@ -135,6 +145,9 @@ second_row_scan:
 
 
 	}   // end of for-loop
+*/
 }  // end of function
 
 /************************************************************************/
+
+//}

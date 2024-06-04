@@ -1772,14 +1772,14 @@
                 <hwRef type="register" interface="s_axi_control" name="direction_matrix_2" usage="address" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="N" index="5" direction="in" srcType="int" srcSize="32">
+        <Arg ArgName="n" index="5" direction="in" srcType="int" srcSize="32">
             <hwRefs>
-                <hwRef type="register" interface="s_axi_control" name="N" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="n" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="M" index="6" direction="in" srcType="int" srcSize="32">
+        <Arg ArgName="m" index="6" direction="in" srcType="int" srcSize="32">
             <hwRefs>
-                <hwRef type="register" interface="s_axi_control" name="M" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="m" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
     </Args>
@@ -1985,14 +1985,14 @@
                         <field offset="0" width="32" name="direction_matrix" access="W" resetValue="0" description="Bit 63 to 32 of direction_matrix"/>
                     </fields>
                 </register>
-                <register offset="0x4c" name="N" access="W" resetValue="0x0" description="Data signal of N" range="32">
+                <register offset="0x4c" name="n" access="W" resetValue="0x0" description="Data signal of n" range="32">
                     <fields>
-                        <field offset="0" width="32" name="N" access="W" resetValue="0" description="Bit 31 to 0 of N"/>
+                        <field offset="0" width="32" name="n" access="W" resetValue="0" description="Bit 31 to 0 of n"/>
                     </fields>
                 </register>
-                <register offset="0x54" name="M" access="W" resetValue="0x0" description="Data signal of M" range="32">
+                <register offset="0x54" name="m" access="W" resetValue="0x0" description="Data signal of m" range="32">
                     <fields>
-                        <field offset="0" width="32" name="M" access="W" resetValue="0" description="Bit 31 to 0 of M"/>
+                        <field offset="0" width="32" name="m" access="W" resetValue="0" description="Bit 31 to 0 of m"/>
                     </fields>
                 </register>
             </registers>
@@ -2036,8 +2036,8 @@
                     <column name="max_index">inout, int*</column>
                     <column name="similarity_matrix">inout, int*</column>
                     <column name="direction_matrix">inout, short*</column>
-                    <column name="N">in, int</column>
-                    <column name="M">in, int</column>
+                    <column name="n">in, int</column>
+                    <column name="m">in, int</column>
                 </table>
             </item>
             <item name="SW-to-HW Mapping">
@@ -2058,8 +2058,8 @@
                     <column name="direction_matrix">m_axi_gmem, interface, , </column>
                     <column name="direction_matrix">s_axi_control direction_matrix_1, register, offset, offset=0x40 range=32</column>
                     <column name="direction_matrix">s_axi_control direction_matrix_2, register, offset, offset=0x44 range=32</column>
-                    <column name="N">s_axi_control N, register, , offset=0x4c range=32</column>
-                    <column name="M">s_axi_control M, register, , offset=0x54 range=32</column>
+                    <column name="n">s_axi_control n, register, , offset=0x4c range=32</column>
+                    <column name="m">s_axi_control m, register, , offset=0x54 range=32</column>
                 </table>
             </item>
         </section>
@@ -2069,19 +2069,19 @@
             <item name="Burst Missed">
                 <table>
                     <keys size="5">HW Interface, Variable, Problem, Resolution, Location</keys>
-                    <column name="m_axi_gmem">similarity_matrix, Access northwest is in the conditional branch, 214-232, hw_baseline/Vitis_HLS/lsal.cpp:105:16</column>
-                    <column name="m_axi_gmem">similarity_matrix, Access west is in the conditional branch, 214-232, hw_baseline/Vitis_HLS/lsal.cpp:106:11</column>
-                    <column name="m_axi_gmem">similarity_matrix, Access north is in the conditional branch, 214-232, hw_baseline/Vitis_HLS/lsal.cpp:114:12</column>
-                    <column name="m_axi_gmem">string1, Could not analyze pattern, 214-229, hw_baseline/Vitis_HLS/lsal.cpp:118:19</column>
-                    <column name="m_axi_gmem">string2, Could not analyze pattern, 214-229, hw_baseline/Vitis_HLS/lsal.cpp:118:33</column>
-                    <column name="m_axi_gmem">max_index, Access store is in the conditional branch, 214-232, hw_baseline/Vitis_HLS/lsal.cpp:145:15</column>
-                    <column name="m_axi_gmem">similarity_matrix, Access is clobbered by northwest, 214-231, hw_baseline/Vitis_HLS/lsal.cpp:140:28</column>
-                    <column name="m_axi_gmem">max_index, Access store is in the conditional branch, 214-232, hw_baseline/Vitis_HLS/lsal.cpp:87:17</column>
-                    <column name="m_axi_gmem">direction_matrix, Could not widen since Type i16 size is greater than or equal to alignment 2(bytes), , hw_baseline/Vitis_HLS/lsal.cpp:93:4</column>
-                    <column name="m_axi_gmem">string1, Could not widen since Type i8 size is greater than or equal to alignment 1(bytes), , hw_baseline/Vitis_HLS/lsal.cpp:59:2</column>
-                    <column name="m_axi_gmem">similarity_matrix, Could not widen since Type i32 size is greater than or equal to alignment 4(bytes), , hw_baseline/Vitis_HLS/lsal.cpp:59:2</column>
-                    <column name="m_axi_gmem">direction_matrix, Could not widen since Type i16 size is greater than or equal to alignment 2(bytes), , hw_baseline/Vitis_HLS/lsal.cpp:59:2</column>
-                    <column name="m_axi_gmem">, Inferred burst reverted due to conflict with call, 214-224, hw_baseline/Vitis_HLS/lsal.cpp:59:2</column>
+                    <column name="m_axi_gmem">similarity_matrix, Access northwest is in the conditional branch, 214-232, hw_baseline/Vitis_HLS/lsal.cpp:94:16</column>
+                    <column name="m_axi_gmem">similarity_matrix, Access west is in the conditional branch, 214-232, hw_baseline/Vitis_HLS/lsal.cpp:95:11</column>
+                    <column name="m_axi_gmem">similarity_matrix, Access north is in the conditional branch, 214-232, hw_baseline/Vitis_HLS/lsal.cpp:103:12</column>
+                    <column name="m_axi_gmem">string1, Could not analyze pattern, 214-229, hw_baseline/Vitis_HLS/lsal.cpp:107:19</column>
+                    <column name="m_axi_gmem">string2, Could not analyze pattern, 214-229, hw_baseline/Vitis_HLS/lsal.cpp:107:33</column>
+                    <column name="m_axi_gmem">max_index, Access store is in the conditional branch, 214-232, hw_baseline/Vitis_HLS/lsal.cpp:134:15</column>
+                    <column name="m_axi_gmem">similarity_matrix, Access is clobbered by northwest, 214-231, hw_baseline/Vitis_HLS/lsal.cpp:129:28</column>
+                    <column name="m_axi_gmem">max_index, Access store is in the conditional branch, 214-232, hw_baseline/Vitis_HLS/lsal.cpp:76:17</column>
+                    <column name="m_axi_gmem">direction_matrix, Could not widen since Type i16 size is greater than or equal to alignment 2(bytes), , hw_baseline/Vitis_HLS/lsal.cpp:82:4</column>
+                    <column name="m_axi_gmem">string1, Could not widen since Type i8 size is greater than or equal to alignment 1(bytes), , hw_baseline/Vitis_HLS/lsal.cpp:48:2</column>
+                    <column name="m_axi_gmem">similarity_matrix, Could not widen since Type i32 size is greater than or equal to alignment 4(bytes), , hw_baseline/Vitis_HLS/lsal.cpp:48:2</column>
+                    <column name="m_axi_gmem">direction_matrix, Could not widen since Type i16 size is greater than or equal to alignment 2(bytes), , hw_baseline/Vitis_HLS/lsal.cpp:48:2</column>
+                    <column name="m_axi_gmem">, Inferred burst reverted due to conflict with call, 214-224, hw_baseline/Vitis_HLS/lsal.cpp:48:2</column>
                 </table>
             </item>
         </section>

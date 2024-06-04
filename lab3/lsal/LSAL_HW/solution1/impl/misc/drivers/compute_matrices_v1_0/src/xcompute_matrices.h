@@ -98,10 +98,10 @@ void XCompute_matrices_Set_similarity_matrix(XCompute_matrices *InstancePtr, u64
 u64 XCompute_matrices_Get_similarity_matrix(XCompute_matrices *InstancePtr);
 void XCompute_matrices_Set_direction_matrix(XCompute_matrices *InstancePtr, u64 Data);
 u64 XCompute_matrices_Get_direction_matrix(XCompute_matrices *InstancePtr);
-void XCompute_matrices_Set_N(XCompute_matrices *InstancePtr, u32 Data);
-u32 XCompute_matrices_Get_N(XCompute_matrices *InstancePtr);
-void XCompute_matrices_Set_M(XCompute_matrices *InstancePtr, u32 Data);
-u32 XCompute_matrices_Get_M(XCompute_matrices *InstancePtr);
+void XCompute_matrices_Set_n(XCompute_matrices *InstancePtr, u32 Data);
+u32 XCompute_matrices_Get_n(XCompute_matrices *InstancePtr);
+void XCompute_matrices_Set_m(XCompute_matrices *InstancePtr, u32 Data);
+u32 XCompute_matrices_Get_m(XCompute_matrices *InstancePtr);
 
 void XCompute_matrices_InterruptGlobalEnable(XCompute_matrices *InstancePtr);
 void XCompute_matrices_InterruptGlobalDisable(XCompute_matrices *InstancePtr);

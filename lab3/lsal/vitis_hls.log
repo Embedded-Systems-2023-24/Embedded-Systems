@@ -1,6 +1,6 @@
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'iathanasi' on host 'localhost' (Linux_x86_64 version 5.14.21-150400.24.97-default) on Thu May 30 11:06:38 EEST 2024
+INFO: [HLS 200-10] For user 'iathanasi' on host 'localhost' (Linux_x86_64 version 5.14.21-150400.24.97-default) on Tue Jun 04 11:05:11 EEST 2024
 INFO: [HLS 200-10] On os "openSUSE Leap 15.4"
 INFO: [HLS 200-10] In directory '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal'
 Sourcing Tcl script '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/LSAL_HW/solution1/csim.tcl'
@@ -33,12 +33,26 @@ INFO: [HLS 200-1510] Running: set_directive_pipeline -II 0 compute_matrices/firs
 INFO: [HLS 200-1510] Running: csim_design -argv 32 32 -quiet 
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../hw_baseline/Vitis_HLS/lsal.cpp in debug mode
-   Generating csim.exe
+make: 'csim.exe' is up to date.
 Starting Local Alignment Code 
- max index is in position (29, 28) 
+Database: PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPGTCTGCCCATGGCTCCTCATGGTAGTCGCCGTPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+Query: GTGGGATGTCTCTCGGCCACAAAGATAAGACG
+N=32, M=32
+ max index is in position (0, 0) 
 both ended
-computation ended!- RESULTS CORRECT 
-INFO: [SIM 211-1] CSim done with 0 errors.
+Error, mismatch in the results, i + 992, SW: 2, HW 0 
+@E Simulation failed: Function 'main' returns nonzero value '1'.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.5 seconds. CPU system time: 0.11 seconds. Elapsed time: 0.82 seconds; current allocated memory: 178.155 MB.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.26 seconds. CPU system time: 0.1 seconds. Elapsed time: 0.27 seconds; current allocated memory: 162.156 MB.
+4
+    while executing
+"source /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/LSAL_HW/solution1/csim.tcl"
+    invoked from within
+"hls::main /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/LSAL_HW/solution1/csim.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$newargs"
+    (procedure "hls_proc" line 16)
+    invoked from within
+"hls_proc [info nameofexecutable] $argv"

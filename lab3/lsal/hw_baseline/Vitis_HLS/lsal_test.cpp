@@ -23,7 +23,7 @@ const short NORTH_WEST = 2;
 const short WEST = 3;
 
 void compute_matrices (
-	char string1[N], char string2[M], int max_index[0], int similarity_matrix[N*M], short direction_matrix[N*M], int N, int M);
+	char string1[N], char string2[M+2*(N-1)], int max_index[0], int similarity_matrix[(M+2*(N-1))*N], short direction_matrix[(M+2*(N-1))*N], int n, int m);
 
 void compute_matrices_sw(
 	char *string1, char *string2,
@@ -173,6 +173,18 @@ void fillRandom(char* string, int dimension) {
 
 }
 
+void fillRandomDatabase(char* string, int N, int M) {
+	fillRandom(string, M+2*(N-1));
+
+	for (int i =0; i<N-1; i++) {
+		string[i] = 'P';
+	}
+
+	for (int i =M+N-1; i<M+2*(N-1); i++) {
+		string[i] = 'P';
+	}
+}
+
 /* ******************************************************************/
 int main(int argc, char** argv) {
 
@@ -189,17 +201,17 @@ int main(int argc, char** argv) {
     int M = atoi(argv[2]);
 
     char *query = (char*) malloc(sizeof(char) * N);
-	char *database = (char*) malloc(sizeof(char) * M);
-	int *similarity_matrix = (int*) malloc(sizeof(int) * N * M);
-	short *direction_matrix = (short*) malloc(sizeof(short) * N * M);
+	char *database = (char*) malloc(sizeof(char) * M+2*(N-1));
+	int *similarity_matrix = (int*) malloc(sizeof(int) * (M+2*(N-1))*N);
+	short *direction_matrix = (short*) malloc(sizeof(short) * (M+2*(N-1))*N);
 	int *max_index = (int *) malloc(sizeof(int));
 
 /* Create the two input strings by calling a random number generator */
 	fillRandom(query, N);
-	fillRandom(database, M);
+	fillRandomDatabase(database, N, M);
 
-	memset(similarity_matrix, 0, sizeof(int) * N * M);
-	memset(direction_matrix, 0, sizeof(short) * N * M);
+	memset(similarity_matrix, 0, sizeof(int) * (M+2*(N-1))*N);
+	memset(direction_matrix, 0, sizeof(short) * (M+2*(N-1))*N);
 
 	compute_matrices(query, database, max_index, similarity_matrix, direction_matrix, N, M);
 
