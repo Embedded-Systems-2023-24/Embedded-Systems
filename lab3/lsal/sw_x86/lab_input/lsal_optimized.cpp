@@ -161,7 +161,6 @@ void compute_matrices(
 				max_value = val;
 				*max_index = index;
 			}
-
 	  }
 	}   // end of for-loop
 }  // end of function

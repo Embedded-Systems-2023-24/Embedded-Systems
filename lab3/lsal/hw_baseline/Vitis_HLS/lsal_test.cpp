@@ -185,6 +185,16 @@ void fillRandomDatabase(char* string, int N, int M) {
 	}
 }
 
+void fixOutput(short *direction_matrix, short *out) {
+	out = ( short *) malloc(sizeof(short) * M*N);
+
+	for(int i =0; i < N; i++) {
+		for (int j =0; j < i+1; j++) {
+			out[i*N+j] = direction_matrix[(i-j)*N+j];
+		}
+	}
+}
+
 /* ******************************************************************/
 int main(int argc, char** argv) {
 

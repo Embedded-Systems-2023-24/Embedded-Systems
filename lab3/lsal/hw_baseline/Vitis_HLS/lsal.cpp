@@ -1,3 +1,6 @@
+#include <string.h>
+//#define index j+i*N
+
 const short N = 256;
 const short M = 2048;
 
@@ -27,7 +30,6 @@ const short WEST = 3;
 void compute_matrices (
 	char string1[N], char string2[M+2*(N-1)], int max_index[0], int similarity_matrix[(M+2*(N-1))*N], short direction_matrix[(M+2*(N-1))*N], int n, int m) {
 
-    int index = 0;
     int i = 0;
 	int j = 0;
 	int match;
@@ -36,6 +38,7 @@ void compute_matrices (
 	int dir;
 
     // Following values are used for the n, W, and NW values wrt. similarity_matrix[i]
+	int index = 0;
     int north = 0;
 	int west = 0;
 	int northwest = 0;
@@ -47,9 +50,57 @@ void compute_matrices (
 	//Here the real computation starts. Place your code whenever is required. 
 
 diag_for:
-	for(int i = 0; i < M+2*(N-1); i++) {
-		
+	for(int i = 0; i < M+(N-1); i++) {
+		col_for:
+		for(int j = N-1; j > -1; j--) {
+			if (string2[i-(j-(N-1))] == 'P') {
+				current_diag[j] = 0;
+			}
+			else {
 
+				index += N-1;
+				val = 0;
+				dir = CENTER;
+
+				northwest = upper_diag[j-1];
+				west = up_diag[j-1];
+
+				//1st case.
+				test_val = northwest + (( string1[j] == string2[i-(j-(N-1))] ) ? MATCH : MISS_MATCH);
+				if(test_val > 0){
+					val = test_val;
+					dir = NORTH_WEST;
+				}
+		
+				north = up_diag[j];
+				//2nd case.
+				test_val = north + GAP_i;
+				if(test_val > val){
+					val = test_val;
+					dir = NORTH;
+				}
+
+				//3rd case.
+				test_val = west + GAP_d;
+				if(test_val > val){
+					val = test_val;
+					dir = WEST;
+				}
+
+				//Save results.
+				current_diag[j] = val;
+				direction_matrix[index] = dir;
+
+				if (val > max_value) {
+					max_value = val;
+					*max_index = index;
+				}
+			}
+	  	}
+			
+		memcpy( &(similarity_matrix[i*N]), current_diag, sizeof(int)*N );
+		memcpy( upper_diag, up_diag, sizeof(int)*N );
+		memcpy( up_diag, current_diag, sizeof(int)*N );
 	}
 /*
 	// Scan the first row of the array.

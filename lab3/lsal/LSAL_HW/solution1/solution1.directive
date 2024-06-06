@@ -15,6 +15,11 @@
                 <option name="II" value="0"/>
             </pragma>
         </directive>
+        <directive functionName="compute_matrices" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="compute_matrices"/>
+            </pragma>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 
