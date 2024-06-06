@@ -16,8 +16,8 @@
 #include <CL/opencl.h>
 #include <CL/cl_ext.h>
 
-// #define N 256
-// #define M 2048
+const short N = 256;
+const short M = 2048;
 
 const short GAP_i = -1;
 const short GAP_d = -1;
@@ -33,11 +33,10 @@ const short WEST = 3;
   * It will be used to verify the correct functionality of the HW implementation.  
   * Its usefulness is mainly when you perform software emulation (sw_emu).
   ***************************************************************************************/
-void compute_matrices_sw(
-	char *string1, char *string2,
-	int *max_index, int *similarity_matrix, short *direction_matrix, int N, int M)
-{
-	int index = 0;
+void compute_matrices_sw (
+	char string1[N], char string2[M], int max_index[0], int similarity_matrix[N*M], short direction_matrix[N*M], int n, int m) {
+
+    int index = 0;
     int i = 0;
 	int j = 0;
 	int match;
@@ -45,7 +44,7 @@ void compute_matrices_sw(
 	int val;
 	int dir;
 
-    // Following values are used for the N, W, and NW values wrt. similarity_matrix[i]
+    // Following values are used for the n, W, and NW values wrt. similarity_matrix[i]
     int north = 0;
 	int west = 0;
 	int northwest = 0;
@@ -54,7 +53,8 @@ void compute_matrices_sw(
 	//Here the real computation starts. Place your code whenever is required. 
 
 	// Scan the first row of the array.
-		for(int i = 1; i < N; i++) {
+first_row_scan:
+	for(int i = 1; i < n; i++) {
 			val = 0;
 			dir = CENTER;
 
@@ -86,11 +86,12 @@ void compute_matrices_sw(
 				}
 	}
 
-	// Scan the N*M array row-wise starting from the second row.
-   for(index = N; index < N*M; index++) {
+	// Scan the n*m array row-wise starting from the second row.
+second_row_scan:
+   for(index = n; index < n*m; index++) {
 
-   	  i = index % N; // column index
-	  j = index / N; // row index
+   	  i = index % n; // column index
+	  j = index / n; // row index
 	  val = 0;
 	  dir = CENTER;
 
@@ -99,7 +100,7 @@ void compute_matrices_sw(
 			west = 0;
 			northwest = 0;
 		} else {
-			northwest = similarity_matrix[index - N - 1];
+			northwest = similarity_matrix[index - n - 1];
 			west = similarity_matrix[index - 1];
 		}
 
@@ -108,7 +109,7 @@ void compute_matrices_sw(
 			north = 0;
 		}
 		else {
-			north = similarity_matrix[index - N]; 
+			north = similarity_matrix[index - n]; 
 		}
 		
 		//1st case.
@@ -216,6 +217,36 @@ int load_file_to_memory(const char *filename, char **result) {
 	(*result)[size] = 0;
 	return size;
 }
+
+/*
+void print_direction_matrix (short *direction_matrix, int N, int M) {
+
+	for (int j=0; j < M; j++) {
+		for (int i=0; i < N; i++) {
+			if (direction_matrix[i+j*N] == CENTER)
+				printf(" C ");
+			else if (direction_matrix[i+j*N] == NORTH_WEST)
+				printf("NW ");
+			else if (direction_matrix[i+j*N] == NORTH)
+				printf(" N ");
+			else
+				printf(" W ");
+		}
+		printf("\n");
+	}
+
+}
+void print_similarity_matrix (int *similarity_matrix, int N, int M) {
+
+	for (int j=0; j < M; j++) {
+		for (int i=0; i < N; i++) {
+			printf("%d ", similarity_matrix[i+j*N]);
+		}
+		printf("\n");
+	}
+
+}
+*/
 
 /*******************************************************************************
  *   Host program running on the Arm CPU. 
@@ -605,6 +636,7 @@ int main(int argc, char** argv) {
 
 	for(cl_uint i = 0; i < matrix_size; i++){
 		similarity_matrix_sw[i] = 0;
+		direction_matrix_sw[i]  = 0;
 	}
 	compute_matrices_sw(query, database, max_index_sw, similarity_matrix_sw, direction_matrix_sw, N, M);
 
@@ -619,15 +651,26 @@ int main(int argc, char** argv) {
 		}
 	}
 
+/* DEBUG
+	printf("\n******** Simularity Matrix SW ********\n");
+	print_similarity_matrix(similarity_matrix_sw, N, M);
+	printf("\n******** Simularity Matrix ********\n");
+	print_similarity_matrix(similarity_matrix, N, M);
+
+	printf("\n******** Direction Matrix SW ********\n");
+	print_direction_matrix(direction_matrix, N, M);
+	printf("\n******** Direction Matrix ********\n");
+	print_direction_matrix(direction_matrix, N, M);
+*/
 	printf("computation ended!- RESULTS CORRECT \n");
 
 	/**************************************************************
 	 * Clean up everything and, then, shutdown 
 	 **************************************************************/
     
-   free(query);
-   free(database);
-   free(similarity_matrix);
+    free(query);
+    free(database);
+    free(similarity_matrix);
 	free(direction_matrix);
 	free(max_index);
 	free(similarity_matrix_sw);

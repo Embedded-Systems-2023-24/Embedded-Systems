@@ -9,3 +9,12 @@ vivado.log
 lsal_sw_arm
 lsal_sw_x86
 lsal_debug
+_*/
+.*/
+package.*/
+lsal
+lsal.xclbin
+build_dir*
+sd_card*
+package.*
+_x* *xclbin.run_summary *xclbin.package_summary qemu-memory-_* emulation _vimage pl* start_simulation.sh *.xclbin

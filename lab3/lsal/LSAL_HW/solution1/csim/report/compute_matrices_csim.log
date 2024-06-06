@@ -1,0 +1,12 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+make: 'csim.exe' is up to date.
+Starting Local Alignment Code 
+Database: PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPGTCTGCCCATGGCTCCTCATGGTAGTCGCCGTPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+Query: GTGGGATGTCTCTCGGCCACAAAGATAAGACG
+N=32, M=32
+ max index is in position (0, 0) 
+both ended
+Error, mismatch in the results, i + 992, SW: 2, HW 0 
+ERR: [SIM 100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 3] *************** CSIM finish ***************

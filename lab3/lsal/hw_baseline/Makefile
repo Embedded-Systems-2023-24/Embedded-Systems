@@ -50,6 +50,8 @@ help::
 	$(ECHO) "      By default, HOST_ARCH=x86. HOST_ARCH and EDGE_COMMON_SW is required for SoC shells"
 	$(ECHO) ""
 
+export PATH := /usr/sbin:$(PATH)
+
 ############################## Setting up Project Variables ##############################
 # Points to top directory 
 MK_PATH := $(abspath $(lastword $(MAKEFILE_LIST)))

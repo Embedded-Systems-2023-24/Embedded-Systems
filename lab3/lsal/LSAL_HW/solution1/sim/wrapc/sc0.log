@@ -1,0 +1,6 @@
+   Build using "/opt/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/bin/g++"
+   Compiling lsal_test.cpp_pre.cpp.tb.cpp
+   Compiling lsal.cpp_pre.cpp.tb.cpp
+   Compiling apatb_compute_matrices.cpp
+   Compiling apatb_compute_matrices_ir.ll
+   Generating cosim.tv.exe
