@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdio.h>
 //#define index j+i*N
 
 const short N = 256;
@@ -9,6 +10,7 @@ const short GAP_d = -1;
 const short MATCH = 2;
 const short MISS_MATCH = -1;
 const short CENTER = 0;
+const short P = -1;
 const short NORTH = 1;
 const short NORTH_WEST = 2;
 const short WEST = 3;
@@ -48,20 +50,21 @@ void compute_matrices (
 	int upper_diag[N] = {0};
 
 	//Here the real computation starts. Place your code whenever is required. 
-
   diag_for:
 	for(int i = 0; i < m+(n-1); i++) {
+		index = i*n;
 	  col_for:
 		for(int j = n-1; j > -1; j--) {
+			index += n-1;
+			
+			val = 0;
+			//printf("databse: %c, row: %d\n", string2[i-(j-(n-1))], i-(j-(n-1)));
 			if (string2[i-(j-(n-1))] == 'P') {
-				current_diag[j] = 0;
+				dir = P;
+				//printf("FAIL\n");
 			}
 			else {
-
-				index += n-1;
-				val = 0;
 				dir = CENTER;
-
 				northwest = upper_diag[j-1];
 				west = up_diag[j-1];
 
@@ -87,15 +90,17 @@ void compute_matrices (
 					dir = WEST;
 				}
 
-				//Save results.
-				current_diag[j] = val;
-				direction_matrix[index] = dir;
-
 				if (val > max_value) {
 					max_value = val;
 					*max_index = index;
 				}
 			}
+			
+			//Save results.
+			current_diag[j] = val;
+			direction_matrix[index] = dir;
+
+			//printf("index: %d, x: %d, y: %d\n", index, index / n, index % n);
 	  	}
 			
 		memcpy( &(similarity_matrix[i*n]), current_diag, sizeof(int)*n );
