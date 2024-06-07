@@ -59,6 +59,8 @@
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include"/>
                                     									
+                                    <listOptionValue builtIn="false" value="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal"/>
+                                    									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
                                     								
                                 </option>
@@ -92,6 +94,8 @@
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
                                     								
@@ -257,6 +261,8 @@
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include"/>
                                     									
+                                    <listOptionValue builtIn="false" value="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal"/>
+                                    									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
                                     								
                                 </option>
@@ -280,6 +286,8 @@
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/Xilinx/Vitis_HLS/2020.2/include/ap_sysc"/>
                                     								

@@ -1,8 +1,171 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling ../../../../hw_baseline/Vitis_HLS/lsal_test.cpp in debug mode
-   Compiling ../../../../hw_baseline/Vitis_HLS/lsal.cpp in debug mode
    Generating csim.exe
 Starting Local Alignment Code 
-ERR: [SIM 100] CSim failed with errors.
+ max index is in position (63, 0) 
+Results
+ val:0, dir:0
+Results
+ val:2, dir:2
+Results
+ val:1, dir:2
+Results
+ val:0, dir:0
+Results
+ val:0, dir:0
+Results
+ val:0, dir:0
+Results
+ val:2, dir:2
+Results
+ val:4, dir:2
+Results
+ val:2, dir:2
+Results
+ val:1, dir:1
+Results
+ val:4, dir:2
+Results
+ val:3, dir:2
+Results
+ val:2, dir:3
+Results
+ val:1, dir:2
+Results
+ val:1, dir:1
+Results
+ val:3, dir:1
+Results
+ val:2, dir:2
+Results
+ val:1, dir:2
+Results
+ val:3, dir:2
+Results
+ val:6, dir:2
+Results
+ val:5, dir:6
+Results
+ val:4, dir:5
+Results
+ val:3, dir:4
+Results
+ val:2, dir:1
+Results
+ val:1, dir:1
+Results
+ val:4, dir:2
+Results
+ val:3, dir:4
+Results
+ val:5, dir:1
+Results
+ val:5, dir:2
+Results
+ val:4, dir:2
+Results
+ val:6, dir:2
+Results
+ val:5, dir:2
+Results
+ val:0, dir:0
+Results
+ val:3, dir:1
+Results
+ val:3, dir:2
+Results
+ val:4, dir:1
+Results
+ val:7, dir:2
+Results
+ val:6, dir:7
+Results
+ val:5, dir:1
+Results
+ val:5, dir:2
+Results
+ val:0, dir:0
+Results
+ val:2, dir:1
+Results
+ val:2, dir:2
+Results
+ val:3, dir:1
+Results
+ val:6, dir:1
+Results
+ val:9, dir:2
+Results
+ val:8, dir:9
+Results
+ val:7, dir:8
+Results
+ val:2, dir:2
+Results
+ val:1, dir:1
+Results
+ val:4, dir:2
+Results
+ val:4, dir:2
+Results
+ val:5, dir:1
+Results
+ val:8, dir:1
+Results
+ val:8, dir:2
+Results
+ val:7, dir:2
+Results
+ val:1, dir:1
+Results
+ val:1, dir:2
+Results
+ val:3, dir:1
+Results
+ val:3, dir:2
+Results
+ val:6, dir:2
+Results
+ val:7, dir:1
+Results
+ val:7, dir:2
+Results
+ val:7, dir:2
+both ended
+
+******** Direction Matrix FPGA prin thn allagh********
+ C  C  C  C  C  C  C NW 
+ C  C  C  C  C  C  W  C 
+ C  C  C  C  C  N  C  C 
+ C  C  C  C NW  C  C  C 
+ C  C  C NW  C  C  C  C 
+ C  C  C  C  C  C  C  C 
+ C NW  C  C  C  C  C  C 
+ N  C  C  C  C  C  C  C 
+ C  C  C  C  C  C  C  C 
+
+******** Direction Matrix HW meta thn allagh ********
+ C  C  C  C  C  C  C  C 
+ C  C  C NW  C  C  C  C 
+ C  C  C  C  C  C  C  C 
+ C  C  C  C  C  C  C  C 
+ C  C  C  C  C  C  C  C 
+ C  C  C  C  C  C  C  C 
+ C  C  C  C  C  C  C  C 
+ N NW  C NW NW  N  W NW 
+ C  C  C  N  C  C  C  C 
+
+******** Direction Matrix SW ********
+ C NW  W  C  C  C NW NW 
+ C NW NW  C  C  C NW NW 
+NW  N NW NW  W NW  N  N 
+NW NW NW NW  W  W  W  N 
+ N NW  W  N NW NW NW NW 
+ C  N NW  N NW  W  N NW 
+ C  N NW  N  N NW  W  W 
+NW  N NW NW  N  N NW NW 
+ N NW  N NW NW  N NW NW 
+Error, mismatch in the results, i + 1, SW: 2, HW 0 
+ERR: [SIM 100] 'csim_design' failed: nonzero return value.
 INFO: [SIM 3] *************** CSIM finish ***************

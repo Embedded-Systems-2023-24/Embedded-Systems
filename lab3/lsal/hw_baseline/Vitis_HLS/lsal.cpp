@@ -49,16 +49,16 @@ void compute_matrices (
 
 	//Here the real computation starts. Place your code whenever is required. 
 
-diag_for:
-	for(int i = 0; i < M+(N-1); i++) {
-		col_for:
-		for(int j = N-1; j > -1; j--) {
-			if (string2[i-(j-(N-1))] == 'P') {
+  diag_for:
+	for(int i = 0; i < m+(n-1); i++) {
+	  col_for:
+		for(int j = n-1; j > -1; j--) {
+			if (string2[i-(j-(n-1))] == 'P') {
 				current_diag[j] = 0;
 			}
 			else {
 
-				index += N-1;
+				index += n-1;
 				val = 0;
 				dir = CENTER;
 
@@ -66,7 +66,7 @@ diag_for:
 				west = up_diag[j-1];
 
 				//1st case.
-				test_val = northwest + (( string1[j] == string2[i-(j-(N-1))] ) ? MATCH : MISS_MATCH);
+				test_val = northwest + (( string1[j] == string2[i-(j-(n-1))] ) ? MATCH : MISS_MATCH);
 				if(test_val > 0){
 					val = test_val;
 					dir = NORTH_WEST;
@@ -98,105 +98,10 @@ diag_for:
 			}
 	  	}
 			
-		memcpy( &(similarity_matrix[i*N]), current_diag, sizeof(int)*N );
-		memcpy( upper_diag, up_diag, sizeof(int)*N );
-		memcpy( up_diag, current_diag, sizeof(int)*N );
+		memcpy( &(similarity_matrix[i*n]), current_diag, sizeof(int)*n );
+		memcpy( upper_diag, up_diag, sizeof(int)*n );
+		memcpy( up_diag, current_diag, sizeof(int)*n );
 	}
-/*
-	// Scan the first row of the array.
-first_row_scan:
-	for(int i = 1; i < n; i++) {
-			val = 0;
-			dir = CENTER;
-
-			west = similarity_matrix[i - 1];
-
-			//1st case.
-			test_val = (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
-				if(test_val > 0){
-					val = test_val;
-					dir = NORTH_WEST;
-				}
-		
-				north = 0;
-
-				//3rd case.
-				test_val = west + GAP_d;
-				if(test_val > val){
-					val = test_val;
-					dir = WEST;
-				}
-
-				//Save results.
-				similarity_matrix[i] = val;
-				direction_matrix[i] = dir;
-
-				if (val > max_value) {
-					max_value = val;
-					*max_index = i;
-				}
-	}
-
-	// Scan the n*m array row-wise starting from the second row.
-second_row_scan:
-   for(index = n; index < n*m; index++) {
-
-   	  i = index % n; // column index
-	  j = index / n; // row index
-	  val = 0;
-	  dir = CENTER;
-
-   	   if (i == 0) {  
-			// first column. 
-			west = 0;
-			northwest = 0;
-		} else {
-			northwest = similarity_matrix[index - n - 1];
-			west = similarity_matrix[index - 1];
-		}
-
-		if (j == 0) {
-			// first row.
-			north = 0;
-		}
-		else {
-			north = similarity_matrix[index - n]; 
-		}
-		
-		//1st case.
-        match = ( string1[i] == string2[j] ) ? MATCH : MISS_MATCH; 
-		test_val = northwest + match;
-		if(test_val > 0){
-			val = test_val;
-			dir = NORTH_WEST;
-		}
-        
-		//2nd case.
-		test_val = north + GAP_i;
-		if(test_val > val){
-			val = test_val;
-			dir = NORTH;
-		}
-
-		//3rd case.
-		test_val = west + GAP_d;
-		if(test_val > val){
-			val = test_val;
-			dir = west;
-		}
-
-        //Save results.
-		similarity_matrix[index] = val;
-		direction_matrix[index] = dir;
-
-		if (val > max_value) {
-			max_value = val;
-			*max_index = index;
-		}
-
-
-	}   // end of for-loop
-*/
 }  // end of function
 
 /************************************************************************/
