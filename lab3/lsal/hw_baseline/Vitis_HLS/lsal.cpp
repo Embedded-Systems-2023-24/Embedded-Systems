@@ -1,19 +1,20 @@
 #include <string.h>
 #include <stdio.h>
+#include "ap_int.h"
 //#define index j+i*N
 
 const short N = 256;
 const short M = 2048;
 
-const short GAP_i = -1;
-const short GAP_d = -1;
-const short MATCH = 2;
-const short MISS_MATCH = -1;
-const short CENTER = 0;
-const short P = -1;
-const short NORTH = 1;
-const short NORTH_WEST = 2;
-const short WEST = 3;
+#define GAP_i -1
+#define GAP_d -1
+#define MATCH 2
+#define MISS_MATCH -1
+#define CENTER 0
+#define P -1
+#define NORTH 1
+#define NORTH_WEST 2
+#define WEST 3
 // static long int cnt_ops=0;
 // static long int cnt_bytes=0;
 
@@ -37,7 +38,7 @@ void compute_matrices (
 	int match;
 	int test_val;
 	int val;
-	int dir;
+	ap_int<4> dir;
 
     // Following values are used for the n, W, and NW values wrt. similarity_matrix[i]
 	int index = 0;
@@ -50,7 +51,7 @@ void compute_matrices (
 	int current_diag[N] = {0};
 	int up_diag[N] = {0};
 	int upper_diag[N] = {0};
-	short direction_diag[N] = {-2};
+	ap_int<4> direction_diag[N] = {-2};
 
 	memcpy(string1, string1_mem, sizeof(char)*N);
 	memcpy(string2, string2_mem, sizeof(char)*(M+2*(N-1)));
@@ -109,7 +110,10 @@ void compute_matrices (
 		memcpy( &(similarity_matrix[i*n]), current_diag, sizeof(int)*n );
 		memcpy( upper_diag, up_diag, sizeof(int)*n );
 		memcpy( up_diag, current_diag, sizeof(int)*n );
-		memcpy( &(direction_matrix[i*n]), direction_diag, sizeof(int)*n );
+		//memcpy( &(direction_matrix[i*n]), direction_diag, 4*n );
+		for(int j = 0; j<n; j++){
+			direction_matrix[(i*n)+j] = direction_diag[j];
+		}
 	}
 }  // end of function
 

@@ -201,6 +201,7 @@
       "set_directive_top compute_matrices -name compute_matrices",
       "set_directive_pipeline compute_matrices\/second_row_scan -II 0",
       "set_directive_pipeline compute_matrices\/first_row_scan -II 0",
+      "set_directive_pipeline compute_matrices\/diag_for ",
       "set_directive_top compute_matrices -name compute_matrices"
     ],
     "ProfileOption": "0",
@@ -239,6 +240,7 @@
       "impl\/vhdl\/compute_matrices_string1.vhd",
       "impl\/vhdl\/compute_matrices_string2.vhd",
       "impl\/vhdl\/compute_matrices_up_diag.vhd",
+      "impl\/vhdl\/compute_matrices_upper_diag.vhd",
       "impl\/vhdl\/compute_matrices.vhd"
     ],
     "Verilog": [
@@ -250,6 +252,7 @@
       "impl\/verilog\/compute_matrices_string1.v",
       "impl\/verilog\/compute_matrices_string2.v",
       "impl\/verilog\/compute_matrices_up_diag.v",
+      "impl\/verilog\/compute_matrices_upper_diag.v",
       "impl\/verilog\/compute_matrices.v"
     ],
     "SwDriver": [
@@ -1139,41 +1142,43 @@
                 "Name": "col_for",
                 "TripCount": "",
                 "Latency": "",
-                "PipelineII": "1",
-                "PipelineDepth": "76"
+                "PipelineII": "",
+                "PipelineDepthMin": "3",
+                "PipelineDepthMax": "76",
+                "PipelineDepth": "3 ~ 76"
               },
               {
                 "Name": "diag_for.2",
                 "TripCount": "",
-                "LatencyMin": "71",
+                "LatencyMin": "72",
                 "LatencyMax": "?",
-                "Latency": "71 ~ ?",
-                "PipelineII": "1",
+                "Latency": "72 ~ ?",
+                "PipelineII": "",
                 "PipelineDepth": "72"
               },
               {
                 "Name": "diag_for.3",
                 "TripCount": "",
-                "LatencyMin": "1",
+                "LatencyMin": "2",
                 "LatencyMax": "?",
-                "Latency": "1 ~ ?",
-                "PipelineII": "1",
+                "Latency": "2 ~ ?",
+                "PipelineII": "",
                 "PipelineDepth": "2"
               },
               {
                 "Name": "diag_for.4",
                 "TripCount": "",
-                "LatencyMin": "1",
-                "LatencyMax": "511",
-                "Latency": "1 ~ 511",
-                "PipelineII": "1",
+                "LatencyMin": "2",
+                "LatencyMax": "1022",
+                "Latency": "2 ~ 1022",
+                "PipelineII": "",
                 "PipelineDepth": "2"
               },
               {
                 "Name": "diag_for.5",
                 "TripCount": "",
                 "Latency": "",
-                "PipelineII": "1",
+                "PipelineII": "",
                 "PipelineDepth": "71"
               }
             ]
@@ -1186,12 +1191,12 @@
           "DSP": "0",
           "AVAIL_DSP": "220",
           "UTIL_DSP": "0",
-          "FF": "7393",
+          "FF": "6776",
           "AVAIL_FF": "106400",
           "UTIL_FF": "6",
-          "LUT": "13444",
+          "LUT": "14209",
           "AVAIL_LUT": "53200",
-          "UTIL_LUT": "25",
+          "UTIL_LUT": "26",
           "URAM": "0",
           "AVAIL_URAM": "0",
           "UTIL_URAM": "0"
@@ -1201,7 +1206,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2024-06-11 10:14:11 EEST",
+    "Time": "2024-06-11 10:35:32 EEST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.2"
   }

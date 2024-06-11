@@ -277,7 +277,6 @@ int main(int argc, char** argv) {
 	char *database_sw = (char*) malloc(sizeof(char)*M);
 
 	strncpy(database_sw, &(database[N-1]), M);
-	printf("\n database_sw: %s\n query: %s\n\n", database_sw, query);
 
 	for(int i = 0; i < M*N; i++){
 		similarity_matrix_sw[i] = 0;
@@ -290,6 +289,7 @@ int main(int argc, char** argv) {
 
 	#ifdef DEBUG
 
+		// printf("\n database_sw: %s\n query: %s\n\n", database_sw, query);
 		// strcpy(database, "PPPPPPPGGTTGACTAPPPPPPP");
 		// strcpy(query, "TGTTACGG");
 		// char database_sw[] = "GGTTGACTA";

@@ -1293,3 +1293,487 @@ INFO: [HLS 200-112] Total CPU user time: 19.15 seconds. Total CPU system time: 2
 Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 -m_axi_offset slave 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: set_directive_top -name compute_matrices compute_matrices 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -II 0 compute_matrices/second_row_scan 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -II 0 compute_matrices/first_row_scan 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/diag_for 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 162.104 MB.
+INFO: [HLS 200-10] Analyzing design file 'hw_baseline/Vitis_HLS/lsal.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.34 seconds. CPU system time: 0.11 seconds. Elapsed time: 0.42 seconds; current allocated memory: 162.374 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-115] Multiple burst reads of length 4 and bit width 512 in loop 'anonymous'(hw_baseline/Vitis_HLS/lsal.cpp:55:2) has been inferred on port 'gmem' (hw_baseline/Vitis_HLS/lsal.cpp:55:2)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.34 seconds. CPU system time: 0.34 seconds. Elapsed time: 6.19 seconds; current allocated memory: 165.253 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 165.254 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 167.928 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 166.637 MB.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-4' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-5' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-6' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-7' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'col_for' (hw_baseline/Vitis_HLS/lsal.cpp:43) in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-8.2' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-8.3' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-8.4' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-8.5' in function 'compute_matrices' automatically.
+WARNING: [HLS 200-936] Cannot unroll loop 'diag_for' (hw_baseline/Vitis_HLS/lsal.cpp:47) in function 'compute_matrices': cannot completely unroll a loop with a variable trip count.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.63 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.79 seconds; current allocated memory: 188.648 MB.
+WARNING: [XFORM 203-561] Updating loop upper bound from -1 to 511 for loop 'Loop-6-3' in function 'compute_matrices'.
+WARNING: [HLS 200-960] Cannot flatten loop 'diag_for' (hw_baseline/Vitis_HLS/lsal.cpp:47:6) in function 'compute_matrices' more than one sub loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'current_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'direction_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'direction_diag' (hw_baseline/Vitis_HLS/lsal.cpp:53:8)
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string2' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string2' 
+INFO: [HLS 200-472] Inferring partial write operation for 'current_diag' (hw_baseline/Vitis_HLS/lsal.cpp:105:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'direction_diag' (hw_baseline/Vitis_HLS/lsal.cpp:106:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag' 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.83 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.94 seconds; current allocated memory: 184.685 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'compute_matrices' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'up_diag'. Use bind_storage pragma to overwrite if needed.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 2'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 3'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 4'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 5'.
+WARNING: [HLS 200-885] Unable to schedule 'store' operation ('string1_addr_2_write_ln55', hw_baseline/Vitis_HLS/lsal.cpp:55) of variable 'p_cast6', hw_baseline/Vitis_HLS/lsal.cpp:55 on array 'string1' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'string1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 32, Depth = 34, loop 'Loop 5'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 6'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'Loop 6'
+INFO: [SCHED 204-61] Pipelining loop 'col_for'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 76, loop 'col_for'
+INFO: [SCHED 204-61] Pipelining loop 'diag_for.2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 72, loop 'diag_for.2'
+INFO: [SCHED 204-61] Pipelining loop 'diag_for.3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'diag_for.3'
+INFO: [SCHED 204-61] Pipelining loop 'diag_for.4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'diag_for.4'
+INFO: [SCHED 204-61] Pipelining loop 'diag_for.5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 71, loop 'diag_for.5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.5 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.94 seconds; current allocated memory: 187.502 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2.21 seconds. CPU system time: 0.04 seconds. Elapsed time: 2.43 seconds; current allocated memory: 191.914 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/string1_mem' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/string2_mem' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/max_index' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/similarity_matrix' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/n' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/m' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'compute_matrices' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'string1_mem', 'string2_mem', 'max_index', 'similarity_matrix', 'direction_matrix', 'n', 'm' to AXI-Lite port control.
+INFO: [RTGEN 206-104] Estimated max fanout for 'compute_matrices' is 5812 from HDL expression: (1'b0 == ap_block_pp5_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_matrices'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.14 seconds. CPU system time: 0.06 seconds. Elapsed time: 1.63 seconds; current allocated memory: 201.175 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'compute_matrices_mul_32s_32s_32_2_1_Multiplier_0'
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_string1_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_string2_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_current_diag_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_up_diag_ram (RAM_1WnR)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_direction_diag_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 4.75 seconds. CPU system time: 0.29 seconds. Elapsed time: 7.88 seconds; current allocated memory: 221.147 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for compute_matrices.
+INFO: [VLOG 209-307] Generating Verilog RTL for compute_matrices.
+INFO: [HLS 200-1603] Design has MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 16.28 seconds. CPU system time: 0.92 seconds. Elapsed time: 23.99 seconds; current allocated memory: 221.745 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 -m_axi_offset slave 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: set_directive_top -name compute_matrices compute_matrices 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -II 0 compute_matrices/second_row_scan 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -II 0 compute_matrices/first_row_scan 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/diag_for 
+INFO: [HLS 200-1510] Running: set_directive_pipeline compute_matrices/diag_for 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 162.106 MB.
+INFO: [HLS 200-10] Analyzing design file 'hw_baseline/Vitis_HLS/lsal.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.42 seconds. CPU system time: 0.12 seconds. Elapsed time: 0.88 seconds; current allocated memory: 162.392 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-115] Multiple burst reads of length 4 and bit width 512 in loop 'anonymous'(hw_baseline/Vitis_HLS/lsal.cpp:55:2) has been inferred on port 'gmem' (hw_baseline/Vitis_HLS/lsal.cpp:55:2)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.24 seconds. CPU system time: 0.43 seconds. Elapsed time: 6.95 seconds; current allocated memory: 165.255 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 165.256 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 167.934 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 166.639 MB.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-4' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-5' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-6' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-7' in function 'compute_matrices' automatically.
+WARNING: [HLS 200-936] Cannot unroll loop 'diag_for' (hw_baseline/Vitis_HLS/lsal.cpp:47) in function 'compute_matrices': cannot completely unroll a loop with a variable trip count.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.51 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.68 seconds; current allocated memory: 188.662 MB.
+WARNING: [XFORM 203-561] Updating loop upper bound from -1 to 511 for loop 'Loop-6-3' in function 'compute_matrices'.
+WARNING: [HLS 200-960] Cannot flatten loop 'diag_for' (hw_baseline/Vitis_HLS/lsal.cpp:47:6) in function 'compute_matrices' more than one sub loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'current_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'direction_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'direction_diag' (hw_baseline/Vitis_HLS/lsal.cpp:53:8)
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 -m_axi_offset slave 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 
+INFO: [HLS 200-1510] Running: set_directive_top -name compute_matrices compute_matrices 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -II 0 compute_matrices/second_row_scan 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -II 0 compute_matrices/first_row_scan 
+INFO: [HLS 200-1510] Running: set_directive_pipeline compute_matrices/diag_for 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 162.104 MB.
+INFO: [HLS 200-10] Analyzing design file 'hw_baseline/Vitis_HLS/lsal.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.51 seconds. CPU system time: 0.14 seconds. Elapsed time: 0.42 seconds; current allocated memory: 162.343 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-115] Multiple burst reads of length 4 and bit width 512 in loop 'anonymous'(hw_baseline/Vitis_HLS/lsal.cpp:55:2) has been inferred on port 'gmem' (hw_baseline/Vitis_HLS/lsal.cpp:55:2)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.47 seconds. CPU system time: 0.42 seconds. Elapsed time: 7.14 seconds; current allocated memory: 165.355 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 165.356 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 168.011 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 166.720 MB.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-4' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-5' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-6' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-7' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'diag_for' (hw_baseline/Vitis_HLS/lsal.cpp:47) in function 'compute_matrices' for pipelining.
+WARNING: [HLS 200-932] Cannot unroll loop 'col_for' (hw_baseline/Vitis_HLS/lsal.cpp:43) in function 'compute_matrices' completely: variable loop bound.
+WARNING: [HLS 200-936] Cannot unroll loop 'Loop-7.2' in function 'compute_matrices': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'Loop-7.3' in function 'compute_matrices': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'Loop-7.4' in function 'compute_matrices': cannot completely unroll a loop with a variable trip count.
+WARNING: [HLS 200-936] Cannot unroll loop 'Loop-7.5' in function 'compute_matrices': cannot completely unroll a loop with a variable trip count.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.57 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.9 seconds; current allocated memory: 188.698 MB.
+WARNING: [XFORM 203-561] Updating loop upper bound from -1 to 511 for loop 'Loop-6-3' in function 'compute_matrices'.
+WARNING: [HLS 200-960] Cannot flatten loop 'diag_for' (hw_baseline/Vitis_HLS/lsal.cpp:47:6) in function 'compute_matrices' more than one sub loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'current_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'direction_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'direction_diag' (hw_baseline/Vitis_HLS/lsal.cpp:53:8)
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string2' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string2' 
+INFO: [HLS 200-472] Inferring partial write operation for 'current_diag' (hw_baseline/Vitis_HLS/lsal.cpp:105:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'direction_diag' (hw_baseline/Vitis_HLS/lsal.cpp:106:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag' 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.87 seconds. CPU system time: 0.05 seconds. Elapsed time: 2.27 seconds; current allocated memory: 184.677 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'compute_matrices' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'up_diag'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'current_diag'. Use bind_storage pragma to overwrite if needed.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 2'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 3'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 4'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 5'.
+WARNING: [HLS 200-885] Unable to schedule 'store' operation ('string1_addr_2_write_ln55', hw_baseline/Vitis_HLS/lsal.cpp:55) of variable 'p_cast6', hw_baseline/Vitis_HLS/lsal.cpp:55 on array 'string1' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'string1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 32, Depth = 34, loop 'Loop 5'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 6'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'Loop 6'
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for loop 'diag_for': contains subloop(s) that are not unrolled or flattened.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.52 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.93 seconds; current allocated memory: 187.338 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2.28 seconds. CPU system time: 0.04 seconds. Elapsed time: 2.54 seconds; current allocated memory: 191.470 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/string1_mem' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/string2_mem' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/max_index' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/similarity_matrix' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/n' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/m' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'compute_matrices' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'string1_mem', 'string2_mem', 'max_index', 'similarity_matrix', 'direction_matrix', 'n', 'm' to AXI-Lite port control.
+INFO: [RTGEN 206-104] Estimated max fanout for 'compute_matrices' is 5812 from HDL expression: (1'b0 == ap_block_pp5_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_matrices'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.15 seconds. CPU system time: 0.07 seconds. Elapsed time: 1.57 seconds; current allocated memory: 199.535 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'compute_matrices_mul_32s_32s_32_2_1_Multiplier_0'
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_string1_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_string2_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_current_diag_ram (RAM_1WnR)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_up_diag_ram (RAM_1WnR)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_upper_diag_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_direction_diag_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 4.48 seconds. CPU system time: 0.31 seconds. Elapsed time: 7.31 seconds; current allocated memory: 218.917 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for compute_matrices.
+INFO: [VLOG 209-307] Generating Verilog RTL for compute_matrices.
+INFO: [HLS 200-1603] Design has MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 16.31 seconds. CPU system time: 1.08 seconds. Elapsed time: 24.83 seconds; current allocated memory: 219.520 MB.
+INFO: [HLS 200-112] Total CPU user time: 19.65 seconds. Total CPU system time: 1.53 seconds. Total elapsed time: 27.55 seconds; peak allocated memory: 218.917 MB.
