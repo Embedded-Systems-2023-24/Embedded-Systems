@@ -54,7 +54,7 @@ void compute_matrices_sw (
 
 	// Scan the first row of the array.
 first_row_scan:
-	for(int i = 1; i < n; i++) {
+	for(int i = 0; i < n; i++) {
 			val = 0;
 			dir = CENTER;
 
@@ -131,7 +131,7 @@ second_row_scan:
 		test_val = west + GAP_d;
 		if(test_val > val){
 			val = test_val;
-			dir = west;
+			dir = WEST;
 		}
 
         //Save results.

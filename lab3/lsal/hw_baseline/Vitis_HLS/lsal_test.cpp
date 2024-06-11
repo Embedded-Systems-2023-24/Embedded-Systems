@@ -47,7 +47,7 @@ void compute_matrices_sw (char string1[N], char string2[M], int max_index[0], in
 
 	// Scan the first row of the array.
 first_row_scan:
-	for(int i = 1; i < n; i++) {
+	for(int i = 0; i < n; i++) {
 			val = 0;
 			dir = CENTER;
 			west = similarity_matrix[i - 1];
@@ -128,7 +128,6 @@ second_row_scan:
 
         //Save results.
 		similarity_matrix[index] = val;
-		printf("x: %d y:%d dir: %d\n", index/n, index%n, dir);
 		direction_matrix[index] = dir;
 
 		if (val > max_value) {
@@ -201,12 +200,12 @@ void fixOutput(short *direction_matrix, short *direction_matrix_hw, int N, int M
 					printf("NW ");
 				else if (direction_matrix[i+j*N] == NORTH)
 					printf(" N ");
-				else //if (direction_matrix[i+j*N] == WEST)
+				else if (direction_matrix[i+j*N] == WEST)
 					printf(" W ");
-				/*else if (direction_matrix[i+j*N] == -1)
+				else if (direction_matrix[i+j*N] == -1)
 					printf(" P ");
 				else if (direction_matrix[i+j*N] == -2)
-					printf(" - ");*/
+					printf(" - ");
 			}
 			printf("\n");
 		}
@@ -246,12 +245,11 @@ int main(int argc, char** argv) {
 	int *max_index = (int *) malloc(sizeof(int));
 
 /* Create the two input strings by calling a random number generator */
-	/*fillRandom(query, N);
-	fillRandomDatabase(database, N, M);*/
-	strcpy(database, "PPPPPPPGGTTGACTAPPPPPPP");
-	strcpy(query, "TGTTACGG");
-	char databaseTest[] = "GGTTGACTA";
-
+	fillRandom(query, N);
+	fillRandomDatabase(database, N, M);
+	// strcpy(database, "PPPPPPPGGTTGACTAPPPPPPP");
+	// strcpy(query, "TGTTACGG");
+	// char database_sw[] = "GGTTGACTA";
 	memset(similarity_matrix, 0, sizeof(int) * (M+2*(N-1))*N);
 	memset(direction_matrix, -2, sizeof(short) * (M+2*(N-1))*N);
 
@@ -266,12 +264,16 @@ int main(int argc, char** argv) {
 	short * direction_matrix_sw = ( short*) malloc(sizeof( short) * M*N);
 	int * max_index_sw = ( int *) malloc(sizeof( int));
 	short *direction_matrix_hw = (short*) malloc(sizeof(short) * (M*N));
+	char *database_sw = (char*) malloc(sizeof(char)*M);
+
+	strncpy(database_sw, &(database[N-1]), M);
+	printf("database_sw: %s\nquery: %s\n", database_sw, query);
 
 	for(int i = 0; i < M*N; i++){
 		similarity_matrix_sw[i] = 0;
 		direction_matrix_sw[i] = 0;
 	}
-	compute_matrices_sw(query, databaseTest, max_index_sw, similarity_matrix_sw, direction_matrix_sw, N, M);
+	compute_matrices_sw(query, database_sw, max_index_sw, similarity_matrix_sw, direction_matrix_sw, N, M);
 
 	printf("both ended\n");
 

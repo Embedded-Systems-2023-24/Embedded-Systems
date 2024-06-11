@@ -55,13 +55,12 @@ void compute_matrices (
 		index = i*n;
 	  col_for:
 		for(int j = n-1; j > -1; j--) {
-			index += n-1;
-			
+			index += n-1;		
 			val = 0;
-			//printf("databse: %c, row: %d\n", string2[i-(j-(n-1))], i-(j-(n-1)));
+
 			if (string2[i-(j-(n-1))] == 'P') {
 				dir = P;
-				//printf("FAIL\n");
+
 			}
 			else {
 				dir = CENTER;
@@ -99,8 +98,6 @@ void compute_matrices (
 			//Save results.
 			current_diag[j] = val;
 			direction_matrix[index] = dir;
-
-			//printf("index: %d, x: %d, y: %d\n", index, index / n, index % n);
 	  	}
 			
 		memcpy( &(similarity_matrix[i*n]), current_diag, sizeof(int)*n );
