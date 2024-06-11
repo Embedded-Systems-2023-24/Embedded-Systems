@@ -22,15 +22,15 @@
 //        bit 0  - ap_done (COR/TOW)
 //        bit 1  - ap_ready (COR/TOW)
 //        others - reserved
-// 0x10 : Data signal of string1
-//        bit 31~0 - string1[31:0] (Read/Write)
-// 0x14 : Data signal of string1
-//        bit 31~0 - string1[63:32] (Read/Write)
+// 0x10 : Data signal of string1_mem
+//        bit 31~0 - string1_mem[31:0] (Read/Write)
+// 0x14 : Data signal of string1_mem
+//        bit 31~0 - string1_mem[63:32] (Read/Write)
 // 0x18 : reserved
-// 0x1c : Data signal of string2
-//        bit 31~0 - string2[31:0] (Read/Write)
-// 0x20 : Data signal of string2
-//        bit 31~0 - string2[63:32] (Read/Write)
+// 0x1c : Data signal of string2_mem
+//        bit 31~0 - string2_mem[31:0] (Read/Write)
+// 0x20 : Data signal of string2_mem
+//        bit 31~0 - string2_mem[63:32] (Read/Write)
 // 0x24 : reserved
 // 0x28 : Data signal of max_index
 //        bit 31~0 - max_index[31:0] (Read/Write)
@@ -59,10 +59,10 @@
 #define XCOMPUTE_MATRICES_CONTROL_ADDR_GIE                    0x04
 #define XCOMPUTE_MATRICES_CONTROL_ADDR_IER                    0x08
 #define XCOMPUTE_MATRICES_CONTROL_ADDR_ISR                    0x0c
-#define XCOMPUTE_MATRICES_CONTROL_ADDR_STRING1_DATA           0x10
-#define XCOMPUTE_MATRICES_CONTROL_BITS_STRING1_DATA           64
-#define XCOMPUTE_MATRICES_CONTROL_ADDR_STRING2_DATA           0x1c
-#define XCOMPUTE_MATRICES_CONTROL_BITS_STRING2_DATA           64
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_STRING1_MEM_DATA       0x10
+#define XCOMPUTE_MATRICES_CONTROL_BITS_STRING1_MEM_DATA       64
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_STRING2_MEM_DATA       0x1c
+#define XCOMPUTE_MATRICES_CONTROL_BITS_STRING2_MEM_DATA       64
 #define XCOMPUTE_MATRICES_CONTROL_ADDR_MAX_INDEX_DATA         0x28
 #define XCOMPUTE_MATRICES_CONTROL_BITS_MAX_INDEX_DATA         64
 #define XCOMPUTE_MATRICES_CONTROL_ADDR_SIMILARITY_MATRIX_DATA 0x34

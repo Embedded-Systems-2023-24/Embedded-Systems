@@ -29,8 +29,8 @@ module compute_matrices_control_s_axi
     output wire                          RVALID,
     input  wire                          RREADY,
     output wire                          interrupt,
-    output wire [63:0]                   string1,
-    output wire [63:0]                   string2,
+    output wire [63:0]                   string1_mem,
+    output wire [63:0]                   string2_mem,
     output wire [63:0]                   max_index,
     output wire [63:0]                   similarity_matrix,
     output wire [63:0]                   direction_matrix,
@@ -62,15 +62,15 @@ module compute_matrices_control_s_axi
 //        bit 0  - ap_done (COR/TOW)
 //        bit 1  - ap_ready (COR/TOW)
 //        others - reserved
-// 0x10 : Data signal of string1
-//        bit 31~0 - string1[31:0] (Read/Write)
-// 0x14 : Data signal of string1
-//        bit 31~0 - string1[63:32] (Read/Write)
+// 0x10 : Data signal of string1_mem
+//        bit 31~0 - string1_mem[31:0] (Read/Write)
+// 0x14 : Data signal of string1_mem
+//        bit 31~0 - string1_mem[63:32] (Read/Write)
 // 0x18 : reserved
-// 0x1c : Data signal of string2
-//        bit 31~0 - string2[31:0] (Read/Write)
-// 0x20 : Data signal of string2
-//        bit 31~0 - string2[63:32] (Read/Write)
+// 0x1c : Data signal of string2_mem
+//        bit 31~0 - string2_mem[31:0] (Read/Write)
+// 0x20 : Data signal of string2_mem
+//        bit 31~0 - string2_mem[63:32] (Read/Write)
 // 0x24 : reserved
 // 0x28 : Data signal of max_index
 //        bit 31~0 - max_index[31:0] (Read/Write)
@@ -101,12 +101,12 @@ localparam
     ADDR_GIE                      = 7'h04,
     ADDR_IER                      = 7'h08,
     ADDR_ISR                      = 7'h0c,
-    ADDR_STRING1_DATA_0           = 7'h10,
-    ADDR_STRING1_DATA_1           = 7'h14,
-    ADDR_STRING1_CTRL             = 7'h18,
-    ADDR_STRING2_DATA_0           = 7'h1c,
-    ADDR_STRING2_DATA_1           = 7'h20,
-    ADDR_STRING2_CTRL             = 7'h24,
+    ADDR_STRING1_MEM_DATA_0       = 7'h10,
+    ADDR_STRING1_MEM_DATA_1       = 7'h14,
+    ADDR_STRING1_MEM_CTRL         = 7'h18,
+    ADDR_STRING2_MEM_DATA_0       = 7'h1c,
+    ADDR_STRING2_MEM_DATA_1       = 7'h20,
+    ADDR_STRING2_MEM_CTRL         = 7'h24,
     ADDR_MAX_INDEX_DATA_0         = 7'h28,
     ADDR_MAX_INDEX_DATA_1         = 7'h2c,
     ADDR_MAX_INDEX_CTRL           = 7'h30,
@@ -151,8 +151,8 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
-    reg  [63:0]                   int_string1 = 'b0;
-    reg  [63:0]                   int_string2 = 'b0;
+    reg  [63:0]                   int_string1_mem = 'b0;
+    reg  [63:0]                   int_string2_mem = 'b0;
     reg  [63:0]                   int_max_index = 'b0;
     reg  [63:0]                   int_similarity_matrix = 'b0;
     reg  [63:0]                   int_direction_matrix = 'b0;
@@ -267,17 +267,17 @@ always @(posedge ACLK) begin
                 ADDR_ISR: begin
                     rdata <= int_isr;
                 end
-                ADDR_STRING1_DATA_0: begin
-                    rdata <= int_string1[31:0];
+                ADDR_STRING1_MEM_DATA_0: begin
+                    rdata <= int_string1_mem[31:0];
                 end
-                ADDR_STRING1_DATA_1: begin
-                    rdata <= int_string1[63:32];
+                ADDR_STRING1_MEM_DATA_1: begin
+                    rdata <= int_string1_mem[63:32];
                 end
-                ADDR_STRING2_DATA_0: begin
-                    rdata <= int_string2[31:0];
+                ADDR_STRING2_MEM_DATA_0: begin
+                    rdata <= int_string2_mem[31:0];
                 end
-                ADDR_STRING2_DATA_1: begin
-                    rdata <= int_string2[63:32];
+                ADDR_STRING2_MEM_DATA_1: begin
+                    rdata <= int_string2_mem[63:32];
                 end
                 ADDR_MAX_INDEX_DATA_0: begin
                     rdata <= int_max_index[31:0];
@@ -314,8 +314,8 @@ assign interrupt         = int_gie & (|int_isr);
 assign ap_start          = int_ap_start;
 assign int_ap_done       = ap_done;
 assign ap_continue       = int_ap_continue;
-assign string1           = int_string1;
-assign string2           = int_string2;
+assign string1_mem       = int_string1_mem;
+assign string2_mem       = int_string2_mem;
 assign max_index         = int_max_index;
 assign similarity_matrix = int_similarity_matrix;
 assign direction_matrix  = int_direction_matrix;
@@ -419,43 +419,43 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_string1[31:0]
+// int_string1_mem[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_string1[31:0] <= 0;
+        int_string1_mem[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_STRING1_DATA_0)
-            int_string1[31:0] <= (WDATA[31:0] & wmask) | (int_string1[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_STRING1_MEM_DATA_0)
+            int_string1_mem[31:0] <= (WDATA[31:0] & wmask) | (int_string1_mem[31:0] & ~wmask);
     end
 end
 
-// int_string1[63:32]
+// int_string1_mem[63:32]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_string1[63:32] <= 0;
+        int_string1_mem[63:32] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_STRING1_DATA_1)
-            int_string1[63:32] <= (WDATA[31:0] & wmask) | (int_string1[63:32] & ~wmask);
+        if (w_hs && waddr == ADDR_STRING1_MEM_DATA_1)
+            int_string1_mem[63:32] <= (WDATA[31:0] & wmask) | (int_string1_mem[63:32] & ~wmask);
     end
 end
 
-// int_string2[31:0]
+// int_string2_mem[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_string2[31:0] <= 0;
+        int_string2_mem[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_STRING2_DATA_0)
-            int_string2[31:0] <= (WDATA[31:0] & wmask) | (int_string2[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_STRING2_MEM_DATA_0)
+            int_string2_mem[31:0] <= (WDATA[31:0] & wmask) | (int_string2_mem[31:0] & ~wmask);
     end
 end
 
-// int_string2[63:32]
+// int_string2_mem[63:32]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_string2[63:32] <= 0;
+        int_string2_mem[63:32] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_STRING2_DATA_1)
-            int_string2[63:32] <= (WDATA[31:0] & wmask) | (int_string2[63:32] & ~wmask);
+        if (w_hs && waddr == ADDR_STRING2_MEM_DATA_1)
+            int_string2_mem[63:32] <= (WDATA[31:0] & wmask) | (int_string2_mem[63:32] & ~wmask);
     end
 end
 

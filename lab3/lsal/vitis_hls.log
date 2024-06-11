@@ -1,6 +1,6 @@
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'iathanasi' on host 'localhost' (Linux_x86_64 version 5.14.21-150400.24.97-default) on Tue Jun 11 09:32:42 EEST 2024
+INFO: [HLS 200-10] For user 'iathanasi' on host 'localhost' (Linux_x86_64 version 5.14.21-150400.24.97-default) on Tue Jun 11 10:25:08 EEST 2024
 INFO: [HLS 200-10] On os "openSUSE Leap 15.4"
 INFO: [HLS 200-10] In directory '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal'
 Sourcing Tcl script '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/LSAL_HW/solution1/csim.tcl'
@@ -34,24 +34,26 @@ INFO: [HLS 200-1510] Running: csim_design -argv 8 9 -quiet
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
    Compiling ../../../../hw_baseline/Vitis_HLS/lsal_test.cpp in debug mode
-   Compiling ../../../../hw_baseline/Vitis_HLS/lsal.cpp in debug mode
    Generating csim.exe
 Starting Local Alignment Code 
- max index is in position (15, 7) 
-database_sw: GCCACAAAG
-query: GTGGGATG
+ max index hw is in position (8, 7) 
+
+ database_sw: GCCACAAAG
+ query: GTGGGATG
+
+ max index sw is in position (8, 7) 
 both ended
 
-******** Similarity Matrix HW ********
-2 0 0 0 0 0 0 0 
-1 1 0 0 0 0 0 0 
-0 1 2 0 0 0 0 0 
-0 0 1 2 0 0 0 0 
-0 0 0 1 2 0 0 0 
-0 0 0 0 1 1 0 0 
-0 0 0 0 0 1 0 0 
-0 0 0 0 0 0 0 2 
-2 0 0 0 0 2 0 1 
+******** Similarity Matrix HW meta thn allagh ********
+2 1 2 2 2 1 0 2 
+1 1 1 1 1 1 0 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 2 1 0 
+0 0 0 0 0 1 1 0 
+0 0 0 0 0 2 1 0 
+0 0 0 0 0 2 1 0 
+0 0 0 0 0 2 1 0 
+2 1 2 2 2 1 1 3 
 
 ******** Similarity Matrix SW ********
 2 1 2 2 2 1 0 2 
@@ -88,4 +90,4 @@ NW  W NW NW NW  N NW NW
 computation ended!- RESULTS CORRECT 
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.38 seconds. CPU system time: 0.18 seconds. Elapsed time: 0.92 seconds; current allocated memory: 162.155 MB.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.56 seconds. CPU system time: 0.18 seconds. Elapsed time: 0.57 seconds; current allocated memory: 178.155 MB.

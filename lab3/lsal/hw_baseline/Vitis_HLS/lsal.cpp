@@ -30,7 +30,7 @@ const short WEST = 3;
 //extern "C" {
 
 void compute_matrices (
-	char string1[N], char string2[M+2*(N-1)], int max_index[0], int similarity_matrix[(M+2*(N-1))*N], short direction_matrix[(M+2*(N-1))*N], int n, int m) {
+	char string1_mem[N], char string2_mem[M+2*(N-1)], int max_index[0], int similarity_matrix[(M+2*(N-1))*N], short direction_matrix[(M+2*(N-1))*N], int n, int m) {
 
     int i = 0;
 	int j = 0;
@@ -45,9 +45,15 @@ void compute_matrices (
 	int west = 0;
 	int northwest = 0;
 	int max_value = 0;
+	char string1[N];
+	char string2[M+2*(N-1)];
 	int current_diag[N] = {0};
 	int up_diag[N] = {0};
 	int upper_diag[N] = {0};
+	short direction_diag[N] = {-2};
+
+	memcpy(string1, string1_mem, sizeof(char)*N);
+	memcpy(string2, string2_mem, sizeof(char)*(M+2*(N-1)));
 
 	//Here the real computation starts. Place your code whenever is required. 
   diag_for:
@@ -91,18 +97,19 @@ void compute_matrices (
 
 				if (val > max_value) {
 					max_value = val;
-					*max_index = index;
+					*max_index = index-((n-1)*n);
 				}
 			}
 			
 			//Save results.
 			current_diag[j] = val;
-			direction_matrix[index] = dir;
+			direction_diag[j] = dir;
 	  	}
 			
 		memcpy( &(similarity_matrix[i*n]), current_diag, sizeof(int)*n );
 		memcpy( upper_diag, up_diag, sizeof(int)*n );
 		memcpy( up_diag, current_diag, sizeof(int)*n );
+		memcpy( &(direction_matrix[i*n]), direction_diag, sizeof(int)*n );
 	}
 }  // end of function
 

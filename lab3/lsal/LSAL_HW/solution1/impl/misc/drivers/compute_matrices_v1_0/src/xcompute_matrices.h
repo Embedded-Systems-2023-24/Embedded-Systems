@@ -88,10 +88,10 @@ void XCompute_matrices_Continue(XCompute_matrices *InstancePtr);
 void XCompute_matrices_EnableAutoRestart(XCompute_matrices *InstancePtr);
 void XCompute_matrices_DisableAutoRestart(XCompute_matrices *InstancePtr);
 
-void XCompute_matrices_Set_string1(XCompute_matrices *InstancePtr, u64 Data);
-u64 XCompute_matrices_Get_string1(XCompute_matrices *InstancePtr);
-void XCompute_matrices_Set_string2(XCompute_matrices *InstancePtr, u64 Data);
-u64 XCompute_matrices_Get_string2(XCompute_matrices *InstancePtr);
+void XCompute_matrices_Set_string1_mem(XCompute_matrices *InstancePtr, u64 Data);
+u64 XCompute_matrices_Get_string1_mem(XCompute_matrices *InstancePtr);
+void XCompute_matrices_Set_string2_mem(XCompute_matrices *InstancePtr, u64 Data);
+u64 XCompute_matrices_Get_string2_mem(XCompute_matrices *InstancePtr);
 void XCompute_matrices_Set_max_index(XCompute_matrices *InstancePtr, u64 Data);
 u64 XCompute_matrices_Get_max_index(XCompute_matrices *InstancePtr);
 void XCompute_matrices_Set_similarity_matrix(XCompute_matrices *InstancePtr, u64 Data);

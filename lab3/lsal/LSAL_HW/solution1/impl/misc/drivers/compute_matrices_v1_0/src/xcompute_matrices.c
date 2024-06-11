@@ -83,41 +83,41 @@ void XCompute_matrices_DisableAutoRestart(XCompute_matrices *InstancePtr) {
     XCompute_matrices_WriteReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_AP_CTRL, 0);
 }
 
-void XCompute_matrices_Set_string1(XCompute_matrices *InstancePtr, u64 Data) {
+void XCompute_matrices_Set_string1_mem(XCompute_matrices *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XCompute_matrices_WriteReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING1_DATA, (u32)(Data));
-    XCompute_matrices_WriteReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING1_DATA + 4, (u32)(Data >> 32));
+    XCompute_matrices_WriteReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING1_MEM_DATA, (u32)(Data));
+    XCompute_matrices_WriteReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING1_MEM_DATA + 4, (u32)(Data >> 32));
 }
 
-u64 XCompute_matrices_Get_string1(XCompute_matrices *InstancePtr) {
+u64 XCompute_matrices_Get_string1_mem(XCompute_matrices *InstancePtr) {
     u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XCompute_matrices_ReadReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING1_DATA);
-    Data += (u64)XCompute_matrices_ReadReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING1_DATA + 4) << 32;
+    Data = XCompute_matrices_ReadReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING1_MEM_DATA);
+    Data += (u64)XCompute_matrices_ReadReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING1_MEM_DATA + 4) << 32;
     return Data;
 }
 
-void XCompute_matrices_Set_string2(XCompute_matrices *InstancePtr, u64 Data) {
+void XCompute_matrices_Set_string2_mem(XCompute_matrices *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XCompute_matrices_WriteReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING2_DATA, (u32)(Data));
-    XCompute_matrices_WriteReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING2_DATA + 4, (u32)(Data >> 32));
+    XCompute_matrices_WriteReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING2_MEM_DATA, (u32)(Data));
+    XCompute_matrices_WriteReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING2_MEM_DATA + 4, (u32)(Data >> 32));
 }
 
-u64 XCompute_matrices_Get_string2(XCompute_matrices *InstancePtr) {
+u64 XCompute_matrices_Get_string2_mem(XCompute_matrices *InstancePtr) {
     u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XCompute_matrices_ReadReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING2_DATA);
-    Data += (u64)XCompute_matrices_ReadReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING2_DATA + 4) << 32;
+    Data = XCompute_matrices_ReadReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING2_MEM_DATA);
+    Data += (u64)XCompute_matrices_ReadReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_STRING2_MEM_DATA + 4) << 32;
     return Data;
 }
 

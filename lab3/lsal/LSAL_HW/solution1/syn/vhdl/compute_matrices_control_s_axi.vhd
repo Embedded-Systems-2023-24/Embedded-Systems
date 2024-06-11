@@ -32,8 +32,8 @@ port (
     RVALID                :out  STD_LOGIC;
     RREADY                :in   STD_LOGIC;
     interrupt             :out  STD_LOGIC;
-    string1               :out  STD_LOGIC_VECTOR(63 downto 0);
-    string2               :out  STD_LOGIC_VECTOR(63 downto 0);
+    string1_mem           :out  STD_LOGIC_VECTOR(63 downto 0);
+    string2_mem           :out  STD_LOGIC_VECTOR(63 downto 0);
     max_index             :out  STD_LOGIC_VECTOR(63 downto 0);
     similarity_matrix     :out  STD_LOGIC_VECTOR(63 downto 0);
     direction_matrix      :out  STD_LOGIC_VECTOR(63 downto 0);
@@ -67,15 +67,15 @@ end entity compute_matrices_control_s_axi;
 --        bit 0  - ap_done (COR/TOW)
 --        bit 1  - ap_ready (COR/TOW)
 --        others - reserved
--- 0x10 : Data signal of string1
---        bit 31~0 - string1[31:0] (Read/Write)
--- 0x14 : Data signal of string1
---        bit 31~0 - string1[63:32] (Read/Write)
+-- 0x10 : Data signal of string1_mem
+--        bit 31~0 - string1_mem[31:0] (Read/Write)
+-- 0x14 : Data signal of string1_mem
+--        bit 31~0 - string1_mem[63:32] (Read/Write)
 -- 0x18 : reserved
--- 0x1c : Data signal of string2
---        bit 31~0 - string2[31:0] (Read/Write)
--- 0x20 : Data signal of string2
---        bit 31~0 - string2[63:32] (Read/Write)
+-- 0x1c : Data signal of string2_mem
+--        bit 31~0 - string2_mem[31:0] (Read/Write)
+-- 0x20 : Data signal of string2_mem
+--        bit 31~0 - string2_mem[63:32] (Read/Write)
 -- 0x24 : reserved
 -- 0x28 : Data signal of max_index
 --        bit 31~0 - max_index[31:0] (Read/Write)
@@ -109,12 +109,12 @@ architecture behave of compute_matrices_control_s_axi is
     constant ADDR_GIE                      : INTEGER := 16#04#;
     constant ADDR_IER                      : INTEGER := 16#08#;
     constant ADDR_ISR                      : INTEGER := 16#0c#;
-    constant ADDR_STRING1_DATA_0           : INTEGER := 16#10#;
-    constant ADDR_STRING1_DATA_1           : INTEGER := 16#14#;
-    constant ADDR_STRING1_CTRL             : INTEGER := 16#18#;
-    constant ADDR_STRING2_DATA_0           : INTEGER := 16#1c#;
-    constant ADDR_STRING2_DATA_1           : INTEGER := 16#20#;
-    constant ADDR_STRING2_CTRL             : INTEGER := 16#24#;
+    constant ADDR_STRING1_MEM_DATA_0       : INTEGER := 16#10#;
+    constant ADDR_STRING1_MEM_DATA_1       : INTEGER := 16#14#;
+    constant ADDR_STRING1_MEM_CTRL         : INTEGER := 16#18#;
+    constant ADDR_STRING2_MEM_DATA_0       : INTEGER := 16#1c#;
+    constant ADDR_STRING2_MEM_DATA_1       : INTEGER := 16#20#;
+    constant ADDR_STRING2_MEM_CTRL         : INTEGER := 16#24#;
     constant ADDR_MAX_INDEX_DATA_0         : INTEGER := 16#28#;
     constant ADDR_MAX_INDEX_DATA_1         : INTEGER := 16#2c#;
     constant ADDR_MAX_INDEX_CTRL           : INTEGER := 16#30#;
@@ -151,8 +151,8 @@ architecture behave of compute_matrices_control_s_axi is
     signal int_gie             : STD_LOGIC := '0';
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
-    signal int_string1         : UNSIGNED(63 downto 0) := (others => '0');
-    signal int_string2         : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_string1_mem     : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_string2_mem     : UNSIGNED(63 downto 0) := (others => '0');
     signal int_max_index       : UNSIGNED(63 downto 0) := (others => '0');
     signal int_similarity_matrix : UNSIGNED(63 downto 0) := (others => '0');
     signal int_direction_matrix : UNSIGNED(63 downto 0) := (others => '0');
@@ -286,14 +286,14 @@ begin
                         rdata_data(1 downto 0) <= int_ier;
                     when ADDR_ISR =>
                         rdata_data(1 downto 0) <= int_isr;
-                    when ADDR_STRING1_DATA_0 =>
-                        rdata_data <= RESIZE(int_string1(31 downto 0), 32);
-                    when ADDR_STRING1_DATA_1 =>
-                        rdata_data <= RESIZE(int_string1(63 downto 32), 32);
-                    when ADDR_STRING2_DATA_0 =>
-                        rdata_data <= RESIZE(int_string2(31 downto 0), 32);
-                    when ADDR_STRING2_DATA_1 =>
-                        rdata_data <= RESIZE(int_string2(63 downto 32), 32);
+                    when ADDR_STRING1_MEM_DATA_0 =>
+                        rdata_data <= RESIZE(int_string1_mem(31 downto 0), 32);
+                    when ADDR_STRING1_MEM_DATA_1 =>
+                        rdata_data <= RESIZE(int_string1_mem(63 downto 32), 32);
+                    when ADDR_STRING2_MEM_DATA_0 =>
+                        rdata_data <= RESIZE(int_string2_mem(31 downto 0), 32);
+                    when ADDR_STRING2_MEM_DATA_1 =>
+                        rdata_data <= RESIZE(int_string2_mem(63 downto 32), 32);
                     when ADDR_MAX_INDEX_DATA_0 =>
                         rdata_data <= RESIZE(int_max_index(31 downto 0), 32);
                     when ADDR_MAX_INDEX_DATA_1 =>
@@ -323,8 +323,8 @@ begin
     ap_start             <= int_ap_start;
     int_ap_done          <= ap_done;
     ap_continue          <= int_ap_continue;
-    string1              <= STD_LOGIC_VECTOR(int_string1);
-    string2              <= STD_LOGIC_VECTOR(int_string2);
+    string1_mem          <= STD_LOGIC_VECTOR(int_string1_mem);
+    string2_mem          <= STD_LOGIC_VECTOR(int_string2_mem);
     max_index            <= STD_LOGIC_VECTOR(int_max_index);
     similarity_matrix    <= STD_LOGIC_VECTOR(int_similarity_matrix);
     direction_matrix     <= STD_LOGIC_VECTOR(int_direction_matrix);
@@ -462,8 +462,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_STRING1_DATA_0) then
-                    int_string1(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_string1(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_STRING1_MEM_DATA_0) then
+                    int_string1_mem(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_string1_mem(31 downto 0));
                 end if;
             end if;
         end if;
@@ -473,8 +473,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_STRING1_DATA_1) then
-                    int_string1(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_string1(63 downto 32));
+                if (w_hs = '1' and waddr = ADDR_STRING1_MEM_DATA_1) then
+                    int_string1_mem(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_string1_mem(63 downto 32));
                 end if;
             end if;
         end if;
@@ -484,8 +484,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_STRING2_DATA_0) then
-                    int_string2(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_string2(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_STRING2_MEM_DATA_0) then
+                    int_string2_mem(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_string2_mem(31 downto 0));
                 end if;
             end if;
         end if;
@@ -495,8 +495,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_STRING2_DATA_1) then
-                    int_string2(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_string2(63 downto 32));
+                if (w_hs = '1' and waddr = ADDR_STRING2_MEM_DATA_1) then
+                    int_string2_mem(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_string2_mem(63 downto 32));
                 end if;
             end if;
         end if;

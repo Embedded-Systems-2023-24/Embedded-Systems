@@ -1,24 +1,26 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling ../../../../hw_baseline/Vitis_HLS/lsal_test.cpp in debug mode
-   Compiling ../../../../hw_baseline/Vitis_HLS/lsal.cpp in debug mode
    Generating csim.exe
 Starting Local Alignment Code 
- max index is in position (15, 7) 
-database_sw: GCCACAAAG
-query: GTGGGATG
+ max index hw is in position (8, 7) 
+
+ database_sw: GCCACAAAG
+ query: GTGGGATG
+
+ max index sw is in position (8, 7) 
 both ended
 
-******** Similarity Matrix HW ********
-2 0 0 0 0 0 0 0 
-1 1 0 0 0 0 0 0 
-0 1 2 0 0 0 0 0 
-0 0 1 2 0 0 0 0 
-0 0 0 1 2 0 0 0 
-0 0 0 0 1 1 0 0 
-0 0 0 0 0 1 0 0 
-0 0 0 0 0 0 0 2 
-2 0 0 0 0 2 0 1 
+******** Similarity Matrix HW meta thn allagh ********
+2 1 2 2 2 1 0 2 
+1 1 1 1 1 1 0 1 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 2 1 0 
+0 0 0 0 0 1 1 0 
+0 0 0 0 0 2 1 0 
+0 0 0 0 0 2 1 0 
+0 0 0 0 0 2 1 0 
+2 1 2 2 2 1 1 3 
 
 ******** Similarity Matrix SW ********
 2 1 2 2 2 1 0 2 
