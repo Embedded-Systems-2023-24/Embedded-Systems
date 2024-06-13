@@ -15,6 +15,13 @@ const short M = 2048;
 #define NORTH 1
 #define NORTH_WEST 2
 #define WEST 3
+
+#define P -1
+#define A 0
+#define G 1
+#define C 2
+#define T 3
+
 // static long int cnt_ops=0;
 // static long int cnt_bytes=0;
 
@@ -28,14 +35,11 @@ const short M = 2048;
  *           max_index is the location of the highest similiarity score 
  *           similarity and direction matrices. Note that these two matrices are initialized with zeros.
  **********************************************************************************************/
-//extern "C" {
+// extern "C" {
 
 void compute_matrices (
-	char string1_mem[N], char string2_mem[M+2*(N-1)], int max_index[0], int similarity_matrix[(M+2*(N-1))*N], short direction_matrix[(M+2*(N-1))*N], int n, int m) {
+	int string1_mem[N], int string2_mem[M+2*(N-1)], int max_index[0], int similarity_matrix[(M+2*(N-1))*N], short direction_matrix[(M+2*(N-1))*N], int n, int m) {
 
-    int i = 0;
-	int j = 0;
-	int match;
 	int test_val;
 	int val;
 	ap_int<4> dir;
@@ -46,15 +50,25 @@ void compute_matrices (
 	int west = 0;
 	int northwest = 0;
 	int max_value = 0;
-	char string1[N];
-	char string2[M+2*(N-1)];
+	int n_buf, m_buf;
+	ap_int<3> string1[N];
+#pragma HLS ARRAY_PARTITION variable=string1 dim=1 factor=2 cyclic
+	ap_int<3> string2[M+2*(N-1)];
+#pragma HLS ARRAY_PARTITION variable=string2 dim=1 factor=2 cyclic
 	int current_diag[N] = {0};
 	int up_diag[N] = {0};
 	int upper_diag[N] = {0};
 	ap_int<4> direction_diag[N] = {-2};
 
-	memcpy(string1, string1_mem, sizeof(char)*N);
-	memcpy(string2, string2_mem, sizeof(char)*(M+2*(N-1)));
+	string1_buffer:for(int i = 0; i<n; i++) {
+#pragma HLS PIPELINE II=1
+		string1[i] = string1_mem[i];
+	}
+
+	string2_buffer:for(int i = 0; i<m+2*(n-1); i++) {
+#pragma HLS PIPELINE II=1
+		string2[i] = string2_mem[i];
+	}
 
 	//Here the real computation starts. Place your code whenever is required. 
   diag_for:
@@ -62,10 +76,11 @@ void compute_matrices (
 		index = i*n;
 	  col_for:
 		for(int j = n-1; j > -1; j--) {
+#pragma HLS PIPELINE II=1
 			index += n-1;		
 			val = 0;
 
-			if (string2[i-(j-(n-1))] == 'P') {
+			if (string2[i-(j-(n-1))] == P) {
 				dir = P;
 
 			}
@@ -107,10 +122,11 @@ void compute_matrices (
 			direction_diag[j] = dir;
 	  	}
 			
-		memcpy( &(similarity_matrix[i*n]), current_diag, sizeof(int)*n );
-		memcpy( upper_diag, up_diag, sizeof(int)*n );
-		memcpy( up_diag, current_diag, sizeof(int)*n );
-		//memcpy( &(direction_matrix[i*n]), direction_diag, 4*n );
+		similarity_maatrix_cpy:memcpy( &(similarity_matrix[i*n]), current_diag, sizeof(int)*n );
+		up_to_upper:memcpy( upper_diag, up_diag, sizeof(int)*n );
+		current_to_up:memcpy( up_diag, current_diag, sizeof(int)*n );
+
+	  fix_direction:
 		for(int j = 0; j<n; j++){
 			direction_matrix[(i*n)+j] = direction_diag[j];
 		}
@@ -119,4 +135,4 @@ void compute_matrices (
 
 /************************************************************************/
 
-//}
+// }

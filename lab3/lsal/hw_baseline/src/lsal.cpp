@@ -1,14 +1,27 @@
+#include <string.h>
+#include <stdio.h>
+#include "ap_int.h"
+//#define index j+i*N
+
 const short N = 256;
 const short M = 2048;
 
-const short GAP_i = -1;
-const short GAP_d = -1;
-const short MATCH = 2;
-const short MISS_MATCH = -1;
-const short CENTER = 0;
-const short NORTH = 1;
-const short NORTH_WEST = 2;
-const short WEST = 3;
+#define GAP_i -1
+#define GAP_d -1
+#define MATCH 2
+#define MISS_MATCH -1
+#define CENTER 0
+#define P -1
+#define NORTH 1
+#define NORTH_WEST 2
+#define WEST 3
+
+#define P -1
+#define A 0
+#define G 1
+#define C 2
+#define T 3
+
 // static long int cnt_ops=0;
 // static long int cnt_bytes=0;
 
@@ -25,40 +38,71 @@ const short WEST = 3;
 extern "C" {
 
 void compute_matrices (
-	char string1[N], char string2[M], int max_index[0], int similarity_matrix[N*M], short direction_matrix[N*M], int n, int m) {
+	int string1_mem[N], int string2_mem[M+2*(N-1)], int max_index[0], int similarity_matrix[(M+2*(N-1))*N], short direction_matrix[(M+2*(N-1))*N], int n, int m) {
 
-    int index = 0;
-    int i = 0;
-	int j = 0;
-	int match;
 	int test_val;
 	int val;
-	int dir;
+	ap_int<4> dir;
 
     // Following values are used for the n, W, and NW values wrt. similarity_matrix[i]
+	int index = 0;
     int north = 0;
 	int west = 0;
 	int northwest = 0;
 	int max_value = 0;
+	int n_buf, m_buf;
+	ap_int<3> string1[N];
+#pragma HLS ARRAY_PARTITION variable=string1 dim=1 factor=2 cyclic
+	ap_int<3> string2[M+2*(N-1)];
+#pragma HLS ARRAY_PARTITION variable=string2 dim=1 factor=2 cyclic
+	int current_diag[N] = {0};
+	int up_diag[N] = {0};
+	int upper_diag[N] = {0};
+	ap_int<4> direction_diag[N] = {-2};
+
+	string1_buffer:for(int i = 0; i<n; i++) {
+#pragma HLS PIPELINE II=1
+		string1[i] = string1_mem[i];
+	}
+
+	string2_buffer:for(int i = 0; i<m+2*(n-1); i++) {
+#pragma HLS PIPELINE II=1
+		string2[i] = string2_mem[i];
+	}
 
 	//Here the real computation starts. Place your code whenever is required. 
-
-	// Scan the first row of the array.
-first_row_scan:
-	for(int i = 1; i < n; i++) {
+  diag_for:
+	for(int i = 0; i < m+(n-1); i++) {
+		index = i*n;
+	  col_for:
+		for(int j = n-1; j > -1; j--) {
+#pragma HLS PIPELINE II=1
+			index += n-1;		
 			val = 0;
-			dir = CENTER;
 
-			west = similarity_matrix[i - 1];
+			if (string2[i-(j-(n-1))] == P) {
+				dir = P;
 
-			//1st case.
-			test_val = northwest + (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
+			}
+			else {
+				dir = CENTER;
+				northwest = upper_diag[j-1];
+				west = up_diag[j-1];
+
+				//1st case.
+				test_val = northwest + (( string1[j] == string2[i-(j-(n-1))] ) ? MATCH : MISS_MATCH);
 				if(test_val > 0){
 					val = test_val;
 					dir = NORTH_WEST;
 				}
 		
-				north = 0;
+				north = up_diag[j];
+				//2nd case.
+				test_val = north + GAP_i;
+				if(test_val > val){
+					val = test_val;
+					dir = NORTH;
+				}
 
 				//3rd case.
 				test_val = west + GAP_d;
@@ -67,75 +111,26 @@ first_row_scan:
 					dir = WEST;
 				}
 
-				//Save results.
-				similarity_matrix[i] = val;
-				direction_matrix[i] = dir;
-
 				if (val > max_value) {
 					max_value = val;
-					*max_index = i;
+					*max_index = index-((n-1)*n);
 				}
+			}
+			
+			//Save results.
+			current_diag[j] = val;
+			direction_diag[j] = dir;
+	  	}
+			
+		similarity_maatrix_cpy:memcpy( &(similarity_matrix[i*n]), current_diag, sizeof(int)*n );
+		up_to_upper:memcpy( upper_diag, up_diag, sizeof(int)*n );
+		current_to_up:memcpy( up_diag, current_diag, sizeof(int)*n );
+
+	  fix_direction:
+		for(int j = 0; j<n; j++){
+			direction_matrix[(i*n)+j] = direction_diag[j];
+		}
 	}
-
-	// Scan the n*m array row-wise starting from the second row.
-second_row_scan:
-   for(index = n; index < n*m; index++) {
-
-   	  i = index % n; // column index
-	  j = index / n; // row index
-	  val = 0;
-	  dir = CENTER;
-
-   	   if (i == 0) {  
-			// first column. 
-			west = 0;
-			northwest = 0;
-		} else {
-			northwest = similarity_matrix[index - n - 1];
-			west = similarity_matrix[index - 1];
-		}
-
-		if (j == 0) {
-			// first row.
-			north = 0;
-		}
-		else {
-			north = similarity_matrix[index - n]; 
-		}
-		
-		//1st case.
-        match = ( string1[i] == string2[j] ) ? MATCH : MISS_MATCH; 
-		test_val = northwest + match;
-		if(test_val > 0){
-			val = test_val;
-			dir = NORTH_WEST;
-		}
-        
-		//2nd case.
-		test_val = north + GAP_i;
-		if(test_val > val){
-			val = test_val;
-			dir = NORTH;
-		}
-
-		//3rd case.
-		test_val = west + GAP_d;
-		if(test_val > val){
-			val = test_val;
-			dir = west;
-		}
-
-        //Save results.
-		similarity_matrix[index] = val;
-		direction_matrix[index] = dir;
-
-		if (val > max_value) {
-			max_value = val;
-			*max_index = index;
-		}
-
-
-	}   // end of for-loop
 }  // end of function
 
 /************************************************************************/

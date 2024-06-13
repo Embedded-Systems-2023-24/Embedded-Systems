@@ -1,6 +1,6 @@
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'iathanasi' on host 'localhost' (Linux_x86_64 version 5.14.21-150400.24.97-default) on Tue Jun 11 11:30:29 EEST 2024
+INFO: [HLS 200-10] For user 'iathanasi' on host 'localhost' (Linux_x86_64 version 5.14.21-150400.24.97-default) on Thu Jun 13 11:19:49 EEST 2024
 INFO: [HLS 200-10] On os "openSUSE Leap 15.4"
 INFO: [HLS 200-10] In directory '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal'
 Sourcing Tcl script '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/LSAL_HW/solution2/csynth.tcl'
@@ -30,86 +30,83 @@ INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3
 INFO: [HLS 200-1510] Running: set_directive_top -name compute_matrices compute_matrices 
 INFO: [HLS 200-1510] Running: set_directive_pipeline -II 0 compute_matrices/second_row_scan 
 INFO: [HLS 200-1510] Running: set_directive_pipeline -II 0 compute_matrices/first_row_scan 
-INFO: [HLS 200-1510] Running: set_directive_pipeline -II 1 compute_matrices/col_for 
-INFO: [HLS 200-1510] Running: set_directive_array_partition -type complete -dim 1 compute_matrices current_diag 
-INFO: [HLS 200-1510] Running: set_directive_array_partition -type complete -dim 1 compute_matrices up_diag 
-INFO: [HLS 200-1510] Running: set_directive_array_partition -type complete -dim 1 compute_matrices upper_diag 
-INFO: [HLS 200-1510] Running: set_directive_array_partition -type complete -dim 1 compute_matrices string1 
+INFO: [HLS 200-1510] Running: set_directive_pipeline -II 1 compute_matrices/direction 
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 162.159 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 162.159 MB.
 INFO: [HLS 200-10] Analyzing design file 'hw_baseline/Vitis_HLS/lsal.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.14 seconds. CPU system time: 0.44 seconds. Elapsed time: 5.28 seconds; current allocated memory: 163.461 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.3 seconds. CPU system time: 0.36 seconds. Elapsed time: 5 seconds; current allocated memory: 163.387 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
-INFO: [HLS 214-115] Multiple burst reads of length 4 and bit width 512 in loop 'anonymous'(hw_baseline/Vitis_HLS/lsal.cpp:56:2) has been inferred on port 'gmem' (hw_baseline/Vitis_HLS/lsal.cpp:56:2)
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.48 seconds. CPU system time: 0.3 seconds. Elapsed time: 6.35 seconds; current allocated memory: 165.726 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0.01 seconds. Elapsed time: 0 seconds; current allocated memory: 165.727 MB.
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 32 in loop 'string1_buffer'(hw_baseline/Vitis_HLS/lsal.cpp:63:17) has been inferred on port 'gmem' (hw_baseline/Vitis_HLS/lsal.cpp:63:17)
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 32 in loop 'string2_buffer'(hw_baseline/Vitis_HLS/lsal.cpp:68:17) has been inferred on port 'gmem' (hw_baseline/Vitis_HLS/lsal.cpp:68:17)
+INFO: [HLS 214-115] Multiple burst writes of variable length and bit width 32 in loop 'anonymous'() has been inferred on port 'gmem'
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.47 seconds. CPU system time: 0.34 seconds. Elapsed time: 6.6 seconds; current allocated memory: 165.653 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0.01 seconds. Elapsed time: 0 seconds; current allocated memory: 165.654 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 171.324 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 171.844 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.16 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.73 seconds; current allocated memory: 175.050 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.24 seconds; current allocated memory: 179.088 MB.
 INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'compute_matrices' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'compute_matrices' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'Loop-4' in function 'compute_matrices' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'Loop-5' in function 'compute_matrices' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'Loop-6' in function 'compute_matrices' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'Loop-7.2' in function 'compute_matrices' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'Loop-7.3' in function 'compute_matrices' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'Loop-7.4' in function 'compute_matrices' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_114_1' (hw_baseline/Vitis_HLS/lsal.cpp:114) in function 'compute_matrices' automatically.
-WARNING: [HLS 200-914] Completely partitioning array 'string1' (hw_baseline/Vitis_HLS/lsal.cpp:49) accessed through non-constant indices on dimension 1, which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
-Resolution: For help on HLS 200-914 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-914.html
-INFO: [XFORM 203-101] Partitioning array 'string1' (hw_baseline/Vitis_HLS/lsal.cpp:49) in dimension 1 completely.
-WARNING: [HLS 200-914] Completely partitioning array 'current_diag' (hw_baseline/Vitis_HLS/lsal.cpp:51) accessed through non-constant indices on dimension 1, which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
-Resolution: For help on HLS 200-914 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-914.html
-INFO: [XFORM 203-101] Partitioning array 'current_diag' (hw_baseline/Vitis_HLS/lsal.cpp:51) in dimension 1 completely.
-WARNING: [HLS 200-914] Completely partitioning array 'up_diag' (hw_baseline/Vitis_HLS/lsal.cpp:52) accessed through non-constant indices on dimension 1, which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
-Resolution: For help on HLS 200-914 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-914.html
-INFO: [XFORM 203-101] Partitioning array 'up_diag' (hw_baseline/Vitis_HLS/lsal.cpp:52) in dimension 1 completely.
-WARNING: [HLS 200-914] Completely partitioning array 'upper_diag' (hw_baseline/Vitis_HLS/lsal.cpp:53) accessed through non-constant indices on dimension 1, which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
-Resolution: For help on HLS 200-914 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-914.html
-INFO: [XFORM 203-101] Partitioning array 'upper_diag' (hw_baseline/Vitis_HLS/lsal.cpp:53) in dimension 1 completely.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 14.36 seconds. CPU system time: 0.06 seconds. Elapsed time: 14.89 seconds; current allocated memory: 243.199 MB.
-WARNING: [HLS 200-960] Cannot flatten loop 'diag_for' (hw_baseline/Vitis_HLS/lsal.cpp:48:6) in function 'compute_matrices' more than one sub loop.
+INFO: [XFORM 203-510] Pipelining loop 'fix_direction' (hw_baseline/Vitis_HLS/lsal.cpp:130) in function 'compute_matrices' automatically.
+INFO: [XFORM 203-101] Partitioning array 'string1.V' (hw_baseline/Vitis_HLS/lsal.cpp:54) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'string2.V' (hw_baseline/Vitis_HLS/lsal.cpp:56) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (hw_baseline/Vitis_HLS/lsal.cpp:48:6) to (hw_baseline/Vitis_HLS/lsal.cpp:83:8) in function 'compute_matrices'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (hw_baseline/Vitis_HLS/lsal.cpp:89:29) to (hw_baseline/Vitis_HLS/lsal.cpp:114:9) in function 'compute_matrices'... converting 4 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.54 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.78 seconds; current allocated memory: 207.801 MB.
+WARNING: [XFORM 203-561] Updating loop upper bound from -1 to 511 for loop 'Loop-5-3' in function 'compute_matrices'.
+WARNING: [XFORM 203-561] Updating loop upper bound from -1 to 511 for loop 'fix_direction' in function 'compute_matrices'.
+WARNING: [HLS 200-960] Cannot flatten loop 'diag_for' (hw_baseline/Vitis_HLS/lsal.cpp:52:6) in function 'compute_matrices' more than one sub loop.
 Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-960.html
+INFO: [HLS 200-472] Inferring partial write operation for 'current_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag' 
 INFO: [HLS 200-472] Inferring partial write operation for 'direction_diag.V' 
-INFO: [HLS 200-472] Inferring partial write operation for 'string2' 
-INFO: [HLS 200-472] Inferring partial write operation for 'string2' 
-INFO: [HLS 200-472] Inferring partial write operation for 'direction_diag.V' (hw_baseline/Vitis_HLS/lsal.cpp:107:22)
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 55.25 seconds. CPU system time: 0.02 seconds. Elapsed time: 55.57 seconds; current allocated memory: 353.948 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'current_diag' (hw_baseline/Vitis_HLS/lsal.cpp:121:20)
+INFO: [HLS 200-472] Inferring partial write operation for 'direction_diag.V' (hw_baseline/Vitis_HLS/lsal.cpp:122:22)
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1.V[0]' (hw_baseline/Vitis_HLS/lsal.cpp:65:13)
+INFO: [HLS 200-472] Inferring partial write operation for 'string2.V[0]' (hw_baseline/Vitis_HLS/lsal.cpp:70:13)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.41 seconds. CPU system time: 0 seconds. Elapsed time: 0.63 seconds; current allocated memory: 206.894 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'compute_matrices' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute_matrices' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'up_diag'. Use bind_storage pragma to overwrite if needed.
 INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 1'
 INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 2'
 INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 3'
-INFO: [SCHED 204-61] Pipelining loop 'Loop 4'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'Loop 4'
-INFO: [SCHED 204-61] Pipelining loop 'Loop 5'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'Loop 5'
+INFO: [SCHED 204-61] Pipelining loop 'string1_buffer'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'string1_buffer'
+INFO: [SCHED 204-61] Pipelining loop 'string2_buffer'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'string2_buffer'
 INFO: [SCHED 204-61] Pipelining loop 'col_for'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 75, loop 'col_for'
 INFO: [SCHED 204-61] Pipelining loop 'diag_for.2'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 71, loop 'diag_for.2'
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'diag_for.2'
 INFO: [SCHED 204-61] Pipelining loop 'diag_for.3'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'diag_for.3'
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'diag_for.3'
 INFO: [SCHED 204-61] Pipelining loop 'diag_for.4'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'diag_for.4'
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_114_1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 71, loop 'VITIS_LOOP_114_1'
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'diag_for.4'
+INFO: [SCHED 204-61] Pipelining loop 'fix_direction'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 71, loop 'fix_direction'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 39.61 seconds. CPU system time: 0.2 seconds. Elapsed time: 40 seconds; current allocated memory: 394.590 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.05 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.38 seconds; current allocated memory: 208.716 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 29.87 seconds. CPU system time: 0.32 seconds. Elapsed time: 31.75 seconds; current allocated memory: 444.129 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2.03 seconds. CPU system time: 0.05 seconds. Elapsed time: 2.2 seconds; current allocated memory: 211.546 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute_matrices' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -124,20 +121,20 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/n' to 's_
 INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/m' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'compute_matrices' to 's_axilite & ap_ctrl_chain'.
 INFO: [RTGEN 206-100] Bundling port 'string1_mem', 'string2_mem', 'max_index', 'similarity_matrix', 'direction_matrix', 'n', 'm' to AXI-Lite port control.
-INFO: [RTGEN 206-104] Estimated max fanout for 'compute_matrices' is 24730 from HDL expression: (1'b1 == ap_CS_fsm_state154)
 INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_2_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mux_2568_32_1_1': 6 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mux_2568_8_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_matrices'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 27.46 seconds. CPU system time: 0.35 seconds. Elapsed time: 30.67 seconds; current allocated memory: 482.069 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.85 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.18 seconds; current allocated memory: 217.434 MB.
 INFO: [RTMG 210-282] Generating pipelined core: 'compute_matrices_mul_32s_32s_32_2_1_Multiplier_0'
-INFO: [RTMG 210-278] Implementing memory 'compute_matrices_string2_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_string1_V_0_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_string2_V_0_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_current_diag_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_up_diag_ram (RAM_1WnR)' using auto RAMs.
 INFO: [RTMG 210-278] Implementing memory 'compute_matrices_direction_diag_V_ram (RAM)' using auto RAMs.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 25.51 seconds. CPU system time: 0.91 seconds. Elapsed time: 32.52 seconds; current allocated memory: 607.917 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 3.85 seconds. CPU system time: 0.29 seconds. Elapsed time: 5.92 seconds; current allocated memory: 232.478 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for compute_matrices.
 INFO: [VLOG 209-307] Generating Verilog RTL for compute_matrices.
 INFO: [HLS 200-1603] Design has MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 201.22 seconds. CPU system time: 2.65 seconds. Elapsed time: 218.93 seconds; current allocated memory: 608.545 MB.
-INFO: [HLS 200-112] Total CPU user time: 205.18 seconds. Total CPU system time: 3.09 seconds. Total elapsed time: 222.77 seconds; peak allocated memory: 607.917 MB.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 17.99 seconds. CPU system time: 1.17 seconds. Elapsed time: 24.55 seconds; current allocated memory: 233.125 MB.
+INFO: [HLS 200-112] Total CPU user time: 21.55 seconds. Total CPU system time: 1.57 seconds. Total elapsed time: 27.42 seconds; peak allocated memory: 232.478 MB.
