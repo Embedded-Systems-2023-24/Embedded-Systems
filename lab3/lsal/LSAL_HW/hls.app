@@ -1,7 +1,7 @@
 <project xmlns="com.autoesl.autopilot.project" name="LSAL_HW" top="compute_matrices">
     <includePaths/>
     <libraryPaths/>
-    <Simulation argv="8 9">
+    <Simulation argv="32 65536">
         <SimFlow name="csim" csimMode="0" lastCsimMode="0"/>
     </Simulation>
     <files xmlns="">

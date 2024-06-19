@@ -10,7 +10,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#define DEBUG
+//  #define DEBUG
 
 const short N = 256;
 const short M = 2048;
@@ -55,10 +55,12 @@ void compute_matrices_sw (char string1[N], char string2[M], int max_index[0], in
 	for(int i = 0; i < n; i++) {
 			val = 0;
 			dir = CENTER;
-			west = similarity_matrix[i - 1];
+
+			if (i != 0)
+				west = similarity_matrix[i - 1];
 
 			//1st case.
-			test_val = northwest + (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
+			test_val = (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
 			if(test_val > 0){
 				val = test_val;
 				dir = NORTH_WEST;
@@ -68,12 +70,15 @@ void compute_matrices_sw (char string1[N], char string2[M], int max_index[0], in
 
 			//3rd case.
 			test_val = west + GAP_d;
+// printf("(%d.%d)", i, j);
+// printf("  west: %d \n  test_val:%x, val:%d, i + %d ,", west, test_val, val, (i*n)+j);
 			if(test_val > val){
 				val = test_val;
 				dir = WEST;
 			}
 
 			//Save results.
+// printf("dir: %d \n", dir);
 			similarity_matrix[i] = val;
 			direction_matrix[i] = dir;
 
@@ -244,7 +249,7 @@ void reshape_similarity(int *similarity_matrix, int *similarity_matrix_hw, int N
 
 		for (int j=0; j < M; j++) {
 			for (int i=0; i < N; i++) {
-				printf("%d ", similarity_matrix[i+j*N]);
+				printf("%2d ", similarity_matrix[i+j*N]);
 			}
 			printf("\n");
 		}
@@ -292,12 +297,10 @@ int main(int argc, char** argv) {
 	reshape_direction(direction_matrix, direction_matrix_hw, N, M);
 	reshape_similarity(similarity_matrix, similarity_matrix_hw, N, M);
 
-	free(similarity_matrix);
-	free(direction_matrix);
-	free(max_index);
-
     printf(" max index hw is in position (%d, %d) \n", max_index[0]/N, max_index[0]%N );
 
+	free(max_index);
+	
 	/**************************************************************
 	 * Run the same algorithm in the Host Unit and compare for verification
 	 **************************************************************/
@@ -317,6 +320,7 @@ int main(int argc, char** argv) {
 
 	printf(" max index sw is in position (%d, %d) \n", max_index_sw[0]/N, max_index_sw[0]%N );
 	printf("both ended\n");
+	// fflush(stdout);
 
 	#ifdef DEBUG
 
@@ -325,15 +329,15 @@ int main(int argc, char** argv) {
 		// strcpy(query, "TGTTACGG");
 		// char database_sw[] = "GGTTGACTA";
 		
-		// printf("\n******** Similarity Matrix HW ********\n");
-		// print_similarity_matrix(similarity_matrix, N, M+2*(N-1));
+		printf("\n******** Similarity Matrix HW ********\n");
+		print_similarity_matrix(similarity_matrix, N, M+2*(N-1));
 		printf("\n******** Similarity Matrix HW meta thn allagh ********\n");
 		print_similarity_matrix(similarity_matrix_hw, N, M);
 		printf("\n******** Similarity Matrix SW ********\n");
 		print_similarity_matrix(similarity_matrix_sw, N, M);
 		
-		// printf("\n******** Direction Matrix HW  ********\n");
-		// print_direction_matrix(direction_matrix, N, M+2*(N-1));
+		printf("\n******** Direction Matrix HW  ********\n");
+		print_direction_matrix(direction_matrix, N, M+2*(N-1));
 		printf("\n******** Direction Matrix HW meta thn allagh ********\n");
 		print_direction_matrix(direction_matrix_hw, N, M);
 		printf("\n******** Direction Matrix SW ********\n");
@@ -352,6 +356,8 @@ int main(int argc, char** argv) {
 
 	printf("computation ended!- RESULTS CORRECT \n");
 
+	free(similarity_matrix);
+	free(direction_matrix);
 	free(direction_matrix_hw);
 	free(similarity_matrix_hw);
 	free(query);

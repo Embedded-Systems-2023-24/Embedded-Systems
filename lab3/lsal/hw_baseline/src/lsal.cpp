@@ -10,8 +10,8 @@ const short M = 2048;
 #define GAP_d -1
 #define MATCH 2
 #define MISS_MATCH -1
+
 #define CENTER 0
-#define P -1
 #define NORTH 1
 #define NORTH_WEST 2
 #define WEST 3
@@ -42,7 +42,8 @@ void compute_matrices (
 
 	int test_val;
 	int val;
-	ap_int<4> dir;
+	ap_int<3> dir;
+	// int dir;
 
     // Following values are used for the n, W, and NW values wrt. similarity_matrix[i]
 	int index = 0;
@@ -58,7 +59,7 @@ void compute_matrices (
 	int current_diag[N] = {0};
 	int up_diag[N] = {0};
 	int upper_diag[N] = {0};
-	ap_int<4> direction_diag[N] = {-2};
+	ap_int<3> direction_diag[N] = {-2};
 
 	string1_buffer:for(int i = 0; i<n; i++) {
 #pragma HLS PIPELINE II=1
@@ -80,14 +81,36 @@ void compute_matrices (
 			index += n-1;		
 			val = 0;
 
+				// printf("(%d.%d) , database[%d]: ", i, j, i-(j-(n-1)));
+				// if (string2[i-(j-(n-1))] == CENTER)
+				// 	printf(" C ");
+				// else if (string2[i-(j-(n-1))] == NORTH_WEST)
+				// 	printf("NW ");
+				// else if (string2[i-(j-(n-1))] == NORTH)
+				// 	printf(" N ");
+				// else if (string2[i-(j-(n-1))] == WEST)
+				// 	printf(" W ");
+				// else if (string2[i-(j-(n-1))] == -1)
+				// 	printf(" P ");
+				// else if (string2[i-(j-(n-1))] == -2)
+				// 	printf(" - ");
+				// 	printf("\n");
+
+
 			if (string2[i-(j-(n-1))] == P) {
 				dir = P;
-
+			
 			}
 			else {
 				dir = CENTER;
-				northwest = upper_diag[j-1];
-				west = up_diag[j-1];
+				if (j != 0) {
+					northwest = upper_diag[j-1];
+					west = up_diag[j-1];
+				}
+				else {
+					northwest = 0;
+					west = 0;
+				}
 
 				//1st case.
 				test_val = northwest + (( string1[j] == string2[i-(j-(n-1))] ) ? MATCH : MISS_MATCH);
@@ -103,9 +126,10 @@ void compute_matrices (
 					val = test_val;
 					dir = NORTH;
 				}
-
+				
 				//3rd case.
 				test_val = west + GAP_d;
+				// printf("  west: %d \n  test_val:%x, val:%d, i + %d \n", west, test_val, val, (i*n)+j);
 				if(test_val > val){
 					val = test_val;
 					dir = WEST;
@@ -122,7 +146,7 @@ void compute_matrices (
 			direction_diag[j] = dir;
 	  	}
 			
-		similarity_maatrix_cpy:memcpy( &(similarity_matrix[i*n]), current_diag, sizeof(int)*n );
+		similarity_matrix_cpy:memcpy( &(similarity_matrix[i*n]), current_diag, sizeof(int)*n );
 		up_to_upper:memcpy( upper_diag, up_diag, sizeof(int)*n );
 		current_to_up:memcpy( up_diag, current_diag, sizeof(int)*n );
 

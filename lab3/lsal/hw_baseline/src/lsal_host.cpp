@@ -39,8 +39,7 @@ const short M = 2048;
   * It will be used to verify the correct functionality of the HW implementation.  
   * Its usefulness is mainly when you perform software emulation (sw_emu).
   ***************************************************************************************/
-void compute_matrices_sw (
-	char string1[N], char string2[M], int max_index[0], int similarity_matrix[N*M], short direction_matrix[N*M], int n, int m) {
+void compute_matrices_sw (char string1[N], char string2[M], int max_index[0], int similarity_matrix[N*M], short direction_matrix[N*M], int n, int m) {
 
     int index = 0;
     int i = 0;
@@ -48,7 +47,7 @@ void compute_matrices_sw (
 	int match;
 	int test_val;
 	int val;
-	int dir;
+	int dir ;
 
     // Following values are used for the n, W, and NW values wrt. similarity_matrix[i]
     int north = 0;
@@ -59,41 +58,43 @@ void compute_matrices_sw (
 	//Here the real computation starts. Place your code whenever is required. 
 
 	// Scan the first row of the array.
-first_row_scan:
+  first_row_scan:
 	for(int i = 0; i < n; i++) {
 			val = 0;
 			dir = CENTER;
 
-			west = similarity_matrix[i - 1];
+			if (i != 0)
+				west = similarity_matrix[i - 1];
 
 			//1st case.
-			test_val = northwest + (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
-				if(test_val > 0){
-					val = test_val;
-					dir = NORTH_WEST;
-				}
-		
-				north = 0;
+			test_val = (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
+			if(test_val > 0){
+				val = test_val;
+				dir = NORTH_WEST;
+			}
+	
+			north = 0;
 
-				//3rd case.
-				test_val = west + GAP_d;
-				if(test_val > val){
-					val = test_val;
-					dir = WEST;
-				}
+			//3rd case.
+			test_val = west + GAP_d;
 
-				//Save results.
-				similarity_matrix[i] = val;
-				direction_matrix[i] = dir;
+			if(test_val > val){
+				val = test_val;
+				dir = WEST;
+			}
 
-				if (val > max_value) {
-					max_value = val;
-					*max_index = i;
-				}
+			//Save results.
+			similarity_matrix[i] = val;
+			direction_matrix[i] = dir;
+
+			if (val > max_value) {
+				max_value = val;
+				*max_index = i;
+			}
 	}
 
 	// Scan the n*m array row-wise starting from the second row.
-second_row_scan:
+  second_row_scan:
    for(index = n; index < n*m; index++) {
 
    	  i = index % n; // column index
