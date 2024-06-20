@@ -1,6 +1,6 @@
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'iathanasi' on host 'localhost' (Linux_x86_64 version 5.14.21-150400.24.97-default) on Thu Jun 20 00:36:04 EEST 2024
+INFO: [HLS 200-10] For user 'iathanasi' on host 'localhost' (Linux_x86_64 version 5.14.21-150400.24.97-default) on Thu Jun 20 14:26:33 EEST 2024
 INFO: [HLS 200-10] On os "openSUSE Leap 15.4"
 INFO: [HLS 200-10] In directory '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal'
 Sourcing Tcl script '/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/LSAL_HW/solution2/csim.tcl'
@@ -31,8 +31,16 @@ INFO: [HLS 200-1510] Running: set_directive_top -name compute_matrices compute_m
 INFO: [HLS 200-1510] Running: set_directive_pipeline -II 0 compute_matrices/second_row_scan 
 INFO: [HLS 200-1510] Running: set_directive_pipeline -II 0 compute_matrices/first_row_scan 
 INFO: [HLS 200-1510] Running: set_directive_pipeline -II 1 compute_matrices/direction 
-INFO: [HLS 200-1510] Running: csim_design -argv 32 65536 -quiet 
+INFO: [HLS 200-1510] Running: csim_design -argv 255 280 -quiet 
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-make: 'csim.exe' is up to date.
+   Compiling ../../../../hw_baseline/Vitis_HLS/lsal.cpp in debug mode
+   Generating csim.exe
 Starting Local Alignment Code 
+ max index hw is in position (278, 250) 
+ max index sw is in position (278, 250) 
+both ended
+computation ended!- RESULTS CORRECT 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.53 seconds. CPU system time: 0.22 seconds. Elapsed time: 1.88 seconds; current allocated memory: 162.259 MB.

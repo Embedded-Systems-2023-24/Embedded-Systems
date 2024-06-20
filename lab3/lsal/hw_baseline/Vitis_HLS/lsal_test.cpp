@@ -13,7 +13,7 @@
 //  #define DEBUG
 
 const short N = 256;
-const short M = 2048;
+const int M = 65536;
 
 #define GAP_i -1
 #define GAP_d -1
@@ -24,7 +24,7 @@ const short M = 2048;
 #define NORTH_WEST 2
 #define WEST 3
 
-#define P -1
+#define P 4
 #define A 0
 #define G 1
 #define C 2

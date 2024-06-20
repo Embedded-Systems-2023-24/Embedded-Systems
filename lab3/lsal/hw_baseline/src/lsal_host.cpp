@@ -17,7 +17,9 @@
 #include <CL/cl_ext.h>
 
 const short N = 256;
-const short M = 2048;
+const int M = 65536;
+
+// #define DEBUG
 
 #define GAP_i -1
 #define GAP_d -1
@@ -265,7 +267,7 @@ int load_file_to_memory(const char *filename, char **result) {
 	return size;
 }
 
-/*
+#ifdef DEBUG
 void print_direction_matrix (short *direction_matrix, int N, int M) {
 
 	for (int j=0; j < M; j++) {
@@ -293,7 +295,7 @@ void print_similarity_matrix (int *similarity_matrix, int N, int M) {
 	}
 
 }
-*/
+#endif
 
 /*******************************************************************************
  *   Host program running on the Arm CPU. 
@@ -703,6 +705,22 @@ int main(int argc, char** argv) {
 
 	printf("both ended\n");
 
+#ifdef DEBUG
+		printf("\n******** Similarity Matrix HW ********\n");
+		print_similarity_matrix(similarity_matrix, N, M+2*(N-1));
+		printf("\n******** Similarity Matrix HW meta thn allagh ********\n");
+		print_similarity_matrix(similarity_matrix_hw, N, M);
+		printf("\n******** Similarity Matrix SW ********\n");
+		print_similarity_matrix(similarity_matrix_sw, N, M);
+		
+		printf("\n******** Direction Matrix HW  ********\n");
+		print_direction_matrix(direction_matrix, N, M+2*(N-1));
+		printf("\n******** Direction Matrix HW meta thn allagh ********\n");
+		print_direction_matrix(direction_matrix_hw, N, M);
+		printf("\n******** Direction Matrix SW ********\n");
+		print_direction_matrix(direction_matrix_sw, N, M);
+#endif
+
 	printf(" execution time is %lf ms \n", executionTime);
 	for (int i = 0; i < N*M; i++) {
 		if (direction_matrix_sw[i] != direction_matrix_hw[i]) {
@@ -712,17 +730,6 @@ int main(int argc, char** argv) {
 		}
 	}
 
-/* DEBUG
-	printf("\n******** Simularity Matrix SW ********\n");
-	print_similarity_matrix(similarity_matrix_sw, N, M);
-	printf("\n******** Simularity Matrix ********\n");
-	print_similarity_matrix(similarity_matrix, N, M);
-
-	printf("\n******** Direction Matrix SW ********\n");
-	print_direction_matrix(direction_matrix, N, M);
-	printf("\n******** Direction Matrix ********\n");
-	print_direction_matrix(direction_matrix, N, M);
-*/
 	printf("computation ended!- RESULTS CORRECT \n");
 
 	/**************************************************************

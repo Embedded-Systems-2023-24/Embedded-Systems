@@ -4,7 +4,7 @@
 //#define index j+i*N
 
 const short N = 256;
-const short M = 2048;
+const int M = 65536;
 
 #define GAP_i -1
 #define GAP_d -1
@@ -16,7 +16,7 @@ const short M = 2048;
 #define NORTH_WEST 2
 #define WEST 3
 
-#define P -1
+#define P 4
 #define A 0
 #define G 1
 #define C 2
@@ -43,7 +43,6 @@ void compute_matrices (
 	int test_val;
 	int val;
 	ap_int<3> dir;
-	// int dir;
 
     // Following values are used for the n, W, and NW values wrt. similarity_matrix[i]
 	int index = 0;
@@ -59,7 +58,7 @@ void compute_matrices (
 	int current_diag[N] = {0};
 	int up_diag[N] = {0};
 	int upper_diag[N] = {0};
-	ap_int<3> direction_diag[N] = {-2};
+	ap_int<3> direction_diag[N];
 
 	string1_buffer:for(int i = 0; i<n; i++) {
 #pragma HLS PIPELINE II=1
@@ -80,22 +79,6 @@ void compute_matrices (
 #pragma HLS PIPELINE II=1
 			index += n-1;		
 			val = 0;
-
-				// printf("(%d.%d) , database[%d]: ", i, j, i-(j-(n-1)));
-				// if (string2[i-(j-(n-1))] == CENTER)
-				// 	printf(" C ");
-				// else if (string2[i-(j-(n-1))] == NORTH_WEST)
-				// 	printf("NW ");
-				// else if (string2[i-(j-(n-1))] == NORTH)
-				// 	printf(" N ");
-				// else if (string2[i-(j-(n-1))] == WEST)
-				// 	printf(" W ");
-				// else if (string2[i-(j-(n-1))] == -1)
-				// 	printf(" P ");
-				// else if (string2[i-(j-(n-1))] == -2)
-				// 	printf(" - ");
-				// 	printf("\n");
-
 
 			if (string2[i-(j-(n-1))] == P) {
 				dir = P;
@@ -129,7 +112,6 @@ void compute_matrices (
 				
 				//3rd case.
 				test_val = west + GAP_d;
-				// printf("  west: %d \n  test_val:%x, val:%d, i + %d \n", west, test_val, val, (i*n)+j);
 				if(test_val > val){
 					val = test_val;
 					dir = WEST;
