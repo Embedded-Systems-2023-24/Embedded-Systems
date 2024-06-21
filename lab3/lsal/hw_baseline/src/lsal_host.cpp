@@ -327,7 +327,7 @@ int main(int argc, char** argv) {
 	char *database = (char*) malloc(sizeof(char) * M+2*(N-1));
 	int *similarity_matrix = (int*) malloc(sizeof(int) * (M+2*(N-1))*N);
 	int *similarity_matrix_hw = (int*) malloc(sizeof(int) * M*N);
-	ap_int<3> direction_matrix[(M+2*(N-1))*N] ={-2};
+	ap_int<3> *direction_matrix = (ap_int<3>*) malloc(sizeof(ap_int<3>) * (M+2*(N-1))*N);
 	short *direction_matrix_hw = (short*) malloc(sizeof(short) * (M*N));
 	int *max_index = (int *) malloc(sizeof(int));
 
@@ -360,6 +360,7 @@ int main(int argc, char** argv) {
 	char_to_int(database, database_hw, M+2*(N-1));
 
 	memset(similarity_matrix, 0, sizeof(int) * (M+2*(N-1))*N);
+	memset(direction_matrix, 0, sizeof(ap_int<3>) * (M+2*(N-1))*N);
 
 /**********************************************
  * 			Xilinx OpenCL Initialization
@@ -744,6 +745,7 @@ int main(int argc, char** argv) {
 	free(direction_matrix_sw);
 	free(max_index_sw);
 	free(similarity_matrix);
+	free(direction_matrix);
 	free(max_index);
 
 	return EXIT_SUCCESS;

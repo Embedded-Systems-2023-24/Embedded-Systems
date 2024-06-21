@@ -269,7 +269,7 @@ int main(int argc, char** argv) {
     printf("Starting Local Alignment Code \n");
 	
 	fflush(stdout);
-
+	
 	/* Typically, M >> N */
 	int N = atoi(argv[1]);
     int M = atoi(argv[2]);
@@ -278,7 +278,7 @@ int main(int argc, char** argv) {
 	char *database = (char*) malloc(sizeof(char) * M+2*(N-1));
 	int *similarity_matrix = (int*) malloc(sizeof(int) * (M+2*(N-1))*N);
 	int *similarity_matrix_hw = (int*) malloc(sizeof(int) * M*N);
-	ap_int<3> direction_matrix[(M+2*(N-1))*N] ={-2};
+	ap_int<3> *direction_matrix = (ap_int<3>*) malloc(sizeof(ap_int<3>) * (M+2*(N-1))*N);
 	short *direction_matrix_hw = (short*) malloc(sizeof(short) * (M*N));
 	int *max_index = (int *) malloc(sizeof(int));
 /* Create the two input strings by calling a random number generator */
@@ -292,6 +292,7 @@ int main(int argc, char** argv) {
 	char_to_int(database, database_hw, M+2*(N-1));
 	
 	memset(similarity_matrix, 0, sizeof(int) * (M+2*(N-1))*N);
+	memset(direction_matrix, -2, sizeof(ap_int<3>) * (M+2*(N-1))*N);
 
 	compute_matrices(query_hw, database_hw, max_index, similarity_matrix, direction_matrix, N, M);
 	reshape_direction(direction_matrix, direction_matrix_hw, N, M);
@@ -357,6 +358,7 @@ int main(int argc, char** argv) {
 	printf("computation ended!- RESULTS CORRECT \n");
 
 	free(similarity_matrix);
+	free(direction_matrix);
 	free(direction_matrix_hw);
 	free(similarity_matrix_hw);
 	free(query);
