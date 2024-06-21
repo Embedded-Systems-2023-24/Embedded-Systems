@@ -61,16 +61,8 @@ void compute_matrices (
 	ap_int<3> direction_diag[N];
 
 	string1_buffer:memcpy(string1, string1_mem, sizeof(ap_int<3>)*n);
-// 	for(int i = 0; i<n; i++) {
-// #pragma HLS PIPELINE II=1
-// 		string1[i] = string1_mem[i];
-// 	}
 
 	string2_buffer:memcpy(string2, string2_mem, sizeof(ap_int<3>)*(m+2*(n-1)));
-// 	for(int i = 0; i<m+2*(n-1); i++) {
-// #pragma HLS PIPELINE II=1
-// 		string2[i] = string2_mem[i];
-// 	}
 
 	//Here the real computation starts. Place your code whenever is required. 
   diag_for:
@@ -133,8 +125,7 @@ void compute_matrices (
 		similarity_matrix_cpy:memcpy( &(similarity_matrix[i*n]), current_diag, sizeof(int)*n );
 		up_to_upper:memcpy( upper_diag, up_diag, sizeof(int)*n );
 		current_to_up:memcpy( up_diag, current_diag, sizeof(int)*n );
-
-	  fix_direction:memcpy( &(direction_matrix[i*n]), direction_diag, sizeof(ap_int<3>)*n);
+	  	fix_direction:memcpy( &(direction_matrix[i*n]), direction_diag, sizeof(ap_int<3>)*n);
 	}
 }  // end of function
 
