@@ -47,16 +47,6 @@
 			<location>/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/LSAL_HW/solution2/.tcls</location>
 		</link>
 		<link>
-			<name>source/lsal.cpp</name>
-			<type>1</type>
-			<location>/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/Vitis_HLS/lsal.cpp</location>
-		</link>
-		<link>
-			<name>testbench/lsal_test.cpp</name>
-			<type>1</type>
-			<location>/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/hw_baseline/Vitis_HLS/lsal_test.cpp</location>
-		</link>
-		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
 			<location>/home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/LSAL_HW/solution1/solution1.directive</location>
