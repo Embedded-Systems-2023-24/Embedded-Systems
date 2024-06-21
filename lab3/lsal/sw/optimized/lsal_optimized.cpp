@@ -52,11 +52,12 @@ void compute_matrices(
 	//Here the real computation starts. Place your code whenever is required.
 
 	// Scan the first row of the array.
-		for(int i = 1; i < N; i++) {
+		for(int i = 0; i < N; i++) {
 			val = 0;
 			dir = CENTER;
 
-			west = similarity_matrix[i - 1];
+			if (i != 0)
+				west = similarity_matrix[i - 1];
 
 			//1st case.
 			test_val = northwest + (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
