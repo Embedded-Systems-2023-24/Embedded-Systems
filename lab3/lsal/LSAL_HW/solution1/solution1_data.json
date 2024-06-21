@@ -18,8 +18,8 @@
     "string1_mem": {
       "index": "0",
       "direction": "inout",
-      "srcType": "char*",
-      "srcSize": "8",
+      "srcType": "int*",
+      "srcSize": "32",
       "hwRefs": [
         {
           "type": "interface",
@@ -47,8 +47,8 @@
     "string2_mem": {
       "index": "1",
       "direction": "inout",
-      "srcType": "char*",
-      "srcSize": "8",
+      "srcType": "int*",
+      "srcSize": "32",
       "hwRefs": [
         {
           "type": "interface",
@@ -190,18 +190,17 @@
   "HlsSolution": {
     "FlowTarget": "vitis",
     "ConfigTcl": [
-      "config_interface -default_interface=kernel",
-      "config_interface -m_axi_alignment_byte_size=64",
       "config_interface -m_axi_latency=64",
+      "config_interface -m_axi_alignment_byte_size=64",
       "config_interface -m_axi_max_widen_bitwidth=512",
+      "config_interface -default_interface=kernel",
       "config_interface -m_axi_offset=slave",
       "config_rtl -register_reset_num=3"
     ],
     "DirectiveTcl": [
-      "set_directive_top compute_matrices -name compute_matrices",
-      "set_directive_pipeline compute_matrices\/second_row_scan -II 0",
-      "set_directive_pipeline compute_matrices\/first_row_scan -II 0",
-      "set_directive_pipeline compute_matrices\/diag_for ",
+      "set_directive_unroll compute_matrices\/fix_direction ",
+      "set_directive_unroll compute_matrices\/string1_buffer ",
+      "set_directive_unroll compute_matrices\/string2_buffer ",
       "set_directive_top compute_matrices -name compute_matrices"
     ],
     "ProfileOption": "0",
@@ -234,25 +233,23 @@
     "Vhdl": [
       "impl\/vhdl\/compute_matrices_control_s_axi.vhd",
       "impl\/vhdl\/compute_matrices_current_diag.vhd",
-      "impl\/vhdl\/compute_matrices_direction_diag.vhd",
+      "impl\/vhdl\/compute_matrices_direction_diag_V.vhd",
       "impl\/vhdl\/compute_matrices_gmem_m_axi.vhd",
       "impl\/vhdl\/compute_matrices_mul_32s_32s_32_2_1.vhd",
-      "impl\/vhdl\/compute_matrices_string1.vhd",
-      "impl\/vhdl\/compute_matrices_string2.vhd",
+      "impl\/vhdl\/compute_matrices_string1_V_0.vhd",
+      "impl\/vhdl\/compute_matrices_string2_V_0.vhd",
       "impl\/vhdl\/compute_matrices_up_diag.vhd",
-      "impl\/vhdl\/compute_matrices_upper_diag.vhd",
       "impl\/vhdl\/compute_matrices.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/compute_matrices_control_s_axi.v",
       "impl\/verilog\/compute_matrices_current_diag.v",
-      "impl\/verilog\/compute_matrices_direction_diag.v",
+      "impl\/verilog\/compute_matrices_direction_diag_V.v",
       "impl\/verilog\/compute_matrices_gmem_m_axi.v",
       "impl\/verilog\/compute_matrices_mul_32s_32s_32_2_1.v",
-      "impl\/verilog\/compute_matrices_string1.v",
-      "impl\/verilog\/compute_matrices_string2.v",
+      "impl\/verilog\/compute_matrices_string1_V_0.v",
+      "impl\/verilog\/compute_matrices_string2_V_0.v",
       "impl\/verilog\/compute_matrices_up_diag.v",
-      "impl\/verilog\/compute_matrices_upper_diag.v",
       "impl\/verilog\/compute_matrices.v"
     ],
     "SwDriver": [
@@ -308,7 +305,7 @@
       "type": "axi4full",
       "busTypeName": "aximm",
       "mode": "master",
-      "dataWidth": "512",
+      "dataWidth": "32",
       "addrWidth": "64",
       "portPrefix": "m_axi_gmem_",
       "paramPrefix": "C_M_AXI_GMEM_",
@@ -388,8 +385,8 @@
         },
         {
           "constraint_type": "bitwidth",
-          "orig_bitwidth": "8",
-          "final_bitwidth": "512",
+          "orig_bitwidth": "32",
+          "final_bitwidth": "32",
           "argName": "string1_mem"
         }
       ]
@@ -938,11 +935,11 @@
     },
     "m_axi_gmem_WDATA": {
       "dir": "out",
-      "width": "512"
+      "width": "32"
     },
     "m_axi_gmem_WSTRB": {
       "dir": "out",
-      "width": "64"
+      "width": "4"
     },
     "m_axi_gmem_WLAST": {
       "dir": "out",
@@ -1022,7 +1019,7 @@
     },
     "m_axi_gmem_RDATA": {
       "dir": "in",
-      "width": "512"
+      "width": "32"
     },
     "m_axi_gmem_RLAST": {
       "dir": "in",
@@ -1111,25 +1108,20 @@
             "PipelineDepth": "1"
           },
           {
-            "Name": "Loop 4",
-            "TripCount": "256",
-            "Latency": "256",
+            "Name": "string1_buffer",
+            "TripCount": "",
+            "LatencyMin": "2",
+            "LatencyMax": "?",
+            "Latency": "2 ~ ?",
             "PipelineII": "1",
-            "PipelineDepth": "1"
+            "PipelineDepth": "3"
           },
           {
-            "Name": "Loop 5",
-            "TripCount": "4",
-            "Latency": "129",
-            "PipelineII": "32",
-            "PipelineDepth": "34"
-          },
-          {
-            "Name": "Loop 6",
-            "TripCount": "1279",
-            "Latency": "1351",
+            "Name": "string2_buffer",
+            "TripCount": "",
+            "Latency": "",
             "PipelineII": "1",
-            "PipelineDepth": "74"
+            "PipelineDepth": "3"
           },
           {
             "Name": "diag_for",
@@ -1142,42 +1134,42 @@
                 "Name": "col_for",
                 "TripCount": "",
                 "Latency": "",
-                "PipelineII": "",
-                "PipelineDepthMin": "3",
-                "PipelineDepthMax": "76",
-                "PipelineDepth": "3 ~ 76"
+                "PipelineII": "1",
+                "PipelineDepth": "74"
               },
               {
                 "Name": "diag_for.2",
                 "TripCount": "",
-                "LatencyMin": "72",
+                "LatencyMin": "2",
                 "LatencyMax": "?",
-                "Latency": "72 ~ ?",
-                "PipelineII": "",
-                "PipelineDepth": "72"
+                "Latency": "2 ~ ?",
+                "PipelineII": "1",
+                "PipelineDepth": "3"
               },
               {
                 "Name": "diag_for.3",
                 "TripCount": "",
-                "LatencyMin": "2",
+                "LatencyMin": "1",
                 "LatencyMax": "?",
-                "Latency": "2 ~ ?",
-                "PipelineII": "",
+                "Latency": "1 ~ ?",
+                "PipelineII": "1",
                 "PipelineDepth": "2"
               },
               {
                 "Name": "diag_for.4",
                 "TripCount": "",
-                "LatencyMin": "2",
-                "LatencyMax": "1022",
-                "Latency": "2 ~ 1022",
-                "PipelineII": "",
+                "LatencyMin": "1",
+                "LatencyMax": "511",
+                "Latency": "1 ~ 511",
+                "PipelineII": "1",
                 "PipelineDepth": "2"
               },
               {
-                "Name": "diag_for.5",
+                "Name": "fix_direction",
                 "TripCount": "",
-                "Latency": "",
+                "LatencyMin": "71",
+                "LatencyMax": "36281",
+                "Latency": "71 ~ 36281",
                 "PipelineII": "",
                 "PipelineDepth": "71"
               }
@@ -1185,18 +1177,18 @@
           }
         ],
         "Area": {
-          "BRAM_18K": "36",
+          "BRAM_18K": "29",
           "AVAIL_BRAM": "280",
-          "UTIL_BRAM": "12",
+          "UTIL_BRAM": "10",
           "DSP": "0",
           "AVAIL_DSP": "220",
           "UTIL_DSP": "0",
-          "FF": "6776",
+          "FF": "3717",
           "AVAIL_FF": "106400",
-          "UTIL_FF": "6",
-          "LUT": "14209",
+          "UTIL_FF": "3",
+          "LUT": "5437",
           "AVAIL_LUT": "53200",
-          "UTIL_LUT": "26",
+          "UTIL_LUT": "10",
           "URAM": "0",
           "AVAIL_URAM": "0",
           "UTIL_URAM": "0"
@@ -1206,7 +1198,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2024-06-11 10:35:32 EEST",
+    "Time": "2024-06-21 13:38:09 EEST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.2"
   }

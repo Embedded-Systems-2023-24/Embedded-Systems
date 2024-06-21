@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName /home/inf2021/iathanasi/embedded/Embedded-Systems/lab3/lsal/LSAL_HW/solution1/./sim/autowrap/testbench/lsal.cpp_pre.cpp.tb.cpp

@@ -2,57 +2,9 @@ INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
 make: 'csim.exe' is up to date.
 Starting Local Alignment Code 
- max index hw is in position (8, 7) 
-
- database_sw: GCCACAAAG
- query: GTGGGATG
-
- max index sw is in position (8, 7) 
+ max index hw is in position (252, 240) 
+ max index sw is in position (252, 240) 
 both ended
-
-******** Similarity Matrix HW meta thn allagh ********
-2 1 2 2 2 1 0 2 
-1 1 1 1 1 1 0 1 
-0 0 0 0 0 0 0 0 
-0 0 0 0 0 2 1 0 
-0 0 0 0 0 1 1 0 
-0 0 0 0 0 2 1 0 
-0 0 0 0 0 2 1 0 
-0 0 0 0 0 2 1 0 
-2 1 2 2 2 1 1 3 
-
-******** Similarity Matrix SW ********
-2 1 2 2 2 1 0 2 
-1 1 1 1 1 1 0 1 
-0 0 0 0 0 0 0 0 
-0 0 0 0 0 2 1 0 
-0 0 0 0 0 1 1 0 
-0 0 0 0 0 2 1 0 
-0 0 0 0 0 2 1 0 
-0 0 0 0 0 2 1 0 
-2 1 2 2 2 1 1 3 
-
-******** Direction Matrix HW meta thn allagh ********
-NW  W NW NW NW  W  C NW 
- N NW  N NW NW NW  C  N 
- C  C  C  C  C  C  C  C 
- C  C  C  C  C NW  W  C 
- C  C  C  C  C  N NW  C 
- C  C  C  C  C NW  W  C 
- C  C  C  C  C NW NW  C 
- C  C  C  C  C NW NW  C 
-NW  W NW NW NW  N NW NW 
-
-******** Direction Matrix SW ********
-NW  W NW NW NW  W  C NW 
- N NW  N NW NW NW  C  N 
- C  C  C  C  C  C  C  C 
- C  C  C  C  C NW  W  C 
- C  C  C  C  C  N NW  C 
- C  C  C  C  C NW  W  C 
- C  C  C  C  C NW NW  C 
- C  C  C  C  C NW NW  C 
-NW  W NW NW NW  N NW NW 
 computation ended!- RESULTS CORRECT 
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

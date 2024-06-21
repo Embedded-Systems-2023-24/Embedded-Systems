@@ -6,7 +6,7 @@
         <DownStreamTool name="vivado"/>
     </downStreamTool>
     <config>
-        <config_interface default_interface="kernel" m_axi_alignment_byte_size="64" m_axi_latency="64" m_axi_max_widen_bitwidth="512" m_axi_offset="slave"/>
+        <config_interface m_axi_latency="64" m_axi_alignment_byte_size="64" m_axi_max_widen_bitwidth="512" default_interface="kernel" m_axi_offset="slave"/>
         <config_rtl register_reset_num="3"/>
     </config>
     <UIConfigurations>
@@ -47,15 +47,20 @@
         <Format formatName="sysgen_ise"/>
         <Format formatName="syn_dcp"/>
         <Format formatName="pcore" use_netlist="none"/>
-        <Format formatName="xo"/>
     </ExportDesign>
-    <Simulation argv="32 32">
+    <Simulation>
         <SimFlow askAgain="true" clangSanitizer="false" compile="false" compileChoice="gcc" disableDeadlockDetect="false" dumpTrace="none" enableDataflowProfiling="false" enableFifoSizing="false" name="cosim" optimizeCompile="false" random_stall="false" reduce_diskspace="false" setup="false" toolName="Auto" waveDebug="false">
             <Rtl active="false" name="systemc"/>
             <Rtl active="true" name="verilog"/>
             <Rtl active="false" name="vhdl"/>
         </SimFlow>
     </Simulation>
+    <name>
+        <value string="solution1"/>
+    </name>
+    <project>
+        <value string="LSAL_HW"/>
+    </project>
     <flowTarget value="vitis"/>
     <targetInfo>
         <TargetInfo value="xc7z020:-clg484:-1"/>
@@ -68,11 +73,5 @@
     <clockList>
         <clock default="false" name="default" period="10"/>
     </clockList>
-    <name>
-        <value string="solution1"/>
-    </name>
-    <project>
-        <value string="LSAL_HW"/>
-    </project>
 </solution>
 

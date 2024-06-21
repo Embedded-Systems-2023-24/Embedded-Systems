@@ -1,25 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
-  <sourceFile>
-    <directive functionName="compute_matrices" label="" functionLabel="">
-      <pragma name="TOP">
-        <option name="name" value="compute_matrices"/>
-      </pragma>
-    </directive>
-    <directive functionName="compute_matrices" label="second_row_scan" functionLabel="">
-      <pragma name="PIPELINE">
-        <option name="II" value="0"/>
-      </pragma>
-    </directive>
-    <directive functionName="compute_matrices" label="first_row_scan" functionLabel="">
-      <pragma name="PIPELINE">
-        <option name="II" value="0"/>
-      </pragma>
-    </directive>
-    <directive functionName="compute_matrices" label="" functionLabel="">
-      <pragma name="TOP">
-        <option name="name" value="compute_matrices"/>
-      </pragma>
-    </directive>
-  </sourceFile>
+    <sourceFile name="">
+        <directive functionName="compute_matrices" label="fix_direction" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="compute_matrices" label="string1_buffer" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="compute_matrices" label="string2_buffer" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+    </sourceFile>
 </AutoPilot:ProjectResources>
+

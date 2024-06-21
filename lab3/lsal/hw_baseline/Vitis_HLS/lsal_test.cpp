@@ -9,6 +9,7 @@
 #include <stdbool.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include "ap_int.h"
 
 //  #define DEBUG
 
@@ -192,7 +193,7 @@ void fillRandomDatabase(char* string, int N, int M) {
 
 }
 
-void char_to_int(char* string, int* string_hw, int dim) {
+void char_to_int(char* string, ap_int<3>* string_hw, int dim) {
 	for (int i=0; i<dim; i++) {
 		if (string[i] == 'A')
 			string_hw[i] = A;
@@ -277,21 +278,20 @@ int main(int argc, char** argv) {
 	char *database = (char*) malloc(sizeof(char) * M+2*(N-1));
 	int *similarity_matrix = (int*) malloc(sizeof(int) * (M+2*(N-1))*N);
 	int *similarity_matrix_hw = (int*) malloc(sizeof(int) * M*N);
-	ap_int<3> *direction_matrix = (short*) malloc(sizeof(short) * (M+2*(N-1))*N);
+	ap_int<3> direction_matrix[(M+2*(N-1))*N] ={-2};
 	short *direction_matrix_hw = (short*) malloc(sizeof(short) * (M*N));
 	int *max_index = (int *) malloc(sizeof(int));
 /* Create the two input strings by calling a random number generator */
 	fillRandom(query, N);
 	fillRandomDatabase(database, N, M);
 
-	int query_hw[N];
-	int database_hw[M+2*(N-1)];
+	ap_int<3> query_hw[N];
+	ap_int<3> database_hw[M+2*(N-1)];
 
 	char_to_int(query, query_hw, N);
 	char_to_int(database, database_hw, M+2*(N-1));
 	
 	memset(similarity_matrix, 0, sizeof(int) * (M+2*(N-1))*N);
-	memset(direction_matrix, -2, sizeof(short) * (M+2*(N-1))*N);
 
 	compute_matrices(query_hw, database_hw, max_index, similarity_matrix, direction_matrix, N, M);
 	reshape_direction(direction_matrix, direction_matrix_hw, N, M);
@@ -357,7 +357,6 @@ int main(int argc, char** argv) {
 	printf("computation ended!- RESULTS CORRECT \n");
 
 	free(similarity_matrix);
-	free(direction_matrix);
 	free(direction_matrix_hw);
 	free(similarity_matrix_hw);
 	free(query);
