@@ -217,7 +217,7 @@ void fillRandomDatabase(char* string, int N, int M) {
 
 }
 
-void char_to_int(char* string, ap_int<3>* string_hw, int dim) {
+void char_to_int(char* string, ap_int<512>* string_hw, int dim) {
 	for (int i=0; i<dim; i++) {
 		if (string[i] == 'A')
 			string_hw[i] = A;
@@ -232,7 +232,7 @@ void char_to_int(char* string, ap_int<3>* string_hw, int dim) {
 	}
 }
 
-void reshape_direction(ap_int<3> *direction_matrix, short *direction_matrix_hw, int N, int M) {
+void reshape_direction(ap_int<512> *direction_matrix, short *direction_matrix_hw, int N, int M) {
 
 	for (int i=0; i < M; i++) 
 		for (int j=0; j < N; j++) 
@@ -327,7 +327,7 @@ int main(int argc, char** argv) {
 	char *database = (char*) malloc(sizeof(char) * M+2*(N-1));
 	int *similarity_matrix = (int*) malloc(sizeof(int) * (M+2*(N-1))*N);
 	int *similarity_matrix_hw = (int*) malloc(sizeof(int) * M*N);
-	ap_int<3> *direction_matrix = (ap_int<3>*) malloc(sizeof(ap_int<3>) * (M+2*(N-1))*N);
+	ap_int<512> *direction_matrix = (ap_int<512>*) malloc(sizeof(ap_int<512>) * (M+2*(N-1))*N);
 	short *direction_matrix_hw = (short*) malloc(sizeof(short) * (M*N));
 	int *max_index = (int *) malloc(sizeof(int));
 
@@ -353,14 +353,14 @@ int main(int argc, char** argv) {
 	fillRandom(query, N);
 	fillRandomDatabase(database, N, M);
 
-	ap_int<3> query_hw[N];
-	ap_int<3> database_hw[M+2*(N-1)];
+	ap_int<512> query_hw[N];
+	ap_int<512> database_hw[M+2*(N-1)];
 
 	char_to_int(query, query_hw, N);
 	char_to_int(database, database_hw, M+2*(N-1));
 
 	memset(similarity_matrix, 0, sizeof(int) * (M+2*(N-1))*N);
-	memset(direction_matrix, 0, sizeof(ap_int<3>) * (M+2*(N-1))*N);
+	memset(direction_matrix, 0, sizeof(ap_int<512>) * (M+2*(N-1))*N);
 
 /**********************************************
  * 			Xilinx OpenCL Initialization
@@ -513,14 +513,14 @@ int main(int argc, char** argv) {
     * host application. We also do not need to use free for any reason.
     * See Xilinx UG1393 for detailed information.
     **************************************************************/
-	input_query = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(ap_int<3>) * N,
+	input_query = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(ap_int<512>) * N,
 	NULL, NULL);
-	input_database = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(ap_int<3>) * (M+2*(N-1)),
+	input_database = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(ap_int<512>) * (M+2*(N-1)),
 	NULL, NULL);
 	output_similarity_matrix = clCreateBuffer(context, CL_MEM_READ_WRITE,
 			sizeof(int) * matrix_size, NULL, NULL);
 	output_direction_matrix = clCreateBuffer(context, CL_MEM_READ_WRITE,
-			sizeof(ap_int<3>) * matrix_size, NULL, NULL);
+			sizeof(ap_int<512>) * matrix_size, NULL, NULL);
 	output_max_index = clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(int),
 	NULL, NULL);
 
@@ -535,7 +535,7 @@ int main(int argc, char** argv) {
     * Step 8 : Write the Input Data to the Write Buffers of the device memory
     **************************************************************/
 	err = clEnqueueWriteBuffer(commands, input_query, CL_TRUE, 0,
-			sizeof(ap_int<3>) * N, query_hw, 0, NULL, NULL);
+			sizeof(ap_int<512>) * N, query_hw, 0, NULL, NULL);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to write to source array a!\n");
 		printf("Test failed\n");
@@ -543,7 +543,7 @@ int main(int argc, char** argv) {
 	}
 
 	err = clEnqueueWriteBuffer(commands, input_database, CL_TRUE, 0,
-			sizeof(ap_int<3>) * (M+2*(N-1)), database_hw, 0, NULL, NULL);
+			sizeof(ap_int<512>) * (M+2*(N-1)), database_hw, 0, NULL, NULL);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to write to source array a!\n");
 		printf("Test failed\n");
@@ -559,7 +559,7 @@ int main(int argc, char** argv) {
 	}
 
 	err = clEnqueueWriteBuffer(commands, output_direction_matrix, CL_TRUE, 0,
-				sizeof(ap_int<3>) * matrix_size, direction_matrix, 0, NULL, NULL);
+				sizeof(ap_int<512>) * matrix_size, direction_matrix, 0, NULL, NULL);
 		if (err != CL_SUCCESS) {
 			printf("Error: Failed to write to source array a!\n");
 			printf("Test failed\n");
@@ -651,7 +651,7 @@ int main(int argc, char** argv) {
 	}
 
 	err = clEnqueueReadBuffer(commands, output_direction_matrix, CL_TRUE, 0,
-			sizeof(ap_int<3>) * matrix_size, direction_matrix, 0, NULL,
+			sizeof(ap_int<512>) * matrix_size, direction_matrix, 0, NULL,
 			&readDirections);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to read array! %d\n", err);

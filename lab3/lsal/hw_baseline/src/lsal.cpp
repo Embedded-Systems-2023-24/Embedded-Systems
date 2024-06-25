@@ -37,11 +37,11 @@ const int M = 65536;
 extern "C" {
 
 void compute_matrices (
-	ap_int<3> string1_mem[N], ap_int<3> string2_mem[M+2*(N-1)], int max_index[0], int similarity_matrix[(M+2*(N-1))*N], ap_int<3> direction_matrix[(M+2*(N-1))*N], int n, int m) {
+	ap_int<512> string1_mem[N], ap_int<512> string2_mem[M+2*(N-1)], int max_index[0], int similarity_matrix[(M+2*(N-1))*N], ap_int<512> direction_matrix[(M+2*(N-1))*N], int n, int m) {
 
 	int test_val;
 	int val;
-	ap_int<3> dir;
+	ap_int<512> dir;
 
     // Following values are used for the n, W, and NW values wrt. similarity_matrix[i]
 	int index = 0;
@@ -49,18 +49,18 @@ void compute_matrices (
 	int west = 0;
 	int northwest = 0;
 	int max_value = 0;
-	ap_int<3> string1[N];
+	ap_int<512> string1[N];
 #pragma HLS ARRAY_PARTITION variable=string1 dim=1 factor=2 cyclic
-	ap_int<3> string2[M+2*(N-1)];
+	ap_int<512> string2[M+2*(N-1)];
 #pragma HLS ARRAY_PARTITION variable=string2 dim=1 factor=2 cyclic
 	int current_diag[N] = {0};
 	int up_diag[N] = {0};
 	int upper_diag[N] = {0};
-	ap_int<3> direction_diag[N];
+	ap_int<512> direction_diag[N];
 
-	string1_buffer:memcpy(string1, string1_mem, sizeof(ap_int<3>)*n);
+	string1_buffer:memcpy(string1, string1_mem, sizeof(ap_int<512>)*n);
 
-	string2_buffer:memcpy(string2, string2_mem, sizeof(ap_int<3>)*(m+2*(n-1)));
+	string2_buffer:memcpy(string2, string2_mem, sizeof(ap_int<512>)*(m+2*(n-1)));
 
 	//Here the real computation starts. Place your code whenever is required. 
   diag_for:
@@ -123,7 +123,7 @@ void compute_matrices (
 		similarity_matrix_cpy:memcpy( &(similarity_matrix[i*n]), current_diag, sizeof(int)*n );
 		up_to_upper:memcpy( upper_diag, up_diag, sizeof(int)*n );
 		current_to_up:memcpy( up_diag, current_diag, sizeof(int)*n );
-	  	fix_direction:memcpy( &(direction_matrix[i*n]), direction_diag, sizeof(ap_int<3>)*n);
+	  	fix_direction:memcpy( &(direction_matrix[i*n]), direction_diag, sizeof(ap_int<512>)*n);
 	}
 }  // end of function
 
