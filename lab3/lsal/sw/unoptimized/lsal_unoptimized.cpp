@@ -61,37 +61,37 @@ void compute_matrices(
 	// Scan the first row of the array.
   first_row_scan:
 	for(int i = 0; i < n; i++) {
-			val = 0;
-			dir = CENTER;
+		val = 0;
+		dir = CENTER;
 
-			if (i != 0)
-				west = similarity_matrix[i - 1];
+		if (i != 0)
+			west = similarity_matrix[i - 1];
 
-			//1st case.
-			test_val = (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
-			if(test_val > 0){
-				val = test_val;
-				dir = NORTH_WEST;
-			}
+		//1st case.
+		test_val = (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
+		if(test_val > 0){
+			val = test_val;
+			dir = NORTH_WEST;
+		}
 	
-			north = 0;
+		north = 0;
 
-			//3rd case.
-			test_val = west + GAP_d;
+		//3rd case.
+		test_val = west + GAP_d;
 
-			if(test_val > val){
-				val = test_val;
-				dir = WEST;
-			}
+		if(test_val > val){
+			val = test_val;
+			dir = WEST;
+		}
 
-			//Save results.
-			similarity_matrix[i] = val;
-			direction_matrix[i] = dir;
+		//Save results.
+		similarity_matrix[i] = val;
+		direction_matrix[i] = dir;
 
-			if (val > max_value) {
-				max_value = val;
-				*max_index = i;
-			}
+		if (val > max_value) {
+			max_value = val;
+			*max_index = i;
+		}
 	}
 
 	// Scan the n*m array row-wise starting from the second row.

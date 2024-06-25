@@ -52,46 +52,44 @@ void compute_matrices(
 	//Here the real computation starts. Place your code whenever is required.
 
 	// Scan the first row of the array.
-		for(int i = 0; i < N; i++) {
-			val = 0;
-			dir = CENTER;
-
-			if (i != 0)
-				west = similarity_matrix[i - 1];
-
-			//1st case.
-			test_val = northwest + (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
-				if(test_val > 0){
-					val = test_val;
-					dir = NORTH_WEST;
-				}
-		
-				north = 0;
-
-				//3rd case.
-				test_val = west + GAP_d;
-				if(test_val > val){
-					val = test_val;
-					dir = WEST;
-				}
-
-				//Save results.
-				similarity_matrix[i] = val;
-				direction_matrix[i] = dir;
-
-				if (val > max_value) {
-					max_value = val;
-					*max_index = i;
-				}
-	}
-
-	// Scan the N*M array row-wise starting from the second row.
-   //for(index = N + 1; index < N*M; index++) {
-	for(int j = 1; j < M; j++) {
+  first_row_scan:	
+	for(int i = 0; i < N; i++) {
 		val = 0;
 		dir = CENTER;
 
-		// first column. 
+		if (i != 0)
+			west = similarity_matrix[i - 1];
+
+		//1st case.
+		test_val = northwest + (( string1[i] == string2[0] ) ? MATCH : MISS_MATCH);
+		if(test_val > 0){
+			val = test_val;
+			dir = NORTH_WEST;
+		}
+
+		//3rd case.
+		test_val = west + GAP_d;
+		if(test_val > val){
+			val = test_val;
+			dir = WEST;
+		}
+
+		//Save results.
+		similarity_matrix[i] = val;
+		direction_matrix[i] = dir;
+
+		if (val > max_value) {
+			max_value = val;
+			*max_index = i;
+		}
+	}
+
+	// Scan the N*M array row-wise starting from the second row.
+  second_row_scan:
+	for(int j = 1; j < M; j++) {
+		//first column
+		val = 0;
+		dir = CENTER;
 
 		//1st case.
 		test_val = ( string1[0] == string2[j] ) ? MATCH : MISS_MATCH; 
@@ -100,8 +98,8 @@ void compute_matrices(
 			dir = NORTH_WEST;
 		}
 
-		north = similarity_matrix[j*N - N];
 		//2nd case.
+		north = similarity_matrix[j*N - N];
 		test_val = north + GAP_i;
 		if(test_val > val){
 			val = test_val;
@@ -117,36 +115,29 @@ void compute_matrices(
 			*max_index = j*N;
 		}
 
-	  for(int i = 1; i < N; i++) {
+	  second_column:	
+		for(int i = 1; i < N; i++) {
+			val = 0;
+			dir = CENTER;
 
-		val = 0;
-		dir = CENTER;
+			northwest = similarity_matrix[index - N - 1];
+			west = similarity_matrix[index - 1];
 
-
-		northwest = similarity_matrix[index - N - 1];
-		west = similarity_matrix[index - 1];
-
-		//1st case.
-		test_val = northwest + (( string1[i] == string2[j] ) ? MATCH : MISS_MATCH);
+			//1st case.
+			test_val = northwest + (( string1[i] == string2[j] ) ? MATCH : MISS_MATCH);
 			if(test_val > 0){
 				val = test_val;
 				dir = NORTH_WEST;
 			}
-	
-			if (j == 0) {
-				// first row.
-				north = 0;
-			}
-			else {
-				north = similarity_matrix[index - N];
-				//2nd case.
-				test_val = north + GAP_i;
-				if(test_val > val){
-					val = test_val;
-					dir = NORTH;
-				}
-			}
 
+			//2nd case.
+			north = similarity_matrix[index - N];
+			test_val = north + GAP_i;
+			if(test_val > val){
+				val = test_val;
+				dir = NORTH;
+			}
+			
 			//3rd case.
 			test_val = west + GAP_d;
 			if(test_val > val){
