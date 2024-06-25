@@ -1,7 +1,6 @@
 #include <string.h>
 #include <stdio.h>
 #include "ap_int.h"
-//#define index j+i*N
 
 const short N = 256;
 const int M = 65536;
@@ -50,7 +49,6 @@ void compute_matrices (
 	int west = 0;
 	int northwest = 0;
 	int max_value = 0;
-	int n_buf, m_buf;
 	ap_int<3> string1[N];
 #pragma HLS ARRAY_PARTITION variable=string1 dim=1 factor=2 cyclic
 	ap_int<3> string2[M+2*(N-1)];
