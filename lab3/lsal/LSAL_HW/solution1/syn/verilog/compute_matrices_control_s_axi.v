@@ -32,7 +32,6 @@ module compute_matrices_control_s_axi
     output wire [63:0]                   string1_mem,
     output wire [63:0]                   string2_mem,
     output wire [63:0]                   max_index,
-    output wire [63:0]                   similarity_matrix,
     output wire [63:0]                   direction_matrix,
     output wire [31:0]                   n,
     output wire [31:0]                   m,
@@ -77,56 +76,48 @@ module compute_matrices_control_s_axi
 // 0x2c : Data signal of max_index
 //        bit 31~0 - max_index[63:32] (Read/Write)
 // 0x30 : reserved
-// 0x34 : Data signal of similarity_matrix
-//        bit 31~0 - similarity_matrix[31:0] (Read/Write)
-// 0x38 : Data signal of similarity_matrix
-//        bit 31~0 - similarity_matrix[63:32] (Read/Write)
-// 0x3c : reserved
-// 0x40 : Data signal of direction_matrix
+// 0x34 : Data signal of direction_matrix
 //        bit 31~0 - direction_matrix[31:0] (Read/Write)
-// 0x44 : Data signal of direction_matrix
+// 0x38 : Data signal of direction_matrix
 //        bit 31~0 - direction_matrix[63:32] (Read/Write)
-// 0x48 : reserved
-// 0x4c : Data signal of n
+// 0x3c : reserved
+// 0x40 : Data signal of n
 //        bit 31~0 - n[31:0] (Read/Write)
-// 0x50 : reserved
-// 0x54 : Data signal of m
+// 0x44 : reserved
+// 0x48 : Data signal of m
 //        bit 31~0 - m[31:0] (Read/Write)
-// 0x58 : reserved
+// 0x4c : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL                  = 7'h00,
-    ADDR_GIE                      = 7'h04,
-    ADDR_IER                      = 7'h08,
-    ADDR_ISR                      = 7'h0c,
-    ADDR_STRING1_MEM_DATA_0       = 7'h10,
-    ADDR_STRING1_MEM_DATA_1       = 7'h14,
-    ADDR_STRING1_MEM_CTRL         = 7'h18,
-    ADDR_STRING2_MEM_DATA_0       = 7'h1c,
-    ADDR_STRING2_MEM_DATA_1       = 7'h20,
-    ADDR_STRING2_MEM_CTRL         = 7'h24,
-    ADDR_MAX_INDEX_DATA_0         = 7'h28,
-    ADDR_MAX_INDEX_DATA_1         = 7'h2c,
-    ADDR_MAX_INDEX_CTRL           = 7'h30,
-    ADDR_SIMILARITY_MATRIX_DATA_0 = 7'h34,
-    ADDR_SIMILARITY_MATRIX_DATA_1 = 7'h38,
-    ADDR_SIMILARITY_MATRIX_CTRL   = 7'h3c,
-    ADDR_DIRECTION_MATRIX_DATA_0  = 7'h40,
-    ADDR_DIRECTION_MATRIX_DATA_1  = 7'h44,
-    ADDR_DIRECTION_MATRIX_CTRL    = 7'h48,
-    ADDR_N_DATA_0                 = 7'h4c,
-    ADDR_N_CTRL                   = 7'h50,
-    ADDR_M_DATA_0                 = 7'h54,
-    ADDR_M_CTRL                   = 7'h58,
-    WRIDLE                        = 2'd0,
-    WRDATA                        = 2'd1,
-    WRRESP                        = 2'd2,
-    WRRESET                       = 2'd3,
-    RDIDLE                        = 2'd0,
-    RDDATA                        = 2'd1,
-    RDRESET                       = 2'd2,
+    ADDR_AP_CTRL                 = 7'h00,
+    ADDR_GIE                     = 7'h04,
+    ADDR_IER                     = 7'h08,
+    ADDR_ISR                     = 7'h0c,
+    ADDR_STRING1_MEM_DATA_0      = 7'h10,
+    ADDR_STRING1_MEM_DATA_1      = 7'h14,
+    ADDR_STRING1_MEM_CTRL        = 7'h18,
+    ADDR_STRING2_MEM_DATA_0      = 7'h1c,
+    ADDR_STRING2_MEM_DATA_1      = 7'h20,
+    ADDR_STRING2_MEM_CTRL        = 7'h24,
+    ADDR_MAX_INDEX_DATA_0        = 7'h28,
+    ADDR_MAX_INDEX_DATA_1        = 7'h2c,
+    ADDR_MAX_INDEX_CTRL          = 7'h30,
+    ADDR_DIRECTION_MATRIX_DATA_0 = 7'h34,
+    ADDR_DIRECTION_MATRIX_DATA_1 = 7'h38,
+    ADDR_DIRECTION_MATRIX_CTRL   = 7'h3c,
+    ADDR_N_DATA_0                = 7'h40,
+    ADDR_N_CTRL                  = 7'h44,
+    ADDR_M_DATA_0                = 7'h48,
+    ADDR_M_CTRL                  = 7'h4c,
+    WRIDLE                       = 2'd0,
+    WRDATA                       = 2'd1,
+    WRRESP                       = 2'd2,
+    WRRESET                      = 2'd3,
+    RDIDLE                       = 2'd0,
+    RDDATA                       = 2'd1,
+    RDRESET                      = 2'd2,
     ADDR_BITS                = 7;
 
 //------------------------Local signal-------------------
@@ -154,7 +145,6 @@ localparam
     reg  [63:0]                   int_string1_mem = 'b0;
     reg  [63:0]                   int_string2_mem = 'b0;
     reg  [63:0]                   int_max_index = 'b0;
-    reg  [63:0]                   int_similarity_matrix = 'b0;
     reg  [63:0]                   int_direction_matrix = 'b0;
     reg  [31:0]                   int_n = 'b0;
     reg  [31:0]                   int_m = 'b0;
@@ -285,12 +275,6 @@ always @(posedge ACLK) begin
                 ADDR_MAX_INDEX_DATA_1: begin
                     rdata <= int_max_index[63:32];
                 end
-                ADDR_SIMILARITY_MATRIX_DATA_0: begin
-                    rdata <= int_similarity_matrix[31:0];
-                end
-                ADDR_SIMILARITY_MATRIX_DATA_1: begin
-                    rdata <= int_similarity_matrix[63:32];
-                end
                 ADDR_DIRECTION_MATRIX_DATA_0: begin
                     rdata <= int_direction_matrix[31:0];
                 end
@@ -310,17 +294,16 @@ end
 
 
 //------------------------Register logic-----------------
-assign interrupt         = int_gie & (|int_isr);
-assign ap_start          = int_ap_start;
-assign int_ap_done       = ap_done;
-assign ap_continue       = int_ap_continue;
-assign string1_mem       = int_string1_mem;
-assign string2_mem       = int_string2_mem;
-assign max_index         = int_max_index;
-assign similarity_matrix = int_similarity_matrix;
-assign direction_matrix  = int_direction_matrix;
-assign n                 = int_n;
-assign m                 = int_m;
+assign interrupt        = int_gie & (|int_isr);
+assign ap_start         = int_ap_start;
+assign int_ap_done      = ap_done;
+assign ap_continue      = int_ap_continue;
+assign string1_mem      = int_string1_mem;
+assign string2_mem      = int_string2_mem;
+assign max_index        = int_max_index;
+assign direction_matrix = int_direction_matrix;
+assign n                = int_n;
+assign m                = int_m;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -476,26 +459,6 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_MAX_INDEX_DATA_1)
             int_max_index[63:32] <= (WDATA[31:0] & wmask) | (int_max_index[63:32] & ~wmask);
-    end
-end
-
-// int_similarity_matrix[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_similarity_matrix[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_SIMILARITY_MATRIX_DATA_0)
-            int_similarity_matrix[31:0] <= (WDATA[31:0] & wmask) | (int_similarity_matrix[31:0] & ~wmask);
-    end
-end
-
-// int_similarity_matrix[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_similarity_matrix[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_SIMILARITY_MATRIX_DATA_1)
-            int_similarity_matrix[63:32] <= (WDATA[31:0] & wmask) | (int_similarity_matrix[63:32] & ~wmask);
     end
 end
 

@@ -140,25 +140,6 @@ u64 XCompute_matrices_Get_max_index(XCompute_matrices *InstancePtr) {
     return Data;
 }
 
-void XCompute_matrices_Set_similarity_matrix(XCompute_matrices *InstancePtr, u64 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XCompute_matrices_WriteReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_SIMILARITY_MATRIX_DATA, (u32)(Data));
-    XCompute_matrices_WriteReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_SIMILARITY_MATRIX_DATA + 4, (u32)(Data >> 32));
-}
-
-u64 XCompute_matrices_Get_similarity_matrix(XCompute_matrices *InstancePtr) {
-    u64 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XCompute_matrices_ReadReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_SIMILARITY_MATRIX_DATA);
-    Data += (u64)XCompute_matrices_ReadReg(InstancePtr->Control_BaseAddress, XCOMPUTE_MATRICES_CONTROL_ADDR_SIMILARITY_MATRIX_DATA + 4) << 32;
-    return Data;
-}
-
 void XCompute_matrices_Set_direction_matrix(XCompute_matrices *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

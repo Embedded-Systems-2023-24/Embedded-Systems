@@ -7,11 +7,11 @@ library ieee;
 use ieee.std_logic_1164.all; 
 use ieee.std_logic_unsigned.all;
 
-entity compute_matrices_current_diag_ram is 
+entity compute_matrices_string1_0_V_ram is 
     generic(
-            DWIDTH     : integer := 32; 
-            AWIDTH     : integer := 8; 
-            MEM_SIZE    : integer := 256
+            DWIDTH     : integer := 3; 
+            AWIDTH     : integer := 7; 
+            MEM_SIZE    : integer := 128
     ); 
     port (
           addr0     : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -24,7 +24,7 @@ entity compute_matrices_current_diag_ram is
 end entity; 
 
 
-architecture rtl of compute_matrices_current_diag_ram is 
+architecture rtl of compute_matrices_string1_0_V_ram is 
 
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
@@ -64,11 +64,11 @@ end rtl;
 Library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity compute_matrices_current_diag is
+entity compute_matrices_string1_0_V is
     generic (
-        DataWidth : INTEGER := 32;
-        AddressRange : INTEGER := 256;
-        AddressWidth : INTEGER := 8);
+        DataWidth : INTEGER := 3;
+        AddressRange : INTEGER := 128;
+        AddressWidth : INTEGER := 7);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;
@@ -79,8 +79,8 @@ entity compute_matrices_current_diag is
         q0 : OUT STD_LOGIC_VECTOR(DataWidth - 1 DOWNTO 0));
 end entity;
 
-architecture arch of compute_matrices_current_diag is
-    component compute_matrices_current_diag_ram is
+architecture arch of compute_matrices_string1_0_V is
+    component compute_matrices_string1_0_V_ram is
         port (
             clk : IN STD_LOGIC;
             addr0 : IN STD_LOGIC_VECTOR;
@@ -93,7 +93,7 @@ architecture arch of compute_matrices_current_diag is
 
 
 begin
-    compute_matrices_current_diag_ram_U :  component compute_matrices_current_diag_ram
+    compute_matrices_string1_0_V_ram_U :  component compute_matrices_string1_0_V_ram
     port map (
         clk => clk,
         addr0 => address0,

@@ -37,40 +37,33 @@
 // 0x2c : Data signal of max_index
 //        bit 31~0 - max_index[63:32] (Read/Write)
 // 0x30 : reserved
-// 0x34 : Data signal of similarity_matrix
-//        bit 31~0 - similarity_matrix[31:0] (Read/Write)
-// 0x38 : Data signal of similarity_matrix
-//        bit 31~0 - similarity_matrix[63:32] (Read/Write)
-// 0x3c : reserved
-// 0x40 : Data signal of direction_matrix
+// 0x34 : Data signal of direction_matrix
 //        bit 31~0 - direction_matrix[31:0] (Read/Write)
-// 0x44 : Data signal of direction_matrix
+// 0x38 : Data signal of direction_matrix
 //        bit 31~0 - direction_matrix[63:32] (Read/Write)
-// 0x48 : reserved
-// 0x4c : Data signal of n
+// 0x3c : reserved
+// 0x40 : Data signal of n
 //        bit 31~0 - n[31:0] (Read/Write)
-// 0x50 : reserved
-// 0x54 : Data signal of m
+// 0x44 : reserved
+// 0x48 : Data signal of m
 //        bit 31~0 - m[31:0] (Read/Write)
-// 0x58 : reserved
+// 0x4c : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
-#define XCOMPUTE_MATRICES_CONTROL_ADDR_AP_CTRL                0x00
-#define XCOMPUTE_MATRICES_CONTROL_ADDR_GIE                    0x04
-#define XCOMPUTE_MATRICES_CONTROL_ADDR_IER                    0x08
-#define XCOMPUTE_MATRICES_CONTROL_ADDR_ISR                    0x0c
-#define XCOMPUTE_MATRICES_CONTROL_ADDR_STRING1_MEM_DATA       0x10
-#define XCOMPUTE_MATRICES_CONTROL_BITS_STRING1_MEM_DATA       64
-#define XCOMPUTE_MATRICES_CONTROL_ADDR_STRING2_MEM_DATA       0x1c
-#define XCOMPUTE_MATRICES_CONTROL_BITS_STRING2_MEM_DATA       64
-#define XCOMPUTE_MATRICES_CONTROL_ADDR_MAX_INDEX_DATA         0x28
-#define XCOMPUTE_MATRICES_CONTROL_BITS_MAX_INDEX_DATA         64
-#define XCOMPUTE_MATRICES_CONTROL_ADDR_SIMILARITY_MATRIX_DATA 0x34
-#define XCOMPUTE_MATRICES_CONTROL_BITS_SIMILARITY_MATRIX_DATA 64
-#define XCOMPUTE_MATRICES_CONTROL_ADDR_DIRECTION_MATRIX_DATA  0x40
-#define XCOMPUTE_MATRICES_CONTROL_BITS_DIRECTION_MATRIX_DATA  64
-#define XCOMPUTE_MATRICES_CONTROL_ADDR_N_DATA                 0x4c
-#define XCOMPUTE_MATRICES_CONTROL_BITS_N_DATA                 32
-#define XCOMPUTE_MATRICES_CONTROL_ADDR_M_DATA                 0x54
-#define XCOMPUTE_MATRICES_CONTROL_BITS_M_DATA                 32
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_AP_CTRL               0x00
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_GIE                   0x04
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_IER                   0x08
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_ISR                   0x0c
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_STRING1_MEM_DATA      0x10
+#define XCOMPUTE_MATRICES_CONTROL_BITS_STRING1_MEM_DATA      64
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_STRING2_MEM_DATA      0x1c
+#define XCOMPUTE_MATRICES_CONTROL_BITS_STRING2_MEM_DATA      64
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_MAX_INDEX_DATA        0x28
+#define XCOMPUTE_MATRICES_CONTROL_BITS_MAX_INDEX_DATA        64
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_DIRECTION_MATRIX_DATA 0x34
+#define XCOMPUTE_MATRICES_CONTROL_BITS_DIRECTION_MATRIX_DATA 64
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_N_DATA                0x40
+#define XCOMPUTE_MATRICES_CONTROL_BITS_N_DATA                32
+#define XCOMPUTE_MATRICES_CONTROL_ADDR_M_DATA                0x48
+#define XCOMPUTE_MATRICES_CONTROL_BITS_M_DATA                32
 

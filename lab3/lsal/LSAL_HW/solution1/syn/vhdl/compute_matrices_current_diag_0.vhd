@@ -7,11 +7,11 @@ library ieee;
 use ieee.std_logic_1164.all; 
 use ieee.std_logic_unsigned.all;
 
-entity compute_matrices_string2_V_0_ram is 
+entity compute_matrices_current_diag_0_ram is 
     generic(
-            DWIDTH     : integer := 3; 
-            AWIDTH     : integer := 16; 
-            MEM_SIZE    : integer := 33023
+            DWIDTH     : integer := 32; 
+            AWIDTH     : integer := 8; 
+            MEM_SIZE    : integer := 256
     ); 
     port (
           addr0     : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -24,7 +24,7 @@ entity compute_matrices_string2_V_0_ram is
 end entity; 
 
 
-architecture rtl of compute_matrices_string2_V_0_ram is 
+architecture rtl of compute_matrices_current_diag_0_ram is 
 
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
@@ -64,11 +64,11 @@ end rtl;
 Library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity compute_matrices_string2_V_0 is
+entity compute_matrices_current_diag_0 is
     generic (
-        DataWidth : INTEGER := 3;
-        AddressRange : INTEGER := 33023;
-        AddressWidth : INTEGER := 16);
+        DataWidth : INTEGER := 32;
+        AddressRange : INTEGER := 256;
+        AddressWidth : INTEGER := 8);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;
@@ -79,8 +79,8 @@ entity compute_matrices_string2_V_0 is
         q0 : OUT STD_LOGIC_VECTOR(DataWidth - 1 DOWNTO 0));
 end entity;
 
-architecture arch of compute_matrices_string2_V_0 is
-    component compute_matrices_string2_V_0_ram is
+architecture arch of compute_matrices_current_diag_0 is
+    component compute_matrices_current_diag_0_ram is
         port (
             clk : IN STD_LOGIC;
             addr0 : IN STD_LOGIC_VECTOR;
@@ -93,7 +93,7 @@ architecture arch of compute_matrices_string2_V_0 is
 
 
 begin
-    compute_matrices_string2_V_0_ram_U :  component compute_matrices_string2_V_0_ram
+    compute_matrices_current_diag_0_ram_U :  component compute_matrices_current_diag_0_ram
     port map (
         clk => clk,
         addr0 => address0,

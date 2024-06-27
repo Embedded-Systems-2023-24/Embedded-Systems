@@ -94,8 +94,6 @@ void XCompute_matrices_Set_string2_mem(XCompute_matrices *InstancePtr, u64 Data)
 u64 XCompute_matrices_Get_string2_mem(XCompute_matrices *InstancePtr);
 void XCompute_matrices_Set_max_index(XCompute_matrices *InstancePtr, u64 Data);
 u64 XCompute_matrices_Get_max_index(XCompute_matrices *InstancePtr);
-void XCompute_matrices_Set_similarity_matrix(XCompute_matrices *InstancePtr, u64 Data);
-u64 XCompute_matrices_Get_similarity_matrix(XCompute_matrices *InstancePtr);
 void XCompute_matrices_Set_direction_matrix(XCompute_matrices *InstancePtr, u64 Data);
 u64 XCompute_matrices_Get_direction_matrix(XCompute_matrices *InstancePtr);
 void XCompute_matrices_Set_n(XCompute_matrices *InstancePtr, u32 Data);

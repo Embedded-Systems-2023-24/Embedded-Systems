@@ -217,7 +217,7 @@ void fillRandomDatabase(char* string, int N, int M) {
 
 }
 
-void char_to_int(char* string, ap_int<512>* string_hw, int dim) {
+void char_to_int(char* string, ap_int<3>* string_hw, int dim) {
 	for (int i=0; i<dim; i++) {
 		if (string[i] == 'A')
 			string_hw[i] = A;
@@ -232,19 +232,11 @@ void char_to_int(char* string, ap_int<512>* string_hw, int dim) {
 	}
 }
 
-void reshape_direction(ap_int<512> *direction_matrix, short *direction_matrix_hw, int N, int M) {
+void reshape_direction(ap_int<3> *direction_matrix, short *direction_matrix_hw, int N, int M) {
 
 	for (int i=0; i < M; i++) 
 		for (int j=0; j < N; j++) 
 			direction_matrix_hw[j+i*N] = direction_matrix[j+(j+i)*N];
-
-}
-
-void reshape_similarity(int *similarity_matrix, int *similarity_matrix_hw, int N, int M) {
-	
-	for (int i=0; i < M; i++) 
-		for (int j=0; j < N; j++) 
-			similarity_matrix_hw[j+i*N] = similarity_matrix[j+(j+i)*N];
 
 }
 
@@ -325,9 +317,7 @@ int main(int argc, char** argv) {
 
     char *query = (char*) malloc(sizeof(char) * N);
 	char *database = (char*) malloc(sizeof(char) * M+2*(N-1));
-	int *similarity_matrix = (int*) malloc(sizeof(int) * (M+2*(N-1))*N);
-	int *similarity_matrix_hw = (int*) malloc(sizeof(int) * M*N);
-	ap_int<512> *direction_matrix = (ap_int<512>*) malloc(sizeof(ap_int<512>) * (M+2*(N-1))*N);
+	ap_int<3> *direction_matrix = (ap_int<3>*) malloc(sizeof(ap_int<3>) * (M+2*(N-1))*N);
 	short *direction_matrix_hw = (short*) malloc(sizeof(short) * (M*N));
 	int *max_index = (int *) malloc(sizeof(int));
 
@@ -346,21 +336,19 @@ int main(int argc, char** argv) {
 
 	cl_mem input_query;
 	cl_mem input_database;
-	cl_mem output_similarity_matrix;
 	cl_mem output_direction_matrix;
 	cl_mem output_max_index;
 
 	fillRandom(query, N);
 	fillRandomDatabase(database, N, M);
 
-	ap_int<512> query_hw[N];
-	ap_int<512> database_hw[M+2*(N-1)];
+	ap_int<3> query_hw[N];
+	ap_int<3> database_hw[M+2*(N-1)];
 
 	char_to_int(query, query_hw, N);
 	char_to_int(database, database_hw, M+2*(N-1));
 
-	memset(similarity_matrix, 0, sizeof(int) * (M+2*(N-1))*N);
-	memset(direction_matrix, 0, sizeof(ap_int<512>) * (M+2*(N-1))*N);
+	memset(direction_matrix, 0, sizeof(ap_int<3>) * (M+2*(N-1))*N);
 
 /**********************************************
  * 			Xilinx OpenCL Initialization
@@ -513,18 +501,16 @@ int main(int argc, char** argv) {
     * host application. We also do not need to use free for any reason.
     * See Xilinx UG1393 for detailed information.
     **************************************************************/
-	input_query = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(ap_int<512>) * N,
+	input_query = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(ap_int<3>) * N,
 	NULL, NULL);
-	input_database = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(ap_int<512>) * (M+2*(N-1)),
+	input_database = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(ap_int<3>) * (M+2*(N-1)),
 	NULL, NULL);
-	output_similarity_matrix = clCreateBuffer(context, CL_MEM_READ_WRITE,
-			sizeof(int) * matrix_size, NULL, NULL);
 	output_direction_matrix = clCreateBuffer(context, CL_MEM_READ_WRITE,
-			sizeof(ap_int<512>) * matrix_size, NULL, NULL);
+			sizeof(ap_int<3>) * matrix_size, NULL, NULL);
 	output_max_index = clCreateBuffer(context, CL_MEM_READ_WRITE, sizeof(int),
 	NULL, NULL);
 
-	if (!input_query || !input_database || !output_similarity_matrix
+	if (!input_query || !input_database
 			|| !output_direction_matrix || !output_max_index) {
 		printf("Error: Failed to allocate device memory!\n");
 		printf("Test failed\n");
@@ -535,7 +521,7 @@ int main(int argc, char** argv) {
     * Step 8 : Write the Input Data to the Write Buffers of the device memory
     **************************************************************/
 	err = clEnqueueWriteBuffer(commands, input_query, CL_TRUE, 0,
-			sizeof(ap_int<512>) * N, query_hw, 0, NULL, NULL);
+			sizeof(ap_int<3>) * N, query_hw, 0, NULL, NULL);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to write to source array a!\n");
 		printf("Test failed\n");
@@ -543,15 +529,7 @@ int main(int argc, char** argv) {
 	}
 
 	err = clEnqueueWriteBuffer(commands, input_database, CL_TRUE, 0,
-			sizeof(ap_int<512>) * (M+2*(N-1)), database_hw, 0, NULL, NULL);
-	if (err != CL_SUCCESS) {
-		printf("Error: Failed to write to source array a!\n");
-		printf("Test failed\n");
-		return EXIT_FAILURE;
-	}
-
-	err = clEnqueueWriteBuffer(commands, output_similarity_matrix, CL_TRUE, 0,
-			sizeof(int) * matrix_size, similarity_matrix, 0, NULL, NULL);
+			sizeof(ap_int<3>) * (M+2*(N-1)), database_hw, 0, NULL, NULL);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to write to source array a!\n");
 		printf("Test failed\n");
@@ -559,7 +537,7 @@ int main(int argc, char** argv) {
 	}
 
 	err = clEnqueueWriteBuffer(commands, output_direction_matrix, CL_TRUE, 0,
-				sizeof(ap_int<512>) * matrix_size, direction_matrix, 0, NULL, NULL);
+				sizeof(ap_int<3>) * matrix_size, direction_matrix, 0, NULL, NULL);
 		if (err != CL_SUCCESS) {
 			printf("Error: Failed to write to source array a!\n");
 			printf("Test failed\n");
@@ -592,30 +570,23 @@ int main(int argc, char** argv) {
 		return EXIT_FAILURE;
 	}
 	printf("set arg 3 \n");
-	err |= clSetKernelArg(kernel, 3, sizeof(cl_mem), &output_similarity_matrix);
-	if (err != CL_SUCCESS) {
-		printf("Error: Failed to set kernel arguments 3! %d\n", err);
-		printf("Test failed\n");
-		return EXIT_FAILURE;
-	}
-	printf("set arg 4 \n");
-	err |= clSetKernelArg(kernel, 4, sizeof(cl_mem),
+	err |= clSetKernelArg(kernel, 3, sizeof(cl_mem),
 			&output_direction_matrix);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to set kernel arguments 4! %d\n", err);
 		printf("Test failed\n");
 		return EXIT_FAILURE;
 	}
-	printf("set arg 5 \n");
-	err |= clSetKernelArg(kernel, 5, sizeof(cl_uint),
+	printf("set arg 4 \n");
+	err |= clSetKernelArg(kernel, 4, sizeof(cl_uint),
 			&N);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to set kernel arguments 5! %d\n", err);
 		printf("Test failed\n");
 		return EXIT_FAILURE;
 	}
-	printf("set arg 6 \n");
-	err |= clSetKernelArg(kernel, 6, sizeof(cl_uint),
+	printf("set arg 5 \n");
+	err |= clSetKernelArg(kernel, 5, sizeof(cl_uint),
 			&M);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to set kernel arguments 6! %d\n", err);
@@ -641,17 +612,10 @@ int main(int argc, char** argv) {
 	/**************************************************************
 	 * Step 11: Read back the results from the device to verify the output
 	 **************************************************************/
-	cl_event readMax, readSimilarity, readDirections;
-	err = clEnqueueReadBuffer(commands, output_similarity_matrix, CL_TRUE, 0,
-			sizeof(char) * matrix_size, similarity_matrix, 0, NULL, &readSimilarity);
-	if (err != CL_SUCCESS) {
-		printf("Error: Failed to read array! %d\n", err);
-		printf("Test failed\n");
-		return EXIT_FAILURE;
-	}
+	cl_event readMax, readDirections;
 
 	err = clEnqueueReadBuffer(commands, output_direction_matrix, CL_TRUE, 0,
-			sizeof(ap_int<512>) * matrix_size, direction_matrix, 0, NULL,
+			sizeof(ap_int<3>) * matrix_size, direction_matrix, 0, NULL,
 			&readDirections);
 	if (err != CL_SUCCESS) {
 		printf("Error: Failed to read array! %d\n", err);
@@ -666,7 +630,6 @@ int main(int argc, char** argv) {
 		return EXIT_FAILURE;
 	}
 
-	clWaitForEvents(1, &readSimilarity);
 	clWaitForEvents(1, &readDirections);
 	clWaitForEvents(1, &readMax);
 
@@ -676,7 +639,6 @@ int main(int argc, char** argv) {
 	clReleaseMemObject(input_query);
 	clReleaseMemObject(output_direction_matrix);
 	clReleaseMemObject(output_max_index);
-	clReleaseMemObject(output_similarity_matrix);
 	clReleaseProgram(program);
 	clReleaseKernel(kernel);
 	clReleaseCommandQueue(commands);
@@ -696,7 +658,6 @@ int main(int argc, char** argv) {
 	strncpy(database_sw, &(database[N-1]), M);
 
 	reshape_direction(direction_matrix, direction_matrix_hw, N, M);
-	reshape_similarity(similarity_matrix, similarity_matrix_hw, N, M);
 
 	for(cl_uint i = 0; i < N*M; i++){
 		similarity_matrix_sw[i] = 0;
@@ -738,13 +699,11 @@ int main(int argc, char** argv) {
 	 **************************************************************/
     
 	free(direction_matrix_hw);
-	free(similarity_matrix_hw);
 	free(query);
 	free(database);
 	free(similarity_matrix_sw);
 	free(direction_matrix_sw);
 	free(max_index_sw);
-	free(similarity_matrix);
 	free(direction_matrix);
 	free(max_index);
 

@@ -6,3 +6,4 @@
 set_directive_unroll "compute_matrices/fix_direction"
 set_directive_unroll "compute_matrices/string1_buffer"
 set_directive_unroll "compute_matrices/string2_buffer"
+set_directive_top -name compute_matrices "compute_matrices"

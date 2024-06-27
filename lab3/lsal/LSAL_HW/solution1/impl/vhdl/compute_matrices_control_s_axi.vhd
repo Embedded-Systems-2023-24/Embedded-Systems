@@ -35,7 +35,6 @@ port (
     string1_mem           :out  STD_LOGIC_VECTOR(63 downto 0);
     string2_mem           :out  STD_LOGIC_VECTOR(63 downto 0);
     max_index             :out  STD_LOGIC_VECTOR(63 downto 0);
-    similarity_matrix     :out  STD_LOGIC_VECTOR(63 downto 0);
     direction_matrix      :out  STD_LOGIC_VECTOR(63 downto 0);
     n                     :out  STD_LOGIC_VECTOR(31 downto 0);
     m                     :out  STD_LOGIC_VECTOR(31 downto 0);
@@ -82,22 +81,17 @@ end entity compute_matrices_control_s_axi;
 -- 0x2c : Data signal of max_index
 --        bit 31~0 - max_index[63:32] (Read/Write)
 -- 0x30 : reserved
--- 0x34 : Data signal of similarity_matrix
---        bit 31~0 - similarity_matrix[31:0] (Read/Write)
--- 0x38 : Data signal of similarity_matrix
---        bit 31~0 - similarity_matrix[63:32] (Read/Write)
--- 0x3c : reserved
--- 0x40 : Data signal of direction_matrix
+-- 0x34 : Data signal of direction_matrix
 --        bit 31~0 - direction_matrix[31:0] (Read/Write)
--- 0x44 : Data signal of direction_matrix
+-- 0x38 : Data signal of direction_matrix
 --        bit 31~0 - direction_matrix[63:32] (Read/Write)
--- 0x48 : reserved
--- 0x4c : Data signal of n
+-- 0x3c : reserved
+-- 0x40 : Data signal of n
 --        bit 31~0 - n[31:0] (Read/Write)
--- 0x50 : reserved
--- 0x54 : Data signal of m
+-- 0x44 : reserved
+-- 0x48 : Data signal of m
 --        bit 31~0 - m[31:0] (Read/Write)
--- 0x58 : reserved
+-- 0x4c : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of compute_matrices_control_s_axi is
@@ -105,29 +99,26 @@ architecture behave of compute_matrices_control_s_axi is
     signal wstate  : states := wrreset;
     signal rstate  : states := rdreset;
     signal wnext, rnext: states;
-    constant ADDR_AP_CTRL                  : INTEGER := 16#00#;
-    constant ADDR_GIE                      : INTEGER := 16#04#;
-    constant ADDR_IER                      : INTEGER := 16#08#;
-    constant ADDR_ISR                      : INTEGER := 16#0c#;
-    constant ADDR_STRING1_MEM_DATA_0       : INTEGER := 16#10#;
-    constant ADDR_STRING1_MEM_DATA_1       : INTEGER := 16#14#;
-    constant ADDR_STRING1_MEM_CTRL         : INTEGER := 16#18#;
-    constant ADDR_STRING2_MEM_DATA_0       : INTEGER := 16#1c#;
-    constant ADDR_STRING2_MEM_DATA_1       : INTEGER := 16#20#;
-    constant ADDR_STRING2_MEM_CTRL         : INTEGER := 16#24#;
-    constant ADDR_MAX_INDEX_DATA_0         : INTEGER := 16#28#;
-    constant ADDR_MAX_INDEX_DATA_1         : INTEGER := 16#2c#;
-    constant ADDR_MAX_INDEX_CTRL           : INTEGER := 16#30#;
-    constant ADDR_SIMILARITY_MATRIX_DATA_0 : INTEGER := 16#34#;
-    constant ADDR_SIMILARITY_MATRIX_DATA_1 : INTEGER := 16#38#;
-    constant ADDR_SIMILARITY_MATRIX_CTRL   : INTEGER := 16#3c#;
-    constant ADDR_DIRECTION_MATRIX_DATA_0  : INTEGER := 16#40#;
-    constant ADDR_DIRECTION_MATRIX_DATA_1  : INTEGER := 16#44#;
-    constant ADDR_DIRECTION_MATRIX_CTRL    : INTEGER := 16#48#;
-    constant ADDR_N_DATA_0                 : INTEGER := 16#4c#;
-    constant ADDR_N_CTRL                   : INTEGER := 16#50#;
-    constant ADDR_M_DATA_0                 : INTEGER := 16#54#;
-    constant ADDR_M_CTRL                   : INTEGER := 16#58#;
+    constant ADDR_AP_CTRL                 : INTEGER := 16#00#;
+    constant ADDR_GIE                     : INTEGER := 16#04#;
+    constant ADDR_IER                     : INTEGER := 16#08#;
+    constant ADDR_ISR                     : INTEGER := 16#0c#;
+    constant ADDR_STRING1_MEM_DATA_0      : INTEGER := 16#10#;
+    constant ADDR_STRING1_MEM_DATA_1      : INTEGER := 16#14#;
+    constant ADDR_STRING1_MEM_CTRL        : INTEGER := 16#18#;
+    constant ADDR_STRING2_MEM_DATA_0      : INTEGER := 16#1c#;
+    constant ADDR_STRING2_MEM_DATA_1      : INTEGER := 16#20#;
+    constant ADDR_STRING2_MEM_CTRL        : INTEGER := 16#24#;
+    constant ADDR_MAX_INDEX_DATA_0        : INTEGER := 16#28#;
+    constant ADDR_MAX_INDEX_DATA_1        : INTEGER := 16#2c#;
+    constant ADDR_MAX_INDEX_CTRL          : INTEGER := 16#30#;
+    constant ADDR_DIRECTION_MATRIX_DATA_0 : INTEGER := 16#34#;
+    constant ADDR_DIRECTION_MATRIX_DATA_1 : INTEGER := 16#38#;
+    constant ADDR_DIRECTION_MATRIX_CTRL   : INTEGER := 16#3c#;
+    constant ADDR_N_DATA_0                : INTEGER := 16#40#;
+    constant ADDR_N_CTRL                  : INTEGER := 16#44#;
+    constant ADDR_M_DATA_0                : INTEGER := 16#48#;
+    constant ADDR_M_CTRL                  : INTEGER := 16#4c#;
     constant ADDR_BITS         : INTEGER := 7;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -154,7 +145,6 @@ architecture behave of compute_matrices_control_s_axi is
     signal int_string1_mem     : UNSIGNED(63 downto 0) := (others => '0');
     signal int_string2_mem     : UNSIGNED(63 downto 0) := (others => '0');
     signal int_max_index       : UNSIGNED(63 downto 0) := (others => '0');
-    signal int_similarity_matrix : UNSIGNED(63 downto 0) := (others => '0');
     signal int_direction_matrix : UNSIGNED(63 downto 0) := (others => '0');
     signal int_n               : UNSIGNED(31 downto 0) := (others => '0');
     signal int_m               : UNSIGNED(31 downto 0) := (others => '0');
@@ -298,10 +288,6 @@ begin
                         rdata_data <= RESIZE(int_max_index(31 downto 0), 32);
                     when ADDR_MAX_INDEX_DATA_1 =>
                         rdata_data <= RESIZE(int_max_index(63 downto 32), 32);
-                    when ADDR_SIMILARITY_MATRIX_DATA_0 =>
-                        rdata_data <= RESIZE(int_similarity_matrix(31 downto 0), 32);
-                    when ADDR_SIMILARITY_MATRIX_DATA_1 =>
-                        rdata_data <= RESIZE(int_similarity_matrix(63 downto 32), 32);
                     when ADDR_DIRECTION_MATRIX_DATA_0 =>
                         rdata_data <= RESIZE(int_direction_matrix(31 downto 0), 32);
                     when ADDR_DIRECTION_MATRIX_DATA_1 =>
@@ -326,7 +312,6 @@ begin
     string1_mem          <= STD_LOGIC_VECTOR(int_string1_mem);
     string2_mem          <= STD_LOGIC_VECTOR(int_string2_mem);
     max_index            <= STD_LOGIC_VECTOR(int_max_index);
-    similarity_matrix    <= STD_LOGIC_VECTOR(int_similarity_matrix);
     direction_matrix     <= STD_LOGIC_VECTOR(int_direction_matrix);
     n                    <= STD_LOGIC_VECTOR(int_n);
     m                    <= STD_LOGIC_VECTOR(int_m);
@@ -519,28 +504,6 @@ begin
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_MAX_INDEX_DATA_1) then
                     int_max_index(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_max_index(63 downto 32));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_SIMILARITY_MATRIX_DATA_0) then
-                    int_similarity_matrix(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_similarity_matrix(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_SIMILARITY_MATRIX_DATA_1) then
-                    int_similarity_matrix(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_similarity_matrix(63 downto 32));
                 end if;
             end if;
         end if;

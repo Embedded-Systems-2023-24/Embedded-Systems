@@ -31,7 +31,7 @@ const int M = 65536;
 #define C 2
 #define T 3
 
-void compute_matrices (ap_int<512> string1_mem[N], ap_int<512> string2_mem[M+2*(N-1)], int max_index[0], int similarity_matrix[(M+2*(N-1))*N], ap_int<512> direction_matrix[(M+2*(N-1))*N], int n, int m);
+void compute_matrices (ap_int<3> string1_mem[N], ap_int<3> string2_mem[M+2*(N-1)], int max_index[0], ap_int<3> direction_matrix[(M+2*(N-1))*N], int n, int m);
 
 void compute_matrices_sw (char string1[N], char string2[M], int max_index[0], int similarity_matrix[N*M], short direction_matrix[N*M], int n, int m) {
 
@@ -71,15 +71,12 @@ void compute_matrices_sw (char string1[N], char string2[M], int max_index[0], in
 
 			//3rd case.
 			test_val = west + GAP_d;
-// printf("(%d.%d)", i, j);
-// printf("  west: %d \n  test_val:%x, val:%d, i + %d ,", west, test_val, val, (i*n)+j);
 			if(test_val > val){
 				val = test_val;
 				dir = WEST;
 			}
 
 			//Save results.
-// printf("dir: %d \n", dir);
 			similarity_matrix[i] = val;
 			direction_matrix[i] = dir;
 
@@ -193,7 +190,7 @@ void fillRandomDatabase(char* string, int N, int M) {
 
 }
 
-void char_to_int(char* string, ap_int<512>* string_hw, int dim) {
+void char_to_int(char* string, ap_int<3>* string_hw, int dim) {
 	for (int i=0; i<dim; i++) {
 		if (string[i] == 'A')
 			string_hw[i] = A;
@@ -208,19 +205,11 @@ void char_to_int(char* string, ap_int<512>* string_hw, int dim) {
 	}
 }
 
-void reshape_direction(ap_int<512> *direction_matrix, short *direction_matrix_hw, int N, int M) {
+void reshape_direction(ap_int<3> *direction_matrix, short *direction_matrix_hw, int N, int M) {
 
 	for (int i=0; i < M; i++) 
 		for (int j=0; j < N; j++) 
 			direction_matrix_hw[j+i*N] = direction_matrix[j+(j+i)*N];
-
-}
-
-void reshape_similarity(int *similarity_matrix, int *similarity_matrix_hw, int N, int M) {
-	
-	for (int i=0; i < M; i++) 
-		for (int j=0; j < N; j++) 
-			similarity_matrix_hw[j+i*N] = similarity_matrix[j+(j+i)*N];
 
 }
 
@@ -276,27 +265,25 @@ int main(int argc, char** argv) {
 	
     char *query = (char*) malloc(sizeof(char) * N);
 	char *database = (char*) malloc(sizeof(char) * M+2*(N-1));
-	int *similarity_matrix = (int*) malloc(sizeof(int) * (M+2*(N-1))*N);
-	int *similarity_matrix_hw = (int*) malloc(sizeof(int) * M*N);
-	ap_int<512> *direction_matrix = (ap_int<512>*) malloc(sizeof(ap_int<512>) * (M+2*(N-1))*N);
+	//int *similarity_matrix = (int*) malloc(sizeof(int) * (M+2*(N-1))*N);
+	//int *similarity_matrix_hw = (int*) malloc(sizeof(int) * M*N);
+	ap_int<3> *direction_matrix = (ap_int<3>*) malloc(sizeof(ap_int<3>) * (M+2*(N-1))*N );
 	short *direction_matrix_hw = (short*) malloc(sizeof(short) * (M*N));
 	int *max_index = (int *) malloc(sizeof(int));
 /* Create the two input strings by calling a random number generator */
 	fillRandom(query, N);
 	fillRandomDatabase(database, N, M);
 
-	ap_int<512> query_hw[N];
-	ap_int<512> database_hw[M+2*(N-1)];
+	ap_int<3> query_hw[N];
+	ap_int<3> database_hw[M+2*(N-1)];
 
 	char_to_int(query, query_hw, N);
 	char_to_int(database, database_hw, M+2*(N-1));
-	
-	memset(similarity_matrix, 0, sizeof(int) * (M+2*(N-1))*N);
-	memset(direction_matrix, -2, sizeof(ap_int<512>) * (M+2*(N-1))*N);
 
-	compute_matrices(query_hw, database_hw, max_index, similarity_matrix, direction_matrix, N, M);
+	memset(direction_matrix, -2, sizeof(ap_int<3>) * (M+2*(N-1))*N);
+
+	compute_matrices(query_hw, database_hw, max_index, direction_matrix, N, M);
 	reshape_direction(direction_matrix, direction_matrix_hw, N, M);
-	reshape_similarity(similarity_matrix, similarity_matrix_hw, N, M);
 
     printf(" max index hw is in position (%d, %d) \n", max_index[0]/N, max_index[0]%N );
 
@@ -324,11 +311,6 @@ int main(int argc, char** argv) {
 	// fflush(stdout);
 
 	#ifdef DEBUG
-
-		// printf("\n database_sw: %s\n query: %s\n\n", database_sw, query);
-		// strcpy(database, "PPPPPPPGGTTGACTAPPPPPPP");
-		// strcpy(query, "TGTTACGG");
-		// char database_sw[] = "GGTTGACTA";
 		
 		printf("\n******** Similarity Matrix HW ********\n");
 		print_similarity_matrix(similarity_matrix, N, M+2*(N-1));
@@ -357,10 +339,8 @@ int main(int argc, char** argv) {
 
 	printf("computation ended!- RESULTS CORRECT \n");
 
-	free(similarity_matrix);
 	free(direction_matrix);
 	free(direction_matrix_hw);
-	free(similarity_matrix_hw);
 	free(query);
 	free(database);
 	free(similarity_matrix_sw);

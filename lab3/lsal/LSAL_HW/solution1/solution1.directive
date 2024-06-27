@@ -9,6 +9,11 @@
         <directive functionName="compute_matrices" label="string2_buffer" functionLabel="">
             <pragma name="UNROLL"/>
         </directive>
+        <directive functionName="compute_matrices" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="compute_matrices"/>
+            </pragma>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

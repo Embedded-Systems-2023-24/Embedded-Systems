@@ -6,7 +6,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
-entity compute_matrices_gmem_m_axi is
+entity compute_matrices_gmem2_m_axi is
     generic (
         CONSERVATIVE              : INTEGER := 0;
         NUM_READ_OUTSTANDING      : INTEGER := 2;
@@ -135,10 +135,10 @@ entity compute_matrices_gmem_m_axi is
         I_RUSER         : out STD_LOGIC_VECTOR(C_M_AXI_RUSER_WIDTH-1 downto 0);
         I_RVALID        : out STD_LOGIC;
         I_RREADY        : in  STD_LOGIC);
-end entity compute_matrices_gmem_m_axi;
+end entity compute_matrices_gmem2_m_axi;
 
-architecture behave of compute_matrices_gmem_m_axi is
-    component compute_matrices_gmem_m_axi_write is
+architecture behave of compute_matrices_gmem2_m_axi is
+    component compute_matrices_gmem2_m_axi_write is
         generic (
             NUM_WRITE_OUTSTANDING     : INTEGER := 1;
             MAX_WRITE_BURST_LENGTH    : INTEGER := 1;
@@ -201,9 +201,9 @@ architecture behave of compute_matrices_gmem_m_axi is
             wrsp_valid      : out STD_LOGIC;
             wrsp_ack        : in  STD_LOGIC;
             wrsp            : out UNSIGNED(1 downto 0));
-    end component compute_matrices_gmem_m_axi_write;
+    end component compute_matrices_gmem2_m_axi_write;
 
-    component compute_matrices_gmem_m_axi_read is
+    component compute_matrices_gmem2_m_axi_read is
         generic (
             NUM_READ_OUTSTANDING      : INTEGER := 1;
             MAX_READ_BURST_LENGTH     : INTEGER := 1;
@@ -256,9 +256,9 @@ architecture behave of compute_matrices_gmem_m_axi is
             rdata_ack       : in  STD_LOGIC;
             rdata_data      : out UNSIGNED(USER_DW-1 downto 0);
             rrsp            : out UNSIGNED(1 downto 0));
-    end component compute_matrices_gmem_m_axi_read;
+    end component compute_matrices_gmem2_m_axi_read;
 
-    component compute_matrices_gmem_m_axi_throttl is
+    component compute_matrices_gmem2_m_axi_throttl is
         generic (
             USED_FIX      : BOOLEAN := true;
             FIX_VALUE     : INTEGER := 4;
@@ -290,7 +290,7 @@ architecture behave of compute_matrices_gmem_m_axi is
             out_last        : out STD_LOGIC;
             out_data_valid  : out STD_LOGIC;
             in_data_ready   : in  STD_LOGIC);
-    end component compute_matrices_gmem_m_axi_throttl;
+    end component compute_matrices_gmem2_m_axi_throttl;
 
     signal      AWADDR_Dummy    : STD_LOGIC_VECTOR(C_M_AXI_ADDR_WIDTH-1 downto 0);
     signal      AWLEN_Dummy     : STD_LOGIC_VECTOR(7 downto 0);
@@ -304,7 +304,7 @@ architecture behave of compute_matrices_gmem_m_axi is
 
 begin
 
-    wreq_throttl : compute_matrices_gmem_m_axi_throttl
+    wreq_throttl : compute_matrices_gmem2_m_axi_throttl
         generic map (
             USED_FIX        => false,
             ADDR_WIDTH      => C_M_AXI_ADDR_WIDTH,
@@ -343,7 +343,7 @@ begin
     I_RUSER <= STD_LOGIC_VECTOR(TO_UNSIGNED(C_USER_VALUE, I_RUSER'length));
 
     -- Instantiation
-    bus_write : compute_matrices_gmem_m_axi_write
+    bus_write : compute_matrices_gmem2_m_axi_write
         generic map (
             NUM_WRITE_OUTSTANDING     => NUM_WRITE_OUTSTANDING,
             MAX_WRITE_BURST_LENGTH    => MAX_WRITE_BURST_LENGTH,
@@ -407,7 +407,7 @@ begin
             wrsp_ack                    => I_BREADY,
             STD_LOGIC_VECTOR(wrsp)      => I_BRESP);
 
-    bus_read : compute_matrices_gmem_m_axi_read
+    bus_read : compute_matrices_gmem2_m_axi_read
         generic map (
             NUM_READ_OUTSTANDING      => NUM_READ_OUTSTANDING,
             MAX_READ_BURST_LENGTH     => MAX_READ_BURST_LENGTH,
@@ -467,7 +467,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
-entity compute_matrices_gmem_m_axi_reg_slice is
+entity compute_matrices_gmem2_m_axi_reg_slice is
     generic (
         N           : INTEGER := 8);
     port (
@@ -482,9 +482,9 @@ entity compute_matrices_gmem_m_axi_reg_slice is
         m_data      : out STD_LOGIC_VECTOR(N-1 downto 0);
         m_valid     : out STD_LOGIC;
         m_ready     : in  STD_LOGIC);
-end entity compute_matrices_gmem_m_axi_reg_slice;
+end entity compute_matrices_gmem2_m_axi_reg_slice;
 
-architecture behave of compute_matrices_gmem_m_axi_reg_slice is
+architecture behave of compute_matrices_gmem2_m_axi_reg_slice is
     constant ZERO                     : STD_LOGIC_VECTOR(1 downto 0) := "10";
     constant ONE                      : STD_LOGIC_VECTOR(1 downto 0) := "11";
     constant TWO                      : STD_LOGIC_VECTOR(1 downto 0) := "01";
@@ -591,7 +591,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
-entity compute_matrices_gmem_m_axi_fifo is
+entity compute_matrices_gmem2_m_axi_fifo is
     generic (
         DATA_BITS   : INTEGER := 8;
         DEPTH       : INTEGER := 16;
@@ -606,9 +606,9 @@ entity compute_matrices_gmem_m_axi_fifo is
         wrreq       : in  STD_LOGIC;
         q           : out UNSIGNED(DATA_BITS-1 downto 0);
         data        : in  UNSIGNED(DATA_BITS-1 downto 0));
-end entity compute_matrices_gmem_m_axi_fifo;
+end entity compute_matrices_gmem2_m_axi_fifo;
 
-architecture behave of compute_matrices_gmem_m_axi_fifo is
+architecture behave of compute_matrices_gmem2_m_axi_fifo is
     signal push, pop, data_vld, full_cond     : STD_LOGIC;
     signal empty_n_tmp, full_n_tmp            : STD_LOGIC;
     signal pout                               : INTEGER range 0 to DEPTH -1;
@@ -718,7 +718,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
-entity compute_matrices_gmem_m_axi_buffer is
+entity compute_matrices_gmem2_m_axi_buffer is
     generic (
         MEM_STYLE  : STRING  := "block";
         DATA_WIDTH : NATURAL := 32;
@@ -740,7 +740,7 @@ entity compute_matrices_gmem_m_axi_buffer is
     );
 end entity;
 
-architecture arch of compute_matrices_gmem_m_axi_buffer is
+architecture arch of compute_matrices_gmem2_m_axi_buffer is
     type memtype is array (0 to DEPTH - 1) of std_logic_vector(DATA_WIDTH - 1 downto 0);
     signal mem        : memtype;
     signal q_buf      : std_logic_vector(DATA_WIDTH - 1 downto 0) := (others => '0');
@@ -927,15 +927,15 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
-entity compute_matrices_gmem_m_axi_decoder is
+entity compute_matrices_gmem2_m_axi_decoder is
     generic (
         DIN_WIDTH : integer := 3);
     port (
         din     : in  UNSIGNED(DIN_WIDTH - 1 downto 0);
         dout    : out UNSIGNED(2**DIN_WIDTH - 1 downto 0));
-end entity compute_matrices_gmem_m_axi_decoder;
+end entity compute_matrices_gmem2_m_axi_decoder;
 
-architecture behav of compute_matrices_gmem_m_axi_decoder is
+architecture behav of compute_matrices_gmem2_m_axi_decoder is
 begin
     process (din)
     begin
@@ -950,7 +950,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
-entity compute_matrices_gmem_m_axi_throttl is
+entity compute_matrices_gmem2_m_axi_throttl is
     generic (
         USED_FIX      : BOOLEAN := false;
         FIX_VALUE     : INTEGER := 4;
@@ -1005,9 +1005,9 @@ entity compute_matrices_gmem_m_axi_throttl is
         return n;
     end function gt_4;
 
-end entity compute_matrices_gmem_m_axi_throttl;
+end entity compute_matrices_gmem2_m_axi_throttl;
 
-architecture behav of compute_matrices_gmem_m_axi_throttl is
+architecture behav of compute_matrices_gmem2_m_axi_throttl is
 begin
 
     conservative_gen : if (CONSERVATIVE = 0) generate
@@ -1068,7 +1068,7 @@ begin
 
     aggressive_gen : if (CONSERVATIVE /= 0) generate
 
-        component compute_matrices_gmem_m_axi_reg_slice is
+        component compute_matrices_gmem2_m_axi_reg_slice is
             generic (
                 n           : integer := 8);
             port (
@@ -1080,7 +1080,7 @@ begin
                 m_data      : out std_logic_vector(n-1 downto 0);
                 m_valid     : out std_logic;
                 m_ready     : in  std_logic);
-        end component compute_matrices_gmem_m_axi_reg_slice;
+        end component compute_matrices_gmem2_m_axi_reg_slice;
 
         -- Instantiation for reg slice for AW channel
         signal   rs_req_ready       : STD_LOGIC;
@@ -1106,7 +1106,7 @@ begin
 
         signal   out_data_ready_tmp : STD_LOGIC;
 
-        component compute_matrices_gmem_m_axi_fifo is
+        component compute_matrices_gmem2_m_axi_fifo is
             generic (
                 DATA_BITS   : INTEGER := 8;
                 DEPTH       : INTEGER := 16;
@@ -1121,7 +1121,7 @@ begin
                 wrreq       : in  STD_LOGIC;
                 q           : out UNSIGNED(DATA_BITS-1 downto 0);
                 data        : in  UNSIGNED(DATA_BITS-1 downto 0));
-        end component compute_matrices_gmem_m_axi_fifo;
+        end component compute_matrices_gmem2_m_axi_fifo;
     begin
         --AW Channel
         req_in          <= in_len & in_addr;
@@ -1148,7 +1148,7 @@ begin
             end if;
         end process;
 
-        req_fifo : compute_matrices_gmem_m_axi_fifo
+        req_fifo : compute_matrices_gmem2_m_axi_fifo
         generic map (
             DATA_BITS           => ADDR_WIDTH + 8,
             DEPTH               => USER_MAXREQS,
@@ -1164,7 +1164,7 @@ begin
             STD_LOGIC_VECTOR(q) => rs_req_in,
             data                => UNSIGNED(req_in));
 
-        rs_req : compute_matrices_gmem_m_axi_reg_slice
+        rs_req : compute_matrices_gmem2_m_axi_reg_slice
         generic map (
             N               =>  ADDR_WIDTH + 8)
         port map (
@@ -1206,7 +1206,7 @@ begin
             end if;
         end process;
 
-        data_fifo : compute_matrices_gmem_m_axi_fifo
+        data_fifo : compute_matrices_gmem2_m_axi_fifo
         generic map (
             DATA_BITS           => DATA_WIDTH + DATA_WIDTH/8 + 1,
             DEPTH               => DEPTH,
@@ -1230,7 +1230,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
-entity compute_matrices_gmem_m_axi_read is
+entity compute_matrices_gmem2_m_axi_read is
     generic (
         NUM_READ_OUTSTANDING      : INTEGER := 2;
         MAX_READ_BURST_LENGTH     : INTEGER := 16;
@@ -1306,9 +1306,9 @@ entity compute_matrices_gmem_m_axi_read is
         return n;
     end function log2;
 
-end entity compute_matrices_gmem_m_axi_read;
+end entity compute_matrices_gmem2_m_axi_read;
 
-architecture behave of compute_matrices_gmem_m_axi_read is
+architecture behave of compute_matrices_gmem2_m_axi_read is
     --common
     constant USER_DATA_WIDTH      : INTEGER := calc_data_width(USER_DW);
     constant USER_DATA_BYTES      : INTEGER := USER_DATA_WIDTH / 8;
@@ -1386,7 +1386,7 @@ architecture behave of compute_matrices_gmem_m_axi_read is
     signal  rdata_ack_t           : STD_LOGIC;
     signal  rdata_valid_t         : STD_LOGIC;
 
-    component compute_matrices_gmem_m_axi_fifo is
+    component compute_matrices_gmem2_m_axi_fifo is
         generic (
             DATA_BITS   : INTEGER := 8;
             DEPTH       : INTEGER := 16;
@@ -1401,9 +1401,9 @@ architecture behave of compute_matrices_gmem_m_axi_read is
             wrreq       : in  STD_LOGIC;
             q           : out UNSIGNED(DATA_BITS-1 downto 0);
             data        : in  UNSIGNED(DATA_BITS-1 downto 0));
-    end component compute_matrices_gmem_m_axi_fifo;
+    end component compute_matrices_gmem2_m_axi_fifo;
 
-    component compute_matrices_gmem_m_axi_reg_slice is
+    component compute_matrices_gmem2_m_axi_reg_slice is
         generic (
             N           : INTEGER := 8);
         port (
@@ -1415,9 +1415,9 @@ architecture behave of compute_matrices_gmem_m_axi_read is
             m_data      : out STD_LOGIC_VECTOR(N-1 downto 0);
             m_valid     : out STD_LOGIC;
             m_ready     : in  STD_LOGIC);
-    end component compute_matrices_gmem_m_axi_reg_slice;
+    end component compute_matrices_gmem2_m_axi_reg_slice;
 
-    component compute_matrices_gmem_m_axi_buffer is
+    component compute_matrices_gmem2_m_axi_buffer is
         generic (
                     MEM_STYLE  : STRING  := "block";
             DATA_WIDTH : NATURAL := 32;
@@ -1436,12 +1436,12 @@ architecture behave of compute_matrices_gmem_m_axi_read is
              if_read_ce  : in  STD_LOGIC;
              if_read     : in  STD_LOGIC;
              if_dout     : out STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0));
-    end component compute_matrices_gmem_m_axi_buffer;
+    end component compute_matrices_gmem2_m_axi_buffer;
 
 begin
     --------------------------- AR channel begin -----------------------------------
     -- Instantiation
-    rs_rreq : compute_matrices_gmem_m_axi_reg_slice
+    rs_rreq : compute_matrices_gmem2_m_axi_reg_slice
         generic map (
             N               =>  USER_AW+ 32)
         port map (
@@ -1454,7 +1454,7 @@ begin
             m_valid         =>  rs2f_rreq_valid,
             m_ready         =>  rs2f_rreq_ack);
 
-    fifo_rreq : compute_matrices_gmem_m_axi_fifo
+    fifo_rreq : compute_matrices_gmem2_m_axi_fifo
         generic map (
             DATA_BITS       =>  USER_AW + 32,
             DEPTH           =>  USER_MAXREQS,
@@ -1831,7 +1831,7 @@ begin
 
     --------------------------- R channel begin ------------------------------------
     -- Instantiation
-    fifo_rdata : compute_matrices_gmem_m_axi_buffer
+    fifo_rdata : compute_matrices_gmem2_m_axi_buffer
         generic map (
             DATA_WIDTH        =>  BUS_DATA_WIDTH + 3,
             DEPTH             =>  NUM_READ_OUTSTANDING * MAX_READ_BURST_LENGTH,
@@ -1849,7 +1849,7 @@ begin
             if_read           => next_beat,
             UNSIGNED(if_dout) => data_pack);
 
-    rs_rdata : compute_matrices_gmem_m_axi_reg_slice
+    rs_rdata : compute_matrices_gmem2_m_axi_reg_slice
         generic map (
             N                 => USER_DW + 2)
         port map (
@@ -1862,7 +1862,7 @@ begin
             m_valid           => rdata_valid,
             m_ready           => rdata_ack);
 
-    fifo_rctl : compute_matrices_gmem_m_axi_fifo
+    fifo_rctl : compute_matrices_gmem2_m_axi_fifo
         generic map (
             DATA_BITS       => 2,
             DEPTH           => NUM_READ_OUTSTANDING-1,
@@ -1955,7 +1955,7 @@ begin
         signal  ready_for_data  : BOOLEAN;
     begin
         -- instantiation
-        fifo_burst : compute_matrices_gmem_m_axi_fifo
+        fifo_burst : compute_matrices_gmem2_m_axi_fifo
             generic map (
                 DATA_BITS       =>  2*SPLIT_ALIGN + 8,
                 DEPTH           =>  USER_MAXREQS,
@@ -2173,7 +2173,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
-entity compute_matrices_gmem_m_axi_write is
+entity compute_matrices_gmem2_m_axi_write is
     generic (
         NUM_WRITE_OUTSTANDING     : INTEGER := 2;
         MAX_WRITE_BURST_LENGTH    : INTEGER := 16;
@@ -2259,9 +2259,9 @@ entity compute_matrices_gmem_m_axi_write is
         return n;
     end function log2;
 
-end entity compute_matrices_gmem_m_axi_write;
+end entity compute_matrices_gmem2_m_axi_write;
 
-architecture behave of compute_matrices_gmem_m_axi_write is
+architecture behave of compute_matrices_gmem2_m_axi_write is
     --common
     constant USER_DATA_WIDTH      : INTEGER := calc_data_width(USER_DW);
     constant USER_DATA_BYTES      : INTEGER := USER_DATA_WIDTH / 8;
@@ -2342,7 +2342,7 @@ architecture behave of compute_matrices_gmem_m_axi_write is
     signal  resp_match            : STD_LOGIC;
     signal  resp_ready            : STD_LOGIC;
 
-    component compute_matrices_gmem_m_axi_fifo is
+    component compute_matrices_gmem2_m_axi_fifo is
         generic (
             DATA_BITS   : INTEGER := 8;
             DEPTH       : INTEGER := 16;
@@ -2357,9 +2357,9 @@ architecture behave of compute_matrices_gmem_m_axi_write is
             wrreq       : in  STD_LOGIC;
             q           : out UNSIGNED(DATA_BITS-1 downto 0);
             data        : in  UNSIGNED(DATA_BITS-1 downto 0));
-    end component compute_matrices_gmem_m_axi_fifo;
+    end component compute_matrices_gmem2_m_axi_fifo;
 
-    component compute_matrices_gmem_m_axi_reg_slice is
+    component compute_matrices_gmem2_m_axi_reg_slice is
         generic (
             N           : INTEGER := 8);
         port (
@@ -2371,9 +2371,9 @@ architecture behave of compute_matrices_gmem_m_axi_write is
             m_data      : out STD_LOGIC_VECTOR(N-1 downto 0);
             m_valid     : out STD_LOGIC;
             m_ready     : in  STD_LOGIC);
-    end component compute_matrices_gmem_m_axi_reg_slice;
+    end component compute_matrices_gmem2_m_axi_reg_slice;
 
-    component compute_matrices_gmem_m_axi_buffer is
+    component compute_matrices_gmem2_m_axi_buffer is
         generic (
                     MEM_STYLE  : STRING  := "block";
             DATA_WIDTH : NATURAL := 32;
@@ -2392,12 +2392,12 @@ architecture behave of compute_matrices_gmem_m_axi_write is
              if_read_ce  : in  STD_LOGIC;
              if_read     : in  STD_LOGIC;
              if_dout     : out STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0));
-    end component compute_matrices_gmem_m_axi_buffer;
+    end component compute_matrices_gmem2_m_axi_buffer;
 
 begin
     --------------------------- AW channel begin -----------------------------------
     -- Instantiation
-    rs_wreq : compute_matrices_gmem_m_axi_reg_slice
+    rs_wreq : compute_matrices_gmem2_m_axi_reg_slice
         generic map (
             N => USER_AW + 32)
         port map (
@@ -2410,7 +2410,7 @@ begin
             m_valid         =>  rs2f_wreq_valid,
             m_ready         =>  rs2f_wreq_ack);
 
-    fifo_wreq : compute_matrices_gmem_m_axi_fifo
+    fifo_wreq : compute_matrices_gmem2_m_axi_fifo
         generic map (
             DATA_BITS       =>  USER_AW + 32,
             DEPTH           =>  USER_MAXREQS,
@@ -2809,7 +2809,7 @@ begin
 
     --------------------------- W channel begin ------------------------------------
     -- Instantiation
-    buff_wdata : compute_matrices_gmem_m_axi_buffer
+    buff_wdata : compute_matrices_gmem2_m_axi_buffer
         generic map (
             DATA_WIDTH      => USER_DW + USER_DW/8,
             DEPTH           => NUM_WRITE_OUTSTANDING * MAX_WRITE_BURST_LENGTH,
@@ -2841,7 +2841,7 @@ begin
         signal  ready_for_data  : BOOLEAN;
     begin
         -- Instantiation
-        fifo_burst : compute_matrices_gmem_m_axi_fifo
+        fifo_burst : compute_matrices_gmem2_m_axi_fifo
             generic map (
                 DATA_BITS       =>  8,
                 DEPTH           =>  USER_MAXREQS,
@@ -2952,7 +2952,7 @@ begin
         signal  ready_for_data  : BOOLEAN;
     begin
         -- instantiation
-        fifo_burst : compute_matrices_gmem_m_axi_fifo
+        fifo_burst : compute_matrices_gmem2_m_axi_fifo
             generic map (
                 DATA_BITS       =>  8,
                 DEPTH           =>  USER_MAXREQS,
@@ -3095,17 +3095,17 @@ begin
         signal  last_beat       : BOOLEAN;
         signal  next_beat       : BOOLEAN;
 
-        component compute_matrices_gmem_m_axi_decoder is
+        component compute_matrices_gmem2_m_axi_decoder is
             generic (
                 DIN_WIDTH : integer := 3);
             port (
                 din     : in  UNSIGNED(DIN_WIDTH - 1 downto 0);
                 dout    : out UNSIGNED(2**DIN_WIDTH - 1 downto 0));
-        end component compute_matrices_gmem_m_axi_decoder;
+        end component compute_matrices_gmem2_m_axi_decoder;
 
     begin
         -- Instantiation
-        fifo_burst : compute_matrices_gmem_m_axi_fifo
+        fifo_burst : compute_matrices_gmem2_m_axi_fifo
             generic map (
                 DATA_BITS       =>  8 + 2*PAD_ALIGN,
                 DEPTH           =>  user_maxreqs,
@@ -3128,14 +3128,14 @@ begin
 
         tmp_burst_info <= awaddr_tmp(BUS_ADDR_ALIGN - 1 downto USER_ADDR_ALIGN) & burst_end(BUS_ADDR_ALIGN - 1 downto USER_ADDR_ALIGN) & RESIZE(awlen_tmp, 8);
 
-        head_pad_decoder : compute_matrices_gmem_m_axi_decoder
+        head_pad_decoder : compute_matrices_gmem2_m_axi_decoder
             generic map (
                 DIN_WIDTH       =>  PAD_ALIGN)
             port map (
                 din             =>  head_pads,
                 dout            =>  head_pad_sel);
 
-        tail_pad_decoder : compute_matrices_gmem_m_axi_decoder
+        tail_pad_decoder : compute_matrices_gmem2_m_axi_decoder
             generic map (
                 DIN_WIDTH       =>  PAD_ALIGN)
             port map (
@@ -3273,7 +3273,7 @@ begin
 
     --------------------------- B channel begin ------------------------------------
     -- Instantiation
-    fifo_resp : compute_matrices_gmem_m_axi_fifo
+    fifo_resp : compute_matrices_gmem2_m_axi_fifo
         generic map (
             DATA_BITS       =>  2,
             DEPTH           =>  NUM_WRITE_OUTSTANDING-1,
@@ -3289,7 +3289,7 @@ begin
             q               =>  aw2b_bdata,
             data            =>  aw2b_awdata);
 
-    fifo_resp_to_user : compute_matrices_gmem_m_axi_fifo
+    fifo_resp_to_user : compute_matrices_gmem2_m_axi_fifo
         generic map (
             DATA_BITS       =>  2,
             DEPTH           =>  USER_MAXREQS,

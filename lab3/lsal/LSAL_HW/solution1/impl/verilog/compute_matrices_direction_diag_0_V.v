@@ -3,11 +3,11 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 `timescale 1 ns / 1 ps
-module compute_matrices_string2_V_0_ram (addr0, ce0, d0, we0, q0,  clk);
+module compute_matrices_direction_diag_0_V_ram (addr0, ce0, d0, we0, q0,  clk);
 
-parameter DWIDTH = 3;
-parameter AWIDTH = 16;
-parameter MEM_SIZE = 33023;
+parameter DWIDTH = 2;
+parameter AWIDTH = 8;
+parameter MEM_SIZE = 256;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -34,7 +34,7 @@ end
 endmodule
 
 `timescale 1 ns / 1 ps
-module compute_matrices_string2_V_0(
+module compute_matrices_direction_diag_0_V(
     reset,
     clk,
     address0,
@@ -43,9 +43,9 @@ module compute_matrices_string2_V_0(
     d0,
     q0);
 
-parameter DataWidth = 32'd3;
-parameter AddressRange = 32'd33023;
-parameter AddressWidth = 32'd16;
+parameter DataWidth = 32'd2;
+parameter AddressRange = 32'd256;
+parameter AddressWidth = 32'd8;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;
@@ -56,7 +56,7 @@ output[DataWidth - 1:0] q0;
 
 
 
-compute_matrices_string2_V_0_ram compute_matrices_string2_V_0_ram_U(
+compute_matrices_direction_diag_0_V_ram compute_matrices_direction_diag_0_V_ram_U(
     .clk( clk ),
     .addr0( address0 ),
     .ce0( ce0 ),
