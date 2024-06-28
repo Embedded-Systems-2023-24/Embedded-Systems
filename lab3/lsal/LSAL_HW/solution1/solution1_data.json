@@ -17,13 +17,13 @@
   "Args": {
     "string1_mem": {
       "index": "0",
-      "direction": "in",
+      "direction": "inout",
       "srcType": "ap_int<3>*",
       "srcSize": "8",
       "hwRefs": [
         {
           "type": "interface",
-          "interface": "m_axi_gmem1",
+          "interface": "m_axi_gmem",
           "name": "",
           "usage": "data",
           "direction": "out"
@@ -46,13 +46,13 @@
     },
     "string2_mem": {
       "index": "1",
-      "direction": "in",
+      "direction": "inout",
       "srcType": "ap_int<3>*",
       "srcSize": "8",
       "hwRefs": [
         {
           "type": "interface",
-          "interface": "m_axi_gmem1",
+          "interface": "m_axi_gmem",
           "name": "",
           "usage": "data",
           "direction": "out"
@@ -75,13 +75,13 @@
     },
     "max_index": {
       "index": "2",
-      "direction": "out",
+      "direction": "inout",
       "srcType": "int*",
       "srcSize": "32",
       "hwRefs": [
         {
           "type": "interface",
-          "interface": "m_axi_gmem2",
+          "interface": "m_axi_gmem",
           "name": "",
           "usage": "data",
           "direction": "out"
@@ -104,13 +104,13 @@
     },
     "direction_matrix": {
       "index": "3",
-      "direction": "out",
+      "direction": "inout",
       "srcType": "ap_int<3>*",
       "srcSize": "8",
       "hwRefs": [
         {
           "type": "interface",
-          "interface": "m_axi_gmem2",
+          "interface": "m_axi_gmem",
           "name": "",
           "usage": "data",
           "direction": "out"
@@ -185,7 +185,7 @@
     "Uncertainty": "2.7",
     "IsCombinational": "0",
     "II": "x",
-    "Latency": "undef"
+    "Latency": "6361502"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
   "Ipx": {
@@ -204,28 +204,22 @@
     "CSource": ["..\/..\/hw_baseline\/Vitis_HLS\/lsal.cpp"],
     "Vhdl": [
       "impl\/vhdl\/compute_matrices_control_s_axi.vhd",
-      "impl\/vhdl\/compute_matrices_current_diag_0.vhd",
-      "impl\/vhdl\/compute_matrices_direction_diag_0_V.vhd",
-      "impl\/vhdl\/compute_matrices_gmem1_m_axi.vhd",
-      "impl\/vhdl\/compute_matrices_gmem2_m_axi.vhd",
-      "impl\/vhdl\/compute_matrices_mul_32s_32s_32_2_1.vhd",
-      "impl\/vhdl\/compute_matrices_string1_0_V.vhd",
+      "impl\/vhdl\/compute_matrices_direction_buf_V.vhd",
+      "impl\/vhdl\/compute_matrices_gmem_m_axi.vhd",
+      "impl\/vhdl\/compute_matrices_mul_22ns_24ns_45_1_1.vhd",
+      "impl\/vhdl\/compute_matrices_mux_646_32_1_1.vhd",
       "impl\/vhdl\/compute_matrices_string2_0_V.vhd",
-      "impl\/vhdl\/compute_matrices_up_diag_0.vhd",
-      "impl\/vhdl\/compute_matrices_upper_diag_0.vhd",
+      "impl\/vhdl\/compute_matrices_urem_22ns_18ns_22_26_1.vhd",
       "impl\/vhdl\/compute_matrices.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/compute_matrices_control_s_axi.v",
-      "impl\/verilog\/compute_matrices_current_diag_0.v",
-      "impl\/verilog\/compute_matrices_direction_diag_0_V.v",
-      "impl\/verilog\/compute_matrices_gmem1_m_axi.v",
-      "impl\/verilog\/compute_matrices_gmem2_m_axi.v",
-      "impl\/verilog\/compute_matrices_mul_32s_32s_32_2_1.v",
-      "impl\/verilog\/compute_matrices_string1_0_V.v",
+      "impl\/verilog\/compute_matrices_direction_buf_V.v",
+      "impl\/verilog\/compute_matrices_gmem_m_axi.v",
+      "impl\/verilog\/compute_matrices_mul_22ns_24ns_45_1_1.v",
+      "impl\/verilog\/compute_matrices_mux_646_32_1_1.v",
       "impl\/verilog\/compute_matrices_string2_0_V.v",
-      "impl\/verilog\/compute_matrices_up_diag_0.v",
-      "impl\/verilog\/compute_matrices_upper_diag_0.v",
+      "impl\/verilog\/compute_matrices_urem_22ns_18ns_22_26_1.v",
       "impl\/verilog\/compute_matrices.v"
     ],
     "SwDriver": [
@@ -254,7 +248,7 @@
       "busTypeName": "clock",
       "mode": "slave",
       "busParams": {
-        "ASSOCIATED_BUSIF": "s_axi_control:m_axi_gmem1:m_axi_gmem2",
+        "ASSOCIATED_BUSIF": "s_axi_control:m_axi_gmem",
         "ASSOCIATED_RESET": "ap_rst_n"
       },
       "portMap": {"ap_clk": "CLK"},
@@ -277,14 +271,14 @@
       "portMap": {"interrupt": "INTERRUPT"},
       "ports": ["interrupt"]
     },
-    "m_axi_gmem1": {
+    "m_axi_gmem": {
       "type": "axi4full",
       "busTypeName": "aximm",
       "mode": "master",
       "dataWidth": "32",
       "addrWidth": "64",
-      "portPrefix": "m_axi_gmem1_",
-      "paramPrefix": "C_M_AXI_GMEM1_",
+      "portPrefix": "m_axi_gmem_",
+      "paramPrefix": "C_M_AXI_GMEM_",
       "offsetSlaveName": "s_axi_control",
       "preferredUsageValue": "MEMORY",
       "busParams": {
@@ -299,51 +293,51 @@
         "SUPPORTS_NARROW_BURST": "0"
       },
       "ports": [
-        "m_axi_gmem1_ARADDR",
-        "m_axi_gmem1_ARBURST",
-        "m_axi_gmem1_ARCACHE",
-        "m_axi_gmem1_ARID",
-        "m_axi_gmem1_ARLEN",
-        "m_axi_gmem1_ARLOCK",
-        "m_axi_gmem1_ARPROT",
-        "m_axi_gmem1_ARQOS",
-        "m_axi_gmem1_ARREADY",
-        "m_axi_gmem1_ARREGION",
-        "m_axi_gmem1_ARSIZE",
-        "m_axi_gmem1_ARUSER",
-        "m_axi_gmem1_ARVALID",
-        "m_axi_gmem1_AWADDR",
-        "m_axi_gmem1_AWBURST",
-        "m_axi_gmem1_AWCACHE",
-        "m_axi_gmem1_AWID",
-        "m_axi_gmem1_AWLEN",
-        "m_axi_gmem1_AWLOCK",
-        "m_axi_gmem1_AWPROT",
-        "m_axi_gmem1_AWQOS",
-        "m_axi_gmem1_AWREADY",
-        "m_axi_gmem1_AWREGION",
-        "m_axi_gmem1_AWSIZE",
-        "m_axi_gmem1_AWUSER",
-        "m_axi_gmem1_AWVALID",
-        "m_axi_gmem1_BID",
-        "m_axi_gmem1_BREADY",
-        "m_axi_gmem1_BRESP",
-        "m_axi_gmem1_BUSER",
-        "m_axi_gmem1_BVALID",
-        "m_axi_gmem1_RDATA",
-        "m_axi_gmem1_RID",
-        "m_axi_gmem1_RLAST",
-        "m_axi_gmem1_RREADY",
-        "m_axi_gmem1_RRESP",
-        "m_axi_gmem1_RUSER",
-        "m_axi_gmem1_RVALID",
-        "m_axi_gmem1_WDATA",
-        "m_axi_gmem1_WID",
-        "m_axi_gmem1_WLAST",
-        "m_axi_gmem1_WREADY",
-        "m_axi_gmem1_WSTRB",
-        "m_axi_gmem1_WUSER",
-        "m_axi_gmem1_WVALID"
+        "m_axi_gmem_ARADDR",
+        "m_axi_gmem_ARBURST",
+        "m_axi_gmem_ARCACHE",
+        "m_axi_gmem_ARID",
+        "m_axi_gmem_ARLEN",
+        "m_axi_gmem_ARLOCK",
+        "m_axi_gmem_ARPROT",
+        "m_axi_gmem_ARQOS",
+        "m_axi_gmem_ARREADY",
+        "m_axi_gmem_ARREGION",
+        "m_axi_gmem_ARSIZE",
+        "m_axi_gmem_ARUSER",
+        "m_axi_gmem_ARVALID",
+        "m_axi_gmem_AWADDR",
+        "m_axi_gmem_AWBURST",
+        "m_axi_gmem_AWCACHE",
+        "m_axi_gmem_AWID",
+        "m_axi_gmem_AWLEN",
+        "m_axi_gmem_AWLOCK",
+        "m_axi_gmem_AWPROT",
+        "m_axi_gmem_AWQOS",
+        "m_axi_gmem_AWREADY",
+        "m_axi_gmem_AWREGION",
+        "m_axi_gmem_AWSIZE",
+        "m_axi_gmem_AWUSER",
+        "m_axi_gmem_AWVALID",
+        "m_axi_gmem_BID",
+        "m_axi_gmem_BREADY",
+        "m_axi_gmem_BRESP",
+        "m_axi_gmem_BUSER",
+        "m_axi_gmem_BVALID",
+        "m_axi_gmem_RDATA",
+        "m_axi_gmem_RID",
+        "m_axi_gmem_RLAST",
+        "m_axi_gmem_RREADY",
+        "m_axi_gmem_RRESP",
+        "m_axi_gmem_RUSER",
+        "m_axi_gmem_RVALID",
+        "m_axi_gmem_WDATA",
+        "m_axi_gmem_WID",
+        "m_axi_gmem_WLAST",
+        "m_axi_gmem_WREADY",
+        "m_axi_gmem_WSTRB",
+        "m_axi_gmem_WUSER",
+        "m_axi_gmem_WVALID"
       ],
       "constraints": [
         {
@@ -362,98 +356,8 @@
         {
           "constraint_type": "bitwidth",
           "orig_bitwidth": "8",
-          "final_bitwidth": "8",
-          "argName": "string1_mem"
-        }
-      ]
-    },
-    "m_axi_gmem2": {
-      "type": "axi4full",
-      "busTypeName": "aximm",
-      "mode": "master",
-      "dataWidth": "32",
-      "addrWidth": "64",
-      "portPrefix": "m_axi_gmem2_",
-      "paramPrefix": "C_M_AXI_GMEM2_",
-      "offsetSlaveName": "s_axi_control",
-      "preferredUsageValue": "MEMORY",
-      "busParams": {
-        "NUM_READ_OUTSTANDING": "16",
-        "NUM_WRITE_OUTSTANDING": "16",
-        "MAX_READ_BURST_LENGTH": "16",
-        "MAX_WRITE_BURST_LENGTH": "16",
-        "MAX_BURST_LENGTH": "256",
-        "PROTOCOL": "AXI4",
-        "READ_WRITE_MODE": "READ_WRITE",
-        "HAS_BURST": "0",
-        "SUPPORTS_NARROW_BURST": "0"
-      },
-      "ports": [
-        "m_axi_gmem2_ARADDR",
-        "m_axi_gmem2_ARBURST",
-        "m_axi_gmem2_ARCACHE",
-        "m_axi_gmem2_ARID",
-        "m_axi_gmem2_ARLEN",
-        "m_axi_gmem2_ARLOCK",
-        "m_axi_gmem2_ARPROT",
-        "m_axi_gmem2_ARQOS",
-        "m_axi_gmem2_ARREADY",
-        "m_axi_gmem2_ARREGION",
-        "m_axi_gmem2_ARSIZE",
-        "m_axi_gmem2_ARUSER",
-        "m_axi_gmem2_ARVALID",
-        "m_axi_gmem2_AWADDR",
-        "m_axi_gmem2_AWBURST",
-        "m_axi_gmem2_AWCACHE",
-        "m_axi_gmem2_AWID",
-        "m_axi_gmem2_AWLEN",
-        "m_axi_gmem2_AWLOCK",
-        "m_axi_gmem2_AWPROT",
-        "m_axi_gmem2_AWQOS",
-        "m_axi_gmem2_AWREADY",
-        "m_axi_gmem2_AWREGION",
-        "m_axi_gmem2_AWSIZE",
-        "m_axi_gmem2_AWUSER",
-        "m_axi_gmem2_AWVALID",
-        "m_axi_gmem2_BID",
-        "m_axi_gmem2_BREADY",
-        "m_axi_gmem2_BRESP",
-        "m_axi_gmem2_BUSER",
-        "m_axi_gmem2_BVALID",
-        "m_axi_gmem2_RDATA",
-        "m_axi_gmem2_RID",
-        "m_axi_gmem2_RLAST",
-        "m_axi_gmem2_RREADY",
-        "m_axi_gmem2_RRESP",
-        "m_axi_gmem2_RUSER",
-        "m_axi_gmem2_RVALID",
-        "m_axi_gmem2_WDATA",
-        "m_axi_gmem2_WID",
-        "m_axi_gmem2_WLAST",
-        "m_axi_gmem2_WREADY",
-        "m_axi_gmem2_WSTRB",
-        "m_axi_gmem2_WUSER",
-        "m_axi_gmem2_WVALID"
-      ],
-      "constraints": [
-        {
-          "constraint_type": "pragma interface",
-          "mode": "m_axi",
-          "register_option": "0",
-          "offset": "slave",
-          "latency": "64",
-          "num_read_outstanding": "16",
-          "num_write_outstanding": "16",
-          "max_read_burst_length": "16",
-          "max_write_burst_length": "16",
-          "max_widen_bitwidth": "512",
-          "argName": "max_index"
-        },
-        {
-          "constraint_type": "bitwidth",
-          "orig_bitwidth": "32",
           "final_bitwidth": "32",
-          "argName": "max_index"
+          "argName": "string1_mem"
         }
       ]
     },
@@ -465,7 +369,7 @@
       "addrWidth": "7",
       "portPrefix": "s_axi_control_",
       "paramPrefix": "C_S_AXI_CONTROL_",
-      "offsetMasterName": "m_axi_gmem2",
+      "offsetMasterName": "m_axi_gmem",
       "ports": [
         "s_axi_control_ARADDR",
         "s_axi_control_ARREADY",
@@ -905,382 +809,192 @@
       "dir": "out",
       "width": "1"
     },
-    "m_axi_gmem1_AWVALID": {
+    "m_axi_gmem_AWVALID": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_gmem1_AWREADY": {
+    "m_axi_gmem_AWREADY": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_gmem1_AWADDR": {
+    "m_axi_gmem_AWADDR": {
       "dir": "out",
       "width": "64"
     },
-    "m_axi_gmem1_AWID": {
+    "m_axi_gmem_AWID": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_gmem1_AWLEN": {
+    "m_axi_gmem_AWLEN": {
       "dir": "out",
       "width": "8"
     },
-    "m_axi_gmem1_AWSIZE": {
+    "m_axi_gmem_AWSIZE": {
       "dir": "out",
       "width": "3"
     },
-    "m_axi_gmem1_AWBURST": {
+    "m_axi_gmem_AWBURST": {
       "dir": "out",
       "width": "2"
     },
-    "m_axi_gmem1_AWLOCK": {
+    "m_axi_gmem_AWLOCK": {
       "dir": "out",
       "width": "2"
     },
-    "m_axi_gmem1_AWCACHE": {
+    "m_axi_gmem_AWCACHE": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_gmem1_AWPROT": {
+    "m_axi_gmem_AWPROT": {
       "dir": "out",
       "width": "3"
     },
-    "m_axi_gmem1_AWQOS": {
+    "m_axi_gmem_AWQOS": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_gmem1_AWREGION": {
+    "m_axi_gmem_AWREGION": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_gmem1_AWUSER": {
+    "m_axi_gmem_AWUSER": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_gmem1_WVALID": {
+    "m_axi_gmem_WVALID": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_gmem1_WREADY": {
+    "m_axi_gmem_WREADY": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_gmem1_WDATA": {
+    "m_axi_gmem_WDATA": {
       "dir": "out",
       "width": "32"
     },
-    "m_axi_gmem1_WSTRB": {
+    "m_axi_gmem_WSTRB": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_gmem1_WLAST": {
+    "m_axi_gmem_WLAST": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_gmem1_WID": {
+    "m_axi_gmem_WID": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_gmem1_WUSER": {
+    "m_axi_gmem_WUSER": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_gmem1_ARVALID": {
+    "m_axi_gmem_ARVALID": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_gmem1_ARREADY": {
+    "m_axi_gmem_ARREADY": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_gmem1_ARADDR": {
+    "m_axi_gmem_ARADDR": {
       "dir": "out",
       "width": "64"
     },
-    "m_axi_gmem1_ARID": {
+    "m_axi_gmem_ARID": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_gmem1_ARLEN": {
+    "m_axi_gmem_ARLEN": {
       "dir": "out",
       "width": "8"
     },
-    "m_axi_gmem1_ARSIZE": {
+    "m_axi_gmem_ARSIZE": {
       "dir": "out",
       "width": "3"
     },
-    "m_axi_gmem1_ARBURST": {
+    "m_axi_gmem_ARBURST": {
       "dir": "out",
       "width": "2"
     },
-    "m_axi_gmem1_ARLOCK": {
+    "m_axi_gmem_ARLOCK": {
       "dir": "out",
       "width": "2"
     },
-    "m_axi_gmem1_ARCACHE": {
+    "m_axi_gmem_ARCACHE": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_gmem1_ARPROT": {
+    "m_axi_gmem_ARPROT": {
       "dir": "out",
       "width": "3"
     },
-    "m_axi_gmem1_ARQOS": {
+    "m_axi_gmem_ARQOS": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_gmem1_ARREGION": {
+    "m_axi_gmem_ARREGION": {
       "dir": "out",
       "width": "4"
     },
-    "m_axi_gmem1_ARUSER": {
+    "m_axi_gmem_ARUSER": {
       "dir": "out",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_gmem1_RVALID": {
+    "m_axi_gmem_RVALID": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_gmem1_RREADY": {
+    "m_axi_gmem_RREADY": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_gmem1_RDATA": {
+    "m_axi_gmem_RDATA": {
       "dir": "in",
       "width": "32"
     },
-    "m_axi_gmem1_RLAST": {
+    "m_axi_gmem_RLAST": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_gmem1_RID": {
+    "m_axi_gmem_RID": {
       "dir": "in",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_gmem1_RUSER": {
+    "m_axi_gmem_RUSER": {
       "dir": "in",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_gmem1_RRESP": {
+    "m_axi_gmem_RRESP": {
       "dir": "in",
       "width": "2"
     },
-    "m_axi_gmem1_BVALID": {
+    "m_axi_gmem_BVALID": {
       "dir": "in",
       "width": "1"
     },
-    "m_axi_gmem1_BREADY": {
+    "m_axi_gmem_BREADY": {
       "dir": "out",
       "width": "1"
     },
-    "m_axi_gmem1_BRESP": {
+    "m_axi_gmem_BRESP": {
       "dir": "in",
       "width": "2"
     },
-    "m_axi_gmem1_BID": {
+    "m_axi_gmem_BID": {
       "dir": "in",
       "width": "1",
       "isVector": "true"
     },
-    "m_axi_gmem1_BUSER": {
-      "dir": "in",
-      "width": "1",
-      "isVector": "true"
-    },
-    "m_axi_gmem2_AWVALID": {
-      "dir": "out",
-      "width": "1"
-    },
-    "m_axi_gmem2_AWREADY": {
-      "dir": "in",
-      "width": "1"
-    },
-    "m_axi_gmem2_AWADDR": {
-      "dir": "out",
-      "width": "64"
-    },
-    "m_axi_gmem2_AWID": {
-      "dir": "out",
-      "width": "1",
-      "isVector": "true"
-    },
-    "m_axi_gmem2_AWLEN": {
-      "dir": "out",
-      "width": "8"
-    },
-    "m_axi_gmem2_AWSIZE": {
-      "dir": "out",
-      "width": "3"
-    },
-    "m_axi_gmem2_AWBURST": {
-      "dir": "out",
-      "width": "2"
-    },
-    "m_axi_gmem2_AWLOCK": {
-      "dir": "out",
-      "width": "2"
-    },
-    "m_axi_gmem2_AWCACHE": {
-      "dir": "out",
-      "width": "4"
-    },
-    "m_axi_gmem2_AWPROT": {
-      "dir": "out",
-      "width": "3"
-    },
-    "m_axi_gmem2_AWQOS": {
-      "dir": "out",
-      "width": "4"
-    },
-    "m_axi_gmem2_AWREGION": {
-      "dir": "out",
-      "width": "4"
-    },
-    "m_axi_gmem2_AWUSER": {
-      "dir": "out",
-      "width": "1",
-      "isVector": "true"
-    },
-    "m_axi_gmem2_WVALID": {
-      "dir": "out",
-      "width": "1"
-    },
-    "m_axi_gmem2_WREADY": {
-      "dir": "in",
-      "width": "1"
-    },
-    "m_axi_gmem2_WDATA": {
-      "dir": "out",
-      "width": "32"
-    },
-    "m_axi_gmem2_WSTRB": {
-      "dir": "out",
-      "width": "4"
-    },
-    "m_axi_gmem2_WLAST": {
-      "dir": "out",
-      "width": "1"
-    },
-    "m_axi_gmem2_WID": {
-      "dir": "out",
-      "width": "1",
-      "isVector": "true"
-    },
-    "m_axi_gmem2_WUSER": {
-      "dir": "out",
-      "width": "1",
-      "isVector": "true"
-    },
-    "m_axi_gmem2_ARVALID": {
-      "dir": "out",
-      "width": "1"
-    },
-    "m_axi_gmem2_ARREADY": {
-      "dir": "in",
-      "width": "1"
-    },
-    "m_axi_gmem2_ARADDR": {
-      "dir": "out",
-      "width": "64"
-    },
-    "m_axi_gmem2_ARID": {
-      "dir": "out",
-      "width": "1",
-      "isVector": "true"
-    },
-    "m_axi_gmem2_ARLEN": {
-      "dir": "out",
-      "width": "8"
-    },
-    "m_axi_gmem2_ARSIZE": {
-      "dir": "out",
-      "width": "3"
-    },
-    "m_axi_gmem2_ARBURST": {
-      "dir": "out",
-      "width": "2"
-    },
-    "m_axi_gmem2_ARLOCK": {
-      "dir": "out",
-      "width": "2"
-    },
-    "m_axi_gmem2_ARCACHE": {
-      "dir": "out",
-      "width": "4"
-    },
-    "m_axi_gmem2_ARPROT": {
-      "dir": "out",
-      "width": "3"
-    },
-    "m_axi_gmem2_ARQOS": {
-      "dir": "out",
-      "width": "4"
-    },
-    "m_axi_gmem2_ARREGION": {
-      "dir": "out",
-      "width": "4"
-    },
-    "m_axi_gmem2_ARUSER": {
-      "dir": "out",
-      "width": "1",
-      "isVector": "true"
-    },
-    "m_axi_gmem2_RVALID": {
-      "dir": "in",
-      "width": "1"
-    },
-    "m_axi_gmem2_RREADY": {
-      "dir": "out",
-      "width": "1"
-    },
-    "m_axi_gmem2_RDATA": {
-      "dir": "in",
-      "width": "32"
-    },
-    "m_axi_gmem2_RLAST": {
-      "dir": "in",
-      "width": "1"
-    },
-    "m_axi_gmem2_RID": {
-      "dir": "in",
-      "width": "1",
-      "isVector": "true"
-    },
-    "m_axi_gmem2_RUSER": {
-      "dir": "in",
-      "width": "1",
-      "isVector": "true"
-    },
-    "m_axi_gmem2_RRESP": {
-      "dir": "in",
-      "width": "2"
-    },
-    "m_axi_gmem2_BVALID": {
-      "dir": "in",
-      "width": "1"
-    },
-    "m_axi_gmem2_BREADY": {
-      "dir": "out",
-      "width": "1"
-    },
-    "m_axi_gmem2_BRESP": {
-      "dir": "in",
-      "width": "2"
-    },
-    "m_axi_gmem2_BID": {
-      "dir": "in",
-      "width": "1",
-      "isVector": "true"
-    },
-    "m_axi_gmem2_BUSER": {
+    "m_axi_gmem_BUSER": {
       "dir": "in",
       "width": "1",
       "isVector": "true"
@@ -1297,113 +1011,82 @@
       }},
     "Metrics": {"compute_matrices": {
         "Latency": {
-          "LatencyBest": "",
-          "LatencyAvg": "",
-          "LatencyWorst": "",
-          "PipelineII": "",
+          "LatencyBest": "6361502",
+          "LatencyAvg": "6361502",
+          "LatencyWorst": "6361502",
+          "PipelineII": "6361503",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "2.70",
-          "Estimate": "7.300"
+          "Estimate": "9.553"
         },
         "Loops": [
           {
             "Name": "Loop 1",
-            "TripCount": "512",
-            "Latency": "512",
+            "TripCount": "64",
+            "Latency": "64",
             "PipelineII": "1",
             "PipelineDepth": "1"
           },
           {
             "Name": "Loop 2",
-            "TripCount": "256",
-            "Latency": "256",
+            "TripCount": "32",
+            "Latency": "32",
             "PipelineII": "1",
             "PipelineDepth": "1"
           },
           {
             "Name": "Loop 3",
-            "TripCount": "256",
-            "Latency": "256",
+            "TripCount": "32",
+            "Latency": "32",
             "PipelineII": "1",
             "PipelineDepth": "1"
           },
           {
             "Name": "Loop 4",
-            "TripCount": "",
-            "Latency": "",
+            "TripCount": "32",
+            "Latency": "103",
             "PipelineII": "1",
-            "PipelineDepth": "3"
+            "PipelineDepth": "73"
           },
           {
             "Name": "Loop 5",
-            "TripCount": "",
-            "Latency": "",
+            "TripCount": "65598",
+            "Latency": "65670",
             "PipelineII": "1",
-            "PipelineDepth": "3"
+            "PipelineDepth": "74"
           },
           {
             "Name": "diag_for",
-            "TripCount": "",
-            "Latency": "",
-            "PipelineII": "",
-            "PipelineDepth": "",
-            "Loops": [
-              {
-                "Name": "col_for",
-                "TripCount": "256",
-                "LatencyMin": "768",
-                "LatencyMax": "1536",
-                "Latency": "768 ~ 1536",
-                "PipelineII": "",
-                "PipelineDepthMin": "3",
-                "PipelineDepthMax": "6",
-                "PipelineDepth": "3 ~ 6"
-              },
-              {
-                "Name": "diag_for.2",
-                "TripCount": "",
-                "LatencyMin": "2",
-                "LatencyMax": "?",
-                "Latency": "2 ~ ?",
-                "PipelineII": "",
-                "PipelineDepth": "2"
-              },
-              {
-                "Name": "diag_for.3",
-                "TripCount": "",
-                "LatencyMin": "2",
-                "LatencyMax": "?",
-                "Latency": "2 ~ ?",
-                "PipelineII": "",
-                "PipelineDepth": "2"
-              },
-              {
-                "Name": "diag_for.4",
-                "TripCount": "",
-                "Latency": "",
-                "PipelineII": "",
-                "PipelineDepth": "71"
-              }
-            ]
+            "TripCount": "65567",
+            "Latency": "4196312",
+            "PipelineII": "64",
+            "PipelineDepth": "89"
+          },
+          {
+            "Name": "Loop 7",
+            "TripCount": "2099136",
+            "Latency": "2099206",
+            "PipelineII": "1",
+            "PipelineDepth": "72"
           }
         ],
         "Area": {
-          "BRAM_18K": "34",
+          "BRAM_18K": "794",
           "AVAIL_BRAM": "280",
-          "UTIL_BRAM": "12",
-          "DSP": "0",
+          "UTIL_BRAM": "283",
+          "DSP": "32",
           "AVAIL_DSP": "220",
-          "UTIL_DSP": "0",
-          "FF": "4026",
+          "UTIL_DSP": "14",
+          "FF": "57840",
           "AVAIL_FF": "106400",
-          "UTIL_FF": "3",
-          "LUT": "6423",
+          "UTIL_FF": "54",
+          "LUT": "82737",
           "AVAIL_LUT": "53200",
-          "UTIL_LUT": "12",
+          "UTIL_LUT": "155",
           "URAM": "0",
           "AVAIL_URAM": "0",
           "UTIL_URAM": "0"
@@ -1413,7 +1096,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2024-06-27 17:40:58 EEST",
+    "Time": "2024-06-28 02:20:39 EEST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.2"
   }

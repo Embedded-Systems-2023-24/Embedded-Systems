@@ -13,7 +13,7 @@
 
 //  #define DEBUG
 
-const short N = 256;
+const short N = 32;
 const int M = 65536;
 
 #define GAP_i -1
@@ -311,16 +311,6 @@ int main(int argc, char** argv) {
 	// fflush(stdout);
 
 	#ifdef DEBUG
-		
-		printf("\n******** Similarity Matrix HW ********\n");
-		print_similarity_matrix(similarity_matrix, N, M+2*(N-1));
-		printf("\n******** Similarity Matrix HW meta thn allagh ********\n");
-		print_similarity_matrix(similarity_matrix_hw, N, M);
-		printf("\n******** Similarity Matrix SW ********\n");
-		print_similarity_matrix(similarity_matrix_sw, N, M);
-		
-		printf("\n******** Direction Matrix HW  ********\n");
-		print_direction_matrix(direction_matrix, N, M+2*(N-1));
 		printf("\n******** Direction Matrix HW meta thn allagh ********\n");
 		print_direction_matrix(direction_matrix_hw, N, M);
 		printf("\n******** Direction Matrix SW ********\n");

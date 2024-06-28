@@ -3,8 +3,8 @@ INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling ../../../../hw_baseline/Vitis_HLS/lsal_test.cpp in debug mode
    Generating csim.exe
 Starting Local Alignment Code 
- max index hw is in position (0, 0) 
- max index sw is in position (0, 0) 
+ max index hw is in position (39961, 30) 
+ max index sw is in position (39961, 30) 
 both ended
 computation ended!- RESULTS CORRECT 
 INFO: [SIM 1] CSim done with 0 errors.

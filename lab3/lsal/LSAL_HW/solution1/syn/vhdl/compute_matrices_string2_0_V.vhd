@@ -11,7 +11,7 @@ entity compute_matrices_string2_0_V_ram is
     generic(
             DWIDTH     : integer := 3; 
             AWIDTH     : integer := 16; 
-            MEM_SIZE    : integer := 33023
+            MEM_SIZE    : integer := 32799
     ); 
     port (
           addr0     : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -28,7 +28,7 @@ architecture rtl of compute_matrices_string2_0_V_ram is
 
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
-shared variable ram : mem_array;
+shared variable ram0 : mem_array;
 
 
 begin 
@@ -50,9 +50,9 @@ p_memory_access_0: process (clk)
 begin 
     if (clk'event and clk = '1') then
         if (ce0 = '1') then 
-            q0 <= ram(CONV_INTEGER(addr0_tmp));
+            q0 <= ram0(CONV_INTEGER(addr0_tmp));
             if (we0 = '1') then 
-                ram(CONV_INTEGER(addr0_tmp)) := d0; 
+                ram0(CONV_INTEGER(addr0_tmp)) := d0; 
             end if;
         end if;
     end if;
@@ -67,7 +67,7 @@ use IEEE.std_logic_1164.all;
 entity compute_matrices_string2_0_V is
     generic (
         DataWidth : INTEGER := 3;
-        AddressRange : INTEGER := 33023;
+        AddressRange : INTEGER := 32799;
         AddressWidth : INTEGER := 16);
     port (
         reset : IN STD_LOGIC;

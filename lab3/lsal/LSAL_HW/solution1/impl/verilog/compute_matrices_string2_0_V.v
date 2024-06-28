@@ -7,7 +7,7 @@ module compute_matrices_string2_0_V_ram (addr0, ce0, d0, we0, q0,  clk);
 
 parameter DWIDTH = 3;
 parameter AWIDTH = 16;
-parameter MEM_SIZE = 33023;
+parameter MEM_SIZE = 32799;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -16,8 +16,7 @@ input we0;
 output reg[DWIDTH-1:0] q0;
 input clk;
 
-reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
-
+reg [DWIDTH-1:0] ram0[0:MEM_SIZE-1];
 
 
 
@@ -25,8 +24,8 @@ always @(posedge clk)
 begin 
     if (ce0) begin
         if (we0) 
-            ram[addr0] <= d0; 
-        q0 <= ram[addr0];
+            ram0[addr0] <= d0; 
+        q0 <= ram0[addr0];
     end
 end
 
@@ -44,7 +43,7 @@ module compute_matrices_string2_0_V(
     q0);
 
 parameter DataWidth = 32'd3;
-parameter AddressRange = 32'd33023;
+parameter AddressRange = 32'd32799;
 parameter AddressWidth = 32'd16;
 input reset;
 input clk;
