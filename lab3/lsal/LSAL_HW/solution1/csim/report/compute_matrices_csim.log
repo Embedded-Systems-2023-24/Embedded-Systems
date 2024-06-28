@@ -1,5 +1,6 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../hw_baseline/Vitis_HLS/lsal_test.cpp in debug mode
    Compiling ../../../../hw_baseline/Vitis_HLS/lsal.cpp in debug mode
    Generating csim.exe
 Starting Local Alignment Code 

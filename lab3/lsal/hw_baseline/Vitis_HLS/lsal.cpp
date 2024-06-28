@@ -3,8 +3,8 @@
 #include "ap_int.h"
 //#define index j+i*N
 
-#define N 32
-#define M 65536
+const short N = 32;
+const int M = 65536;
 
 #define GAP_i -1
 #define GAP_d -1
@@ -39,7 +39,29 @@
 
 void compute_matrices (
 	ap_int<3> string1_mem[N], ap_int<3> string2_mem[M+2*(N-1)], int max_index[0], ap_int<3> direction_matrix[(M+2*(N-1))*N], int n, int m) {
-#pragma HLS ARRAY_PARTITION variable=direction_matrix dim=1 factor=32 cyclic
+	//scalar values
+#pragma HLS INTERFACE s_axilite port=n bundle=control
+#pragma HLS INTERFACE s_axilite port=m bundle=control
+
+	//string1
+#pragma HLS INTERFACE m_axi port=string1_mem offset=slave bundle=gmem1
+#pragma HLS INTERFACE s_axilite port=string1_mem bundle=control
+
+	//string2
+#pragma HLS INTERFACE m_axi port=string2_mem offset=slave bundle=gmem1
+#pragma HLS INTERFACE s_axilite port=string2_mem bundle=control
+
+	//max_index
+#pragma HLS INTERFACE m_axi port=max_index offset=slave bundle=gmem2
+#pragma HLS INTERFACE s_axilite port=max_index bundle=control
+
+	//direction_matrix
+#pragma HLS INTERFACE m_axi port=direction_matrix offset=slave bundle=gmem2
+#pragma HLS INTERFACE s_axilite port=direction_matrix bundle=control
+
+	//return
+#pragma HLS INTERFACE s_axilite port=return bundle=control
+
 
 	int test_val;
 	int val;
@@ -53,28 +75,34 @@ void compute_matrices (
 	int max_index_buf = 0;
 	int max_value = 0;
 	ap_int<3> string1[N];
-#pragma HLS ARRAY_PARTITION variable=string1 dim=1 complete
-	ap_int<3> string2[65598];
+#pragma HLS ARRAY_PARTITION variable=string1 dim=1 factor=2 cyclic
+	ap_int<3> string2[M+2*(N-1)];
 #pragma HLS ARRAY_PARTITION variable=string2 dim=1 factor=2 cyclic
-	int current_diag[62] = {0};
-#pragma HLS ARRAY_PARTITION variable=current_diag factor=32 cyclic
+	int current_diag[N*2] = {0};
+#pragma HLS ARRAY_PARTITION variable=current_diag dim=1 factor=2 block
 	int up_diag[N] = {0};
-#pragma HLS ARRAY_PARTITION variable=up_diag dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=up_diag dim=1 factor=2 cyclic
 	int upper_diag[N] = {0};
-#pragma HLS ARRAY_PARTITION variable=upper_diag dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=upper_diag dim=1 factor=2 cyclic
+	ap_int<3> direction_diag[N*2];
+#pragma HLS ARRAY_PARTITION variable=direction_diag dim=1 factor=2 block
 
-	memcpy(string1, string1_mem, 32 );
-	memcpy(string2, string2_mem, 65598 );
+	string1_buffer:memcpy(string1, string1_mem, sizeof(ap_int<3>)*N );
+	string2_buffer:memcpy(string2, string2_mem, sizeof(ap_int<3>)*(M+2*(N-1)) );
 
 	//Here the real computation starts. Place your code whenever is required. 
   diag_for:
-	for(int i = 0; i < 65567; i++ && (index = i*N)) {
-#pragma HLS PIPELINE II=16
+	for(int i = 0; i < M+(N-1); i++) {
+#pragma HLS PIPELINE II=32
+
+		index = i*N;
 		
 	  col_for:
 		for(int j = N-1; j > -1; j--) {
+			if ( j >= N ) 
+				continue;
 
-			index += N-1;
+			index += N-1;		
 			val = 0;
 
 			if (string2[i-(j-(N-1))] == P)
@@ -120,11 +148,12 @@ void compute_matrices (
 			
 			//Save results.
 			current_diag[(i%2)*N+j] = val;
-			direction_matrix[i*N+j] = dir;
+			direction_diag[(i%2)*N+j] = dir;
 	  	}
 
-		memcpy( upper_diag, up_diag, 128 );
-		memcpy( up_diag, &(current_diag[(i%2)*N]), 128 );
+		up_to_upper:memcpy( upper_diag, up_diag, sizeof(int)*N );
+		current_to_up:memcpy( up_diag, &(current_diag[(i%2)*N]), sizeof(int)*N );
+	  	fix_direction:memcpy( &(direction_matrix[i*N]), &(direction_diag[(i%2)*N]), sizeof(ap_int<3>)*N );
 	}
 
 	*max_index = max_index_buf;

@@ -16272,3 +16272,1253 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction
 INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_26' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_27' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_28' to 's_axilite & ap_none'.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1464] Running solution command: config_rtl -reset_level=low
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 -reset_level low 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 -m_axi_offset slave 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/fix_direction 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/string1_buffer 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/string2_buffer 
+INFO: [HLS 200-1510] Running: set_directive_top -name compute_matrices compute_matrices 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 162.109 MB.
+INFO: [HLS 200-10] Analyzing design file 'hw_baseline/Vitis_HLS/lsal.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'n': hw_baseline/Vitis_HLS/lsal.cpp:41:143
+WARNING: [HLS 207-5301] unused parameter 'm': hw_baseline/Vitis_HLS/lsal.cpp:41:150
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.05 seconds. CPU system time: 0.34 seconds. Elapsed time: 5 seconds; current allocated memory: 163.312 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-248] cyclic partitioned array 'direction_matrix' on dimension 1 with 32 (hw_baseline/Vitis_HLS/lsal.cpp:41:237)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.37 seconds. CPU system time: 0.77 seconds. Elapsed time: 6.72 seconds; current allocated memory: 165.285 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 165.286 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.17 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.38 seconds; current allocated memory: 172.008 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.37 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.47 seconds; current allocated memory: 179.083 MB.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-4' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-5' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-6' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'diag_for' (hw_baseline/Vitis_HLS/lsal.cpp:49) in function 'compute_matrices' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'col_for' (hw_baseline/Vitis_HLS/lsal.cpp:49) in function 'compute_matrices' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-6.2' in function 'compute_matrices' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-6.3' in function 'compute_matrices' completely with a factor of 32.
+INFO: [XFORM 203-101] Partitioning array 'string1.V' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-101] Partitioning array 'string2.V' (hw_baseline/Vitis_HLS/lsal.cpp:57) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'current_diag' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 with a cyclic factor 32.
+INFO: [XFORM 203-101] Partitioning array 'up_diag' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.0' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.1' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.2' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.3' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.4' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.5' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.6' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.7' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.8' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.9' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.10' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.11' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.12' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.13' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.14' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.15' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.16' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.17' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.18' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.19' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.20' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.21' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.22' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.23' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.24' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.25' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.26' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.27' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.28' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.29' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.30' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.31' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.0' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.1' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.2' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.3' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.4' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.5' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.6' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.7' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.8' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.9' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.10' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.11' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.12' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.13' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.14' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.15' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.16' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.17' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.18' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.19' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.20' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.21' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.22' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.23' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.24' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.25' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.26' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.27' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.28' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.29' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.30' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.31' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (hw_baseline/Vitis_HLS/lsal.cpp:49:6) in function 'compute_matrices'... converting 97 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 2.48 seconds. CPU system time: 0.11 seconds. Elapsed time: 4.51 seconds; current allocated memory: 212.551 MB.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_0' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_1' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_10' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_11' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_12' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_13' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_14' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_15' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_16' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_17' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_18' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_19' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_2' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_20' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_21' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_22' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_23' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_24' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_25' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_26' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_27' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_28' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_29' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_3' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_30' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_31' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_4' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_5' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_6' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_7' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_8' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_9' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-472] Inferring partial write operation for 'string2[0].V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string2[1].V' 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.8 seconds. CPU system time: 0.02 seconds. Elapsed time: 2.5 seconds; current allocated memory: 221.091 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'compute_matrices' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'string2_1_V'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'string2_0_V'. Use bind_storage pragma to overwrite if needed.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 2'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 73, loop 'Loop 3'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'Loop 4'
+INFO: [SCHED 204-61] Pipelining loop 'diag_for'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 16, Final II = 16, Depth = 21, loop 'diag_for'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2.62 seconds. CPU system time: 0.1 seconds. Elapsed time: 3.07 seconds; current allocated memory: 229.868 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 3.39 seconds. CPU system time: 0.21 seconds. Elapsed time: 4.61 seconds; current allocated memory: 242.800 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_2' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_3' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_4' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_5' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_6' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_7' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_8' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_9' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_10' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_11' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_12' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_13' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_14' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_15' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_16' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_17' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_18' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_19' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_20' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_21' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_22' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_23' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_24' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_25' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_26' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_27' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_28' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_29' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_30' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_31' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/string1_mem' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/string2_mem' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/max_index' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_4' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_5' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_6' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_7' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_8' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_9' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_10' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_11' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_12' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_13' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_14' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_15' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_16' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_17' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_18' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_19' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_20' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_21' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_22' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_23' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_24' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_25' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_26' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_27' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_28' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_29' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_30' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_31' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/n' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/m' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'compute_matrices' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'string1_mem', 'string2_mem', 'max_index', 'direction_matrix_0', 'direction_matrix_1', 'direction_matrix_2', 'direction_matrix_3', 'direction_matrix_4', 'direction_matrix_5', 'direction_matrix_6', 'direction_matrix_7', 'direction_matrix_8', 'direction_matrix_9', 'direction_matrix_10', 'direction_matrix_11', 'direction_matrix_12', 'direction_matrix_13', 'direction_matrix_14', 'direction_matrix_15', 'direction_matrix_16', 'direction_matrix_17', 'direction_matrix_18', 'direction_matrix_19', 'direction_matrix_20', 'direction_matrix_21', 'direction_matrix_22', 'direction_matrix_23', 'direction_matrix_24', 'direction_matrix_25', 'direction_matrix_26', 'direction_matrix_27', 'direction_matrix_28', 'direction_matrix_29', 'direction_matrix_30', 'direction_matrix_31', 'n', 'm' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_matrices'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 8.44 seconds. CPU system time: 0.32 seconds. Elapsed time: 12.16 seconds; current allocated memory: 265.103 MB.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_string2_0_V_ram (RAM_1WnR)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 50.81 seconds. CPU system time: 3.49 seconds. Elapsed time: 68.19 seconds; current allocated memory: 332.382 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for compute_matrices.
+INFO: [VLOG 209-307] Generating Verilog RTL for compute_matrices.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1464] Running solution command: config_rtl -reset_level=low
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 -reset_level low 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 -m_axi_offset slave 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/fix_direction 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/string1_buffer 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/string2_buffer 
+INFO: [HLS 200-1510] Running: set_directive_top -name compute_matrices compute_matrices 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 162.109 MB.
+INFO: [HLS 200-10] Analyzing design file 'hw_baseline/Vitis_HLS/lsal.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'n': hw_baseline/Vitis_HLS/lsal.cpp:41:143
+WARNING: [HLS 207-5301] unused parameter 'm': hw_baseline/Vitis_HLS/lsal.cpp:41:150
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.07 seconds. CPU system time: 0.36 seconds. Elapsed time: 5 seconds; current allocated memory: 163.312 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-248] cyclic partitioned array 'direction_matrix' on dimension 1 with 32 (hw_baseline/Vitis_HLS/lsal.cpp:41:237)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.54 seconds. CPU system time: 0.45 seconds. Elapsed time: 6.66 seconds; current allocated memory: 165.253 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 165.254 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.38 seconds; current allocated memory: 171.936 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.35 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.46 seconds; current allocated memory: 179.023 MB.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-4' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-5' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'diag_for' (hw_baseline/Vitis_HLS/lsal.cpp:49) in function 'compute_matrices' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'col_for' (hw_baseline/Vitis_HLS/lsal.cpp:49) in function 'compute_matrices' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-5.2' in function 'compute_matrices' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-5.3' in function 'compute_matrices' completely with a factor of 32.
+INFO: [XFORM 203-101] Partitioning array 'string1.V' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-101] Partitioning array 'current_diag' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 with a cyclic factor 32.
+INFO: [XFORM 203-101] Partitioning array 'up_diag' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.0' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.1' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.2' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.3' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.4' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.5' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.6' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.7' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.8' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.9' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.10' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.11' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.12' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.13' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.14' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.15' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.16' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.17' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.18' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.19' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.20' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.21' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.22' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.23' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.24' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.25' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.26' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.27' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.28' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.29' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.30' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.31' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.0' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.1' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.2' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.3' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.4' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.5' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.6' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.7' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.8' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.9' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.10' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.11' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.12' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.13' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.14' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.15' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.16' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.17' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.18' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.19' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.20' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.21' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.22' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.23' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.24' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.25' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.26' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.27' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.28' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.29' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.30' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.31' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 2.47 seconds. CPU system time: 0.11 seconds. Elapsed time: 4.48 seconds; current allocated memory: 211.943 MB.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_0' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_1' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_10' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_11' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_12' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_13' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_14' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_15' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_16' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_17' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_18' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_19' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_2' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_20' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_21' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_22' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_23' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_24' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_25' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_26' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_27' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_28' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_29' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_3' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_30' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_31' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_4' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_5' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_6' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_7' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_8' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 65567 on port 'gmem_9' (hw_baseline/Vitis_HLS/lsal.cpp:123:30). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 2.19 seconds. CPU system time: 0.02 seconds. Elapsed time: 2.73 seconds; current allocated memory: 221.018 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'compute_matrices' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 2'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 73, loop 'Loop 3'
+INFO: [SCHED 204-61] Pipelining loop 'diag_for'.
+WARNING: [HLS 200-885] Unable to schedule bus request on port 'gmem' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+INFO: [HLS 200-1470] Pipelining result : Target II = 16, Final II = 32, Depth = 107, loop 'diag_for'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 5.78 seconds. CPU system time: 0.08 seconds. Elapsed time: 6.09 seconds; current allocated memory: 232.090 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 4.04 seconds. CPU system time: 0.31 seconds. Elapsed time: 6 seconds; current allocated memory: 249.114 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_2' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_3' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_4' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_5' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_6' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_7' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_8' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_9' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_10' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_11' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_12' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_13' to 'm_axi'.
+INFO: [RTGEN 206-500]==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1464] Running solution command: config_rtl -reset_level=low
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 -reset_level low 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 -m_axi_offset slave 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/fix_direction 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/string1_buffer 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/string2_buffer 
+INFO: [HLS 200-1510] Running: set_directive_top -name compute_matrices compute_matrices 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 178.108 MB.
+INFO: [HLS 200-10] Analyzing design file 'hw_baseline/Vitis_HLS/lsal.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'n': hw_baseline/Vitis_HLS/lsal.cpp:41:143
+WARNING: [HLS 207-5301] unused parameter 'm': hw_baseline/Vitis_HLS/lsal.cpp:41:150
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 3.97 seconds. CPU system time: 0.31 seconds. Elapsed time: 5.44 seconds; current allocated memory: 179.312 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-248] cyclic partitioned array 'direction_matrix' on dimension 1 with 16 (hw_baseline/Vitis_HLS/lsal.cpp:41:237)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.29 seconds. CPU system time: 0.34 seconds. Elapsed time: 6.99 seconds; current allocated memory: 181.668 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 181.670 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.34 seconds; current allocated memory: 188.099 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.21 seconds. CPU system time: 0 seconds. Elapsed time: 0.3 seconds; current allocated memory: 195.257 MB.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-4' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-5' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-6' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'diag_for' (hw_baseline/Vitis_HLS/lsal.cpp:49) in function 'compute_matrices' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'col_for' (hw_baseline/Vitis_HLS/lsal.cpp:49) in function 'compute_matrices' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-6.2' in function 'compute_matrices' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-6.3' in function 'compute_matrices' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-6.4' in function 'compute_matrices' completely with a factor of 32.
+INFO: [XFORM 203-101] Partitioning array 'string1.V' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-101] Partitioning array 'string2.V' (hw_baseline/Vitis_HLS/lsal.cpp:57) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'current_diag' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 with a cyclic factor 32.
+INFO: [XFORM 203-101] Partitioning array 'up_diag' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.0' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.1' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.2' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.3' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.4' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.5' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.6' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'string1.V.7' (hw_baseline/Vitis_HLS/lsal.cpp:55) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.8' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.9' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.10' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.11' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.12' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.13' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.14' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.15' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.16' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.17' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.18' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.19' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.20' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.21' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.22' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.23' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.24' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.25' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.26' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.27' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.28' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.29' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.30' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'current_diag.31' (hw_baseline/Vitis_HLS/lsal.cpp:59) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'up_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:61) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'upper_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:63) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.0' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.1' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.2' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.3' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.4' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.5' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.6' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.7' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.0' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.1' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.2' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.3' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.4' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.5' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.6' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'string1.V.7' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.8' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.9' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.10' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.11' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.12' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.13' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.14' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.15' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.16' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.17' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.18' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.19' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.20' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.21' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.22' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.23' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.24' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.25' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.26' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.27' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.28' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.29' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.30' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'current_diag.31' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'up_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.0' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.1' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.2' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.3' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.4' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.5' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.6' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag.7' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.0' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.1' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.2' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.3' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.4' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.5' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.6' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.7' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (hw_baseline/Vitis_HLS/lsal.cpp:49:6) in function 'compute_matrices'... converting 97 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.83 seconds. CPU system time: 0.07 seconds. Elapsed time: 3.85 seconds; current allocated memory: 228.531 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'string2[0].V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string2[1].V' 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.42 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.5 seconds; current allocated memory: 235.866 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'compute_matrices' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'string2_1_V'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'string2_0_V'. Use bind_storage pragma to overwrite if needed.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 2'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 73, loop 'Loop 3'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'Loop 4'
+INFO: [SCHED 204-61] Pipelining loop 'diag_for'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 16, Final II = 16, Depth = 88, loop 'diag_for'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2.76 seconds. CPU system time: 0.02 seconds. Elapsed time: 3.09 seconds; current allocated memory: 244.610 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 3.45 seconds. CPU system time: 0.16 seconds. Elapsed time: 4.52 seconds; current allocated memory: 257.828 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_2' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_3' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_4' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_5' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_6' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_7' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_8' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_9' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_10' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_11' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_12' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_13' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_14' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_15' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/string1_mem' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/string2_mem' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/max_index' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_2' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_3' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_4' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_5' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_6' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_7' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_8' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_9' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_10' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_11' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_12' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_13' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_14' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_15' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/n' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/m' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'compute_matrices' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'string1_mem', 'string2_mem', 'max_index', 'direction_matrix_0', 'direction_matrix_1', 'direction_matrix_2', 'direction_matrix_3', 'direction_matrix_4', 'direction_matrix_5', 'direction_matrix_6', 'direction_matrix_7', 'direction_matrix_8', 'direction_matrix_9', 'direction_matrix_10', 'direction_matrix_11', 'direction_matrix_12', 'direction_matrix_13', 'direction_matrix_14', 'direction_matrix_15', 'n', 'm' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_matrices'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 5.89 seconds. CPU system time: 0.12 seconds. Elapsed time: 8.31 seconds; current allocated memory: 276.177 MB.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_string2_0_V_ram (RAM_1WnR)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 24.27 seconds. CPU system time: 0.73 seconds. Elapsed time: 33.09 seconds; current allocated memory: 330.070 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for compute_matrices.
+INFO: [VLOG 209-307] Generating Verilog RTL for compute_matrices.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 49.26 seconds. CPU system time: 1.78 seconds. Elapsed time: 68.76 seconds; current allocated memory: 334.585 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1464] Running solution command: config_rtl -reset_level=low
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 -reset_level low 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 -m_axi_offset slave 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/fix_direction 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/string1_buffer 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/string2_buffer 
+INFO: [HLS 200-1510] Running: set_directive_top -name compute_matrices compute_matrices 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 178.108 MB.
+INFO: [HLS 200-10] Analyzing design file 'hw_baseline/Vitis_HLS/lsal.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'n': hw_baseline/Vitis_HLS/lsal.cpp:41:143
+WARNING: [HLS 207-5301] unused parameter 'm': hw_baseline/Vitis_HLS/lsal.cpp:41:150
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.13 seconds. CPU system time: 0.31 seconds. Elapsed time: 4.85 seconds; current allocated memory: 179.311 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-248] cyclic partitioned array 'direction_matrix' on dimension 1 with 4 (hw_baseline/Vitis_HLS/lsal.cpp:41:237)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.14 seconds. CPU system time: 0.32 seconds. Elapsed time: 6.34 seconds; current allocated memory: 181.569 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 181.570 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 187.758 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 194.994 MB.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-4' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-5' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-6' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'diag_for' (hw_baseline/Vitis_HLS/lsal.cpp:49) in function 'compute_matrices' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'col_for' (hw_baseline/Vitis_HLS/lsal.cpp:49) in function 'compute_matrices' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-6.2' in function 'compute_matrices' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-6.3' in function 'compute_matrices' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-6.4' in function 'compute_matrices' completely with a factor of 32.
+INFO: [XFORM 203-101] Partitioning array 'string1.V' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 with a cyclic factor 4.
+INFO: [XFORM 203-101] Partitioning array 'string2.V' (hw_baseline/Vitis_HLS/lsal.cpp:57) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'current_diag' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-101] Partitioning array 'up_diag' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 with a cyclic factor 4.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 with a cyclic factor 4.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 with a cyclic factor 8.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.0' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.1' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.2' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.3' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.4' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.5' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.6' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'direction_buf.V.7' (hw_baseline/Vitis_HLS/lsal.cpp:65) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.0' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.1' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.2' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.3' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.4' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.5' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.6' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V.7' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (hw_baseline/Vitis_HLS/lsal.cpp:49:6) in function 'compute_matrices'... converting 97 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.55 seconds; current allocated memory: 226.647 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1[0].V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1[1].V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1[2].V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1[3].V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string2[0].V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string2[1].V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[3]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[2]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[3]' 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.04 seconds. CPU system time: 0.03 seconds. Elapsed time: 2.15 seconds; current allocated memory: 232.137 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'compute_matrices' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'string2_1_V'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'string2_0_V'. Use bind_storage pragma to overwrite if needed.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 2'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 73, loop 'Loop 3'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'Loop 4'
+INFO: [SCHED 204-61] Pipelining loop 'diag_for'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 16, Final II = 16, Depth = 81, loop 'diag_for'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 10.91 seconds. CPU system time: 0.06 seconds. Elapsed time: 11.37 seconds; current allocated memory: 240.531 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 3.58 seconds. CPU system time: 0.24 seconds. Elapsed time: 4.86 seconds; current allocated memory: 251.583 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem' to 'm_axi'.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1464] Running solution command: config_rtl -reset_level=low
+INFO: [HLS 200-1464] Running solution command: config_interface -default_interface=kernel
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=slave
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_rtl -register_reset_num 3 -reset_level low 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_alignment_byte_size 64 -m_axi_latency 64 -m_axi_max_widen_bitwidth 512 -m_axi_offset slave 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/fix_direction 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/string1_buffer 
+INFO: [HLS 200-1510] Running: set_directive_unroll compute_matrices/string2_buffer 
+INFO: [HLS 200-1510] Running: set_directive_top -name compute_matrices compute_matrices 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 162.109 MB.
+INFO: [HLS 200-10] Analyzing design file 'hw_baseline/Vitis_HLS/lsal.cpp' ... 
+WARNING: [HLS 207-5301] unused parameter 'n': hw_baseline/Vitis_HLS/lsal.cpp:41:143
+WARNING: [HLS 207-5301] unused parameter 'm': hw_baseline/Vitis_HLS/lsal.cpp:41:150
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.03 seconds. CPU system time: 0.3 seconds. Elapsed time: 4.81 seconds; current allocated memory: 163.311 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 214-248] cyclic partitioned array 'direction_matrix' on dimension 1 with 2 (hw_baseline/Vitis_HLS/lsal.cpp:41:237)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i3.s_struct.ap_ints' into 'compute_matrices(ap_int<3>*, ap_int<3>*, int*, ap_int<3>*, int, int)'
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.15 seconds. CPU system time: 0.42 seconds. Elapsed time: 6.7 seconds; current allocated memory: 165.622 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 165.624 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.27 seconds; current allocated memory: 171.793 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 179.020 MB.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-4' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-5' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-6' in function 'compute_matrices' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'diag_for' (hw_baseline/Vitis_HLS/lsal.cpp:49) in function 'compute_matrices' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'col_for' (hw_baseline/Vitis_HLS/lsal.cpp:49) in function 'compute_matrices' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-6.2' in function 'compute_matrices' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-6.3' in function 'compute_matrices' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-6.4' in function 'compute_matrices' completely with a factor of 32.
+INFO: [XFORM 203-101] Partitioning array 'string1.V' (hw_baseline/Vitis_HLS/lsal.cpp:55) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'string2.V' (hw_baseline/Vitis_HLS/lsal.cpp:57) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'current_diag' (hw_baseline/Vitis_HLS/lsal.cpp:59) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'up_diag' (hw_baseline/Vitis_HLS/lsal.cpp:61) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'upper_diag' (hw_baseline/Vitis_HLS/lsal.cpp:63) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-101] Partitioning array 'direction_buf.V' (hw_baseline/Vitis_HLS/lsal.cpp:65) in dimension 1 with a cyclic factor 2.
+INFO: [XFORM 203-102] Partitioning array 'direction_buf.V.0' (hw_baseline/Vitis_HLS/lsal.cpp:65) automatically.
+INFO: [XFORM 203-102] Partitioning array 'direction_buf.V.1' (hw_baseline/Vitis_HLS/lsal.cpp:65) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (hw_baseline/Vitis_HLS/lsal.cpp:49:6) in function 'compute_matrices'... converting 97 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.98 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.31 seconds; current allocated memory: 210.705 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'current_diag[0]' (hw_baseline/Vitis_HLS/lsal.cpp:124:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1[0].V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string1[1].V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string2[0].V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'string2[1].V' 
+INFO: [HLS 200-472] Inferring partial write operation for 'current_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'up_diag[1]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[0]' 
+INFO: [HLS 200-472] Inferring partial write operation for 'upper_diag[1]' 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.14 seconds. CPU system time: 0.02 seconds. Elapsed time: 2.01 seconds; current allocated memory: 216.603 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'compute_matrices' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'string2_1_V'. Use bind_storage pragma to overwrite if needed.
+INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'string2_0_V'. Use bind_storage pragma to overwrite if needed.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 2'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'Loop 3'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 73, loop 'Loop 4'
+INFO: [SCHED 204-61] Pipelining loop 'Loop 5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 74, loop 'Loop 5'
+INFO: [SCHED 204-61] Pipelining loop 'diag_for'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 16, Final II = 16, Depth = 89, loop 'diag_for'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 11.84 seconds. CPU system time: 0.03 seconds. Elapsed time: 12.14 seconds; current allocated memory: 225.193 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 3.77 seconds. CPU system time: 0.14 seconds. Elapsed time: 4.79 seconds; current allocated memory: 236.373 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_matrices' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/gmem_1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/string1_mem' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/string2_mem' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/max_index' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_0' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/direction_matrix_1' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/n' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_matrices/m' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'compute_matrices' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'string1_mem', 'string2_mem', 'max_index', 'direction_matrix_0', 'direction_matrix_1', 'n', 'm' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_matrices'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4.21 seconds. CPU system time: 0.18 seconds. Elapsed time: 5.73 seconds; current allocated memory: 250.740 MB.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_string1_0_V_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_string2_0_V_ram (RAM_1WnR)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_current_diag_0_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_matrices_up_diag_0_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 13.27 seconds. CPU system time: 0.45 seconds. Elapsed time: 18.18 seconds; current allocated memory: 291.562 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for compute_matrices.
+INFO: [VLOG 209-307] Generating Verilog RTL for compute_matrices.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+INFO: [HLS 200-111]==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================

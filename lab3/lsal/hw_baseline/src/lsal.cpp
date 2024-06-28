@@ -37,10 +37,8 @@
  **********************************************************************************************/
 extern "C" {
 
-
 void compute_matrices (
 	ap_int<3> string1_mem[N], ap_int<3> string2_mem[M+2*(N-1)], int max_index[0], ap_int<3> direction_matrix[(M+2*(N-1))*N], int n, int m) {
-#pragma HLS ARRAY_PARTITION variable=direction_matrix dim=1 factor=32 cyclic
 
 	int test_val;
 	int val;
@@ -54,31 +52,34 @@ void compute_matrices (
 	int max_index_buf = 0;
 	int max_value = 0;
 	ap_int<3> string1[N];
-#pragma HLS ARRAY_PARTITION variable=string1 dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=string1 dim=1 factor=2 cyclic
 	ap_int<3> string2[M+2*(N-1)];
 #pragma HLS ARRAY_PARTITION variable=string2 dim=1 factor=2 cyclic
 	int current_diag[N*2] = {0};
-#pragma HLS ARRAY_PARTITION variable=current_diag dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=current_diag dim=1 factor=32 block
 	int up_diag[N] = {0};
-#pragma HLS ARRAY_PARTITION variable=up_diag dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=up_diag dim=1 factor=32 block
 	int upper_diag[N] = {0};
-#pragma HLS ARRAY_PARTITION variable=upper_diag dim=1 complete
-//	ap_int<3> direction_buf[(M+2*(N-1))*N];
-//#pragma HLS ARRAY_RESHAPE variable=direction_buf block
+#pragma HLS ARRAY_PARTITION variable=upper_diag dim=1 factor=32 block
+	ap_int<3> direction_diag[N*2];
+#pragma HLS ARRAY_PARTITION variable=direction_diag dim=1 factor=32 block
 
-	memcpy(string1, string1_mem, sizeof(ap_int<3>)*N );
-	memcpy(string2, string2_mem, sizeof(ap_int<3>)*(M+2*(N-1)) );
+	string1_buffer:memcpy(string1, string1_mem, sizeof(ap_int<3>)*N );
+	string2_buffer:memcpy(string2, string2_mem, sizeof(ap_int<3>)*(M+2*(N-1)) );
 
 	//Here the real computation starts. Place your code whenever is required. 
   diag_for:
 	for(int i = 0; i < M+(N-1); i++) {
-#pragma HLS PIPELINE II=16
+#pragma HLS PIPELINE II=32
+
 		index = i*N;
 		
 	  col_for:
 		for(int j = N-1; j > -1; j--) {
+			if ( j >= N ) 
+				continue;
 
-			index += N-1;
+			index += N-1;		
 			val = 0;
 
 			if (string2[i-(j-(N-1))] == P)
@@ -124,17 +125,16 @@ void compute_matrices (
 			
 			//Save results.
 			current_diag[(i%2)*N+j] = val;
-			direction_matrix[i*N+j] = dir;
+			direction_diag[(i%2)*N+j] = dir;
 	  	}
 
-		memcpy( upper_diag, up_diag, 128 );
-		memcpy( up_diag, &(current_diag[(i%2)*N]), 128 );
+		memcpy( upper_diag, up_diag, sizeof(int)*N );
+		memcpy( up_diag, &(current_diag[(i%2)*N]), sizeof(int)*N );
+	  	memcpy( &(direction_matrix[i*N]), &(direction_diag[(i%2)*N]), sizeof(ap_int<3>)*N );
 	}
 
 	*max_index = max_index_buf;
-//	memcpy( direction_matrix, direction_buf, sizeof(ap_int<3>)*(M+2*(N-1))*N );
 }  // end of function
-
 
 /************************************************************************/
 
