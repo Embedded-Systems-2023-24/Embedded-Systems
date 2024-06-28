@@ -37,8 +37,10 @@
  **********************************************************************************************/
 extern "C" {
 
+
 void compute_matrices (
 	ap_int<3> string1_mem[N], ap_int<3> string2_mem[M+2*(N-1)], int max_index[0], ap_int<3> direction_matrix[(M+2*(N-1))*N], int n, int m) {
+#pragma HLS ARRAY_PARTITION variable=direction_matrix dim=1 factor=32 cyclic
 
 	int test_val;
 	int val;
@@ -46,27 +48,26 @@ void compute_matrices (
 
     // Following values are used for the N, W, and NW values wrt. similarity_matrix[i]
 	int index = 0;
-#pragma HLS INTERFACE m_axi depth=10 port=index offset=slave bundle=gmem1 num_write_outstanding=300
     int north = 0;
 	int west = 0;
 	int northwest = 0;
 	int max_index_buf = 0;
 	int max_value = 0;
 	ap_int<3> string1[N];
-#pragma HLS ARRAY_PARTITION variable=string1 dim=1 factor=32 cyclic
+#pragma HLS ARRAY_PARTITION variable=string1 dim=1 complete
 	ap_int<3> string2[M+2*(N-1)];
-#pragma HLS ARRAY_PARTITION variable=string2 dim=1 factor=32 cyclic
+#pragma HLS ARRAY_PARTITION variable=string2 dim=1 factor=2 cyclic
 	int current_diag[N*2] = {0};
-#pragma HLS ARRAY_PARTITION variable=current_diag dim=1 factor=32 cyclic
+#pragma HLS ARRAY_PARTITION variable=current_diag dim=1 complete
 	int up_diag[N] = {0};
-#pragma HLS ARRAY_PARTITION variable=up_diag dim=1 factor=32 cyclic
+#pragma HLS ARRAY_PARTITION variable=up_diag dim=1 complete
 	int upper_diag[N] = {0};
-#pragma HLS ARRAY_PARTITION variable=upper_diag dim=1 factor=32 cyclic
-	ap_int<3> direction_buf[(M+2*(N-1))*N];
-#pragma HLS ARRAY_PARTITION variable=direction_diag dim=1 factor=32 cyclic
+#pragma HLS ARRAY_PARTITION variable=upper_diag dim=1 complete
+//	ap_int<3> direction_buf[(M+2*(N-1))*N];
+//#pragma HLS ARRAY_RESHAPE variable=direction_buf block
 
-	string1_buffer:memcpy(string1, string1_mem, sizeof(ap_int<3>)*N );
-	string2_buffer:memcpy(string2, string2_mem, sizeof(ap_int<3>)*(M+2*(N-1)) );
+	memcpy(string1, string1_mem, sizeof(ap_int<3>)*N );
+	memcpy(string2, string2_mem, sizeof(ap_int<3>)*(M+2*(N-1)) );
 
 	//Here the real computation starts. Place your code whenever is required. 
   diag_for:
@@ -123,15 +124,15 @@ void compute_matrices (
 			
 			//Save results.
 			current_diag[(i%2)*N+j] = val;
-			direction_buf[i*N+j] = dir;
+			direction_matrix[i*N+j] = dir;
 	  	}
 
-		memcpy( upper_diag, up_diag, sizeof(int)*N );
-		memcpy( up_diag, &(current_diag[(i%2)*N]), sizeof(int)*N );
+		memcpy( upper_diag, up_diag, 128 );
+		memcpy( up_diag, &(current_diag[(i%2)*N]), 128 );
 	}
 
 	*max_index = max_index_buf;
-	memcpy( direction_matrix, direction_buf, sizeof(ap_int<3>)*(M+2*(N-1))*N );
+//	memcpy( direction_matrix, direction_buf, sizeof(ap_int<3>)*(M+2*(N-1))*N );
 }  // end of function
 
 

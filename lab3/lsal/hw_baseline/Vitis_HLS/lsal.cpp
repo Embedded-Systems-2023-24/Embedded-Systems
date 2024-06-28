@@ -39,6 +39,7 @@
 
 void compute_matrices (
 	ap_int<3> string1_mem[N], ap_int<3> string2_mem[M+2*(N-1)], int max_index[0], ap_int<3> direction_matrix[(M+2*(N-1))*N], int n, int m) {
+#pragma HLS ARRAY_PARTITION variable=direction_matrix dim=1 factor=32 cyclic
 
 	int test_val;
 	int val;
@@ -53,25 +54,22 @@ void compute_matrices (
 	int max_value = 0;
 	ap_int<3> string1[N];
 #pragma HLS ARRAY_PARTITION variable=string1 dim=1 complete
-	ap_int<3> string2[M+2*(N-1)];
+	ap_int<3> string2[65598];
 #pragma HLS ARRAY_PARTITION variable=string2 dim=1 factor=2 cyclic
-	int current_diag[N*2] = {0};
-#pragma HLS ARRAY_PARTITION variable=current_diag dim=1 complete
+	int current_diag[62] = {0};
+#pragma HLS ARRAY_PARTITION variable=current_diag factor=32 cyclic
 	int up_diag[N] = {0};
 #pragma HLS ARRAY_PARTITION variable=up_diag dim=1 complete
 	int upper_diag[N] = {0};
 #pragma HLS ARRAY_PARTITION variable=upper_diag dim=1 complete
-	ap_int<3> direction_buf[(M+2*(N-1))*N];
-#pragma HLS ARRAY_RESHAPE variable=direction_buf dim=1 factor=32 block
 
-	memcpy(string1, string1_mem, sizeof(ap_int<3>)*N );
-	memcpy(string2, string2_mem, sizeof(ap_int<3>)*(M+2*(N-1)) );
+	memcpy(string1, string1_mem, 32 );
+	memcpy(string2, string2_mem, 65598 );
 
 	//Here the real computation starts. Place your code whenever is required. 
   diag_for:
-	for(int i = 0; i < M+(N-1); i++) {
+	for(int i = 0; i < 65567; i++ && (index = i*N)) {
 #pragma HLS PIPELINE II=16
-		index = i*N;
 		
 	  col_for:
 		for(int j = N-1; j > -1; j--) {
@@ -122,15 +120,14 @@ void compute_matrices (
 			
 			//Save results.
 			current_diag[(i%2)*N+j] = val;
-			direction_buf[i*N+j] = dir;
+			direction_matrix[i*N+j] = dir;
 	  	}
 
-		memcpy( upper_diag, up_diag, sizeof(int)*N );
-		memcpy( up_diag, &(current_diag[(i%2)*N]), sizeof(int)*N );
+		memcpy( upper_diag, up_diag, 128 );
+		memcpy( up_diag, &(current_diag[(i%2)*N]), 128 );
 	}
 
 	*max_index = max_index_buf;
-	memcpy( direction_matrix, direction_buf, sizeof(ap_int<3>)*(M+2*(N-1))*N );
 }  // end of function
 
 /************************************************************************/
